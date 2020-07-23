@@ -1,0 +1,6 @@
+site_name: Scarf Documentation
+theme: readthedocs
+nav:
+- Scarf SDK's for library authors: 'index.md'
+- Distributing system packages with Scarf: 'distribute-with-scarf.md'
+- Using Scarf as a system package manager: 'end-user.md'
