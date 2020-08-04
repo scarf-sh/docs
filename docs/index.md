@@ -6,5 +6,4 @@ Understand how your software is used, connect with the businesses that rely on y
 
 ## Overview
 
-
-TODO
+Scarf's approach focuses on identifying which companies rely on your software. Scarf currently offers telemetry for package installation as well as documentation/website traffic. 
