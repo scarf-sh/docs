@@ -3,6 +3,6 @@ theme: readthedocs
 nav:
 - Introduction: 'index.md'
 - Package telemetry SDKs: 'package-analytics.md'
-- Documentation and web traffic analytics: 'web-traffic.md'
+- Documentation insights: 'web-traffic.md'
 - Package manager (maintainers): 'distribute-with-scarf.md'
 - Package manager (end-user): 'end-user.md'
