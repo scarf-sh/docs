@@ -220,7 +220,7 @@ click `Start monetizing <package>`. Set your price. That's it! Scarf handles all
 user registration and payments so you are now fully ready to start making money
 from your package. Stripe will send your payouts daily to your connected bank
 account. (NOTE: your very first payout will go through 7 days after your account
-is opened, so be patiend for your first payout.)
+is opened, so be patient for your first payout.)
 
 ## Keeping Scarf up to date
 

@@ -21,7 +21,7 @@ Head to your Scarf dashboard and find the `Documentation Insights Management` se
 
 #### Data Precision
 
-View counts from Documentation Insights data should be considered to be approximate and not exact. Page loads are a noisy signal, and Scarf's infrusture that serves your tracking pixel is optimized to always load quickly and never get in the way, rather than having an _exact_ page load count.
+View counts from Documentation Insights data should be considered to be approximate and not exact. Page loads are a noisy signal, and Scarf's infrastructure that serves your tracking pixel is optimized to always load quickly and never get in the way, rather than having an _exact_ page load count.
 
 #### Sources
 
