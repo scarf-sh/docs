@@ -42,7 +42,7 @@ Let's follow the flow of a request when an end user runs:
 $ docker pull packages.jenny.com/oss-org/userful-tool
 ```
 
-When the `docker` client hits `https://packages.jenny.com/oss-org/userful-tool`, Jenny's CNAME resolves to her Scarf Gateway URL, `jenny.docker.scarf.sh`, where the Scarf Gateway processes the request. The Scarf Gateway is primarily concerned with redirecting incoming requests to packages on arbitrary external registries. The Gateway performs a lookup for the given resource request (e.g., `packages.jenny.com/org-name/image-name`), responds with a redirect to the correct registry, and logs request information for asynchronous processing. Scarf's analytics pipeline processes the logs and makes all insights and visualizations available to the maintainer and any additional stake-holders in the maintainer dashboard at <https://scarf.sh>. For a diagram of dataflow for an end-user's `docker pull`, see [Figure 1](#figure_1).  
+When the `docker` client hits `https://packages.jenny.com/oss-org/userful-tool`, Jenny's CNAME resolves to her Scarf Gateway URL, `jenny.docker.scarf.sh`, where the Scarf Gateway processes the request. The Scarf Gateway is primarily concerned with redirecting incoming requests to packages on arbitrary external registries. The Gateway performs a lookup for the given resource request (e.g., `packages.jenny.com/org-name/image-name`), responds with a redirect to the correct registry, and logs request information for asynchronous processing. Scarf's analytics pipeline processes the logs and makes all insights and visualizations available to the maintainer and any additional stake-holders in the maintainer dashboard at <https://scarf.sh>. For a diagram of data-flow for an end-user's `docker pull`, see [Figure 1](#figure_1).  
 
 Because The Scarf Gateway merely redirects to the backend registry, it has minimal performance overhead when an end-user installs your package. It does not directly serve package artifacts itself.  
 
@@ -52,7 +52,7 @@ For a diagram of the entire system described, see [Figure 2](#figure_2).
 
 **Packages**
 
-Every container served through the Scarf gateway needs a corresponding _package_ entry on scarf.sh. Configuration, analytics, and permissions are all done at the level of a package, or single repository. `hello-world`, `myorg/image` are all valid package entries. Because packages can seemlessly change their registry, hostnames (e.g. `gcr.io`)are not part of the package identifier, i.e. `myorg/image` and not `gcr.io/myorg/image`. 
+Every container served through the Scarf gateway needs a corresponding _package_ entry on [scarf.sh](scarf.sh). Configuration, analytics, and permissions are all done at the level of a package, or single repository. `hello-world`, `myorg/image` are all valid package entries. Because packages can seamlessly change their registry, hostnames (e.g. `gcr.io`)are not part of the package identifier, i.e. `myorg/image` and not `gcr.io/myorg/image`. 
 
 To create your package entry, click "New Package" in the navbar in your Scarf dashboard, or [click here](https://scarf.sh/create-package). 
 
@@ -63,13 +63,13 @@ Gatway configuration for a package entry has two main considerations:
 - **Backend URL**: This refers to where your container is actually hosted, the location where Scarf will send requests to pull the container. Scarf will ask for your container's current pull command. This could be `hello-world`, `org/name` (implicitly specifying Docker Hub as the registry, `registry.hub.docker.com/org/name`), or a fully qualified `ghcr.io/namespace/imagename`. You can modify this value later, and your traffic will be instantly moved over to the new destination.
 - **Public domain**: This will represent your new pull command through Scarf. This can be your own domain, or a Scarf-supplied domain, of the form `<username>.docker.scarf.sh`. While you can update this value, updating your public domain is a breaking change! Edit this value with caution.
 
-If you configure yoru public domain to be a custom domain, you'll need to add a CNAME to `<username>.docker.scarf.sh`. See your DNS's providers instructions for how to do this.
+If you configure your public domain to be a custom domain, you'll need to add a CNAME to `<username>.docker.scarf.sh`. See your DNS provider's instructions for how to do this.
 
 ### Security
 
 **TLS**
 
-All pulls through the gateway occur over https. If you configure Scarf host your container via a custom domain, Scarf will get an SSL certificate via [LetsEntrypt](https://letsencrypt.org), and perform SSL termination for the traffic. The gateway in turn will issue a redirect for the request, or proxy the request to the backend registry.
+All pulls through the gateway occur over https. If you configure Scarf host your container via a custom domain, Scarf will fetch an issued SSL certificate via [LetsEntrypt](https://letsencrypt.org), and perform SSL termination for the traffic. The gateway in turn will issue a redirect for the request, or proxy the request to the backend registry.
 
 ### Availability
 
@@ -82,7 +82,7 @@ We are expecting to meet a monthly service uptime percentage of 99.9%. Guarantee
 
 **A given subdomain can only point to a single container registry at a time.**
 
-If you have containers on different registries, you'll currently need to point users to distinct subdomains. This limitation is due to the current implementation of the Docker client. To being pulling a container, initialization and authentication requests are sent, which must be passed to the backend registry you the Scarf Gateway to use. Unforunately, the these requests don't include any information about what image it's trying to pull, so at the time of these requests, all Scarf has to go on is the hostname used to access the image. This is a limitation we are working to fix.  
+If you have containers on different registries, you'll currently need to point users to distinct subdomains. This limitation is due to the current implementation of the Docker client. To being pulling a container, initialization and authentication requests are sent, which must be passed to the backend registry you the Scarf Gateway to use. Unfortunately, the these requests don't include any information about what image it's trying to pull, so at the time of these requests, all Scarf has to go on is the hostname used to access the image. This is a limitation we are working to fix.  
 
 
 **The path used in your container's new pull command must match the path on the backend container registry**
@@ -137,11 +137,6 @@ The Scarf Gateway’s current feature set is free and will remain free. We will 
 **Is the Scarf Gateway self-hosted or managed by Scarf?**
 
 The Scarf Gateway is managed by the Scarf team. We plan an open source release of the Gateway for self-hosting, when it is out of the current open beta period and into general availability. 
-
-**What’s the business model for Scarf? How will you make money on the Gateway?**
-
-We plan to charge Gateway users for premium features such as data integration with external platforms, which have yet to be released. The Scarf Gateway also supports Scarf’s broader model of helping open-source creators connect with their commercial users for everything from support to licensing and beyond.
-
 
 <a id="figure_0"></a>
 
