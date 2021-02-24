@@ -1,4 +1,4 @@
-The Scarf Gateway is a single access-point to all of your containers, no matter where they are hosted.
+The Scarf Gateway is a service that sits in front of your container registry/registries, acting as a single access-point to all of your containers, regardless of where they are actually hosted. By making it easy to host containers from your own domain, the gateway decouples your distribution from your registry provider and provides unparalleled download analytics.
 
 ### A motivating example
 
