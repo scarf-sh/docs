@@ -41,13 +41,13 @@ $ scarf install --system-package-file
 
 ## Use a package privately
 
-All packages on Scarf are free to download, and some let you purchse the ability
+All packages on Scarf are free to download, and some let you purchase the ability
 to use them without reporting any usage statistics! Here's how:
 
 - Create an account on [Scarf](https://scarf.sh)
 - Add some payment information on your account settings page. 
 - Search for your package and find the `Private Tier` option to purchase. Select
-  the payment details you added and confirm your purchse
+  the payment details you added and confirm your purchase
 - Find your `SCARF_API_TOKEN` on your account settings page.
 - `SCARF_API_TOKEN="${your token}" scarf sync-access`
 
