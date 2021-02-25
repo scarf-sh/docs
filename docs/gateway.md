@@ -1,52 +1,20 @@
+### Overview
+
 The Scarf Gateway is a service that sits in front of your container registry/registries, acting as a single access-point to all of your containers, regardless of where they are actually hosted. By making it easy to host containers from your own domain, the gateway decouples your distribution from your registry provider and provides unparalleled download analytics.
 
-### A motivating example
+Suppose you maintain a container `your-org/a-container-name`. Your users pull your container via `docker pull your-org/a-container-name` (or an alternative container runtime command). Scarf prodies a thin redirect layer in front of your registry so that, you can offer a registry-independent route to your container, on your own domain.
 
-Let's suppose an open-source maintainer, Jenny, maintains `oss-org/useful-tool` on Docker Hub. When one of Jenny's users wants to install her container, they run:  
-
-```bash
-$ docker pull oss-org/userful-tool
-```
-
-Unfortunately, Jenny won't see any details of that installation - Which tag (i.e., version) of the container was installed? Where in the world is the user installing from? Was the installation for commercial use or individual use? Realizing the limitations of her current registry, Jenny decides she'd like to switch container registries for `useful-tool`, but realizes she'll have to make a breaking change to do this. After she makes the switch her users will have a new command to run:  
+With Scarf, your container can stay on it's current registry, but be served through your own domain, e.g.:
 
 ```bash
-# If she chooses Google Container Registry:
-$ docker pull gcr.io/oss-org/userful-tool
-# If she chooses GitHub Packages:
-$ docker pull ghcr.io/oss-org/userful-tool
-# Each option Jenny has each come with their own URL.
-# It's a breaking change every time she switches!
+# Make your existing container available through your own domain
+$ docker pull registry.custom.com/your-org/a-container-name
+
+# Scarf provides a URL too if you'd prefer
+$ docker pull org.docker.scarf.sh/your-org/a-container-name
 ```
 
-
-Jenny decides to put The Scarf Gateway in front of her Docker containers. She visits <https://scarf.sh>, creates an account, and makes a new "Package" entry for `oss-org/useful-tool`. She sets the backend registry to Docker Hub, where her container is currently hosted. Her container is now available to anyone by running:  
-
-```bash
-$ docker pull jenny.docker.scarf.sh/oss-org/userful-tool
-```
-
-Jenny then sees on her Scarf package dashboard that she can configure The Scarf Gateway to use her own custom domain! She configures the gateway to recognize `packages.jenny.com` a valid domain to serve her `oss-org/useful-tool`. She then updates her DNS, adding a CNAME from `packages.jenny.com` to her static Scarf Gateway URL, `jenny.docker.scarf.sh`. See [Figure 0](#figure_0) for a visual description of the the maintainer-facing workflow.  
-
-Once Jenny configures her backend registry, the Scarf Gateway issues a new certificate from Let's Encrypt so that it can perform SSL termination on requests through Jenny's domain. Her container is then available via:  
-
-```bash
-$ docker pull packages.jenny.com/oss-org/userful-tool
-```
-
-Now, Jenny can configure the Scarf Gateway to point her container pulls to any registry she chooses. She can change her registry host as often as she likes, and her users are never impacted. Jenny decides to host `oss-org/useful-tool` on GitHub Packages instead of Docker Hub, so she pushes her images to her new registry, and updates her Scarf Gateway configuration to point to the new registry. Her container can still be pulled via `docker pull packages.jenny.com/oss-org/userful-tool`, but the pulls are now being served from GitHub!  
-
-Let's follow the flow of a request when an end user runs:  
-
-```bash
-$ docker pull packages.jenny.com/oss-org/userful-tool
-```
-
-When the `docker` client hits `https://packages.jenny.com/oss-org/userful-tool`, Jenny's CNAME resolves to her Scarf Gateway URL, `jenny.docker.scarf.sh`, where the Scarf Gateway processes the request. The Scarf Gateway is primarily concerned with redirecting incoming requests to packages on arbitrary external registries. The Gateway performs a lookup for the given resource request (e.g., `packages.jenny.com/org-name/image-name`), responds with a redirect to the correct registry, and logs request information for asynchronous processing. Scarf's analytics pipeline processes the logs and makes all insights and visualizations available to the maintainer and any additional stake-holders in the maintainer dashboard at <https://scarf.sh>. For a diagram of data-flow for an end-user's `docker pull`, see [Figure 1](#figure_1).  
-
-Because The Scarf Gateway merely redirects to the backend registry, it has minimal performance overhead when an end-user installs your package. It does not directly serve package artifacts itself.  
-
-For a diagram of the entire system described, see [Figure 2](#figure_2).  
+Data insights about your container's downloads can be found in your Scarf dashboard. From there you can also manage your gateway configuration, access controls, and more.
 
 ### Configuring
 
@@ -58,18 +26,33 @@ To create your package entry, click "New Package" in the navbar in your Scarf da
 
 **Configuring a container on the Scarf Gateway**
 
-Gatway configuration for a package entry has two main considerations:
+Gateway configuration for a package entry has two main considerations:
 
 - **Backend URL**: This refers to where your container is actually hosted, the location where Scarf will send requests to pull the container. Scarf will ask for your container's current pull command. This could be `hello-world`, `org/name` (implicitly specifying Docker Hub as the registry, `registry.hub.docker.com/org/name`), or a fully qualified `ghcr.io/namespace/imagename`. You can modify this value later, and your traffic will be instantly moved over to the new destination.
 - **Public domain**: This will represent your new pull command through Scarf. This can be your own domain, or a Scarf-supplied domain, of the form `<username>.docker.scarf.sh`. While you can update this value, updating your public domain is a breaking change! Edit this value with caution.
 
 If you configure your public domain to be a custom domain, you'll need to add a CNAME to `<username>.docker.scarf.sh`. See your DNS provider's instructions for how to do this.
 
+See [Figure 0](#figure_0) to see how these pieces fit together visually.
+
+### How does it work?
+
+When a user requests a container through Scarf, Scarf simply issues a redirect response, pointing to whichever registry host you've configured for your container. Certain container runtimes do not handle redirects appropriately during registry authentication (which is required even for anonymous pulls), and in those cases Scarf will proxy the request to the host. For a visualization of the system from the end-user's perspective, see [Figure 1](#figure_1). For an overview of the entire system, [Figure 2](#figure_2).
+
+**Dashboard and Data Access**
+
+Your container's usage data will be made available to you in your Scarf dashboard. The data insights are private by default, but you can grant others access as well from your package details page. Current permission levels supported are:
+
+| Access Level | Description                                                                                    |
+| -----------  | -----------                                                                                    |
+| Admin        | Can read all package-level data, edit package configuration, and grant access to other members |
+| Member       | Can read all package-level data                                                                |
+
+Scarf does not yet support organization-level permissions, but it will soon.
+
 ### Security
 
-**TLS**
-
-All pulls through the gateway occur over https. If you configure Scarf host your container via a custom domain, Scarf will fetch an issued SSL certificate via [LetsEntrypt](https://letsencrypt.org), and perform SSL termination for the traffic. The gateway in turn will issue a redirect for the request, or proxy the request to the backend registry.
+All pulls through the gateway occur over HTTPS. If you configure Scarf host your container via a custom domain, Scarf will fetch an issued SSL certificate via [LetsEntrypt](https://letsencrypt.org), and perform SSL termination for the traffic. The gateway in turn will issue a redirect for the request, or proxy the request to the backend registry.
 
 ### Availability
 
