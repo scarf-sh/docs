@@ -50,6 +50,15 @@ Your container's usage data will be made available to you in your Scarf dashboar
 
 Scarf does not yet support organization-level permissions, but it will soon.
 
+### Defining a container pull
+
+Scarf defines a pull based on how [Docker Hub defines them](https://docs.docker.com/docker-hub/download-rate-limit/) for the purposes of their rate-limiting functionality.
+
+A pull is defined as up to two (but generally, just one) `GET` requests on registry manifest URLs (`/v2/*/manifests/*`). `HEAD` requests are not counted as a pull.
+
+Note that even if a client downloads the blobs that comprise any given container, the container's manifest file may already be cached on the client, meaning the download would not be counted in Scarf's analytics. Future versions of Scarf's data processing pipelines will be more intelligent and will track things like partial downloads, blob fetches, etc.
+
+
 ### Security
 
 All pulls through the gateway occur over HTTPS. If you configure Scarf host your container via a custom domain, Scarf will fetch an issued SSL certificate via [LetsEntrypt](https://letsencrypt.org), and perform SSL termination for the traffic. The gateway in turn will issue a redirect for the request, or proxy the request to the backend registry.
