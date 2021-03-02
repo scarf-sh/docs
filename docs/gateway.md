@@ -1,10 +1,10 @@
 ### Overview
 
-The Scarf Gateway is a service that sits in front of your container registry/registries, acting as a single access-point to all of your containers, regardless of where they are actually hosted. By making it easy to host containers from your own domain, the gateway decouples your distribution from your registry provider and provides unparalleled download analytics.
+The Scarf Gateway is a service that sits in front of your container registry/registries, acting as a single access-point to all of your containers, regardless of where they are actually hosted. By making it easy to host containers from your own domain, the gateway decouples your distribution from your registry provider and provides in-depth download analytics.
 
-Suppose you maintain a container `your-org/a-container-name`. Your users pull your container via `docker pull your-org/a-container-name` (or an alternative container runtime command). Scarf prodies a thin redirect layer in front of your registry so that, you can offer a registry-independent route to your container, on your own domain.
+Suppose you maintain a container `your-org/a-container-name`. Your users pull your container via `docker pull your-org/a-container-name` (or an alternative container runtime command). Scarf provides a thin redirect layer in front of your registry so that you can offer a registry-independent route to your container, on your own domain.
 
-With Scarf, your container can stay on it's current registry, but be served through your own domain, e.g.:
+With Scarf, your container can stay on its current registry, but be served through your own domain, e.g.:
 
 ```bash
 # Make your existing container available through your own domain
@@ -14,13 +14,13 @@ $ docker pull registry.custom.com/your-org/a-container-name
 $ docker pull org.docker.scarf.sh/your-org/a-container-name
 ```
 
-Data insights about your container's downloads can be found in your Scarf dashboard. From there you can also manage your gateway configuration, access controls, and more.
+Data insights about your container's downloads can be found in your Scarf dashboard. From there, you can also manage your gateway configuration, access controls, and more.
 
 ### Configuring
 
 **Packages**
 
-Every container served through the Scarf gateway needs a corresponding _package_ entry on [scarf.sh](scarf.sh). Configuration, analytics, and permissions are all done at the level of a package, or single repository. `hello-world`, `myorg/image` are all valid package entries. Because packages can seamlessly change their registry, hostnames (e.g. `gcr.io`)are not part of the package identifier, i.e. `myorg/image` and not `gcr.io/myorg/image`. 
+Every container served through the Scarf Gateway needs a corresponding _package_ entry on [scarf.sh](scarf.sh). Configuration, analytics, and permissions are all done at the level of a package, or single repository. `hello-world`, `myorg/image` are all valid package entries. Because packages can seamlessly change their registry, hostnames (e.g. `gcr.io`) are not part of the package identifier, i.e. `myorg/image` and not `gcr.io/myorg/image`. 
 
 To create your package entry, click "New Package" in the navbar in your Scarf dashboard, or [click here](https://scarf.sh/create-package). 
 
@@ -28,8 +28,8 @@ To create your package entry, click "New Package" in the navbar in your Scarf da
 
 Gateway configuration for a package entry has two main considerations:
 
-- **Backend URL**: This refers to where your container is actually hosted, the location where Scarf will send requests to pull the container. Scarf will ask for your container's current pull command. This could be `hello-world`, `org/name` (implicitly specifying Docker Hub as the registry, `registry.hub.docker.com/org/name`), or a fully qualified `ghcr.io/namespace/imagename`. You can modify this value later, and your traffic will be instantly moved over to the new destination.
-- **Public domain**: This will represent your new pull command through Scarf. This can be your own domain, or a Scarf-supplied domain, of the form `<username>.docker.scarf.sh`. While you can update this value, updating your public domain is a breaking change! Edit this value with caution.
+- **Backend URL**: This refers to where your container is actually hosted, the location where Scarf will direct requests to pull the container. Scarf will ask for your container's current pull command. This could be `hello-world`, `org/name` (implicitly specifying Docker Hub as the registry, `registry.hub.docker.com/org/name`), or a fully qualified `ghcr.io/namespace/imagename`. You can modify this value later, and your traffic will be instantly moved over to the new destination.
+- **Public domain**: This will represent your new pull command through Scarf. This can be your own domain, or a Scarf-supplied domain, of the form `<username>.docker.scarf.sh`. While you can update this value, updating your public domain is a breaking change for any users on the current domain! Edit this value with caution.
 
 If you configure your public domain to be a custom domain, you'll need to add a CNAME to `<username>.docker.scarf.sh`. See your DNS provider's instructions for how to do this.
 
@@ -37,7 +37,7 @@ See [Figure 0](#figure_0) to see how these pieces fit together visually.
 
 ### How does it work?
 
-When a user requests a container through Scarf, Scarf simply issues a redirect response, pointing to whichever registry host you've configured for your container. Certain container runtimes do not handle redirects appropriately during registry authentication (which is required even for anonymous pulls), and in those cases Scarf will proxy the request to the host. For a visualization of the system from the end-user's perspective, see [Figure 1](#figure_1). For an overview of the entire system, [Figure 2](#figure_2).
+When a user requests a container through Scarf, Scarf simply issues a redirect response, pointing to whichever registry host you've configured for your container. Certain container runtimes do not handle redirects appropriately during registry authentication (which is required even for anonymous pulls), and in those cases Scarf will proxy the request to the host instead of redirecting. For a visualization of the system from the end-user's perspective, see [Figure 1](#figure_1). For an overview of the entire system, [Figure 2](#figure_2).
 
 **Dashboard and Data Access**
 
@@ -48,7 +48,7 @@ Your container's usage data will be made available to you in your Scarf dashboar
 | Admin        | Can read all package-level data, edit package configuration, and grant access to other members |
 | Member       | Can read all package-level data                                                                |
 
-Scarf does not yet support organization-level permissions, but it will soon.
+Scarf does not yet support organization-level permissions but will soon.
 
 ### Defining a container pull
 
@@ -65,9 +65,9 @@ All pulls through the gateway occur over HTTPS. If you configure Scarf host your
 
 ### Availability
 
-The Scarf Gateway is a free hosted service that is provided to maintainers and users as-is and as-available.  
+The Scarf Gateway is a free hosted service that is provided to maintainers and users as-is and as-available. It is currently in an open beta stage that is available to anyone.
 
-We are expecting to meet a monthly service uptime percentage of 99.9%. Guarantees of our service-level agreement will be made available in the future.  
+We are expecting to meet a monthly service uptime percentage of 99.9%. Guarantees of our service-level agreement will be made available in the future, when the system moves from beta to general availability.
 
 
 ### Caveats and Limitations
@@ -101,13 +101,12 @@ Should you decide to switch registries later on, current users will have to upda
 
 **Are you actually hosting my packages?**
 
-No. Your container continues to be hosted on your current registry. The Gateway is simply a thin layer on top. Since the gateway acts as a static entry point to your containers, you will always have the freedom to host your container on any registry you choose. 
+No, your container continues to be hosted on your current registry not on Scarf itself. The Gateway is simply a thin redirect layer in front of your registry. Since the gateway acts as a static entry point to your containers, you will always have the freedom to host your container on any registry you choose. 
 
 
 **How are you managing the usage data you get about my project? Are you storing my users’ data?**
 
-No. The Scarf Gateway does not store any personally identifying information.
-
+The Scarf Gateway does not store any personally identifying information or sensitive data about your users.
 
 Scarf looks up IP address metadata, but the raw IP addresses are discarded and never exposed. IP metadata may contain:
 
