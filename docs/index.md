@@ -1,9 +1,7 @@
-# Welcome to the Scarf docs!
+# Welcome to Scarf's docs!
 
-Scarf is a toolchain for commercializing your open-source software. 
+Scarf offers a set of tools to help you better understand how your open-source software (OSS) is being used, make data informed decisions around your work, and connect with your commercial users to financially support your project or business.
 
-Understand how your software is used, connect with the businesses that rely on your projects, and get properly compensated for work.
+These site documents the various components of Scarf's toolchain for maintainers.
 
-## Overview
-
-Scarf's approach focuses on identifying which companies rely on your software. Scarf currently offers telemetry for package installation as well as documentation/website traffic. 
+You can contribute to the docs directly, they are hosted on [GitHub](https://github.com/scarf-sh/docs).

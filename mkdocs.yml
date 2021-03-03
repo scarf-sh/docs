@@ -2,6 +2,7 @@ site_name: Scarf Documentation
 theme: readthedocs
 nav:
 - Introduction: 'index.md'
+- The Scarf Gateway: 'gateway.md'
 - Package telemetry SDKs: 'package-analytics.md'
 - Documentation insights: 'web-traffic.md'
 - Package manager (maintainers): 'distribute-with-scarf.md'
