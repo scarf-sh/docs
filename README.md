@@ -12,6 +12,4 @@ mkdocs serve
 
 ### Deploy
 
-```
-mkdocs gh-deploy
-````
+GitHub Actions are configured for this repository to deploy changes on every update to the master branch.
