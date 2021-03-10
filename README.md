@@ -6,9 +6,12 @@ The site uses [MkDocs](https://www.mkdocs.org/) to generate the doc site from ma
 
 ### Running locally
 
-```
+```bash
+# Setup
+pip install mkdocs-material
+# Serve
 mkdocs serve
-````
+```
 
 ### Deploy
 

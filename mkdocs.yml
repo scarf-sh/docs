@@ -1,5 +1,9 @@
 site_name: Scarf Documentation
-theme: readthedocs
+theme:
+  name: material
+  logo: assets/scarf.svg
+extra_css:
+  - 'stylesheets/extra.css'
 nav:
 - Introduction: 'index.md'
 - The Scarf Gateway: 'gateway.md'
