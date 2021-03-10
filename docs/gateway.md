@@ -129,6 +129,10 @@ The Scarf Gateway’s current feature set is free and will remain free. We will 
 
 The Scarf Gateway is managed by the Scarf team. We plan an open source release of the Gateway for self-hosting, when it is out of the current open beta period and into general availability. 
 
+**How long will it take for any given container download to show up in my analytics dashboard?**
+
+Downloads will typically show up in your dashboard within 30 minutes.
+
 <a id="figure_0"></a>
 
 ## Figure 0: Using the Scarf Gateway as a maintainer
