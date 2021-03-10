@@ -61,7 +61,7 @@ Note that even if a client downloads the blobs that comprise any given container
 
 ### Security
 
-All pulls through the gateway occur over HTTPS. If you configure Scarf host your container via a custom domain, Scarf will fetch an issued SSL certificate via [LetsEntrypt](https://letsencrypt.org), and perform SSL termination for the traffic. The gateway in turn will issue a redirect for the request, or proxy the request to the backend registry.
+All pulls through the gateway occur over HTTPS. If you configure Scarf to host your container via a custom domain, Scarf will fetch an issued SSL certificate via [LetsEncrypt](https://letsencrypt.org), and perform SSL termination for the traffic. The gateway in turn will issue a redirect for the request, or proxy the request to the backend registry.
 
 ### Availability
 
@@ -74,7 +74,7 @@ We are expecting to meet a monthly service uptime percentage of 99.9%. Guarantee
 
 **A given subdomain can only point to a single container registry at a time.**
 
-If you have containers on multiple distinct registries, you'll currently need to point users to distinct subdomains. This limitation is due to the current implementation of the `docker` client. To begin pulling a container, initialization and authentication requests are sent, which must be passed to the backend registry you the Scarf Gateway to use. Unfortunately, the these requests don't include any information about what image it's trying to pull, so at the time of these requests, all Scarf has to go on is the hostname used to access the image. This is a limitation we are working to fix.  
+If you have containers on multiple distinct registries, you'll currently need to point users to distinct subdomains. This limitation is due to the current implementation of the `docker` client. To begin pulling a container, initialization and authentication requests are sent, which must be passed to the backend registry you configure the Scarf Gateway to use. Unfortunately, these requests don't include any information about what image it's trying to pull, so at the time of these requests, all Scarf has to go on is the hostname used to access the image. This is a limitation we are working to fix.  
 
 
 **The path used in your container's new pull command must match the path on the backend container registry**
