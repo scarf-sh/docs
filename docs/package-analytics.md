@@ -88,7 +88,7 @@ See more [here](#data-collection-and-privacy).
 #### As a user of a package using scarf-js, how can I opt out of analytics?
 
 Scarf's analytics help support developers of the open source packages you are
-using, and provide daata insights to help improve their software, so your opt-in is appreciated. However, if you'd like to opt out,
+using, and provide data insights to help improve their software, so your opt-in is appreciated. However, if you'd like to opt out,
 you can add your preference to your project's `package.json`:
 
 
