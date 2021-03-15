@@ -1,6 +1,6 @@
 # Scarf SDKs for library and package authors
 
-Scarf's language SDKs provide observability into the usage of your libraries and language-level packages. By simply adding a dependency to a Scarf language library, you can be getting better insight into how your package is used, and by which companies.
+Scarf's programming language SDKs provide observability into the usage of your libraries and language-specific packages. By adding a dependency to scarf-js or another Scarf language-level library, you can gain better data insights into how your package is used, and by which companies.
 
 ## JavaScript
 
@@ -36,8 +36,8 @@ Head to your package's dashboard on Scarf to see your reports when available.
 #### Configuration
 
 Users of your package will be opted in by default and can opt out by setting the
-`SCARF_ANALYTICS=false` environment variable. If you'd Scarf analytics to
-instead be opt-in, you can set this by adding an entry to your `package.json`
+`SCARF_ANALYTICS=false` environment variable. If you'd prefer to set Scarf analytics to
+be opt-in instead, you can set this by adding an entry to your `package.json`
 
 
 ```json5
@@ -77,7 +77,7 @@ By default, scarf-js will only trigger analytics when your package is installed 
 #### What information does scarf-js provide me as a package author?
 
 - Understanding your user-base
-  - Which companies are using your package?
+  - Which companies and organizations are using your package?
   - Is your project growing or shrinking? Where? On which platforms?
 - Which versions of your package are being used?
 
@@ -88,7 +88,7 @@ See more [here](#data-collection-and-privacy).
 #### As a user of a package using scarf-js, how can I opt out of analytics?
 
 Scarf's analytics help support developers of the open source packages you are
-using, so enabling analytics is appreciated. However, if you'd like to opt out,
+using, and provide data insights to help improve their software, so your opt-in is appreciated. However, if you'd like to opt out,
 you can add your preference to your project's `package.json`:
 
 
@@ -152,19 +152,19 @@ use http://localhost:8080 as the analytics endpoint host.
 **Scarf does not store any personally identifying information from SDK telemetry data.** Scarf only collects information that is helpful for:
 
 - Package maintainence 
-- Identifying which companies are using a particular package, in order to set up support agreements between developers and companies. 
+- Identifying which companies are using a particular package, in order to enable support agreements between developers and commercial entities. 
 
 Specifically, scarf-js sends:
 
-- The operating system you are using
+- The operating system you are using.
 - Your IP address will be used to look up any available company information. _Scarf does not store the actual IP address_
 - Limited dependency tree information. Scarf sends the name and version of the package(s) that directly depend on scarf-js. Additionally, scarf-js will send SHA256-hashed name and version for the following packages in the dependency tree:
   - Packages that depend on a package that depends on scarf-js.
   - The root package of the dependency tree.
-This allows Scarf to provide maintainers information about which public packages are using their own, without exposing identifying details of non-public packages.
+This allows Scarf to provide maintainers with information about which public packages are using theirs, without exposing identifying details of non-public packages.
 
 ## More languages coming soon
 
-We're working to build out sibling libraries for various languages. If you're
+We're working to build out sibling libraries for various languages beyond JavaScript. If you're
 interested in using Scarf in a language we haven't released yet, let us know!
 
