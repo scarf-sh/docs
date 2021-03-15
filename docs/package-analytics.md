@@ -31,7 +31,7 @@ Head to your package's dashboard on Scarf to see your reports when available.
 
 #### How does it work?
 
-`scarf-js` registers a `postInstall` hook that sends telemetry information. This library has no runtime footprint, it only runs at installation time, when a developer runs `npm install` Continue reading below [here](#what-information-does-scarf-js-send?)
+`scarf-js` registers a `postInstall` hook that sends telemetry information. This library has no runtime footprint, it only runs at installation time, when a developer runs `npm install` Continue reading below [here](#what-information-does-scarf-js-send).
 
 #### Configuration
 
