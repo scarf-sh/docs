@@ -151,7 +151,7 @@ use http://localhost:8080 as the analytics endpoint host.
 
 **Scarf does not store any personally identifying information from SDK telemetry data.** Scarf only collects information that is helpful for:
 
-- Package maintainence 
+- Package maintenance 
 - Identifying which companies are using a particular package, in order to enable support agreements between developers and commercial entities. 
 
 Specifically, scarf-js sends:
