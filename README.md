@@ -16,3 +16,7 @@ mkdocs serve
 ### Deploy
 
 GitHub Actions are configured for this repository to deploy changes on every update to the master branch.
+
+### Community
+
+Join the [Scarf-Community workspace](https://join.slack.com/t/scarf-community/shared_invite/zt-ptndha07-Vs88XHYyHnnAOIEw9AZMgg) on Slack to learn more about our products and plans. We'll keep an eye out for your questions and concerns. And if you have issues that aren't covered in Scarf Docs, we'd love to hear from you. 
