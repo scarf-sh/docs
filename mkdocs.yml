@@ -9,5 +9,3 @@ nav:
 - The Scarf Gateway: 'gateway.md'
 - SDKs for Package Authors: 'package-analytics.md'
 - Documentation Insights: 'web-traffic.md'
-- Package Manager (maintainers): 'distribute-with-scarf.md'
-- Package Manager (end-user): 'end-user.md'
