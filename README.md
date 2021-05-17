@@ -1,9 +1,9 @@
 # Scarf Docs
 
 
-<p align="center">
+<p>
   <a href="https://join.slack.com/t/scarf-community/shared_invite/zt-ptndha07-Vs88XHYyHnnAOIEw9AZMgg">
-    <img src="https://img.shields.io/badge/Scarf%20Community%20Slack-blue" alt="Join the Scarf Community Slack" />
+    <img src="https://img.shields.io/badge/Scarf%20Community%20-Slack-blue" alt="Join the Scarf Community Slack" />
   </a>
 </p>
 </br>
