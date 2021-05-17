@@ -1,5 +1,14 @@
 # Scarf Docs
 
+
+<p align="center">
+  <a href="https://join.slack.com/t/scarf-community/shared_invite/zt-ptndha07-Vs88XHYyHnnAOIEw9AZMgg">
+    <img src="https://img.shields.io/badge/Scarf%20Community%20Slack-blue" alt="Join the Scarf Community Slack" />
+  </a>
+</p>
+</br>
+
+
 This repo serves Scarf's documentation site located at https://docs.scarf.sh.
 
 The site uses [MkDocs](https://www.mkdocs.org/) to generate the doc site from markdown.
