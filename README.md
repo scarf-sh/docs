@@ -6,7 +6,6 @@
     <img src="https://img.shields.io/badge/Scarf%20Community%20-Slack-blue" alt="Join the Scarf Community Slack" />
   </a>
 </p>
-</br>
 
 
 This repo serves Scarf's documentation site located at https://docs.scarf.sh.
