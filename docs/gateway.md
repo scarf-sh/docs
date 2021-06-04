@@ -69,6 +69,16 @@ The Scarf Gateway is a free hosted service that is provided to maintainers and u
 
 We are expecting to meet a monthly service uptime percentage of 99.9%. Guarantees of our service-level agreement will be made available in the future, when the system moves from beta to general availability.
 
+### Badges
+
+All packages on the Scarf Gateway offer dynamic Scarf-powered README badges automatically. Head to your package page, and the badges will be shown in the details section near the top. Copy the URL, paste it into your project’s README based on whatever doc format you are using and you’re all set.
+
+**What is the difference between the downloads badge and the company badge?**
+The *commercial usage* badge shows how many distinct companies have been identified to be fetching your gateway package in the previous month. The *downloads* badge reports the total number of downloads across all users.
+
+**What is the purpose of this badge?**
+README badges let you show off your project by sharing high-level real-time data about your download traffic and commercial adoption, so readers can quickly assess some basic details about your project. Scarf-powered README badges are an easy way to share your project’s usage data publicly, regardless of where on the internet your docs are being rendered. Telling prospective new users how many companies use your project is a great way to show that your project is reliable and worth adopting.
+
 
 ### Caveats and Limitations
 
