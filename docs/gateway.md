@@ -73,6 +73,11 @@ We are expecting to meet a monthly service uptime percentage of 99.9%. Guarantee
 
 All packages on the Scarf Gateway offer dynamic Scarf-powered README badges automatically. Head to your package page, and the badges will be shown in the details section near the top. Copy the URL, paste it into your project’s README based on whatever doc format you are using and you’re all set.
 
+![img](Scarf-badge-details-page.png)  
+
+<img width="789" alt="Screen Shot 2021-06-03 at 5 32 57 PM" src="https://user-images.githubusercontent.com/52803/120844406-2bd7f580-c524-11eb-80cb-9a8d213348b5.png">
+
+
 **What is the difference between the downloads badge and the company badge?**
 
 The *commercial usage* badge shows how many distinct companies have been identified to be fetching your gateway package in the previous month. The *downloads* badge reports the total number of downloads across all users.
