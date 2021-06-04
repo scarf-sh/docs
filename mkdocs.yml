@@ -9,3 +9,18 @@ nav:
 - The Scarf Gateway: 'gateway.md'
 - SDKs for Package Authors: 'package-analytics.md'
 - Documentation Insights: 'web-traffic.md'
+copyright: Copyright &copy; 2019 - 2021 Scarf Systems, Inc.
+google_analytics:
+  - auto
+  - G-GH3EXW7112
+edit_uri: https://github.com/scarf-sh/docs/blob/master/docs/
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/scarf-sh
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/scarf_oss
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/scarf-sh
+    - icon: fontawesome/brands/slack
+      link: https://join.slack.com/t/scarf-community/shared_invite/zt-ptndha07-Vs88XHYyHnnAOIEw9AZMgg
