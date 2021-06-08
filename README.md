@@ -2,7 +2,7 @@
 
 
 <p>
-  <a href="https://join.slack.com/t/scarf-community/shared_invite/zt-ptndha07-Vs88XHYyHnnAOIEw9AZMgg">
+  <a href="https://tinyurl.com/join-scarf-community">
     <img src="https://img.shields.io/badge/Scarf%20Community%20-Slack-blue" alt="Join the Scarf Community Slack" />
   </a>
 </p>
@@ -44,4 +44,4 @@ A collection of resources relating to Scarf and our story, including origins, in
 
 ### Community 
 
-Join the [Scarf-Community workspace](https://join.slack.com/t/scarf-community/shared_invite/zt-ptndha07-Vs88XHYyHnnAOIEw9AZMgg) on Slack to learn more about our products and plans. We'll keep an eye out for your questions and concerns. And if you have issues that aren't covered in Scarf Docs, we'd love to hear from you. 
+Join the [Scarf-Community workspace](https://tinyurl.com/join-scarf-community) on Slack to learn more about our products and plans. We'll keep an eye out for your questions and concerns. And if you have issues that aren't covered in Scarf Docs, we'd love to hear from you. 
