@@ -27,6 +27,11 @@ Expects a `JSON`-encoded [PackageUpsertV1](#packageupsertv1) in the request body
 
 Deletes package with UUID `package-id`.
 
+#### Package permissions
+`POST https://scarf.sh/api/v1/packages/{package-id}/permissions`
+
+Modifies permissions for the package based on the `JSON`-encoded [PackagePermissionSetV1](#packagepermissionsetv1) in the request body.
+
 #### PackageV1
 
 | Field            | Description                                                 | Optional |
@@ -51,6 +56,21 @@ Deletes package with UUID `package-id`.
 | libraryType      | The type of the package (docker, npm, hackage, pypi, other) | Yes      |
 | publicUrl        | The public URL for the docker registry (docker only)        | Yes      |
 | backendUrl       | The backend URL for the docker registry (docker only)       | Yes      |
+
+#### PackagePermissionSetV1
+| Field           | Description                                                                      | Optional |
+|-----------------|----------------------------------------------------------------------------------|----------|
+| userQuery       | A query to look up the user whose permissions we want to set (email or username) | No       |
+| permissionLevel | The [PackagePermissionLevelV1](PackagePermissionLevel) to give the user          | No       |
+
+#### PackagePermissionLevelV1
+
+| Enum value | Description                                                  |
+|------------|--------------------------------------------------------------|
+| blocked    | The user is blocked from the package                         |
+| default    | The user has the default access level                        |
+| member     | The user is a member of the package but cannot administer it |
+| admin      | The user is an admin of the package                          |
 
 ### Data Export
 
