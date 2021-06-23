@@ -6,6 +6,52 @@ All Scarf accounts come with an API token, found on the [user details page](http
 
 `Authorization: Bearer <token>`
 
+### Packages
+
+#### List packages
+`GET https://scarf.sh/api/v1/packages`
+
+List all packages for the user.
+
+Returns a `JSON`-encoded list of [PackageV1](#packagev1)
+
+#### Create package
+`POST https://scarf.sh/api/v1/packages`
+
+Create a new package.
+
+Expects a `JSON`-encoded [PackageUpsertV1](#packageupsertv1) in the request body
+
+#### Delete package
+`DELETE https://scarf.sh/api/v1/packages/{package-id}`
+
+Deletes package with UUID `package-id`.
+
+#### PackageV1
+
+| Field            | Description                                                 | Optional |
+|------------------|-------------------------------------------------------------|----------|
+| uuid             | The package's identifier                                    | No       |
+| owner            | The account name of the package owner                       | No       |
+| name             | The name of the package                                     | No       |
+| shortDescription | A short description of the package                          | No       |
+| createdAt        | When the package was created                                | No       |
+| longDescription  | A longer description of the package                         | Yes      |
+| website          | The package website                                         | Yes      |
+| libraryType      | The type of the package (docker, npm, hackage, pypi, other) | Yes      |
+
+#### PackageUpsertV1
+
+| Field            | Description                                                 | Optional |
+|------------------|-------------------------------------------------------------|----------|
+| name             | The name of the package                                     | No       |
+| shortDescription | A short description of the package                          | No       |
+| longDescription  | A longer description of the package                         | Yes      |
+| website          | The package website                                         | Yes      |
+| libraryType      | The type of the package (docker, npm, hackage, pypi, other) | Yes      |
+| publicUrl        | The public URL for the docker registry (docker only)        | Yes      |
+| backendUrl       | The backend URL for the docker registry (docker only)       | Yes      |
+
 ### Data Export
 
 Pro users can export a raw CSV of events pertaining to their packages and documentation insights pixels.
