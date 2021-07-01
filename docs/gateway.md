@@ -1,5 +1,7 @@
 ### Overview
 
+![Gateway.png](https://s3.us-west-2.amazonaws.com/static.scarf.sh/scarf-gateway-infographic.png)
+
 The Scarf Gateway is a service that sits in front of your container registry/registries, acting as a single access-point to all of your containers, regardless of where they are actually hosted. By making it easy to host containers from your own domain, the gateway decouples your distribution from your registry provider and provides in-depth download analytics.
 
 Suppose you maintain a container `your-org/a-container-name`. Your users pull your container via `docker pull your-org/a-container-name` (or an alternative container runtime command). Scarf provides a thin redirect layer in front of your registry so that you can offer a registry-independent route to your container, on your own domain.
@@ -54,7 +56,7 @@ Scarf does not yet support organization-level permissions but will soon.
 
 Scarf defines a pull based on how [Docker Hub defines them](https://docs.docker.com/docker-hub/download-rate-limit/) for the purposes of their rate-limiting functionality.
 
-A pull is defined as up to two (but generally, just one) `GET` requests on registry manifest URLs (`/v2/*/manifests/*`). `HEAD` requests are not counted as a pull.
+A pull is defined as one or more `GET` requests on registry manifest URLs (`/v2/*/manifests/*`). `HEAD` requests are not counted as a pull.
 
 Note that even if a client downloads the blobs that comprise any given container, the container's manifest file may already be cached on the client, meaning the download would not be counted in Scarf's analytics. Future versions of Scarf's data processing pipelines will be more intelligent and will track things like partial downloads, blob fetches, etc.
 
@@ -67,7 +69,12 @@ All pulls through the gateway occur over HTTPS. If you configure Scarf to host y
 
 The Scarf Gateway is a free hosted service that is provided to maintainers and users as-is and as-available. It is currently in an open beta stage that is available to anyone.
 
+Scarf is deployed on AWS in multiple regions around the globe; it is fault tolerant even to entire regions going offline, and can automatically and elasticly scale our backend capacity to meet whatever user traffic demands of us. 
+
 We are expecting to meet a monthly service uptime percentage of 99.9%. Guarantees of our service-level agreement will be made available in the future, when the system moves from beta to general availability.
+
+
+To see Scarf's uptime and system status, you can view the status page [here](https://status.scarf.sh).
 
 ### Badges
 
@@ -85,7 +92,7 @@ The *commercial usage* badge shows how many distinct companies have been identif
 README badges let you show off your project by sharing high-level real-time data about your download traffic and commercial adoption, so readers can quickly assess some basic details about your project. Scarf-powered README badges are an easy way to share your project’s usage data publicly, regardless of where on the internet your docs are being rendered. Telling prospective new users how many companies use your project is a great way to show that your project is reliable and worth adopting.
 
 
-### Caveats and Limitations
+### <a name="caveats"></a>Caveats and Limitations
 
 **A given subdomain can only point to a single container registry at a time.**
 
@@ -118,6 +125,9 @@ Should you decide to switch registries later on, current users will have to upda
 
 No, your container continues to be hosted on your current registry not on Scarf itself. The Gateway is simply a thin redirect layer in front of your registry. Since the gateway acts as a static entry point to your containers, you will always have the freedom to host your container on any registry you choose. 
 
+**My container's name on my current registry is `organization-name/project-name`, can I change that to just `project-name` when users pull through Scarf?**
+
+Unforunately this is not possible unless you can change this name on the registry that hosts your container. Your container name on Scarf must match the container name on the registry that hosts it, because the Docker client uses that name to sign the request and validate the response from the registry. The Docker client will reject the download if the response signature is invalid. See the [Caveats section](#caveats) for more information.
 
 **How are you managing the usage data you get about my project? Are you storing my users’ data?**
 
@@ -147,6 +157,10 @@ The Scarf Gateway is managed by the Scarf team. We plan an open source release o
 **How long will it take for any given container download to show up in my analytics dashboard?**
 
 Downloads will typically show up in your dashboard within 30 minutes.
+
+**Is there an API I can use to pull my stats, manage my containers, etc?**
+
+Yes! See [our API documentation](/api) for more information.
 
 <a id="figure_0"></a>
 
