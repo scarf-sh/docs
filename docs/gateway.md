@@ -158,6 +158,10 @@ The Scarf Gateway is managed by the Scarf team. We plan an open source release o
 
 Downloads will typically show up in your dashboard within 30 minutes.
 
+**Is there an API I can use to pull my stats, manage my containers, etc?**
+
+Yes! See [our API documentation](/api) for more information.
+
 <a id="figure_0"></a>
 
 ## Figure 0: Using the Scarf Gateway as a maintainer
