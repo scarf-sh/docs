@@ -162,6 +162,10 @@ Downloads will typically show up in your dashboard within 30 minutes.
 
 Yes! See [our API documentation](/api) for more information.
 
+**I have more questions, where is the best place to ask?**
+
+[Join us in Slack](https://tinyurl.com/scarf-community-slack), we're more than happy to help.
+
 <a id="figure_0"></a>
 
 ## Figure 0: Using the Scarf Gateway as a maintainer

@@ -140,6 +140,11 @@ Yes. By opting out of analytics via `package.json`, any package upstream will ha
 ```
 
 Installers of your packages will have scarf-js disabled for all dependencies upstream from yours.
+
+
+#### I have more questions, where is the best place to ask
+
+[Join us in Slack](https://tinyurl.com/scarf-community-slack), we're more than happy to help.
   
 
 ### Developing
