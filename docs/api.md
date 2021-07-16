@@ -47,15 +47,15 @@ Modifies permissions for the package based on the `JSON`-encoded [PackagePermiss
 
 #### PackageUpsertV1
 
-| Field            | Description                                                 | Optional |
-|------------------|-------------------------------------------------------------|----------|
-| name             | The name of the package                                     | No       |
-| shortDescription | A short description of the package                          | No       |
-| longDescription  | A longer description of the package                         | Yes      |
-| website          | The package website                                         | Yes      |
-| libraryType      | The type of the package (docker, npm, hackage, pypi, other) | Yes      |
-| publicUrl        | The public URL for the docker registry (docker only)        | Yes      |
-| backendUrl       | The backend URL for the docker registry (docker only)       | Yes      |
+| Field            | Description                                                                                                                                                                | Optional |
+|------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
+| name             | The name of the package                                                                                                                                                    | No       |
+| shortDescription | A short description of the package                                                                                                                                         | No       |
+| longDescription  | A longer description of the package                                                                                                                                        | Yes      |
+| website          | The package website                                                                                                                                                        | Yes      |
+| libraryType      | The type of the package (docker, npm, hackage, pypi, other)                                                                                                                | Yes      |
+| backendUrl       | The backend URL for the docker registry (docker only). Must be a valid URL with at least 1 path component with each path component matching `[a-z0-9]+(?:[._-][a-z0-9]+)*` | Yes      |
+| publicUrl        | The public URL for the docker registry (docker only). Must be a valid URL matching `backendUrl`'s path parts                                                               | Yes      |
 
 #### PackagePermissionSetV1
 | Field           | Description                                                                      | Optional |
