@@ -22,6 +22,15 @@ Create a new package.
 
 Expects a `JSON`-encoded [PackageUpsertV1](#packageupsertv1) in the request body
 
+#### Update package
+`PUT https://scarf.sh/api/v1/packages/{package-id}`
+
+Updates package with UUID `package-id`.
+
+Expects a `JSON`-encoded [PackageUpsertV1](#packageupsertv1) in the request body. 
+
+Note that `libraryType` can't be changed after package creation.
+
 #### Delete package
 `DELETE https://scarf.sh/api/v1/packages/{package-id}`
 
