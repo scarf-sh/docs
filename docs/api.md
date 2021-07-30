@@ -41,6 +41,44 @@ Deletes package with UUID `package-id`.
 
 Modifies permissions for the package based on the `JSON`-encoded [PackagePermissionSetV1](#packagepermissionsetv1) in the request body.
 
+#### List package routes (File Packages only)
+`GET https://scarf.sh/api/v1/packages/{package-id}/routes`
+
+List all package routes for the user.
+
+Returns a `JSON`-encoded list of [PackageRouteV1](#packageroutev1)
+
+#### Create package route (File Packages only)
+`POST https://scarf.sh/api/v1/packages/{package-id}/routes`
+
+Create a new package route.
+
+Expects a `JSON`-encoded [CreatePackageRouteV1](#createpackageroutev1) in the request body.
+
+#### Delete package route (File Packages only)
+`DELETE https://scarf.sh/api/v1/packages/{package-id}/routes/{route-id}`
+
+Delete a package route.
+
+#### List package domains (File Packages only)
+`GET https://scarf.sh/api/v1/packages/{package-id}/domains`
+
+List all package domains for the user.
+
+Returns a `JSON`-encoded list of [PackageDomainV1](#packagedomainv1)
+
+#### Create package domain (File Packages only)
+`POST https://scarf.sh/api/v1/packages/{package-id}/domains`
+
+Create a new package domain.
+
+Expects a `JSON`-encoded [CreatePackageDomainV1](#createpackagedomainv1) in the request body.
+
+#### Delete package domains (File Packages only)
+`DELETE https://scarf.sh/api/v1/packages/{package-id}/domains/{domain-id}`
+
+Deletes a package domain.
+
 #### PackageV1
 
 | Field            | Description                                                 | Optional |
@@ -80,6 +118,35 @@ Modifies permissions for the package based on the `JSON`-encoded [PackagePermiss
 | default    | The user has the default access level                        |
 | member     | The user is a member of the package but cannot administer it |
 | admin      | The user is an admin of the package                          |
+
+#### PackageRouteV1
+
+| Field        | Description                     |
+|--------------|---------------------------------|
+| id           | The id of the package route     |
+| outgoingUrl  | The outgoing url for the route  |
+| templatePath | The template path of the route  |
+
+#### CreatePackageRouteV1
+
+| Field        | Description                     | Optional |
+|--------------|---------------------------------|----------|
+| outgoingUrl  | The outgoing url for the route  | No       |
+| templatePath | The template path of the route  | No       |
+
+#### PackageDomainV1
+
+| Field        | Description                     |
+|--------------|---------------------------------|
+| id           | The id of the package domain    |
+| name         | The full domain name            |
+
+#### CreatePackageDomainV1
+
+| Field   | Description                  | Optional |
+|---------|------------------------------|----------|
+| name    | The full name of the domain  | No       |
+
 
 ### Data Export
 
