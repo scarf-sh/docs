@@ -83,7 +83,9 @@ Modifies permissions for the package based on the `JSON`-encoded [PackagePermiss
 
 ### Data Export
 
-Pro users can export a raw CSV of events pertaining to their packages and documentation insights pixels.
+/NOTE: Data exporting is a gated feature, as it will eventually be part of a paid tier of Scarf. In the meantime, we're happy to grant free export access to your account, forever - simply drop us a line in our community Slack, or post about how you're using Scarf to social media and we'll permanently bump your account's access level. /
+
+Export a raw CSV of events pertaining to packages and Documentation Insights pixels.
 
 #### Package Events
 `GET https://scarf.sh/api/v1/packages/{package-id}/events/{filename}.csv?startDate={startDate}&endDate={endDate}`
