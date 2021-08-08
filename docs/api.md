@@ -39,7 +39,7 @@ Deletes package with UUID `package-id`.
 #### Package permissions
 `POST https://scarf.sh/api/v1/packages/{package-id}/permissions`
 
-Modifies permissions for the package based on the `JSON`-encoded [PackagePermissionSetV1](#packagepermissionsetv1) in the request body.
+Modifies permissions for the package based on a single or an array of `JSON`-encoded [PackagePermissionSetV1](#packagepermissionsetv1) in the request body.
 
 #### PackageV1
 
