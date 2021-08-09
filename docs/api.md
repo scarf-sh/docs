@@ -108,12 +108,13 @@ The `v1` event export APIs yield an unordered CSV with a header row, starting wi
 
 | Field                    | Description                                                                                                                                                           | Optional |
 |--------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| `type`                   | The type of event that occurred (e.g. image pull, pixel fetch)                                                                                                        | No       |
+| `type`                   | The type of event that occurred (e.g. image pull, pixel fetch, file-download)                                                                                                        | No       |
 | `package`                | The name of the package the event is associated with                                                                                                                  | Yes      |
 | `version`                | The version of the package the event is associated with                                                                                                               | Yes      |
 | `time`                   | The time of the event                                                                                                                                                 | No       |
 | `referer`                | The value of the HTTP `Referer` header                                                                                                                                | Yes      |
 | `user_agent`             | The value of the HTTP `User-Agent` header                                                                                                                             | Yes      |
+| `variables`              | [Query string](https://en.wikipedia.org/wiki/Query_string) containing matched variables. Only set for `file-download` events | Yes |
 | `origin_id`              | An opaque ID for the client. Events with identical IDs can be inferred to come from the same client, but differing IDs cannot be assumed to be from different clients | Yes      |
 | `origin_latitude`        | An approximate latitude for the client                                                                                                                                | Yes      |
 | `origin_longitude`       | An approximate longitude for the client                                                                                                                               | Yes      |
