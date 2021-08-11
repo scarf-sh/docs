@@ -27,7 +27,7 @@ Expects a `JSON`-encoded [PackageUpsertV1](#packageupsertv1) in the request body
 
 Updates package with UUID `package-id`.
 
-Expects a `JSON`-encoded [PackageUpsertV1](#packageupsertv1) in the request body. 
+Expects a `JSON`-encoded [PackageUpsertV1](#packageupsertv1) in the request body.
 
 Note that `libraryType` can't be changed after package creation.
 
@@ -36,7 +36,12 @@ Note that `libraryType` can't be changed after package creation.
 
 Deletes package with UUID `package-id`.
 
-#### Package permissions
+#### Get Package permissions
+`GET https://scarf.sh/api/v1/packages/{package-id}/permissions`
+
+Returns a `JSON`-encoded list of [PackagePermissionGetV1](#packagepermissiongetv1).
+
+#### Set Package permissions
 `POST https://scarf.sh/api/v1/packages/{package-id}/permissions`
 
 Modifies permissions for the package based on a single or an array of `JSON`-encoded [PackagePermissionSetV1](#packagepermissionsetv1) in the request body.
@@ -65,6 +70,12 @@ Modifies permissions for the package based on a single or an array of `JSON`-enc
 | libraryType      | The type of the package (docker, npm, hackage, pypi, other)                                                                                                                | Yes      |
 | backendUrl       | The backend URL for the docker registry (docker only). Must be a valid URL with at least 1 path component with each path component matching `[a-z0-9]+(?:[._-][a-z0-9]+)*` | Yes      |
 | publicUrl        | The public URL for the docker registry (docker only). Must be a valid URL matching `backendUrl`'s path parts                                                               | Yes      |
+
+#### PackagePermissionGetV1
+| Field           | Description                                                                      | Optional |
+|-----------------|----------------------------------------------------------------------------------|----------|
+| username        | Username of the user to which permissionLevel is assigned                        | No       |
+| permissionLevel | The [PackagePermissionLevelV1](PackagePermissionLevel) the user has assigned     | No       |
 
 #### PackagePermissionSetV1
 | Field           | Description                                                                      | Optional |
