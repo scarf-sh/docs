@@ -36,12 +36,12 @@ Note that `libraryType` can't be changed after package creation.
 
 Deletes package with UUID `package-id`.
 
-#### Get Package permissions
+#### Get package permissions
 `GET https://scarf.sh/api/v1/packages/{package-id}/permissions`
 
 Returns a `JSON`-encoded list of [PackagePermissionGetV1](#packagepermissiongetv1).
 
-#### Set Package permissions
+#### Set package permissions
 `POST https://scarf.sh/api/v1/packages/{package-id}/permissions`
 
 Modifies permissions for the package based on a single or an array of `JSON`-encoded [PackagePermissionSetV1](#packagepermissionsetv1) in the request body.
