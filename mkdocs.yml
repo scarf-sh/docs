@@ -2,6 +2,9 @@ site_name: Scarf Documentation
 theme:
   name: material
   logo: assets/scarf.svg
+  custom_dir: overrides
+site_description: |
+  Scarf's Technical Documentation & API Reference
 extra_css:
   - 'stylesheets/extra.css'
 nav:
@@ -15,6 +18,8 @@ google_analytics:
   - auto
   - G-GH3EXW7112
 edit_uri: https://github.com/scarf-sh/docs/blob/master/docs/
+markdown_extensions:
+  - meta
 extra:
   social:
     - icon: fontawesome/brands/github
