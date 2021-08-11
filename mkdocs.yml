@@ -17,7 +17,7 @@ copyright: Copyright &copy; 2019 - 2021 Scarf Systems, Inc.
 google_analytics:
   - auto
   - G-GH3EXW7112
-edit_uri: https://github.com/scarf-sh/docs/blob/master/docs/
+repo_url: https://github.com/scarf-sh/docs
 markdown_extensions:
   - meta
 extra:
