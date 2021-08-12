@@ -1,0 +1,14 @@
+digraph {
+  subgraph external_scarf {
+    "Maintainer" -> "Scarf Dashboard";
+    "Scarf Analytics" -> "Scarf Dashboard" [label="Data is processed and insights are made available to the maintainer"];
+    "Maintainer" -> "DNS Provider" [style=dashed label="Maintainer set a CNAME from their own domain to Scarf"];
+  }
+
+  subgraph cluster_internal_scarf {
+    label = "Scarf Infrastructure"
+    "Scarf Configuration" -> "Scarf Gateway";
+    "Scarf Gateway" -> "Scarf Analytics" [label="Access logs from end-user downloads are aggregated to be asynchronously processed"];
+    "Scarf Dashboard" -> "Scarf Configuration" [style=dashed label="Maintainers configure the Scarf Gatway to redirect traffic to the correct registry"];
+  }
+}

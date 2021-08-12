@@ -1,0 +1,23 @@
+digraph {
+  subgraph external_user {
+    "User" -> "downloads.acme.com" [label = "curl -LO https://downloads.acme.com/files/2.2.1/amd64/rocket-skates-amd64-2.2.1.tar.gz"];
+  }
+
+  subgraph external_scarf {
+    "downloads.acme.com" -> "gateway.scarf.sh" [label="Via maintainer's CNAME"]
+  }
+
+  subgraph cluster_internal_scarf {
+    label = "Scarf Infrastructure"
+    "gateway.scarf.sh" -> "Scarf Gateway" [label="Request hits Scarf Gateway"];
+  }
+
+  subgraph cluster_external_deps {
+    subgraph cluster_registries {
+      "Scarf Gateway" -> {"AWS S3"} [style=dashed]
+      "Scarf Gateway" -> {"GitHub Releases"} [label="The request is redirected to the hosting provider configured by the maintainer"]
+      "Scarf Gateway" -> {"Google Cloud Storage"} [style=dashed]
+    }
+    "Scarf Gateway" -> "Let's Encrypt CA" [label="SSL Cert Issuance"]
+  }
+}
