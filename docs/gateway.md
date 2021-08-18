@@ -135,8 +135,6 @@ No, your package continues to be hosted on your current hosting provider not on 
 
 **My Docker container image name on my current registry is `acme/rocket-skates`, can I change that to just `rocket-skates` when users pull through Scarf?**
 
-[FIXME THIS IS EXPLAINED IN THE PREVIOUS SECTION]
-
 Unfortunately this is not possible unless you can change this name on the registry that hosts your container. Your container name on Scarf must match the container name on the registry that hosts it, because the Docker client uses that name to sign the request and validate the response from the registry. The Docker client will reject the download if the response signature is invalid. See the [Caveats section](#caveats) for more information.
 
 **How are you managing the usage data you get about my project? Are you storing my users’ data?**
