@@ -1,6 +1,6 @@
 ### Overview
 
-![Gateway.png](https://s3.us-west-2.amazonaws.com/static.scarf.sh/scarf-gateway-infographic.png)
+![Gateway.png](https://s3.us-west-2.amazonaws.com/static.scarf.sh/scarf-docker-gateway-infographic.png)
 
 Scarf Gateway is a service that sits in front of your existing software hosting platform(s), acting as a single access-point to all of your artifacts, regardless of where they are actually hosted. By making it easy to host content from your own domain, Scarf Gateway decouples your distribution from your hosting provider and provides in-depth download analytics.
 
@@ -38,6 +38,8 @@ If you elect to use your own domain, you'll need to add a CNAME for that domain 
 See [Figure 0](#figure_0) to see how these pieces fit together visually.
 
 **Configuring a file 'package' on Scarf Gateway**
+
+![Gateway.png](https://s3.us-west-2.amazonaws.com/static.scarf.sh/scarf-file-gateway-infographic.png)
 
 Scarf Gateway configuration for a file package entry has three main considerations:
 
