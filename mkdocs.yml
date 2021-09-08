@@ -9,7 +9,7 @@ extra_css:
   - 'stylesheets/extra.css'
 nav:
 - Introduction: 'index.md'
-- The Scarf Gateway: 'gateway.md'
+- Scarf Gateway: 'gateway.md'
 - SDKs for Package Authors: 'package-analytics.md'
 - Documentation Insights: 'web-traffic.md'
 - API: 'api.md'
