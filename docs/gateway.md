@@ -26,7 +26,7 @@ Every Docker container image served through Scarf Gateway needs a corresponding 
 
 To create your package entry, click "New Package" in the navbar in your Scarf dashboard, or [click here](https://scarf.sh/create-package).
 
-**Configuring a Docker container image 'package' on Scarf Gateway**
+**Configuring a Docker container image package on Scarf Gateway**
 
 Scarf Gateway configuration for a Docker container image entry has two main considerations:
 
@@ -37,7 +37,7 @@ If you elect to use your own domain, you'll need to add a CNAME for that domain 
 
 See [Figure 0](#figure_0) to see how these pieces fit together visually.
 
-**Configuring a file 'package' on Scarf Gateway**
+**Configuring a file package on Scarf Gateway**
 
 ![Gateway.png](https://s3.us-west-2.amazonaws.com/static.scarf.sh/scarf-file-gateway-infographic.png)
 
