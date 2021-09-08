@@ -20,13 +20,13 @@ Data insights about your Docker container image's downloads can be found in your
 
 ### Configuring
 
-**Packages**
+#### Scarf Package Entries
 
-Every Docker container image served through Scarf Gateway needs a corresponding _package_ entry on [scarf.sh](scarf.sh). Configuration, analytics, and permissions are all done at the level of a package, or single repository. `rocket-skates`, `acme/rocket-skates` are all valid package entries. Because packages can seamlessly change their hosting provider, hostnames (e.g. `gcr.io`) are not part of the package identifier on Scarf (e.g. `acme/rocket-skates` and not `gcr.io/acme/rocket-skates`.)
+Everything that is served and tracked via Scarf Gateway needs a corresponding _package_ entry on [scarf.sh](scarf.sh). Configuration, analytics, and permissions are all done at the level of a package, or single repository. `rocket-skates`, `acme/rocket-skates` are all valid package entries. Because packages can seamlessly change their hosting provider, hostnames (e.g. `gcr.io`) are not part of the package identifier on Scarf (e.g. `acme/rocket-skates` and not `gcr.io/acme/rocket-skates`.)
 
-To create your package entry, click "New Package" in the navbar in your Scarf dashboard, or [click here](https://scarf.sh/create-package).
+To create your package entry, click "New Package" in the navbar in your Scarf dashboard, or [click here](https://scarf.sh/create-package). Then select the corresponding package type for your artifact.
 
-**Configuring a Docker container image package on Scarf Gateway**
+#### Container Image Packages
 
 Scarf Gateway configuration for a Docker container image entry has two main considerations:
 
@@ -37,7 +37,7 @@ If you elect to use your own domain, you'll need to add a CNAME for that domain 
 
 See [Figure 0](#figure_0) to see how these pieces fit together visually.
 
-**Configuring a file package on Scarf Gateway**
+#### File Packages
 
 ![Gateway.png](https://s3.us-west-2.amazonaws.com/static.scarf.sh/scarf-file-gateway-infographic.png)
 
@@ -49,7 +49,7 @@ Scarf Gateway configuration for a file package entry has three main consideratio
 
 See [Figure 3](#figure_3) to see how these pieces fit together visually.
 
-### How does it work?
+### How it works
 
 When a user requests a Docker container image through Scarf, Scarf simply issues a redirect response, pointing to whichever hosting provider you've configured for your container. Certain container runtimes do not handle redirects appropriately during authentication (which is required even for anonymous pulls), and in those cases Scarf will proxy the request to the host instead of redirecting. For a visualization of the system from the end-user's perspective, see [Figure 1](#figure_1). For an overview of the entire system, [Figure 2](#figure_2).
 
@@ -67,7 +67,7 @@ Your package's usage data will be made available to you in your Scarf dashboard.
 
 Scarf does not yet support organization-level permissions but will soon.
 
-### Docker Packages: Defining a container pull
+#### Docker Packages: Defining a container pull
 
 Scarf defines a pull based on how [Docker Hub defines them](https://docs.docker.com/docker-hub/download-rate-limit/) for the purposes of their rate-limiting functionality.
 
@@ -75,7 +75,7 @@ A pull is defined as one or more `GET` requests on hosting provider manifest URL
 
 Note that even if a client downloads the blobs that comprise any given container, the container's manifest file may already be cached on the client, meaning the download would not be counted in Scarf's analytics. Future versions of Scarf's data processing pipelines will be more intelligent and will track things like partial downloads, blob fetches, etc.
 
-### Security
+#### Security
 
 All interactions through Scarf Gateway occur over HTTPS. Scarf Gateway will procure a valid TLS certificate via [LetsEncrypt](https://letsencrypt.org), and perform TLS termination for the traffic. Scarf Gateway in turn will issue a redirect for the request, or proxy the request to the hosting provider.
 
@@ -174,38 +174,40 @@ Yes! See [our API documentation](/api) for more information.
 
 [Join us in Slack](https://tinyurl.com/scarf-community-slack), we're more than happy to help.
 
+## Figures
+
 <a id="figure_0"></a>
 
-## Figure 0: Using Scarf (Docker) Gateway as a maintainer
+#### Figure 0: Using Scarf (Docker) Gateway as a maintainer
 
 ![img](gateway-diagram-maintainer-docker.png)
 
 <a id="figure_1"></a>
 
-## Figure 1: Pulling a Docker container image from Scarf (Docker) Gateway as a User
+#### Figure 1: Pulling a Docker container image from Scarf (Docker) Gateway as a User
 
 ![img](gateway-diagram-end-user-docker.png)
 
 <a id="figure_2"></a>
 
-## Figure 2: Full System Diagram (Docker)
+#### Figure 2: Full System Diagram (Docker)
 
 ![img](gateway-diagram-internal-docker.png)
 
 <a id="figure_3"></a>
 
-## Figure 3: Using Scarf (File) Gateway as a maintainer
+#### Figure 3: Using Scarf (File) Gateway as a maintainer
 
 ![img](gateway-diagram-maintainer-file.png)
 
 <a id="figure_4"></a>
 
-## Figure 4: Downloading a File from Scarf (File) Gateway as a User
+#### Figure 4: Downloading a File from Scarf (File) Gateway as a User
 
 ![img](gateway-diagram-end-user-file.png)
 
 <a id="figure_5"></a>
 
-## Figure 5: Full System Diagram (File)
+#### Figure 5: Full System Diagram (File)
 
 ![img](gateway-diagram-internal-file.png)
