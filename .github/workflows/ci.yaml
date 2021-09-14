@@ -13,10 +13,8 @@ jobs:
       - name: Checkout main
         uses: actions/checkout@v2
         
-      - name: Super-Linter
-        uses: github/super-linter@v4.7.3
-        env:
-          VALIDATE_MARKDOWN: true
+      - name: Markdown linter
+        uses: avtodev/markdown-lint@v1
 
       - name: Deploy docs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
