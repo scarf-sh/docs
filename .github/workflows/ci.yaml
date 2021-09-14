@@ -15,6 +15,8 @@ jobs:
         
       - name: Markdown linter
         uses: avto-dev/markdown-lint@v1
+        with:
+          args: '*'
 
       - name: Deploy docs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
