@@ -15,6 +15,8 @@ jobs:
         
       - name: Super-Linter
         uses: github/super-linter@v4.7.3
+        env:
+          VALIDATE_MARKDOWN: true
 
       - name: Deploy docs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
