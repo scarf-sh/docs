@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - master
+  pull_request:
 
 jobs:
   build:
@@ -22,3 +23,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CUSTOM_DOMAIN: docs.scarf.sh
           EXTRA_PACKAGES: build-base
+        if: github.ref == 'refs/heads/master'
+
