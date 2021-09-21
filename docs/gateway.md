@@ -103,6 +103,18 @@ The *commercial usage* badge shows how many distinct companies have been identif
 
 README badges let you show off your project by sharing high-level real-time data about your download traffic and commercial adoption, so readers can quickly assess some basic details about your project. Scarf-powered README badges are an easy way to share your project’s usage data publicly, regardless of where on the internet your docs are being rendered. Telling prospective new users how many companies use your project is a great way to show that your project is reliable and worth adopting.
 
+**What is the URL format of the badges**
+
+The badges can be used in the following formats:
+
+* Company Badge
+  * https://scarf.sh/package/company-badge/{package-id}
+  * https://scarf.sh/company-badge/{username}/{package-name}?package-type={package-type}
+
+* Downloads Badge
+  * https://scarf.sh/package/installs-badge/{package-id}
+  * https://scarf.sh/installs-badge/{username}/{package-name}?package-type={package-type}
+
 ### <a name="caveats"></a>Caveats and Limitations
 
 **A given subdomain can only point to a single container registry at a time.**
