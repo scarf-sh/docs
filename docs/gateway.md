@@ -107,13 +107,13 @@ README badges let you show off your project by sharing high-level real-time data
 
 The badges can be used in the following formats:
 
-* Company Badge
-  * https://scarf.sh/package/company-badge/{package-id}
-  * https://scarf.sh/company-badge/{username}/{package-name}?package-type={package-type}
+- Company Badge
+    - https://scarf.sh/package/company-badge/{package-id}
+    - https://scarf.sh/company-badge/{username}/{package-name}?package-type={package-type}
 
-* Downloads Badge
-  * https://scarf.sh/package/installs-badge/{package-id}
-  * https://scarf.sh/installs-badge/{username}/{package-name}?package-type={package-type}
+- Downloads Badge
+    - https://scarf.sh/package/installs-badge/{package-id}
+    - https://scarf.sh/installs-badge/{username}/{package-name}?package-type={package-type}
 
 ### <a name="caveats"></a>Caveats and Limitations
 
