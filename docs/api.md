@@ -105,7 +105,7 @@ Download a CSV for events relating to the package with UUID `package-id` with ev
 
 We currently only allow date ranges up to 31 days.
 
-Package events include both events for the main package artifact (docker downloads, npm installs, etc.) as well as events for any documentation insights pixels associated with the package.
+Package events include both events for the main package artifact (docker downloads, npm installs, etc.) and events for any documentation insights pixels associated with the package.
 
 #### Pixel events
 `GET https://scarf.sh/api/v1/pixels/events/{filename}.csv?startDate={startDate}&endDate={endDate}`
