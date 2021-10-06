@@ -101,7 +101,7 @@ Export a raw CSV of events pertaining to packages and Documentation Insights pix
 #### Package Events
 `GET https://scarf.sh/api/v1/packages/{package-id}/events/{filename}.csv?startDate={startDate}&endDate={endDate}`
 
-Download a CSV for events relating to the package with UUID `package-id` with events between `startDate` (inclusive) and `endDate` (exclusive). Dates are in `YYYY-MM-DD` format. `filename` is up to the ignored by the server and is just used for programs (such as browsers) that use the final path part as the name of a file to save.
+Download a CSV for events relating to the package with UUID `package-id` with events between `startDate` (inclusive) and `endDate` (exclusive). Dates are in `YYYY-MM-DD` format. `filename` is ignored by the server and is used for programs (such as browsers) that use the final path part as the name of a file to save.
 
 We currently only allow date ranges up to 31 days.
 
