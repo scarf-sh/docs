@@ -6,7 +6,7 @@ Scarf's programming language SDKs provide observability into the usage of your l
 
 ### Features
 
-- Collects basic installation statistics on `npm install`. 
+- Collects basic installation statistics on `npm install`.
 - No dependencies
 - Fully transparent to the user. Scarf will log its behavior to the console during installation. It will never silently report analytics for someone that hasn't explictly given permission to do so.
 - Never interrupts your package installation. Reporting is done on a best effort basis.
@@ -16,7 +16,7 @@ You can find scarf-js on [Github](https://github.com/scarf-sh/scarf-js) or on
 
 ### Installation
 
-You'll first need to create a package entry on Scarf. Be sure to select "External library", and set the package type to "npm". 
+You'll first need to create a package entry on Scarf. Be sure to select "External library", and set the package type to "npm".
 
 Once created, add a dependency on this library to your own:
 
@@ -145,7 +145,7 @@ Installers of your packages will have scarf-js disabled for all dependencies ups
 #### I have more questions, where is the best place to ask
 
 [Join us in Slack](https://tinyurl.com/scarf-community-slack), we're more than happy to help.
-  
+
 
 ### Developing
 
@@ -156,8 +156,8 @@ use http://localhost:8080 as the analytics endpoint host.
 
 **Scarf does not store any personally identifying information from SDK telemetry data.** Scarf only collects information that is helpful for:
 
-- Package maintenance 
-- Identifying which companies are using a particular package, in order to enable support agreements between developers and commercial entities. 
+- Package maintenance
+- Identifying which companies are using a particular package, in order to enable support agreements between developers and commercial entities.
 
 Specifically, scarf-js sends:
 
@@ -172,4 +172,3 @@ This allows Scarf to provide maintainers with information about which public pac
 
 We're working to build out sibling libraries for various languages beyond JavaScript. If you're
 interested in using Scarf in a language we haven't released yet, let us know!
-

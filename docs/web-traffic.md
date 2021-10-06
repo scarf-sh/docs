@@ -1,18 +1,17 @@
-
 Scarf can help you identify your commercial users via the web traffic to your project's documentation pages, READMEs, and other web properties. Unlike traditional JavaScript-based web analytics, image-based telemetry works in places where JavaScript execution is not accessible. If you observe commercial users who frequently view your project documentation, this can indicate an opportunity for landing support contracts or even potential sponsorship, to financially support your project.
 
 ### Features
 
 Scarf's project Documentation Insights offers insights into:
 
-  * Which businesses are looking at your project's documentation. 
+  * Which businesses are looking at your project's documentation.
   * Aggregated location information associated with this web traffic.
   * Which parts of your documentation are looked at most.
   * With tooling that works in READMEs (or rendered docs generally), emails, and other places on the web where JavaScript is not typically executed.
 
 ### How it works
 
-Scarf gathers web traffic insights via a simple transparent tracking pixel. You copy an `<img>` tag from Scarf into your project's README, docs, or any other web property, and any time a user loads the image from us, Scarf will look up any business metadata associated with the address and surface that information to you (and only you) via your free Scarf account. Scarf does not store the IP address itself, so no personally identifiable information is collected. 
+Scarf gathers web traffic insights via a simple transparent tracking pixel. You copy an `<img>` tag from Scarf into your project's README, docs, or any other web property, and any time a user loads the image from us, Scarf will look up any business metadata associated with the address and surface that information to you (and only you) via your free Scarf account. Scarf does not store the IP address itself, so no personally identifiable information is collected.
 
 ### Getting started
 
@@ -26,4 +25,4 @@ View counts from Documentation Insights data should be considered as approximate
 
 #### Sources
 
-Pixel-based telemetry will work on standard webpages, rendered markdown documentation on package registry sites like `npm` and `PyPi`, and anywhere an image can be embedded, with a notable exception being GitHub. When GitHub renders markdown, it rewrites URLs from their original web address to https://camo.githubusercontent.com/<path>, where GitHub hosts any linked images themselves. This prevents Scarf from providing insights to maintainers, since all that can now be detected at the original web address via the tracking pixel is undifferentiated traffic from GitHub. 
+Pixel-based telemetry will work on standard webpages, rendered markdown documentation on package registry sites like `npm` and `PyPi`, and anywhere an image can be embedded, with a notable exception being GitHub. When GitHub renders markdown, it rewrites URLs from their original web address to https://camo.githubusercontent.com/<path>, where GitHub hosts any linked images themselves. This prevents Scarf from providing insights to maintainers, since all that can now be detected at the original web address via the tracking pixel is undifferentiated traffic from GitHub.
