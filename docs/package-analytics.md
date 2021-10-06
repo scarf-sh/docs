@@ -11,7 +11,7 @@ Scarf's programming language SDKs provide observability into the usage of your l
 - Fully transparent to the user. Scarf will log its behavior to the console during installation. It will never silently report analytics for someone that hasn't explictly given permission to do so.
 - Never interrupts your package installation. Reporting is done on a best effort basis.
 
-You can find scarf-js on [Github](https://github.com/scarf-sh/scarf-js) or on
+You can find scarf-js on [GitHub](https://github.com/scarf-sh/scarf-js) or on
 [npm](https://www.npmjs.com/package/@scarf/scarf) directly.
 
 ### Installation
