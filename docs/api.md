@@ -15,6 +15,14 @@ List all packages for the user.
 
 Returns a `JSON`-encoded list of [PackageV1](#packagev1)
 
+#### Get package
+`GET https://scarf.sh/api/v1/packages/{package-id}`
+
+Gets a package with UUID `package-id`. You can also get the package by specifying the package name e.g. `GET https://scarf.sh/api/v1/packages/{package-name}`
+In case you have different packages with the same name, you can use the `packageType` query parameter to disambiguate e.g. `GET https://scarf.sh/api/v1/packages/{package-name}?packageType=docker` 
+
+Returns a `JSON`-encoded [PackageV1](#packagev1)
+
 #### Create package
 `POST https://scarf.sh/api/v1/packages`
 
