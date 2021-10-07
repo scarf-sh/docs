@@ -115,6 +115,8 @@ The badges can be used in the following formats:
     - https://scarf.sh/package/installs-badge/{package-id}
     - https://scarf.sh/installs-badge/{username}/{package-name}?package-type={package-type}
 
+You can also pass some additional settings to your badges via query strings: `color`, `label-color`, `logo`, `logo-color` and `style`. For example, `https://scarf.sh/package/installs-badge/{package-id}?color=red&style=flat`. See https://shields.io/#colors to know more about the supported values for each setting.
+
 ### <a name="caveats"></a>Caveats and Limitations
 
 **A given subdomain can only point to a single container registry at a time.**
