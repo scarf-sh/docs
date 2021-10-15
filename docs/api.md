@@ -6,7 +6,9 @@ All Scarf accounts come with an API token, found on the [user details page](http
 
 `Authorization: Bearer <token>`
 
-### Packages
+### Packages (All Package Types)
+
+This section describes API endpoints for management of any type of file entry on Scarf.
 
 #### List packages
 `GET https://scarf.sh/api/v1/packages`
@@ -54,44 +56,6 @@ Returns a `JSON`-encoded list of [PackagePermissionGetV1](#packagepermissiongetv
 
 Modifies permissions for the package based on a single or an array of `JSON`-encoded [PackagePermissionSetV1](#packagepermissionsetv1) in the request body.
 
-#### List package routes (File Packages only)
-`GET https://scarf.sh/api/v1/packages/{package-id}/routes`
-
-List all package routes for the user.
-
-Returns a `JSON`-encoded list of [PackageRouteV1](#packageroutev1)
-
-#### Create package route (File Packages only)
-`POST https://scarf.sh/api/v1/packages/{package-id}/routes`
-
-Create a new package route.
-
-Expects a `JSON`-encoded [CreatePackageRouteV1](#createpackageroutev1) in the request body.
-
-#### Delete package route (File Packages only)
-`DELETE https://scarf.sh/api/v1/packages/{package-id}/routes/{route-id}`
-
-Delete a package route.
-
-#### List package domains (File Packages only)
-`GET https://scarf.sh/api/v1/packages/{package-id}/domains`
-
-List all package domains for the user.
-
-Returns a `JSON`-encoded list of [PackageDomainV1](#packagedomainv1)
-
-#### Create package domain (File Packages only)
-`POST https://scarf.sh/api/v1/packages/{package-id}/domains`
-
-Create a new package domain.
-
-Expects a `JSON`-encoded [CreatePackageDomainV1](#createpackagedomainv1) in the request body.
-
-#### Delete package domains (File Packages only)
-`DELETE https://scarf.sh/api/v1/packages/{package-id}/domains/{domain-id}`
-
-Deletes a package domain.
-
 #### PackageV1
 
 | Field            | Description                                                 | Optional |
@@ -137,6 +101,48 @@ Deletes a package domain.
 | default    | The user has the default access level                        |
 | member     | The user is a member of the package but cannot administer it |
 | admin      | The user is an admin of the package                          |
+
+### File Packages
+
+File packages on Scarf represent artifacts of any kind of file. Configuration of file packages offer more granular, lower-level controls than other packages types. Path routing is user-defined, rather than the API standards of a given package/container registry.
+
+#### List package routes
+`GET https://scarf.sh/api/v1/packages/{package-id}/routes`
+
+List all package routes for the user.
+
+Returns a `JSON`-encoded list of [PackageRouteV1](#packageroutev1)
+
+#### Create package route
+`POST https://scarf.sh/api/v1/packages/{package-id}/routes`
+
+Create a new package route.
+
+Expects a `JSON`-encoded [CreatePackageRouteV1](#createpackageroutev1) in the request body.
+
+#### Delete package route
+`DELETE https://scarf.sh/api/v1/packages/{package-id}/routes/{route-id}`
+
+Delete a package route.
+
+#### List package domains
+`GET https://scarf.sh/api/v1/packages/{package-id}/domains`
+
+List all package domains for the user.
+
+Returns a `JSON`-encoded list of [PackageDomainV1](#packagedomainv1)
+
+#### Create package domain
+`POST https://scarf.sh/api/v1/packages/{package-id}/domains`
+
+Create a new package domain.
+
+Expects a `JSON`-encoded [CreatePackageDomainV1](#createpackagedomainv1) in the request body.
+
+#### Delete package domains
+`DELETE https://scarf.sh/api/v1/packages/{package-id}/domains/{domain-id}`
+
+Deletes a package domain.
 
 #### PackageRouteV1
 
