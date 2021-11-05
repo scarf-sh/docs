@@ -6,6 +6,100 @@ All Scarf accounts come with an API token, found on the [user details page](http
 
 `Authorization: Bearer <token>`
 
+### Organizations 
+
+This sections describes the available API endpoints for managing organiations on Scarf.
+
+#### Get organization
+`GET https://scarf.sh/api/v1/organizations/{organization-name}`
+
+Gets the organization with the name `organization-name`.
+
+Returns a `JSON`-encoded [OrganizationV1](#organizationv1)
+
+#### Create organiation
+`POST https://scarf.sh/api/v1/organizations`
+
+Create a new organization. The issuer of the request is made owner of the newly created organization.
+
+Expects a `JSON`-encoded [OrganizationUpsertV1](#organizationupsertv1) in the request body.
+
+#### Update organization
+`PUT https://scarf.sh/api/v1/organizations/{organization-name}`
+
+Updates organization with name `organization-name`.
+
+Expects a `JSON`-encoded [OrganizationUpsertV1](#organizationupsertv1) in the request body.
+
+#### List packages
+`GET https://scarf.sh/api/v1/organizations/{organization-name}/packages`
+
+List all packages for the organization with name `organization-name`.
+
+Returns a `JSON`-encoded list of [PackageV1](#packagev1)
+
+#### Create package
+`POST https://scarf.sh/api/v1/{organization-name}/packages`
+
+Create a new package under the organization with name `organization-name`.
+
+Expects a `JSON`-encoded [PackageUpsertV1](#packageupsertv1) in the request body.
+
+#### List users 
+`GET https://scarf.sh/api/v1/{organization-name}/users`
+
+List all members of the organization with name `organization-name`.
+
+Returns a `JSON`-encoded list of [OrganizationMemberV1](#organizationmemberv1).
+
+#### Upsert organization membership
+`POST https://scarf.sh/api/v1/{organization-name}/users`
+
+Creates or updates a membership for the organization with name `organization-name`.
+
+Expects a `JSON`-encoded [OrganizationMemberUpsertV1](#organizationupsertv1) in the request body.
+
+#### Remove organization member
+`DELETE https://scarf.sh/api/v1/{organization-name}/users/{username}`
+
+Removes the member `username` from the organization with name `organization-name`.
+
+#### OrganizationV1
+
+| Field            | Description                                                 | Optional |
+|------------------|-------------------------------------------------------------|----------|
+| name             | Organization name                                           | No       |
+| description      | Description of the organization.                            | No       |
+| website          | The organization website                                    | Yes      |
+| billingEmail     | Email addres to use for billing                             | No       |
+| createdAt        | When the organization was created                           | No       |
+| updatedAt        | When the organization was last updated                      | No       |
+
+
+#### OrganizationUpsertV1
+
+| Field            | Description                                                 | Optional |
+|------------------|-------------------------------------------------------------|----------|
+| name             | Organization name                                           | No       |
+| description      | Description of the organization.                            | No       |
+| website          | The organization website                                    | Yes      |
+| billingEmail     | Email addres to use for billing                             | No       |
+
+#### OrganizationMemberV1
+
+| Field            | Description                                                 | Optional |
+|------------------|-------------------------------------------------------------|----------|
+| organizationName | Organization name                                           | No       |
+| username         | The member's username                                       | No       | 
+| role             | The member's role (member, admin, owner)                    | No       | 
+
+#### OrganizationMemberUpsertV1
+
+| Field            | Description                                                 | Optional |
+|------------------|-------------------------------------------------------------|----------|
+| username         | The member's username                                       | No       |
+| role             | The member's role (member, admin, owner)                    | No       |
+
 ### Packages (All Package Types)
 
 This section describes API endpoints for management of any type of file entry on Scarf.
@@ -30,7 +124,7 @@ Returns a `JSON`-encoded [PackageV1](#packagev1)
 
 Create a new package.
 
-Expects a `JSON`-encoded [PackageUpsertV1](#packageupsertv1) in the request body
+Expects a `JSON`-encoded [PackageUpsertV1](#packageupsertv1) in the request body.
 
 #### Update package
 `PUT https://scarf.sh/api/v1/packages/{package-id}`
