@@ -8,7 +8,7 @@ All Scarf accounts come with an API token, found on the [user details page](http
 
 ### Organizations 
 
-This sections describes the available API endpoints for managing organiations on Scarf.
+This section describes the available API endpoints for managing organizations on Scarf.
 
 #### Get organization
 `GET https://scarf.sh/api/v1/organizations/{organization-name}`
