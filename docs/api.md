@@ -6,7 +6,7 @@ All Scarf accounts come with an API token, found on the [user details page](http
 
 `Authorization: Bearer <token>`
 
-### Organizations 
+### Organizations
 
 This section describes the available API endpoints for managing organizations on Scarf.
 
@@ -45,7 +45,7 @@ Create a new package under the organization with name `organization-name`.
 
 Expects a `JSON`-encoded [PackageUpsertV1](#packageupsertv1) in the request body.
 
-#### List users 
+#### List users
 `GET https://scarf.sh/api/v1/{organization-name}/users`
 
 List all members of the organization with name `organization-name`.
@@ -90,8 +90,8 @@ Removes the member `username` from the organization with name `organization-name
 | Field            | Description                                                 | Optional |
 |------------------|-------------------------------------------------------------|----------|
 | organizationName | Organization name                                           | No       |
-| username         | The member's username                                       | No       | 
-| role             | The member's role (member, admin, owner)                    | No       | 
+| username         | The member's username                                       | No       |
+| role             | The member's role (member, admin, owner)                    | No       |
 
 #### OrganizationMemberUpsertV1
 
@@ -115,7 +115,7 @@ Returns a `JSON`-encoded list of [PackageV1](#packagev1)
 `GET https://scarf.sh/api/v1/packages/{package-id}`
 
 Gets a package with UUID `package-id`. You can also get the package by specifying the package name e.g. `GET https://scarf.sh/api/v1/packages/{package-name}`
-In case you have different packages with the same name, you can use the `packageType` query parameter to disambiguate e.g. `GET https://scarf.sh/api/v1/packages/{package-name}?packageType=docker` 
+In case you have different packages with the same name, you can use the `packageType` query parameter to disambiguate e.g. `GET https://scarf.sh/api/v1/packages/{package-name}?packageType=docker`
 
 Returns a `JSON`-encoded [PackageV1](#packagev1)
 
@@ -266,12 +266,41 @@ Deletes a package domain.
 |---------|------------------------------|----------|
 | name    | The full name of the domain  | No       |
 
-
 ### Data Export
 
 _NOTE: Data exporting is a gated feature, as it will eventually be part of a paid tier of Scarf. Meanwhile, we're happy to grant free export access to your account, forever - simply drop us a line in our community Slack, or post about how you're using Scarf to social media and we'll permanently bump your account's access level._
 
-Export a raw CSV of events pertaining to packages and Documentation Insights pixels.
+#### Aggregated Events for Organizations
+`GET https://scarf.sh/api/v1/organizations/{organization-name}/aggregates?startDate={startDate}&endDate={endDate}`
+
+Export a newline-delimited stream of JSON encoded [AggregateV1](aggregatev1) containing breakdowns of package events.
+
+#### Aggregated Events for Users
+`GET https://scarf.sh/api/v1/users/{username}/aggregates?startDate={startDate}&endDate={endDate}`
+
+Export a newline-delimited stream of JSON encoded [AggregateV1](aggregatev1) containing breakdowns of package events.
+
+#### AggregateV1
+
+| Field      | Description                                                                                         | Optional |
+|------------|-----------------------------------------------------------------------------------------------------|----------|
+| breakdown  | One of `company`, `cloud_provider`, `country`, `platform`, `version`, `client`, `variable`, `total` | No       |
+| date       | Date of the aggregation                                                                             | No       |
+| package    | The `uuid` of the package for the aggregate                                                         | No       |
+| total      | Total number of downloads/pulls for `breakdown`/`date`/`package`                                    | No       |
+| company_name | Company name (`company` breakdown only)                                                           | Yes      |
+| company_domain | Company domain (`company` breakdown only)                                                       | Yes      |
+| cloud_provider_name | Cloud provider name (`cloud_provider` breakdown only)                                                           | Yes      |
+| cloud_provider_domain | Cloud provider domain (`cloud_provider` breakdown only)                                                       | Yes      |
+| country |  Country (`country` breakdown only)                                                       | Yes      |
+| platform | Platform (`platform` breakdown only) |Yes |
+| version | Version (`version` breakdown only, docker packages only) | Yes |
+| client | Client {`client` breakdown only) | Yes |
+| client_version | Client version (`client` breakdown only) | Yes |
+| variable | Variable (`variable` breakdown only, file packages only) | Yes |
+| value | Variable value (`variable` breakdown only, file packages only) | Yes |
+| unique_total | Downloads by unqiue ip (`total` breakdown only) | Yes |
+
 
 #### Package Events
 `GET https://scarf.sh/api/v1/packages/{package-id}/events/{filename}.csv?startDate={startDate}&endDate={endDate}`
