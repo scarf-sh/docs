@@ -17,7 +17,7 @@ Gets the organization with the name `organization-name`.
 
 Returns a `JSON`-encoded [OrganizationV1](#organizationv1)
 
-#### Create organiation
+#### Create organization
 `POST https://scarf.sh/api/v1/organizations`
 
 Create a new organization. The issuer of the request is made owner of the newly created organization.
