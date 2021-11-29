@@ -1,6 +1,6 @@
 ### Overview
 
-![Gateway.png](https://s3.us-west-2.amazonaws.com/static.scarf.sh/scarf-docker-gateway-infographic.png)
+![Gateway.png](https://s3.us-west-2.amazonaws.com/static.scarf.sh/scarf-gateway-2021-11-29-1200x675.png)
 
 Scarf Gateway is a service that sits in front of your existing software hosting platform(s), acting as a single access-point to all of your artifacts, regardless of where they are actually hosted. By making it easy to host content from your own domain, Scarf Gateway decouples your distribution from your hosting provider and provides in-depth download analytics.
 
@@ -27,6 +27,8 @@ Everything that is served and tracked via Scarf Gateway needs a corresponding _p
 To create your package entry, click "New Package" in the navbar in your Scarf dashboard, or [click here](https://scarf.sh/create-package). Then select the corresponding package type for your artifact.
 
 #### Container Image Packages
+
+![Gateway.png](https://s3.us-west-2.amazonaws.com/static.scarf.sh/scarf-docker-gateway-infographic.png)
 
 Scarf Gateway configuration for a Docker container image entry has two main considerations:
 
