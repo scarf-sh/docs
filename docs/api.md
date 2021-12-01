@@ -196,6 +196,92 @@ Modifies permissions for the package based on a single or an array of `JSON`-enc
 | member     | The user is a member of the package but cannot administer it |
 | admin      | The user is an admin of the package                          |
 
+### Docker package auto-creation
+
+Adding each Docker package separately can be tedious. AutoDocker package auto-creation offers a way to specify a pattern by which, on the first pull of the image, the package is created automatically.
+
+#### List auto-creation rules
+For users
+
+```GET https://scarf.sh/api/v1/users/{username}/auto-creation-rules```
+
+For organizations 
+
+```GET https://scarf.sh/api/v1/organizations/{organization-name}/auto-creation-rules```
+
+List all packages for the user or organization.
+
+Returns a `JSON`-encoded list of [AutoCreationRuleV1](#autocreationrulev1)
+
+#### Get auto-creation rule 
+
+For users
+
+```GET https://scarf.sh/api/v1/users/{username}/auto-creation-rules/{id}```
+
+For organizations 
+
+```GET https://scarf.sh/api/v1/organizations/{organization-name}/auto-creation-rules/{id}```
+
+Gets an auto-creation rule with id `id`. 
+
+Returns a `JSON`-encoded [AutoCreationRuleV1](#autocreationrulev1)
+
+#### Create auto-creation rule
+For users
+
+```POST https://scarf.sh/api/v1/users/{username}/auto-creation-rules```
+
+For organizations 
+
+```POST https://scarf.sh/api/v1/organizations/{organization-name}/auto-creation-rules```
+
+Expects a `JSON`-encoded [UpsertAutoCreationRuleV1](#upsertautocreationrulev1) in the request body. Returns a 
+`JSON`-encoded [AutoCreationRuleV1](#autocreationrulev1) in the response.
+
+#### Update auto-creation rule
+For users
+
+```PUT https://scarf.sh/api/v1/users/{username}/auto-creation-rules/{id}```
+
+For organizations 
+
+```PUT https://scarf.sh/api/v1/organizations/{organization-name}/auto-creation-rules/{id}```
+
+Expects a `JSON`-encoded [UpsertAutoCreationRuleV1](#upsertautocreationrulev1) in the request body. Returns a 
+`JSON`-encoded [AutoCreationRuleV1](#autocreationrulev1) in the response.
+
+#### Delete auto-creation rule
+For users
+
+```DELETE https://scarf.sh/api/v1/users/{username}/auto-creation-rules/{id}```
+
+For organizations 
+
+```DELETE https://scarf.sh/api/v1/organizations/{organization-name}/auto-creation-rules/{id}```
+
+Deletes an auto-creation rule identified by `id`.
+
+#### Auto-creation pattern
+
+#### UpsertAutoCreationRuleV1
+
+| Field        | Description                     | Optional |
+|--------------|---------------------------------|----------|
+| pattern      | Pattern that matches image name | No       |
+| publicDomain | Public domain of the image | Yes      |
+| backendDomain | Backend domain of the image | No |
+
+#### AutoCreationRuleV1
+
+| Field        | Description                     | Optional |
+|--------------|---------------------------------|----------|
+| id           | Uniquely identifies the rule    | No       |
+| pattern      | Pattern that matches image name | No       |
+| publicDomain | Public domain of the image | Yes      |
+| backendDomain | Backend domain of the image | No |
+| createdAt     | When the rule was created | No |
+
 ### File Packages
 
 File packages on Scarf represent artifacts of any kind of file. Configuration of file packages offer more granular, lower-level controls than other packages types. Path routing is user-defined, rather than the API standards of a given package/container registry.
