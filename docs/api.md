@@ -39,28 +39,28 @@ List all packages for the organization with name `organization-name`.
 Returns a `JSON`-encoded list of [PackageV1](#packagev1)
 
 #### Create package
-`POST https://scarf.sh/api/v1/{organization-name}/packages`
+`POST https://scarf.sh/api/v1/organizations/{organization-name}/packages`
 
 Create a new package under the organization with name `organization-name`.
 
 Expects a `JSON`-encoded [PackageUpsertV1](#packageupsertv1) in the request body.
 
 #### List users
-`GET https://scarf.sh/api/v1/{organization-name}/users`
+`GET https://scarf.sh/api/v1/organizations/{organization-name}/users`
 
 List all members of the organization with name `organization-name`.
 
 Returns a `JSON`-encoded list of [OrganizationMemberV1](#organizationmemberv1).
 
 #### Upsert organization membership
-`POST https://scarf.sh/api/v1/{organization-name}/users`
+`POST https://scarf.sh/api/v1/organizations/{organization-name}/users`
 
 Creates or updates a membership for the organization with name `organization-name`.
 
 Expects a `JSON`-encoded [OrganizationMemberUpsertV1](#organizationupsertv1) in the request body.
 
 #### Remove organization member
-`DELETE https://scarf.sh/api/v1/{organization-name}/users/{username}`
+`DELETE https://scarf.sh/api/v1/organizations/{organization-name}/users/{username}`
 
 Removes the member `username` from the organization with name `organization-name`.
 
