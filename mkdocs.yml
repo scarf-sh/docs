@@ -12,6 +12,7 @@ nav:
 - Scarf Gateway: 'gateway.md'
 - SDKs for Package Authors: 'package-analytics.md'
 - Documentation Insights: 'web-traffic.md'
+- Organizations: 'organization.md'
 - API: 'api.md'
 copyright: Copyright &copy; 2019 - 2021 Scarf Systems, Inc.
 google_analytics:

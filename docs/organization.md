@@ -1,11 +1,11 @@
-### CREATING AN ORGANIZATION
+### Creating an organization
 
 To create an organization, navigate to your Scarf dashboard. Clicking the username dropdown will bring a few new options:
 
-> Your dashboard
-> Dashboards for each organization you belong to
-> Manage organizations
-> Create an organization
+- Your dashboard
+- Dashboards for each organization you belong to
+- Manage organizations
+- Create an organization
 
 Here, you’ll want to click on “Create an organization”:
 
@@ -18,7 +18,7 @@ This will take you to the Create an Organization form:
 
 There are two distinct ways to create an organization:
 
-### Converting your current account
+### Converting your current account to an organization
 
 If your current username is what you would like your organization to be called, you can  to convert your account into an organization. To do this, please follow the steps below:
 
