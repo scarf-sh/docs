@@ -129,6 +129,43 @@ If you have Docker container images on multiple distinct registries, you'll curr
 
 If your container is on Docker Hub as `acme/rocket-skates`, your install command must be: `docker pull ~<your-domain.com>/acme/rocket-skates`. The image name path (acme/rocket-status) is not something that can be changed at this time. This is due to the Docker client's OAuth implementation (authorization includes the image name path of the being requested.) If Scarf Gateway redirects to a different path, the authorization becomes invalid and the Docker pull will fail.
 
+#### Automatic Package Creation for Containers
+
+Rather than creating packages entries for each container in your namespace, you can specify rules to automaically forward all matching traffic and create package entries automatically. By using a template, e.g. ``repository/*``, every time an image matching that template is first downloaded, Scarf will automatically create a page for that package (e.g. repository/test01, repository/new-item).
+
+### Creating an Auto Package Rule from Settings
+To get started, navigate to your user-settings page.
+
+![Image title](assets/pics/auto-creation/user_settings_pg.png)
+
+Next, please navigate to the Automatic Creation Paths table. Here, you’ll find all your current templates- with the options to edit, delete, and create new rules.
+
+![Image title](assets/pics/auto-creation/user_auto_creation_table
+.png)
+
+To create a new rule, please first insert the template that will be used. It can be anything of the form: ``repository/*``, ``repository/{ variable1, variable2 }``, etc. Next, insert the backend domain, the domain where your images are hosted (e.g. registry-1.docker.io, ghcr.io, gcr.io). Please keep in mind, each public domain should map to one backend domain. (E.g. If you’re using your Scarf domain for your images hosted on docker, you will not be able to use your Scarf domain for your images hosted on Amazon.) Submit your new rule!
+
+
+### Creating an Auto Package Rule for Your Organization
+
+To begin, navigate to “Manage Organizations.”
+![Image title](assets/pics/auto-creation/manage_org_page.png)
+
+Please select the organization you would like to add a template for.
+
+In the Edit Organization Details page for that specific organization, you will find the Auto Creation Paths table at the very bottom.
+
+![Image title](assets/pics/auto-creation/org_auto_creation_table.png)
+
+From here, please first insert the template that will be used. It can be anything of the form: ``repository/*``, ``repository/{ variable1, variable2 }``, etc.
+
+Next, insert the backend domain, the domain where your images are hosted (e.g. registry-1.docker.io, ghcr.io, gcr.io). Please keep in mind, each public domain should map to one backend domain. (E.g. If you’re using your Scarf domain for your images hosted on docker, you will not be able to use your Scarf domain for your images hosted on Amazon.)
+
+Submit your new rule!
+
+
+![Image title](assets/pics/auto-creation/create_org_auto_path.png)
+
 ## FAQ
 
 **How do I get started using Scarf Gateway?**
