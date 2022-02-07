@@ -6,14 +6,15 @@ theme:
 site_description: |
   Scarf's Technical Documentation & API Reference
 extra_css:
-  - 'stylesheets/extra.css'
+  - "stylesheets/extra.css"
 nav:
-- Introduction: 'index.md'
-- Scarf Gateway: 'gateway.md'
-- SDKs for Package Authors: 'package-analytics.md'
-- Documentation Insights: 'web-traffic.md'
-- Organizations: 'organization.md'
-- API: 'api.md'
+  - Introduction: "index.md"
+  - Quick Start: "quick-start.md"
+  - Scarf Gateway: "gateway.md"
+  - SDKs for Package Authors: "package-analytics.md"
+  - Documentation Insights: "web-traffic.md"
+  - Organizations: "organization.md"
+  - API: "api.md"
 copyright: Copyright &copy; 2019 - 2021 Scarf Systems, Inc.
 google_analytics:
   - auto
