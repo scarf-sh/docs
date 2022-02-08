@@ -4,19 +4,20 @@ Scarf Gateway is a service that provides a central access point to your containe
 
 In this guide, you will learn:
 
-- How to create a Docker package
-- How to create a tracking pixel for each of your packages
+- How to create track pulls of your Docker containers with Scarf
+- How to create a tracking pixel to track views of your package's documentation
 - How to download your packages and fetch associated pixels
 
 ## Prerequisites
 
 - You will need to sign up for a [Scarf account](https://scarf.sh/signup).
   You can sign up with a valid email address or your GitHub account.
-- You will need a docker container. This guide will use the `hello-world` [docker image](<(https://hub.docker.com/_/hello-world)>).
+- The container you're looking to track must be published to an existing public registry, eg Docker Hub, GitHub Container Registry. 
+  This guide will use the `hello-world` [docker image](<(https://hub.docker.com/_/hello-world)>).
 
 ### Creating a Docker Package
 
-Using Scarf, users can pull your Docker container images from Scarf Gateway using your private domain.
+Using Scarf, users can pull your Docker container images via Scarf Gateway using your custom domain.
 
 1.  Once signed in to Scarf, navigate to the home page.
 
@@ -24,10 +25,10 @@ Using Scarf, users can pull your Docker container images from Scarf Gateway usin
 
 3.  Select the Create a Package drop-down and click on the package type you would like to create. For this section you will click `Docker`
     ![Create a package](assets/pics/quick-start/create_package.png)
-4.  Enter the docker pull command.
+4.  Enter the current pull command for your Docker container.
     The Docker command for the `hello-world` package is `docker pull hello-world`.
     ![Enter the docker pull command](assets/pics/quick-start/pull_command.png)
-5.  Optional: You can add a custom domain or use the domain provided by the Scarf Gateway.
+5.  Optional: You can add a custom domain or use the domain provided by Scarf Gateway.
 
 6.  Click the `Submit` button to be redirected to your package dashboard.
 
