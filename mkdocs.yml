@@ -9,6 +9,7 @@ extra_css:
   - "stylesheets/extra.css"
 nav:
   - Introduction: "index.md"
+  - Quick Start: "quick-start.md"
   - Scarf Gateway: "gateway.md"
   - SDKs for Package Authors: "package-analytics.md"
   - Documentation Insights: "web-traffic.md"
