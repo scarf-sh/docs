@@ -140,8 +140,7 @@ To get started, navigate to your user-settings page.
 
 Next, please navigate to the Automatic Creation Paths table. Here, you’ll find all your current templates- with the options to edit, delete, and create new rules.
 
-![Image title](assets/pics/auto-creation/user_auto_creation_table
-.png)
+![Image title](assets/pics/auto-creation/user_auto_creation_table.png)
 
 To create a new rule, please first insert the template that will be used. It can be anything of the form: ``repository/*``, ``repository/{ variable1, variable2 }``, etc. Next, insert the backend domain, the domain where your images are hosted (e.g. registry-1.docker.io, ghcr.io, gcr.io). Please keep in mind, each public domain should map to one backend domain. (E.g. If you’re using your Scarf domain for your images hosted on docker, you will not be able to use your Scarf domain for your images hosted on Amazon.) Submit your new rule!
 
