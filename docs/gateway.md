@@ -53,7 +53,7 @@ See [Figure 3](#figure_3) to see how these pieces fit together visually.
 
 #### Python Packages
 
-Scarf Gateway configuration for a python package entry has three main considerations:
+Scarf Gateway configuration for a Python package entry has three main considerations:
 
 - **pip Command**: This is the pip command used to install your package. This could be `pip install numpy` or an install command passing `--extra-index-url` if your package is not hosted on PyPI.org. This defines the location where the users will be redirected to when installing your package.
 - **Domain**: This can be your own domain, or a Scarf-supplied domain, of the form `<username>.gateway.scarf.sh`. By default, your Scarf domain will be used if this field is left empty.
