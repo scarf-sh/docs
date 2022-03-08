@@ -55,7 +55,7 @@ See [Figure 3](#figure_3) to see how these pieces fit together visually.
 
 Scarf Gateway configuration for a Python package entry has three main considerations:
 
-- **pip Command**: This is the pip command used to install your package. This could be `pip install numpy` or an install command passing `--extra-index-url` if your package is not hosted on PyPI.org. This defines the location where the users will be redirected to when installing your package.
+- **pip Command**: This is the current pip command used to install your package. For packages on PyPI.org, this will be of the form `pip install numpy` and will include the `--extra-index-url` if your package is hosted elsewhere. This defines the location where the users will be redirected to when installing your package.
 - **Domain**: This can be your own domain, or a Scarf-supplied domain, of the form `<username>.gateway.scarf.sh`. By default, your Scarf domain will be used if this field is left empty.
 
 If you elect to use your own domain, you'll need to add a CNAME for that domain to `gateway.scarf.sh`. See your DNS provider's instructions for how to add a CNAME.
