@@ -51,6 +51,15 @@ Scarf Gateway configuration for a file package entry has three main consideratio
 
 See [Figure 3](#figure_3) to see how these pieces fit together visually.
 
+#### Python Packages
+
+Scarf Gateway configuration for a Python package entry has three main considerations:
+
+- **pip Command**: This is the current pip command used to install your package. For packages on PyPI.org, this will be of the form `pip install numpy` and will include the `--extra-index-url` if your package is hosted elsewhere. This defines the location where the users will be redirected to when installing your package.
+- **Domain**: This can be your own domain, or a Scarf-supplied domain, of the form `<username>.gateway.scarf.sh`. By default, your Scarf domain will be used if this field is left empty.
+
+If you elect to use your own domain, you'll need to add a CNAME for that domain to `gateway.scarf.sh`. See your DNS provider's instructions for how to add a CNAME.
+
 ### How it works
 
 When a user requests a Docker container image through Scarf, Scarf simply issues a redirect response, pointing to whichever hosting provider you've configured for your container. Certain container runtimes do not handle redirects appropriately during authentication (which is required even for anonymous pulls), and, in those cases, Scarf will proxy the request to the host instead of redirecting. For a visualization of the system from the end-user's perspective, see [Figure 1](#figure_1). For an overview of the entire system, [Figure 2](#figure_2).
@@ -204,7 +213,7 @@ Scarf looks up IP address metadata, but the raw IP addresses are discarded and n
 
 **What package types are you planning to support next?**
 
-We’d love your input to help us prioritize support for additional package types. Java, Python, and others are planned. Scarf Gateway will ultimately be generalized to support arbitrary artifact types.
+We’d love your input to help us prioritize support for additional package types. Java, RPM and others are planned. Scarf Gateway will ultimately be generalized to support arbitrary artifact types.
 
 **How much does it cost to use Scarf Gateway?**
 
