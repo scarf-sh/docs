@@ -174,6 +174,7 @@ Modifies permissions for the package based on a single or an array of `JSON`-enc
 | libraryType      | The type of the package (docker, npm, hackage, pypi, other)                                                                                                                | Yes      |
 | backendUrl       | The backend URL for the docker registry (docker only). Must be a valid URL with at least 1 path component with each path component matching `[a-z0-9]+(?:[._-][a-z0-9]+)*` | Yes      |
 | publicUrl        | The public URL for the docker registry (docker only). Must be a valid URL matching `backendUrl`'s path parts                                                               | Yes      |
+| repositoryURL    | The Python Simple Repository URL (python only). Must be a valid URL. In case of PyPI, it should be `https://pypi.org/simple/`.                                             | Yes
 
 #### PackagePermissionGetV1
 | Field           | Description                                                                      | Optional |
@@ -252,6 +253,40 @@ Deletes a package domain.
 |--------------|---------------------------------|----------|
 | outgoingUrl  | The outgoing url for the route  | No       |
 | templatePath | The template path of the route  | No       |
+
+#### PackageDomainV1
+
+| Field        | Description                     |
+|--------------|---------------------------------|
+| id           | The id of the package domain    |
+| name         | The full domain name            |
+
+#### CreatePackageDomainV1
+
+| Field   | Description                  | Optional |
+|---------|------------------------------|----------|
+| name    | The full name of the domain  | No       |
+
+### Python Packages
+
+#### List package domains
+`GET https://scarf.sh/api/v1/packages/{package-id}/domains`
+
+List all package domains for the user. You can find more information about package domains in the [Gateway Docs](https://docs.scarf.sh/gateway/#python-packages)
+
+Returns a `JSON`-encoded list of [PackageDomainV1](#packagedomainv1)
+
+#### Create package domain
+`POST https://scarf.sh/api/v1/packages/{package-id}/domains`
+
+Create a new package domain.
+
+Expects a `JSON`-encoded [CreatePackageDomainV1](#createpackagedomainv1) in the request body.
+
+#### Delete package domains
+`DELETE https://scarf.sh/api/v1/packages/{package-id}/domains/{domain-id}`
+
+Deletes a package domain.
 
 #### PackageDomainV1
 
