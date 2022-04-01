@@ -1,6 +1,6 @@
 ### Overview
 
-![Gateway.png](https://s3.us-west-2.amazonaws.com/static.scarf.sh/scarf-gateway-2021-11-29-1200x675.png)
+![Gateway.png](https://s3.us-west-2.amazonaws.com/static.scarf.sh/docs/scarf-gateway-full-diagram.png)
 
 Scarf Gateway is a service that sits in front of your existing software hosting platform(s), acting as a single access-point to all of your artifacts, regardless of where they are actually hosted. By making it easy to host content from your own domain, Scarf Gateway decouples your distribution from your hosting provider and provides in-depth download analytics.
 
@@ -52,6 +52,8 @@ Scarf Gateway configuration for a file package entry has three main consideratio
 See [Figure 3](#figure_3) to see how these pieces fit together visually.
 
 #### Python Packages
+
+![Gateway.png](https://s3.us-west-2.amazonaws.com/static.scarf.sh/docs/Python+Gateway+Diagram)
 
 Scarf Gateway configuration for a Python package entry has three main considerations:
 
