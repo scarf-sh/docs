@@ -53,6 +53,8 @@ See [Figure 3](#figure_3) to see how these pieces fit together visually.
 
 #### Python Packages
 
+![Gateway.png](https://s3.us-west-2.amazonaws.com/static.scarf.sh/docs/Python+Gateway+Diagram)
+
 Scarf Gateway configuration for a Python package entry has three main considerations:
 
 - **pip Command**: This is the current pip command used to install your package. For packages on PyPI.org, this will be of the form `pip install numpy` and will include the `--extra-index-url` if your package is hosted elsewhere. This defines the location where the users will be redirected to when installing your package.
