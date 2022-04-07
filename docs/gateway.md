@@ -64,7 +64,7 @@ Scarf Gateway configuration for a Python package entry has three main considerat
 Add the --extra-index-url option at the top of your requirements.txt:
 
 ```
---extra-index-url https://my-python-project-domain.com
+--extra-index-url https://my-python-project-domain.com/simple/
 my-pkg==0.0.1
 ```
 
