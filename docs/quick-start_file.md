@@ -19,11 +19,13 @@ In this guide, you will learn:
 2. Click `New Package` in the navigation.
 
 3. Select the Create a Package drop-down and click on the package type you would like to create. For this section you will click `File`
+
  ![Create a package](assets/pics/qs-file-packages/create.png)
 
 4. Select the package owner from the dropdown.
 
 5. Give your package a name.
+
 ![Name your package](assets/pics/qs-file-packages/package_name.png)
 
 ## Adding an Outgoing and Incoming URL
