@@ -65,6 +65,7 @@ Example:
 `/latest/{platform}`
 
 ![Add desired path format](assets/pics/qs-file-packages/desired_path.png)
+
 4.) Click the `Add Route` button.
 
 ## What’s Next?
