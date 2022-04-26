@@ -1,6 +1,6 @@
 # Introduction
 
-Scarf Gateway is a service that provides a central access point to your containers and packages, no matter where you host them. Scarf Gateway offers support for “File Packages”, which can be arbitrary files, API endpoints, or even simply URLs. In this guide, you will learn:
+Scarf Gateway is a service that provides a central access point to your containers and packages, no matter where you host them. Scarf Gateway offers support for “File Packages”, which can be arbitrary files, API endpoints, or even simply URLs.
 
 In this guide, you will learn:
 
@@ -19,11 +19,13 @@ In this guide, you will learn:
 2. Click `New Package` in the navigation.
 
 3. Select the Create a Package drop-down and click on the package type you would like to create. For this section you will click `File`
+
  ![Create a package](assets/pics/qs-file-packages/create.png)
 
 4. Select the package owner from the dropdown.
 
 5. Give your package a name.
+
 ![Name your package](assets/pics/qs-file-packages/package_name.png)
 
 ## Adding an Outgoing and Incoming URL
@@ -65,6 +67,7 @@ Example:
 `/latest/{platform}`
 
 ![Add desired path format](assets/pics/qs-file-packages/desired_path.png)
+
 4.) Click the `Add Route` button.
 
 ## What’s Next?
