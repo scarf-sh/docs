@@ -338,11 +338,19 @@ Export a newline-delimited stream of JSON encoded [AggregateV1](aggregatev1) con
 
 
 #### Package Events
+User scoped packages can use:
+
 `GET https://scarf.sh/api/v1/packages/{package-id}/events/{filename}.csv?startDate={startDate}&endDate={endDate}`
+
+While organization scoped packages can use:
+
+`GET https://scarf.sh/api/v1/packages/{organizationName}/{packageId}/events/{fileName}.csv?startDate={startDate}&endDate={endDate}`
 
 Download a CSV for events relating to the package with UUID `package-id` with events between `startDate` (inclusive) and `endDate` (exclusive). Dates are in `YYYY-MM-DD` format. `filename` is ignored by the server and is used for programs (such as browsers) that use the final path part as the name of a file to save.
 
-We currently only allow date ranges up to 31 days.
+Scarf only allows exports of date ranges up to 31 days for free accounts, but subscribers to premium Scarf Business plans can access all historical data via the v2 API:
+
+`GET https://api.scarf.sh/v2/packages/{organization_name}/{package_id}/events?start_date={start_date}&end_date={end_date}`
 
 Package events include both events for the main package artifact (docker downloads, npm installs, etc.) and events for any documentation insights pixels associated with the package.
 
@@ -350,7 +358,9 @@ Package events include both events for the main package artifact (docker downloa
 `GET https://scarf.sh/api/v1/pixels/events/{filename}.csv?startDate={startDate}&endDate={endDate}`
 Download a CSV for events relating to any documentation insights pixels the user has access to with events between `startDate` (inclusive) and `endDate` (exclusive). Dates are in `YYYY-MM-DD` format. `filename` is up to the ignored by the server and is just used for programs (such as browsers) that use the final path part as the name of a file to save.
 
-We currently only allow date ranges up to 31 days.
+Scarf only allows exports of date ranges up to 31 days for free accounts, but subscribers to premium Scarf Business plans can access all historical data via the v2 API:
+
+`GET https://api.scarf.sh/v2/tracking-pixels/{organization_name}/events?start_date={start_date}&end_date={end_date}`
 
 #### Download format
 
