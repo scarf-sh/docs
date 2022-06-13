@@ -102,6 +102,12 @@ Note that even if a client downloads the blobs that comprise any given container
 
 All interactions through Scarf Gateway occur over HTTPS. Scarf Gateway will procure a valid TLS certificate via [LetsEncrypt](https://letsencrypt.org), and perform TLS termination for the traffic. Scarf Gateway in turn will issue a redirect for the request, or proxy the request to the hosting provider.
 
+#### Do Not Track
+
+Our gateway respects the HTTP Headers as defined in [DNT](https://www.w3.org/2011/tracking-protection/drafts/tracking-dnt.html) and [GPC](https://globalprivacycontrol.github.io/gpc-spec/). If you send an HTTP request to our Scarf Gateway with the HTTP header "DNT=1" or "Sec-GPC=1", we will not count your request in our statistics nor will we lookup your IP address to determine if you are a business. Basically, it will be as if you didn't request anything from our gateway but we will still serve the content to you.
+
+Please note that this behavior works for all packages and pixels that are served through our gateway. If users have DNT turned on in their browser settings, we will not track file downloads or pixel views.
+
 ### Availability
 
 Scarf Gateway is a free hosted service that is provided to maintainers and users as-is and as-available.
