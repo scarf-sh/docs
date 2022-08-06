@@ -4,8 +4,10 @@
     --md-primary-fg-color--dark:  #7bcbe8;
 }
 
-header img {
+.md-header__button.md-logo img, .md-header__button.md-logo svg {
     color: white;
+    height: 1.2rem;
+    width: auto;
 }
 
 .md-ellipsis {
