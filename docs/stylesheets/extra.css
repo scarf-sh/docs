@@ -1,10 +1,15 @@
 :root {
-    --md-primary-fg-color:        #06446C;
+    --md-primary-fg-color:        #0572F1;
     --md-primary-fg-color--light: #7bcbe8;
     --md-primary-fg-color--dark:  #7bcbe8;
 }
 
-header img {
+.md-header__button.md-logo img, .md-header__button.md-logo svg {
     color: white;
+    height: 1.2rem;
+    width: auto;
 }
 
+.md-ellipsis {
+    display: none;
+}

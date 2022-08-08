@@ -1,7 +1,7 @@
 site_name: Scarf Documentation
 theme:
   name: material
-  logo: assets/scarf.svg
+  logo: assets/scarf_text.svg
   custom_dir: overrides
 site_description: |
   Scarf's Technical Documentation & API Reference
