@@ -303,7 +303,7 @@ Deletes a package domain.
 
 ### Data Export
 
-_NOTE: Data exporting is a gated feature, as it will eventually be part of a paid tier of Scarf. Meanwhile, we're happy to grant free export access to your account, forever - simply drop us a line, or post about how you're using Scarf to social media and we'll permanently bump your account's access level._
+_NOTE: Data exporting is part of the Scarf Professional plan. To enable data export capabilities for your organization, please [get in touch with us](mailto:support@scarf.sh)._
 
 #### Aggregated Events for Organizations
 `GET https://scarf.sh/api/v1/organizations/{organization-name}/aggregates?startDate={startDate}&endDate={endDate}`
