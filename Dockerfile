@@ -2,6 +2,7 @@ FROM python
 RUN apt-get update
 RUN apt-get install -y graphviz
 RUN pip install mkdocs-material
+RUN pip install mkdocs-render-swagger-plugin
 ADD ./ /src/
 WORKDIR /src
 RUN cd docs; for dot in *.dot; do dot -Kdot -Tpng <$dot >$(echo $dot|sed 's/\.dot/.\png/'); done
