@@ -18,16 +18,20 @@
             "description": "Public information about users."
         },
         {
-            "name": "Organizations"
+            "name": "Organizations",
+            "description": "Control organizations and their users."
         },
         {
-            "name": "Packages"
+            "name": "Packages",
+            "description": "Manage Packages"
         },
         {
-            "name": "Tracking Pixels"
+            "name": "Tracking Pixels",
+            "description": "Manage Tracking Pixels"
         },
         {
-            "name": "Auto Creation Rules"
+            "name": "Auto Creation Rules",
+            "description": "Manage Auto Creation Rules"
         }
     ],
     "security": [
@@ -44,7 +48,7 @@
             ],
             "get": {
                 "operationId": "getPackagesOverview",
-                "summary": "Returns a paginated list of packages belonging to the given account",
+                "summary": "Gets a paginated list of packages belonging to the given owner",
                 "tags": [
                     "Packages"
                 ],
@@ -113,7 +117,7 @@
             ],
             "get": {
                 "operationId": "getPackages",
-                "summary": "Returns a paginated list of packages belonging to the given account",
+                "summary": "Gets a paginated list of packages belonging to the given owner",
                 "tags": [
                     "Packages"
                 ],
@@ -233,7 +237,7 @@
             ],
             "get": {
                 "operationId": "getPackageByName",
-                "summary": "Returns a package by specified its package type and name",
+                "summary": "Gets a package by specified package type and name",
                 "tags": [
                     "Packages"
                 ],
@@ -265,7 +269,7 @@
             ],
             "get": {
                 "operationId": "getPackageById",
-                "summary": "Returns a package by specified id",
+                "summary": "Gets a package by specified id",
                 "tags": [
                     "Packages"
                 ],
@@ -368,7 +372,7 @@
                     }
                 ],
                 "operationId": "getPackageTrackingPixels",
-                "summary": "Returns all the tracking-pixels associated with a particular package",
+                "summary": "Gets all the tracking-pixels associated with a particular package",
                 "tags": [
                     "Packages"
                 ],
@@ -403,7 +407,7 @@
             ],
             "get": {
                 "operationId": "getPackageDomains",
-                "summary": "Get all domains of a specified package. Currently, it only works for File, Python, and Docker packages",
+                "summary": "Gets all domains of a specified package.",
                 "tags": [
                     "Packages"
                 ],
@@ -697,7 +701,7 @@
                     }
                 ],
                 "operationId": "getPackagePermissions",
-                "summary": "Gets list of package permissions. Only when owner is a User",
+                "summary": "Gets a list of package permissions. Only when owner is a User",
                 "tags": [
                     "Packages"
                 ],
@@ -792,7 +796,7 @@
             ],
             "get": {
                 "operationId": "getOrganization",
-                "summary": "Returns the organization details",
+                "summary": "Gets the organization details",
                 "tags": [
                     "Organizations"
                 ],
@@ -817,7 +821,7 @@
             },
             "put": {
                 "operationId": "updateOrganization",
-                "summary": "Update the organization details",
+                "summary": "Updates the organization details",
                 "tags": [
                     "Organizations"
                 ],
@@ -869,7 +873,7 @@
             ],
             "get": {
                 "operationId": "getOrganizationMembers",
-                "summary": "Returns a paginated list of members of an organization",
+                "summary": "Gets a paginated list of members of an organization",
                 "tags": [
                     "Organizations"
                 ],
@@ -978,7 +982,7 @@
             ],
             "get": {
                 "operationId": "getOrganizationMember",
-                "summary": "Returns an organization member",
+                "summary": "Gets an organization member",
                 "tags": [
                     "Organizations"
                 ],
@@ -1120,7 +1124,7 @@
                     }
                 ],
                 "operationId": "getUserOrganizations",
-                "summary": "List the organizations of an user",
+                "summary": "Gets a list of the user organizations",
                 "tags": [
                     "Users"
                 ],
@@ -1163,7 +1167,7 @@
             ],
             "get": {
                 "operationId": "getTrackingPixels",
-                "summary": "Returns a paginated list of tracking pixels belonging to the given account",
+                "summary": "Gets a paginated list of tracking pixels belonging to the given account",
                 "tags": [
                     "Tracking Pixels"
                 ],
@@ -1265,7 +1269,7 @@
             ],
             "get": {
                 "operationId": "getTrackingPixel",
-                "summary": "Returns the tracking pixel",
+                "summary": "Gets a tracking pixel",
                 "tags": [
                     "Tracking Pixels"
                 ],
@@ -1354,7 +1358,7 @@
             ],
             "get": {
                 "operationId": "getAutoCreationRules",
-                "summary": "Returns a paginated list of auto-creation rules belonging to the given account",
+                "summary": "Gets a paginated list of auto-creation rules belonging to the given account",
                 "tags": [
                     "Auto Creation Rules"
                 ],
@@ -1464,7 +1468,7 @@
             ],
             "get": {
                 "operationId": "getAutoCreationRule",
-                "summary": "Returns the auto-creation rule",
+                "summary": "Gets an auto-creation rule",
                 "tags": [
                     "Auto Creation Rules"
                 ],
