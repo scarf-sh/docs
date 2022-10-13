@@ -1,0 +1,3177 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "2.0.0",
+        "title": "Scarf API",
+        "license": {
+            "name": "MIT"
+        }
+    },
+    "servers": [
+        {
+            "url": "https://api.scarf.sh"
+        }
+    ],
+    "tags": [
+        {
+            "name": "Users",
+            "description": "Public information about users."
+        },
+        {
+            "name": "Organizations",
+            "description": "Control organizations and their users."
+        },
+        {
+            "name": "Packages",
+            "description": "Manage Packages"
+        },
+        {
+            "name": "Tracking Pixels",
+            "description": "Manage Tracking Pixels"
+        },
+        {
+            "name": "Auto Creation Rules",
+            "description": "Manage Auto Creation Rules"
+        }
+    ],
+    "security": [
+        {
+            "ApiToken": []
+        }
+    ],
+    "paths": {
+        "/v2/packages/{owner}/overview": {
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/owner"
+                }
+            ],
+            "get": {
+                "operationId": "getPackagesOverview",
+                "summary": "Gets a paginated list of packages belonging to the given owner",
+                "tags": [
+                    "Packages"
+                ],
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "required": false,
+                        "explode": true,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/components/schemas/PackageType"
+                            }
+                        }
+                    },
+                    {
+                        "name": "after",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "example": "b9aef4a5-f4b4-472c-ad49-088781a175d4"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/per_page"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A page of packages",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "required": [
+                                        "results"
+                                    ],
+                                    "properties": {
+                                        "results": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/OverviewPackage"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "404": {
+                        "description": "Package not found"
+                    }
+                }
+            }
+        },
+        "/v2/packages/{owner}": {
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/owner"
+                }
+            ],
+            "get": {
+                "operationId": "getPackages",
+                "summary": "Gets a paginated list of packages belonging to the given owner",
+                "tags": [
+                    "Packages"
+                ],
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "required": false,
+                        "explode": true,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/components/schemas/PackageType"
+                            }
+                        }
+                    },
+                    {
+                        "name": "after",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "example": "b9aef4a5-f4b4-472c-ad49-088781a175d4"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/per_page"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A page of packages",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "required": [
+                                        "results"
+                                    ],
+                                    "properties": {
+                                        "results": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Package"
+                                            }
+                                        },
+                                        "_links": {
+                                            "$ref": "#/components/schemas/CursorLinks"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "404": {
+                        "description": "Package not found"
+                    }
+                }
+            },
+            "post": {
+                "operationId": "createPackage",
+                "summary": "Creates a new package",
+                "tags": [
+                    "Packages"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreatePackage"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successfully created package",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Package"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not found"
+                    },
+                    "422": {
+                        "description": "Request is not valid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CreatePackageError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/packages/{owner}/{package_type}/{package_name}": {
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/owner"
+                },
+                {
+                    "$ref": "#/components/parameters/package_type"
+                },
+                {
+                    "$ref": "#/components/parameters/package_name"
+                }
+            ],
+            "get": {
+                "operationId": "getPackageByName",
+                "summary": "Gets a package by specified package type and name",
+                "tags": [
+                    "Packages"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Package details",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Package"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Owner or Package not found"
+                    }
+                }
+            }
+        },
+        "/v2/packages/{owner}/{package_id}": {
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/owner"
+                },
+                {
+                    "$ref": "#/components/parameters/package_id"
+                }
+            ],
+            "get": {
+                "operationId": "getPackageById",
+                "summary": "Gets a package by specified id",
+                "tags": [
+                    "Packages"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Package details",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Package"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Owner or Package not found"
+                    }
+                }
+            },
+            "put": {
+                "operationId": "updatePackage",
+                "summary": "Updates an existing package",
+                "tags": [
+                    "Packages"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdatePackage"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Package updated successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Package"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not found"
+                    },
+                    "422": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UpdatePackageError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "operationId": "deletePackage",
+                "summary": "Deletes a package",
+                "tags": [
+                    "Packages"
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Package deleted successfully"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    }
+                }
+            }
+        },
+        "/v2/packages/{owner}/{package_id}/tracking-pixels": {
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/owner"
+                },
+                {
+                    "$ref": "#/components/parameters/package_id"
+                }
+            ],
+            "get": {
+                "parameters": [
+                    {
+                        "name": "after",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "example": "dbba955a-7567-4300-8630-088054db2222"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/per_page"
+                    }
+                ],
+                "operationId": "getPackageTrackingPixels",
+                "summary": "Gets all the tracking-pixels associated with a particular package",
+                "tags": [
+                    "Packages"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of tracking pixels for the requested package",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/TrackingPixel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not found"
+                    }
+                }
+            }
+        },
+        "/v2/packages/{owner}/{package_id}/domains": {
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/owner"
+                },
+                {
+                    "$ref": "#/components/parameters/package_id"
+                }
+            ],
+            "get": {
+                "operationId": "getPackageDomains",
+                "summary": "Gets all domains of a specified package.",
+                "tags": [
+                    "Packages"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of package domains",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Domain"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Owner or package not found"
+                    }
+                }
+            },
+            "post": {
+                "operationId": "createPackageDomain",
+                "summary": "Creates a new package domain. Currently, it only works for File and Python packages",
+                "tags": [
+                    "Packages"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreatePackageDomain"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Package domain created successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Domain"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not found"
+                    },
+                    "422": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CreatePackageDomainError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/packages/{owner}/{package_id}/domains/{domain_id}": {
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/owner"
+                },
+                {
+                    "$ref": "#/components/parameters/package_id"
+                },
+                {
+                    "$ref": "#/components/parameters/domain_id"
+                }
+            ],
+            "get": {
+                "operationId": "getPackageDomain",
+                "summary": "Gets a package domain by specified id",
+                "tags": [
+                    "Packages"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Package domain",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Domain"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Package domain not found"
+                    }
+                }
+            },
+            "delete": {
+                "operationId": "deletePackageDomain",
+                "summary": "Deletes a package domain",
+                "tags": [
+                    "Packages"
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Package domain deleted successfully"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    }
+                }
+            }
+        },
+        "/v2/packages/{owner}/{package_id}/routes": {
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/owner"
+                },
+                {
+                    "$ref": "#/components/parameters/package_id"
+                }
+            ],
+            "get": {
+                "parameters": [
+                    {
+                        "name": "after",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "x-tie-haskell-type": "Scarf.Capability.Parameters.RouteId",
+                            "example": "3kTMd"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/per_page"
+                    }
+                ],
+                "operationId": "getPackageRoutes",
+                "summary": "Gets all package routes (only for File Packages)",
+                "tags": [
+                    "Packages"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of package routes returned successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/PackageRoute"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not found"
+                    }
+                }
+            },
+            "post": {
+                "operationId": "createPackageRoute",
+                "summary": "Creates a new package route (only for File Packages)",
+                "tags": [
+                    "Packages"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreatePackageRoute"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Package route created successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PackageRoute"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not found"
+                    },
+                    "422": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CreatePackageRouteError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/packages/{owner}/{package_id}/routes/{route_id}": {
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/owner"
+                },
+                {
+                    "$ref": "#/components/parameters/package_id"
+                },
+                {
+                    "$ref": "#/components/parameters/route_id"
+                }
+            ],
+            "get": {
+                "operationId": "getPackageRoute",
+                "summary": "Gets the details of a package route",
+                "tags": [
+                    "Packages"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Package route returned successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PackageRoute"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not found"
+                    }
+                }
+            },
+            "delete": {
+                "operationId": "deletePackageRoute",
+                "summary": "Deletes a package route",
+                "tags": [
+                    "Packages"
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Package route deleted successfully"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    },
+                    "422": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeletePackageRouteError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/packages/{owner}/{package_id}/permissions": {
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/owner"
+                },
+                {
+                    "$ref": "#/components/parameters/package_id"
+                }
+            ],
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/per_page"
+                    },
+                    {
+                        "name": "after",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "x-tie-haskell-type": "Scarf.Capability.Parameters.UserId",
+                            "example": "7bea2612-d30a-43e3-bf2b-d390eb125eb0"
+                        }
+                    }
+                ],
+                "operationId": "getPackagePermissions",
+                "summary": "Gets a list of package permissions. Only when owner is a User",
+                "tags": [
+                    "Packages"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Package permissions returned successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/PackagePermission"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not found"
+                    }
+                }
+            },
+            "post": {
+                "operationId": "setPackagePermission",
+                "summary": "Sets a package permission. Only when owner is a User",
+                "tags": [
+                    "Packages"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SetPackagePermission"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "204": {
+                        "description": "Package permission set successfully"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    },
+                    "422": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/packages/{owner}/{package_id}/permissions/{username}": {
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/owner"
+                },
+                {
+                    "$ref": "#/components/parameters/package_id"
+                },
+                {
+                    "$ref": "#/components/parameters/username"
+                }
+            ],
+            "delete": {
+                "operationId": "deletePackagePermission",
+                "summary": "Deletes a package permission",
+                "tags": [
+                    "Packages"
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Package permission deleted successfully"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    }
+                }
+            }
+        },
+        "/v2/organizations/{organization_name}": {
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/organization_name"
+                }
+            ],
+            "get": {
+                "operationId": "getOrganization",
+                "summary": "Gets the organization details",
+                "tags": [
+                    "Organizations"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Requested organization",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Organization"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    }
+                }
+            },
+            "put": {
+                "operationId": "updateOrganization",
+                "summary": "Updates the organization details",
+                "tags": [
+                    "Organizations"
+                ],
+                "requestBody": {
+                    "description": "Organization details",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateOrganization"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Updated organization",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Organization"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    },
+                    "422": {
+                        "description": "Request is not valid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UpdateOrganizationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/organizations/{organization_name}/members": {
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/organization_name"
+                }
+            ],
+            "get": {
+                "operationId": "getOrganizationMembers",
+                "summary": "Gets a paginated list of members of an organization",
+                "tags": [
+                    "Organizations"
+                ],
+                "parameters": [
+                    {
+                        "name": "after",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "x-tie-haskell-type": "Scarf.Capability.Parameters.UserId",
+                            "example": "3kTMd"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/per_page"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Members response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "required": [
+                                        "results"
+                                    ],
+                                    "properties": {
+                                        "results": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/OrganizationMember"
+                                            }
+                                        },
+                                        "_links": {
+                                            "$ref": "#/components/schemas/CursorLinks"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/LoginNotFound"
+                    }
+                }
+            },
+            "post": {
+                "operationId": "addOrganizationMember",
+                "summary": "Adds user to an organization",
+                "tags": [
+                    "Organizations"
+                ],
+                "requestBody": {
+                    "description": "Member details",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AddOrganizationMember"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Member created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OrganizationMember"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    },
+                    "422": {
+                        "description": "Request is not valid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UpsertOrganizationMemberError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/organizations/{organization_name}/members/{organization_member}": {
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/organization_name"
+                },
+                {
+                    "$ref": "#/components/parameters/organization_member"
+                }
+            ],
+            "get": {
+                "operationId": "getOrganizationMember",
+                "summary": "Gets an organization member",
+                "tags": [
+                    "Organizations"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Member",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OrganizationMember"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not found"
+                    }
+                }
+            },
+            "put": {
+                "operationId": "updateOrganizationMemberRole",
+                "summary": "Updates the role of an organization member",
+                "tags": [
+                    "Organizations"
+                ],
+                "requestBody": {
+                    "description": "New role",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/OrganizationMemberRoleObject"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Updated role",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OrganizationMember"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    },
+                    "422": {
+                        "description": "Request is not valid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UpsertOrganizationMemberError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "operationId": "deleteOrganizationMember",
+                "summary": "Removes the user from the organization",
+                "tags": [
+                    "Organizations"
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Member removed"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    },
+                    "422": {
+                        "description": "Request is not valid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeleteOrganizationMemberError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/users/{username}": {
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/username"
+                }
+            ],
+            "get": {
+                "operationId": "getUserInformation",
+                "summary": "Gets user information",
+                "tags": [
+                    "Users"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User's public information.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/User"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            }
+        },
+        "/v2/users/{username}/organizations": {
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/username"
+                }
+            ],
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/organization_id"
+                    },
+                    {
+                        "$ref": "#/components/parameters/per_page"
+                    }
+                ],
+                "operationId": "getUserOrganizations",
+                "summary": "Gets a list of the user organizations",
+                "tags": [
+                    "Users"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Organizations",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "required": [
+                                        "results"
+                                    ],
+                                    "properties": {
+                                        "results": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/OrganizationMembership"
+                                            }
+                                        },
+                                        "_links": {
+                                            "$ref": "#/components/schemas/CursorLinks"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            }
+        },
+        "/v2/tracking-pixels/{owner}": {
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/owner"
+                }
+            ],
+            "get": {
+                "operationId": "getTrackingPixels",
+                "summary": "Gets a paginated list of tracking pixels belonging to the given account",
+                "tags": [
+                    "Tracking Pixels"
+                ],
+                "parameters": [
+                    {
+                        "name": "after",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "example": "dbba955a-7567-4300-8630-088054db2222"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/per_page"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A page of tracking pixels",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "required": [
+                                        "results"
+                                    ],
+                                    "properties": {
+                                        "results": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/TrackingPixel"
+                                            }
+                                        },
+                                        "_links": {
+                                            "$ref": "#/components/schemas/CursorLinks"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Owner not found"
+                    }
+                }
+            },
+            "post": {
+                "operationId": "createTrackingPixel",
+                "summary": "Creates a tracking pixel",
+                "tags": [
+                    "Tracking Pixels"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateTrackingPixel"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created tracking pixel",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TrackingPixel"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not found"
+                    },
+                    "422": {
+                        "description": "Request is not valid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CreateTrackingPixelError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/tracking-pixels/{owner}/{tracking_pixel_id}": {
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/owner"
+                },
+                {
+                    "$ref": "#/components/parameters/tracking_pixel_id"
+                }
+            ],
+            "get": {
+                "operationId": "getTrackingPixel",
+                "summary": "Gets a tracking pixel",
+                "tags": [
+                    "Tracking Pixels"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Tracking pixel",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TrackingPixel"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not found"
+                    }
+                }
+            },
+            "put": {
+                "operationId": "updateTrackingPixel",
+                "summary": "Updates a tracking pixel",
+                "tags": [
+                    "Tracking Pixels"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateTrackingPixel"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Updated tracking pixel",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TrackingPixel"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Pixel not found"
+                    },
+                    "422": {
+                        "description": "Request is not valid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UpdateTrackingPixelError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "operationId": "deleteTrackingPixel",
+                "summary": "Deletes a tracking pixel",
+                "tags": [
+                    "Tracking Pixels"
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Tracking pixel deleted successfully"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/LoginNotFound"
+                    }
+                }
+            }
+        },
+        "/v2/auto-creation-rules/{owner}": {
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/owner"
+                }
+            ],
+            "get": {
+                "operationId": "getAutoCreationRules",
+                "summary": "Gets a paginated list of auto-creation rules belonging to the given account",
+                "tags": [
+                    "Auto Creation Rules"
+                ],
+                "parameters": [
+                    {
+                        "name": "after",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "x-tie-haskell-type": "Scarf.Capability.Parameters.AutoCreationRuleId",
+                            "example": "3kTMd"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/per_page"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A page of auto-creation rules",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "required": [
+                                        "results",
+                                        "_links"
+                                    ],
+                                    "properties": {
+                                        "results": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/AutoCreationRule"
+                                            }
+                                        },
+                                        "_links": {
+                                            "$ref": "#/components/schemas/CursorLinks"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/LoginNotFound"
+                    }
+                }
+            },
+            "post": {
+                "operationId": "createAutoCreationRule",
+                "summary": "Creates an auto-creation rule",
+                "tags": [
+                    "Auto Creation Rules"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateAutoCreationRule"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created auto-creation rule",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AutoCreationRule"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/LoginNotFound"
+                    },
+                    "422": {
+                        "description": "Request is not valid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CreateAutoCreationRuleError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/auto-creation-rules/{owner}/{auto_creation_rule_id}": {
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/owner"
+                },
+                {
+                    "$ref": "#/components/parameters/auto_creation_rule_id"
+                }
+            ],
+            "get": {
+                "operationId": "getAutoCreationRule",
+                "summary": "Gets an auto-creation rule",
+                "tags": [
+                    "Auto Creation Rules"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Auto-creation rule",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AutoCreationRule"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/LoginNotFound"
+                    }
+                }
+            },
+            "put": {
+                "operationId": "updateAutoCreationRule",
+                "summary": "Updates an auto-creation rule",
+                "tags": [
+                    "Auto Creation Rules"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateAutoCreationRule"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Updated auto-creation rule",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AutoCreationRule"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/LoginNotFound"
+                    },
+                    "422": {
+                        "description": "Request is not valid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UpdateAutoCreationRuleError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "operationId": "deleteAutoCreationRule",
+                "summary": "Deletes an auto-creation rule",
+                "tags": [
+                    "Auto Creation Rules"
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Auto-creation rule deleted successfully"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/LoginNotFound"
+                    },
+                    "422": {
+                        "description": "Request is not valid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UpdateAutoCreationRuleError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "ApiToken": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        },
+        "responses": {
+            "LoginNotFound": {
+                "description": "The requested login does not exist"
+            },
+            "Unauthorized": {
+                "description": "Unauthorized access"
+            }
+        },
+        "parameters": {
+            "username": {
+                "name": "username",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "x-tie-haskell-type": "Scarf.Capability.Parameters.UserName",
+                    "example": "johndoe"
+                }
+            },
+            "login": {
+                "name": "login",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "example": "johndoe"
+                }
+            },
+            "owner": {
+                "name": "owner",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "example": "johndoe"
+                }
+            },
+            "page": {
+                "name": "page",
+                "in": "query",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "example": 1
+                }
+            },
+            "per_page": {
+                "name": "per_page",
+                "in": "query",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "example": 30
+                }
+            },
+            "order": {
+                "name": "order",
+                "in": "query",
+                "required": false,
+                "schema": {
+                    "$ref": "#/components/schemas/Order"
+                }
+            },
+            "package_id": {
+                "name": "package_id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "example": "b9aef4a5-f4b4-472c-ad49-088781a175d4"
+                }
+            },
+            "package_type": {
+                "name": "package_type",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "$ref": "#/components/schemas/PackageType"
+                }
+            },
+            "package_name": {
+                "name": "package_name",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "example": "pizza-place-locator"
+                }
+            },
+            "domain_id": {
+                "name": "domain_id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "x-tie-haskell-type": "Scarf.Capability.Parameters.DomainId",
+                    "example": "30b31fc0-6a4b-40f8-ab99-9fb26bf568d1"
+                }
+            },
+            "route_id": {
+                "name": "route_id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "x-tie-haskell-type": "Scarf.Capability.Parameters.RouteId",
+                    "example": "a617d8c9-d5ce-4241-af50-3de3abec5c36"
+                }
+            },
+            "organization_id": {
+                "name": "organization_id",
+                "in": "query",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "x-tie-haskell-type": "Scarf.Capability.Parameters.OrganizationId",
+                    "example": "5a959df0-a44b-4c7d-89de-72daf5becee1"
+                }
+            },
+            "organization_name": {
+                "name": "organization_name",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "x-tie-haskell-type": "Scarf.Capability.Parameters.OrganizationName",
+                    "example": "joes-pizza-place"
+                }
+            },
+            "organization_member": {
+                "name": "organization_member",
+                "description": "Username of the member",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "x-tie-haskell-type": "Scarf.Capability.Parameters.UserName",
+                    "example": "johndoe"
+                }
+            },
+            "tracking_pixel_id": {
+                "name": "tracking_pixel_id",
+                "description": "Tracking pixel ID",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "example": "dbba955a-7567-4300-8630-088054db2222"
+                }
+            },
+            "auto_creation_rule_id": {
+                "name": "auto_creation_rule_id",
+                "description": "Auto-creation rule ID",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "x-tie-haskell-type": "Scarf.Capability.Parameters.AutoCreationRuleId",
+                    "example": "3kTMd"
+                }
+            }
+        },
+        "schemas": {
+            "Error": {
+                "type": "object",
+                "required": [
+                    "message"
+                ],
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Order": {
+                "type": "string",
+                "enum": [
+                    "asc",
+                    "desc"
+                ]
+            },
+            "PaginationLinks": {
+                "type": "object",
+                "properties": {
+                    "next": {
+                        "type": "string"
+                    },
+                    "self": {
+                        "type": "string"
+                    },
+                    "previous": {
+                        "type": "string"
+                    }
+                }
+            },
+            "CursorLinks": {
+                "type": "object",
+                "properties": {
+                    "next": {
+                        "type": "string"
+                    },
+                    "self": {
+                        "type": "string"
+                    }
+                }
+            },
+            "UserType": {
+                "type": "string",
+                "enum": [
+                    "user",
+                    "organization"
+                ]
+            },
+            "User": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "name",
+                    "type",
+                    "created_at",
+                    "updated_at"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "example": "6fc9d139-90e0-4295-8d16-747562e4d721"
+                    },
+                    "name": {
+                        "type": "string",
+                        "example": "johndoe"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "type": {
+                        "$ref": "#/components/schemas/UserType"
+                    }
+                }
+            },
+            "PackageLinks": {
+                "type": "object",
+                "properties": {
+                    "self": {
+                        "type": "string",
+                        "example": "https://api.scarf.sh/packages/joes-pizza-place/b9aef4a5-f4b4-472c-ad49-088781a175d4"
+                    },
+                    "domains": {
+                        "type": "string",
+                        "example": "https://api.scarf.sh/packages/joes-pizza-place/b9aef4a5-f4b4-472c-ad49-088781a175d4/domains"
+                    }
+                }
+            },
+            "DomainLinks": {
+                "type": "object",
+                "required": [
+                    "self"
+                ],
+                "properties": {
+                    "self": {
+                        "type": "string",
+                        "example": "https://api.scarf.sh/packages/joes-pizza-place/b9aef4a5-f4b4-472c-ad49-088781a175d4/domains/30b31fc0-6a4b-40f8-ab99-9fb26bf568d1"
+                    }
+                }
+            },
+            "PackageRouteLinks": {
+                "type": "object",
+                "required": [
+                    "self"
+                ],
+                "properties": {
+                    "self": {
+                        "type": "string",
+                        "example": "https://api.scarf.sh/packages/joes-pizza-place/b9aef4a5-f4b4-472c-ad49-088781a175d4/routes/a617d8c9-d5ce-4241-af50-3de3abec5c36"
+                    }
+                }
+            },
+            "PackageType": {
+                "type": "string",
+                "enum": [
+                    "docker",
+                    "file",
+                    "python",
+                    "npm",
+                    "hackage"
+                ]
+            },
+            "PackageIdentifier": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "name",
+                    "owner",
+                    "type"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "example": "b9aef4a5-f4b4-472c-ad49-088781a175d4"
+                    },
+                    "name": {
+                        "type": "string",
+                        "example": "pizza-place-locator"
+                    },
+                    "owner": {
+                        "type": "string",
+                        "example": "joes-pizze-place"
+                    },
+                    "type": {
+                        "$ref": "#/components/schemas/PackageType"
+                    }
+                }
+            },
+            "PackageBase": {
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/PackageIdentifier"
+                    },
+                    {
+                        "type": "object",
+                        "required": [
+                            "created_at",
+                            "updated_at"
+                        ],
+                        "properties": {
+                            "short_description": {
+                                "type": "string",
+                                "example": "A tool to help you find the nearest pizza place!"
+                            },
+                            "long_description": {
+                                "type": "string",
+                                "example": "A long description about how pizza-place-locator works."
+                            },
+                            "website": {
+                                "type": "string",
+                                "example": "pizza-place-locator.tiki"
+                            },
+                            "created_at": {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            "updated_at": {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            "_links": {
+                                "$ref": "#/components/schemas/PackageLinks"
+                            }
+                        }
+                    }
+                ]
+            },
+            "FilePackageRoute": {
+                "type": "object",
+                "required": [
+                    "incoming_path",
+                    "outgoing_url",
+                    "owner",
+                    "package_id"
+                ],
+                "properties": {
+                    "incoming_path": {
+                        "type": "string",
+                        "example": "/downloads/{version}/pizza-place-locator-{version}.tar.gz"
+                    },
+                    "outgoing_url": {
+                        "type": "string",
+                        "example": "https://dl.pizza-place-locator.tiki/downloads/{version}.tar.gz"
+                    }
+                }
+            },
+            "FilePackage": {
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/PackageBase"
+                    }
+                ]
+            },
+            "DockerPackage": {
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/PackageBase"
+                    },
+                    {
+                        "type": "object",
+                        "required": [
+                            "backend_registry"
+                        ],
+                        "properties": {
+                            "backend_registry": {
+                                "type": "string",
+                                "example": "docker.io"
+                            }
+                        }
+                    }
+                ]
+            },
+            "PythonPackage": {
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/PackageBase"
+                    },
+                    {
+                        "type": "object",
+                        "required": [
+                            "repository_url"
+                        ],
+                        "properties": {
+                            "repository_url": {
+                                "type": "string",
+                                "example": "pypi.org"
+                            }
+                        }
+                    }
+                ]
+            },
+            "NpmPackage": {
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/PackageBase"
+                    }
+                ]
+            },
+            "HackagePackage": {
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/PackageBase"
+                    }
+                ]
+            },
+            "Package": {
+                "discriminator": {
+                    "propertyName": "type",
+                    "mapping": {
+                        "docker": "#/components/schemas/DockerPackage",
+                        "file": "#/components/schemas/FilePackage",
+                        "python": "#/components/schemas/PythonPackage",
+                        "npm": "#/components/schemas/NpmPackage",
+                        "hackage": "#/components/schemas/HackagePackage"
+                    }
+                },
+                "oneOf": [
+                    {
+                        "$ref": "#/components/schemas/FilePackage"
+                    },
+                    {
+                        "$ref": "#/components/schemas/DockerPackage"
+                    },
+                    {
+                        "$ref": "#/components/schemas/PythonPackage"
+                    },
+                    {
+                        "$ref": "#/components/schemas/NpmPackage"
+                    },
+                    {
+                        "$ref": "#/components/schemas/HackagePackage"
+                    }
+                ]
+            },
+            "OverviewPackage": {
+                "type": "object",
+                "required": [
+                    "package",
+                    "domains"
+                ],
+                "properties": {
+                    "package": {
+                        "$ref": "#/components/schemas/Package"
+                    },
+                    "domains": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Domain"
+                        }
+                    }
+                }
+            },
+            "CreatePackageBase": {
+                "type": "object",
+                "required": [
+                    "type",
+                    "name"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "example": "pizza-place-locator"
+                    },
+                    "type": {
+                        "$ref": "#/components/schemas/PackageType"
+                    },
+                    "short_description": {
+                        "type": "string",
+                        "example": "A tool to help you find the nearest pizza place!"
+                    },
+                    "long_description": {
+                        "type": "string",
+                        "example": "A long description about how pizza-place-locator works."
+                    },
+                    "website": {
+                        "type": "string",
+                        "example": "pizza-place-locator.tiki"
+                    }
+                }
+            },
+            "CreateDockerPackage": {
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/CreatePackageBase"
+                    },
+                    {
+                        "type": "object",
+                        "required": [
+                            "backend_registry"
+                        ],
+                        "properties": {
+                            "backend_registry": {
+                                "type": "string",
+                                "example": "docker.io"
+                            },
+                            "domain": {
+                                "type": "string",
+                                "example": "cr.pizza-place-locator.tiki"
+                            }
+                        }
+                    }
+                ]
+            },
+            "CreateFilePackage": {
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/CreatePackageBase"
+                    },
+                    {
+                        "type": "object",
+                        "required": [
+                            "incoming_path",
+                            "outgoing_url"
+                        ],
+                        "properties": {
+                            "incoming_path": {
+                                "type": "string",
+                                "example": "/downloads/{version}/pizza-place-locator-{version}.tar.gz"
+                            },
+                            "outgoing_url": {
+                                "type": "string",
+                                "example": "https://dl.pizza-place-locator.tiki/downloads/{version}.tar.gz"
+                            },
+                            "domain": {
+                                "type": "string",
+                                "example": "cr.pizza-place-locator.tiki"
+                            }
+                        }
+                    }
+                ]
+            },
+            "CreatePythonPackage": {
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/CreatePackageBase"
+                    },
+                    {
+                        "type": "object",
+                        "properties": {
+                            "repository_url": {
+                                "type": "string",
+                                "example": "pypi.org"
+                            },
+                            "domain": {
+                                "type": "string",
+                                "example": "cr.pizza-place-locator.tiki"
+                            }
+                        }
+                    }
+                ]
+            },
+            "CreateNpmPackage": {
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/CreatePackageBase"
+                    }
+                ]
+            },
+            "CreateHackagePackage": {
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/CreatePackageBase"
+                    }
+                ]
+            },
+            "CreatePackage": {
+                "discriminator": {
+                    "propertyName": "type",
+                    "mapping": {
+                        "docker": "#/components/schemas/CreateDockerPackage",
+                        "file": "#/components/schemas/CreateFilePackage",
+                        "python": "#/components/schemas/CreatePythonPackage",
+                        "npm": "#/components/schemas/CreateNpmPackage",
+                        "hackage": "#/components/schemas/CreateHackagePackage"
+                    }
+                },
+                "oneOf": [
+                    {
+                        "$ref": "#/components/schemas/CreateDockerPackage"
+                    },
+                    {
+                        "$ref": "#/components/schemas/CreateFilePackage"
+                    },
+                    {
+                        "$ref": "#/components/schemas/CreatePythonPackage"
+                    },
+                    {
+                        "$ref": "#/components/schemas/CreateNpmPackage"
+                    },
+                    {
+                        "$ref": "#/components/schemas/CreateHackagePackage"
+                    }
+                ]
+            },
+            "CreatePackageError": {
+                "type": "object",
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "enum": [
+                            "backend-registry-is-empty",
+                            "backend-registry-has-invalid-characters",
+                            "public-domain-is-empty",
+                            "public-domain-is-already-in-use",
+                            "public-domain-has-invalid-characters",
+                            "public-domain-is-invalid-scarf-domain",
+                            "docker-image-name-is-longer-than-255-characters",
+                            "docker-image-name-has-empty-segments",
+                            "docker-image-name-has-invalid-characters",
+                            "package-is-conflicting",
+                            "package-already-exists",
+                            "package-name-is-empty",
+                            "outgoing-url-invalid-url-template",
+                            "outgoing-url-must-be-absolute",
+                            "incoming-path-invalid-url-template",
+                            "incoming-path-must-be-relative",
+                            "incoming-path-must-start-with-slash",
+                            "incoming-path-missing-variables",
+                            "invalid-python-project-name",
+                            "repository-url-invalid",
+                            "repository-url-not-https",
+                            "repository-url-missing-trailing-slash"
+                        ]
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                }
+            },
+            "UpdatePackageBase": {
+                "type": "object",
+                "required": [
+                    "type",
+                    "name"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "example": "pizza-place-locator"
+                    },
+                    "type": {
+                        "$ref": "#/components/schemas/PackageType"
+                    },
+                    "short_description": {
+                        "type": "string",
+                        "example": "A tool to help you find the nearest pizza place!"
+                    },
+                    "long_description": {
+                        "type": "string",
+                        "example": "A long description about how pizza-place-locator works."
+                    },
+                    "website": {
+                        "type": "string",
+                        "example": "pizza-place-locator.tiki"
+                    }
+                }
+            },
+            "UpdateDockerPackage": {
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/UpdatePackageBase"
+                    },
+                    {
+                        "type": "object",
+                        "required": [
+                            "backend_registry"
+                        ],
+                        "properties": {
+                            "backend_registry": {
+                                "type": "string",
+                                "example": "docker.io"
+                            }
+                        }
+                    }
+                ]
+            },
+            "UpdateFilePackage": {
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/UpdatePackageBase"
+                    }
+                ]
+            },
+            "UpdatePythonPackage": {
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/UpdatePackageBase"
+                    },
+                    {
+                        "type": "object",
+                        "required": [
+                            "repository_url"
+                        ],
+                        "properties": {
+                            "repository_url": {
+                                "type": "string",
+                                "example": "pypi.org"
+                            }
+                        }
+                    }
+                ]
+            },
+            "UpdateNpmPackage": {
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/UpdatePackageBase"
+                    }
+                ]
+            },
+            "UpdateHackagePackage": {
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/UpdatePackageBase"
+                    }
+                ]
+            },
+            "UpdatePackage": {
+                "discriminator": {
+                    "propertyName": "type",
+                    "mapping": {
+                        "docker": "#/components/schemas/UpdateDockerPackage",
+                        "file": "#/components/schemas/UpdateFilePackage",
+                        "python": "#/components/schemas/UpdatePythonPackage",
+                        "npm": "#/components/schemas/UpdateNpmPackage",
+                        "hackage": "#/components/schemas/UpdateHackagePackage"
+                    }
+                },
+                "oneOf": [
+                    {
+                        "$ref": "#/components/schemas/UpdateDockerPackage"
+                    },
+                    {
+                        "$ref": "#/components/schemas/UpdatePythonPackage"
+                    },
+                    {
+                        "$ref": "#/components/schemas/UpdateFilePackage"
+                    },
+                    {
+                        "$ref": "#/components/schemas/UpdateNpmPackage"
+                    },
+                    {
+                        "$ref": "#/components/schemas/UpdateHackagePackage"
+                    }
+                ]
+            },
+            "UpdatePackageError": {
+                "discriminator": {
+                    "propertyName": "type",
+                    "mapping": {
+                        "docker": "#/components/schemas/UpdateDockerPackageError",
+                        "python": "#/components/schemas/UpdatePythonPackageError",
+                        "file": "#/components/schemas/UpdateFilePackageError",
+                        "npm": "#/components/schemas/UpdateNpmPackageError",
+                        "hackage": "#/components/schemas/UpdateHackagePackageError"
+                    }
+                },
+                "oneOf": [
+                    {
+                        "$ref": "#/components/schemas/UpdateDockerPackageError"
+                    },
+                    {
+                        "$ref": "#/components/schemas/UpdatePythonPackageError"
+                    },
+                    {
+                        "$ref": "#/components/schemas/UpdateFilePackageError"
+                    },
+                    {
+                        "$ref": "#/components/schemas/UpdateNpmPackageError"
+                    },
+                    {
+                        "$ref": "#/components/schemas/UpdateHackagePackageError"
+                    }
+                ]
+            },
+            "UpdateDockerPackageError": {
+                "type": "object",
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "enum": [
+                            "backend-registry-is-empty",
+                            "backend-registry-has-invalid-characters",
+                            "public-domain-is-empty",
+                            "public-domain-is-already-in-use",
+                            "public-domain-has-invalid-characters",
+                            "public-domain-is-invalid-scarf-domain",
+                            "docker-image-name-is-longer-than-255-characters",
+                            "docker-image-name-has-empty-segments",
+                            "docker-image-name-has-invalid-characters",
+                            "package-is-conflicting",
+                            "package-already-exists",
+                            "package-name-is-empty"
+                        ]
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                }
+            },
+            "UpdatePythonPackageError": {
+                "type": "object",
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "enum": [
+                            "package-already-exists",
+                            "package-name-is-empty",
+                            "package-is-conflicting",
+                            "invalid-python-project-name",
+                            "repository-url-invalid",
+                            "repository-url-not-https",
+                            "repository-url-missing-trailing-slash"
+                        ]
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                }
+            },
+            "UpdateFilePackageError": {
+                "type": "object",
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "enum": [
+                            "package-already-exists",
+                            "package-name-is-empty"
+                        ]
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                }
+            },
+            "UpdateNpmPackageError": {
+                "type": "object",
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "enum": [
+                            "package-already-exists",
+                            "package-name-is-empty"
+                        ]
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                }
+            },
+            "UpdateHackagePackageError": {
+                "type": "object",
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "enum": [
+                            "package-already-exists",
+                            "package-name-is-empty"
+                        ]
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Domain": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "name",
+                    "owner",
+                    "package_id",
+                    "created_at",
+                    "links"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "x-tie-haskell-type": "Scarf.Capability.Parameters.DomainId",
+                        "example": "30b31fc0-6a4b-40f8-ab99-9fb26bf568d1"
+                    },
+                    "name": {
+                        "type": "string",
+                        "example": "pizza-place-locator.tiki"
+                    },
+                    "owner": {
+                        "type": "string",
+                        "example": "joes-pizze-place"
+                    },
+                    "package_id": {
+                        "type": "string",
+                        "example": "b9aef4a5-f4b4-472c-ad49-088781a175d4"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "_links": {
+                        "$ref": "#/components/schemas/DomainLinks"
+                    }
+                }
+            },
+            "CreatePackageDomain": {
+                "type": "object",
+                "required": [
+                    "name"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "example": "pizza-place-locator.tiki"
+                    }
+                }
+            },
+            "CreatePackageDomainError": {
+                "type": "object",
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "enum": [
+                            "domain-is-empty",
+                            "domain-is-already-in-use",
+                            "domain-has-invalid-characters",
+                            "domain-is-invalid-scarf-domain"
+                        ]
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                }
+            },
+            "PackageRoute": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "incoming_path",
+                    "outgoing_url",
+                    "created_at",
+                    "owner",
+                    "package_id",
+                    "_links"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "x-tie-haskell-type": "Scarf.Capability.Parameters.RouteId",
+                        "example": "e471333e-6e6a-4e74-ac1c-84aba4937c48"
+                    },
+                    "incoming_path": {
+                        "type": "string",
+                        "example": "/downloads/{version}/pizza-place-locator-{version}.tar.gz"
+                    },
+                    "outgoing_url": {
+                        "type": "string",
+                        "example": "https://dl.pizza-place-locator.tiki/downloads/{version}.tar.gz"
+                    },
+                    "owner": {
+                        "type": "string",
+                        "example": "joes-pizze-place"
+                    },
+                    "package_id": {
+                        "type": "string",
+                        "example": "b9aef4a5-f4b4-472c-ad49-088781a175d4"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "_links": {
+                        "$ref": "#/components/schemas/PackageRouteLinks"
+                    }
+                }
+            },
+            "CreatePackageRoute": {
+                "type": "object",
+                "required": [
+                    "incoming_path",
+                    "outgoing_url"
+                ],
+                "properties": {
+                    "incoming_path": {
+                        "type": "string",
+                        "example": "/downloads/{version}/pizza-place-locator-{version}.tar.gz"
+                    },
+                    "outgoing_url": {
+                        "type": "string",
+                        "example": "https://dl.pizza-place-locator.tiki/downloads/{version}.tar.gz"
+                    }
+                }
+            },
+            "CreatePackageRouteError": {
+                "type": "object",
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "enum": [
+                            "not-a-file-package",
+                            "outgoing-url-invalid-url-template",
+                            "outgoing-url-must-be-absolute",
+                            "incoming-path-invalid-url-template",
+                            "incoming-path-must-be-relative",
+                            "incoming-path-must-start-with-slash",
+                            "incoming-path-missing-variables"
+                        ]
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                }
+            },
+            "DeletePackageRouteError": {
+                "type": "object",
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "enum": [
+                            "not-a-file-package"
+                        ]
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                }
+            },
+            "PackagePermissionLevel": {
+                "type": "string",
+                "enum": [
+                    "member",
+                    "admin",
+                    "owner"
+                ]
+            },
+            "PackagePermission": {
+                "type": "object",
+                "required": [
+                    "user_id",
+                    "username",
+                    "permission_level"
+                ],
+                "properties": {
+                    "username": {
+                        "type": "string",
+                        "example": "janedoe"
+                    },
+                    "permission_level": {
+                        "$ref": "#/components/schemas/PackagePermissionLevel"
+                    },
+                    "user_id": {
+                        "type": "string",
+                        "x-tie-haskell-type": "Scarf.Capability.Parameters.UserId",
+                        "example": "3kTMd"
+                    }
+                }
+            },
+            "SetPackagePermission": {
+                "type": "object",
+                "required": [
+                    "username",
+                    "permission_level"
+                ],
+                "properties": {
+                    "username": {
+                        "type": "string",
+                        "example": "janedoe"
+                    },
+                    "permission_level": {
+                        "$ref": "#/components/schemas/PackagePermissionLevel"
+                    }
+                }
+            },
+            "Organization": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "name",
+                    "created_at",
+                    "updated_at"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "x-tie-haskell-type": "Scarf.Capability.Parameters.OrganizationId",
+                        "example": "5a959df0-a44b-4c7d-89de-72daf5becee1"
+                    },
+                    "name": {
+                        "type": "string",
+                        "example": "joes-pizze-place"
+                    },
+                    "description": {
+                        "type": "string",
+                        "example": "All of Joe's Pizza Place packages"
+                    },
+                    "billing_email": {
+                        "type": "string",
+                        "example": "accounting@pizza-place-locator.tiki"
+                    },
+                    "website": {
+                        "type": "string",
+                        "example": "pizza-place-locator.tiki"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            },
+            "UpdateOrganization": {
+                "type": "object",
+                "required": [
+                    "name",
+                    "billing_email"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "example": "joes-pizze-place"
+                    },
+                    "description": {
+                        "type": "string",
+                        "example": "All of Joe's Pizza Place packages"
+                    },
+                    "website": {
+                        "type": "string",
+                        "example": "pizza-place-locator.tiki"
+                    },
+                    "billing_email": {
+                        "type": "string",
+                        "example": "accounting@pizza-place-locator.tiki"
+                    }
+                }
+            },
+            "UpdateOrganizationError": {
+                "type": "object",
+                "required": [
+                    "message",
+                    "code"
+                ],
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    },
+                    "code": {
+                        "type": "string",
+                        "enum": [
+                            "invalid-organization-name",
+                            "entity-already-exists",
+                            "invalid-billing-email",
+                            "invalid-website-url"
+                        ]
+                    }
+                }
+            },
+            "OrganizationMemberRole": {
+                "type": "string",
+                "enum": [
+                    "admin",
+                    "member",
+                    "owner"
+                ]
+            },
+            "AddOrganizationMember": {
+                "type": "object",
+                "required": [
+                    "username",
+                    "role"
+                ],
+                "properties": {
+                    "username": {
+                        "type": "string",
+                        "x-tie-haskell-type": "Scarf.Capability.Parameters.UserName",
+                        "example": "janedoe"
+                    },
+                    "role": {
+                        "$ref": "#/components/schemas/OrganizationMemberRole"
+                    }
+                }
+            },
+            "OrganizationMember": {
+                "type": "object",
+                "required": [
+                    "user_id",
+                    "username",
+                    "role"
+                ],
+                "properties": {
+                    "user_id": {
+                        "type": "string",
+                        "x-tie-haskell-type": "Scarf.Capability.Parameters.UserId",
+                        "example": "3kTMd"
+                    },
+                    "username": {
+                        "type": "string",
+                        "x-tie-haskell-type": "Scarf.Capability.Parameters.UserName",
+                        "example": "janedoe"
+                    },
+                    "role": {
+                        "$ref": "#/components/schemas/OrganizationMemberRole"
+                    }
+                }
+            },
+            "OrganizationMemberRoleObject": {
+                "type": "object",
+                "required": [
+                    "role"
+                ],
+                "properties": {
+                    "role": {
+                        "$ref": "#/components/schemas/OrganizationMemberRole"
+                    }
+                }
+            },
+            "OrganizationMembership": {
+                "type": "object",
+                "required": [
+                    "organization_id",
+                    "organization_name",
+                    "role"
+                ],
+                "properties": {
+                    "organization_id": {
+                        "type": "string",
+                        "x-tie-haskell-type": "Scarf.Capability.Parameters.OrganizationId",
+                        "example": "5a959df0-a44b-4c7d-89de-72daf5becee1"
+                    },
+                    "organization_name": {
+                        "type": "string",
+                        "example": "joes-pizze-place"
+                    },
+                    "organization_description": {
+                        "type": "string",
+                        "example": "All of Joe's Pizza Place packages"
+                    },
+                    "organization_website": {
+                        "type": "string",
+                        "example": "pizza-place-locator.tiki"
+                    },
+                    "role": {
+                        "$ref": "#/components/schemas/OrganizationMemberRole"
+                    }
+                }
+            },
+            "TrackingPixel": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "owner",
+                    "created_at",
+                    "updated_at"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "example": "dbba955a-7567-4300-8630-088054db2222"
+                    },
+                    "owner": {
+                        "type": "string",
+                        "example": "joes-pizza-place"
+                    },
+                    "name": {
+                        "type": "string",
+                        "example": "Pizza-place-locator documentation"
+                    },
+                    "package": {
+                        "$ref": "#/components/schemas/PackageIdentifier"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            },
+            "CreateTrackingPixel": {
+                "type": "object",
+                "required": [
+                    "name"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "example": "Pizza-place-locator documentation"
+                    },
+                    "package_id": {
+                        "type": "string",
+                        "example": "b9aef4a5-f4b4-472c-ad49-088781a175d4"
+                    }
+                }
+            },
+            "CreateTrackingPixelError": {
+                "type": "object",
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "enum": [
+                            "name-is-empty",
+                            "name-already-exists"
+                        ]
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                }
+            },
+            "UpdateTrackingPixel": {
+                "type": "object",
+                "required": [
+                    "name"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "example": "Pizza-place-locator documentation"
+                    },
+                    "package_id": {
+                        "type": "string",
+                        "example": "b9aef4a5-f4b4-472c-ad49-088781a175d4"
+                    }
+                }
+            },
+            "UpdateTrackingPixelError": {
+                "type": "object",
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "enum": [
+                            "name-is-empty",
+                            "name-already-exists"
+                        ]
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                }
+            },
+            "AutoCreationRule": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "owner",
+                    "pattern",
+                    "public_domain",
+                    "backend_domain",
+                    "created_at",
+                    "updated_at"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "example": "d14ea96f-f497-4238-956f-99aeba743b97"
+                    },
+                    "owner": {
+                        "type": "string",
+                        "example": "joes-pizza-place"
+                    },
+                    "pattern": {
+                        "type": "string",
+                        "example": "pizza-joes/*"
+                    },
+                    "public_domain": {
+                        "type": "string",
+                        "example": "cr.pizza-place-locator.tiki"
+                    },
+                    "backend_domain": {
+                        "type": "string",
+                        "example": "docker.io"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            },
+            "CreateAutoCreationRule": {
+                "type": "object",
+                "required": [
+                    "pattern",
+                    "backend_domain"
+                ],
+                "properties": {
+                    "pattern": {
+                        "type": "string",
+                        "example": "pizza-joes/*"
+                    },
+                    "public_domain": {
+                        "type": "string",
+                        "example": "cr.pizza-place-locator.tiki"
+                    },
+                    "backend_domain": {
+                        "type": "string",
+                        "example": "docker.io"
+                    }
+                }
+            },
+            "CreateAutoCreationRuleError": {
+                "type": "object",
+                "required": [
+                    "message",
+                    "code"
+                ],
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    },
+                    "code": {
+                        "type": "string",
+                        "enum": [
+                            "backend-registry-is-empty",
+                            "backend-registry-has-invalid-characters",
+                            "public-domain-is-empty",
+                            "public-domain-is-already-in-use",
+                            "public-domain-has-invalid-characters",
+                            "public-domain-is-invalid-scarf-domain",
+                            "rule-is-conflicting",
+                            "pattern-is-empty",
+                            "pattern-is-invalid",
+                            "pattern-is-duplicated",
+                            "pattern-has-invalid-characters"
+                        ]
+                    }
+                }
+            },
+            "UpdateAutoCreationRule": {
+                "type": "object",
+                "required": [
+                    "pattern",
+                    "backend_domain"
+                ],
+                "properties": {
+                    "pattern": {
+                        "type": "string",
+                        "example": "pizza-joes/*"
+                    },
+                    "public_domain": {
+                        "type": "string",
+                        "example": "cr.pizza-place-locator.tiki"
+                    },
+                    "backend_domain": {
+                        "type": "string",
+                        "example": "docker.io"
+                    }
+                }
+            },
+            "UserSearch": {
+                "type": "object",
+                "properties": {
+                    "username": {
+                        "type": "string",
+                        "example": "janedoe"
+                    }
+                }
+            },
+            "UpdateAutoCreationRuleError": {
+                "type": "object",
+                "required": [
+                    "message",
+                    "code"
+                ],
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    },
+                    "code": {
+                        "type": "string",
+                        "enum": [
+                            "backend-registry-is-empty",
+                            "backend-registry-has-invalid-characters",
+                            "public-domain-is-empty",
+                            "public-domain-is-already-in-use",
+                            "public-domain-has-invalid-characters",
+                            "public-domain-is-invalid-scarf-domain",
+                            "rule-is-conflicting",
+                            "pattern-is-empty",
+                            "pattern-is-invalid",
+                            "pattern-is-duplicated",
+                            "pattern-has-invalid-characters"
+                        ]
+                    }
+                }
+            },
+            "DeleteOrganizationMemberError": {
+                "type": "object",
+                "required": [
+                    "message",
+                    "code"
+                ],
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    },
+                    "code": {
+                        "type": "string",
+                        "enum": [
+                            "cannot-delete-owner"
+                        ]
+                    }
+                }
+            },
+            "UpsertOrganizationMemberError": {
+                "type": "object",
+                "required": [
+                    "message",
+                    "code"
+                ],
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    },
+                    "code": {
+                        "type": "string",
+                        "enum": [
+                            "cannot-revoke-ownership"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}

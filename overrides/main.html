@@ -14,3 +14,10 @@
 <meta property="og:image" content="https://scarf-sh.s3.us-west-2.amazonaws.com/images/scarf-og-v2.png" />
 <meta property="og:image:type" content="image/png" />
 {% endblock %}
+
+{% block libs %}
+    {{ super() }}
+    {% if page and page.title == 'API V2 (beta)' %}
+    <script src="{{ base_url }}/scripts/hide-sidebar.js"></script>
+    {% endif %}
+{% endblock %}

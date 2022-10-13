@@ -4,6 +4,8 @@ on:
     branches:
       - master
 
+  pull_request:
+
 jobs:
   build:
     name: Deploy docs
@@ -19,3 +21,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CUSTOM_DOMAIN: docs.scarf.sh
           EXTRA_PACKAGES: build-base
+          REQUIREMENTS: requirements.txt
