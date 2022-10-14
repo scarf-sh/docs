@@ -15,11 +15,11 @@
     "tags": [
         {
             "name": "Users",
-            "description": "Public information about users."
+            "description": "Manage Users"
         },
         {
             "name": "Organizations",
-            "description": "Control organizations and their users."
+            "description": "Manage Organizations"
         },
         {
             "name": "Packages",
@@ -32,6 +32,10 @@
         {
             "name": "Auto Creation Rules",
             "description": "Manage Auto Creation Rules"
+        },
+        {
+            "name": "Collections",
+            "description": "Manage Collections"
         }
     ],
     "security": [
@@ -63,6 +67,14 @@
                             "items": {
                                 "$ref": "#/components/schemas/PackageType"
                             }
+                        }
+                    },
+                    {
+                        "name": "permission",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/components/schemas/PackagePermissionLevel"
                         }
                     },
                     {
@@ -132,6 +144,14 @@
                             "items": {
                                 "$ref": "#/components/schemas/PackageType"
                             }
+                        }
+                    },
+                    {
+                        "name": "permission",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/components/schemas/PackagePermissionLevel"
                         }
                     },
                     {
@@ -1350,6 +1370,211 @@
                 }
             }
         },
+        "/v2/collections/{owner}": {
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/owner"
+                }
+            ],
+            "get": {
+                "operationId": "getCollections",
+                "summary": "Gets a paginated list of collections belonging to the given account",
+                "tags": [
+                    "Collections"
+                ],
+                "parameters": [
+                    {
+                        "name": "after",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "x-tie-haskell-type": "Scarf.Capability.Parameters.CollectionId",
+                            "example": "3kTMd"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/per_page"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A page of collections",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "required": [
+                                        "results",
+                                        "_links"
+                                    ],
+                                    "properties": {
+                                        "results": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Collection"
+                                            }
+                                        },
+                                        "_links": {
+                                            "$ref": "#/components/schemas/CursorLinks"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/LoginNotFound"
+                    }
+                }
+            },
+            "post": {
+                "operationId": "createCollection",
+                "summary": "Creates a collection",
+                "tags": [
+                    "Collections"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateCollection"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created collection",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Collection"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/LoginNotFound"
+                    },
+                    "422": {
+                        "description": "Request is not valid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CreateCollectionError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/collections/{owner}/{collection_id}": {
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/owner"
+                },
+                {
+                    "$ref": "#/components/parameters/collection_id"
+                }
+            ],
+            "get": {
+                "operationId": "getCollection",
+                "summary": "Gets a collection",
+                "tags": [
+                    "Collections"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Collection details",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Collection"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "404": {
+                        "description": "Collection not found"
+                    }
+                }
+            },
+            "put": {
+                "operationId": "updateCollection",
+                "summary": "Updates a collection",
+                "tags": [
+                    "Collections"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateCollection"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Collection updated successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Collection"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "404": {
+                        "description": "Collection not found"
+                    },
+                    "422": {
+                        "description": "Request is not valid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UpdateCollectionError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "operationId": "deleteCollection",
+                "summary": "Deletes a collection",
+                "tags": [
+                    "Collections"
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Collection deleted successfully"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "404": {
+                        "description": "Collection not found"
+                    }
+                }
+            }
+        },
         "/v2/auto-creation-rules/{owner}": {
             "parameters": [
                 {
@@ -1358,7 +1583,7 @@
             ],
             "get": {
                 "operationId": "getAutoCreationRules",
-                "summary": "Gets a paginated list of auto-creation rules belonging to the given account",
+                "summary": "(DEPRECATED - use Collections instead) Gets a paginated list of auto-creation rules belonging to the given account",
                 "tags": [
                     "Auto Creation Rules"
                 ],
@@ -1413,7 +1638,7 @@
             },
             "post": {
                 "operationId": "createAutoCreationRule",
-                "summary": "Creates an auto-creation rule",
+                "summary": "(DEPRECATED - use Collections instead) Creates an auto-creation rule",
                 "tags": [
                     "Auto Creation Rules"
                 ],
@@ -1468,7 +1693,7 @@
             ],
             "get": {
                 "operationId": "getAutoCreationRule",
-                "summary": "Gets an auto-creation rule",
+                "summary": "(DEPRECATED - use Collections instead) Gets an auto-creation rule",
                 "tags": [
                     "Auto Creation Rules"
                 ],
@@ -1493,7 +1718,7 @@
             },
             "put": {
                 "operationId": "updateAutoCreationRule",
-                "summary": "Updates an auto-creation rule",
+                "summary": "(DEPRECATED - use Collections instead) Updates an auto-creation rule",
                 "tags": [
                     "Auto Creation Rules"
                 ],
@@ -1538,7 +1763,7 @@
             },
             "delete": {
                 "operationId": "deleteAutoCreationRule",
-                "summary": "Deletes an auto-creation rule",
+                "summary": "(DEPRECATED - use Collections instead) Deletes an auto-creation rule",
                 "tags": [
                     "Auto Creation Rules"
                 ],
@@ -1732,6 +1957,17 @@
                 "schema": {
                     "type": "string",
                     "x-tie-haskell-type": "Scarf.Capability.Parameters.AutoCreationRuleId",
+                    "example": "3kTMd"
+                }
+            },
+            "collection_id": {
+                "name": "collection_id",
+                "description": "Collection ID",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "x-tie-haskell-type": "Scarf.Capability.Parameters.CollectionId",
                     "example": "3kTMd"
                 }
             }
@@ -3168,6 +3404,161 @@
                         "type": "string",
                         "enum": [
                             "cannot-revoke-ownership"
+                        ]
+                    }
+                }
+            },
+            "Collection": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "owner",
+                    "pattern",
+                    "public_domain",
+                    "backend_domain",
+                    "type",
+                    "created_at",
+                    "updated_at"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "example": "d14ea96f-f497-4238-956f-99aeba743b97"
+                    },
+                    "owner": {
+                        "type": "string",
+                        "example": "joes-pizza-place"
+                    },
+                    "pattern": {
+                        "type": "string",
+                        "example": "pizza-joes/*"
+                    },
+                    "public_domain": {
+                        "type": "string",
+                        "example": "cr.pizza-place-locator.tiki"
+                    },
+                    "backend_domain": {
+                        "type": "string",
+                        "example": "docker.io"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "docker"
+                        ]
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            },
+            "CreateCollection": {
+                "type": "object",
+                "required": [
+                    "pattern",
+                    "backend_domain",
+                    "type"
+                ],
+                "properties": {
+                    "pattern": {
+                        "type": "string",
+                        "example": "pizza-joes/*"
+                    },
+                    "public_domain": {
+                        "type": "string",
+                        "example": "cr.pizza-place-locator.tiki"
+                    },
+                    "backend_domain": {
+                        "type": "string",
+                        "example": "docker.io"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "docker"
+                        ]
+                    }
+                }
+            },
+            "CreateCollectionError": {
+                "type": "object",
+                "required": [
+                    "message",
+                    "code"
+                ],
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    },
+                    "code": {
+                        "type": "string",
+                        "enum": [
+                            "backend-registry-is-empty",
+                            "backend-registry-has-invalid-characters",
+                            "public-domain-is-empty",
+                            "public-domain-is-already-in-use",
+                            "public-domain-has-invalid-characters",
+                            "public-domain-is-invalid-scarf-domain",
+                            "collection-is-conflicting",
+                            "pattern-is-empty",
+                            "pattern-is-invalid",
+                            "pattern-is-duplicated",
+                            "pattern-has-invalid-characters",
+                            "type-is-invalid"
+                        ]
+                    }
+                }
+            },
+            "UpdateCollection": {
+                "type": "object",
+                "required": [
+                    "pattern",
+                    "backend_domain"
+                ],
+                "properties": {
+                    "pattern": {
+                        "type": "string",
+                        "example": "pizza-joes/*"
+                    },
+                    "public_domain": {
+                        "type": "string",
+                        "example": "cr.pizza-place-locator.tiki"
+                    },
+                    "backend_domain": {
+                        "type": "string",
+                        "example": "docker.io"
+                    }
+                }
+            },
+            "UpdateCollectionError": {
+                "type": "object",
+                "required": [
+                    "message",
+                    "code"
+                ],
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    },
+                    "code": {
+                        "type": "string",
+                        "enum": [
+                            "backend-registry-is-empty",
+                            "backend-registry-has-invalid-characters",
+                            "public-domain-is-empty",
+                            "public-domain-is-already-in-use",
+                            "public-domain-has-invalid-characters",
+                            "public-domain-is-invalid-scarf-domain",
+                            "collection-is-conflicting",
+                            "pattern-is-empty",
+                            "pattern-is-invalid",
+                            "pattern-is-duplicated",
+                            "pattern-has-invalid-characters"
                         ]
                     }
                 }
