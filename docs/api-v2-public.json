@@ -30,8 +30,8 @@
             "description": "Manage Tracking Pixels"
         },
         {
-            "name": "Auto Creation Rules",
-            "description": "Manage Auto Creation Rules"
+            "name": "Collections",
+            "description": "Manage Package Collections"
         }
     ],
     "security": [
@@ -1350,17 +1350,17 @@
                 }
             }
         },
-        "/v2/auto-creation-rules/{owner}": {
+        "/v2/collections/{owner}": {
             "parameters": [
                 {
                     "$ref": "#/components/parameters/owner"
                 }
             ],
             "get": {
-                "operationId": "getAutoCreationRules",
-                "summary": "Gets a paginated list of auto-creation rules belonging to the given account",
+                "operationId": "getCollections",
+                "summary": "Gets a paginated list of collections belonging to the given account",
                 "tags": [
-                    "Auto Creation Rules"
+                    "Collections"
                 ],
                 "parameters": [
                     {
@@ -1369,7 +1369,7 @@
                         "required": false,
                         "schema": {
                             "type": "string",
-                            "x-tie-haskell-type": "Scarf.Capability.Parameters.AutoCreationRuleId",
+                            "x-tie-haskell-type": "Scarf.Capability.Parameters.CollectionId",
                             "example": "3kTMd"
                         }
                     },
@@ -1379,7 +1379,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "A page of auto-creation rules",
+                        "description": "A page of collections",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1392,7 +1392,7 @@
                                         "results": {
                                             "type": "array",
                                             "items": {
-                                                "$ref": "#/components/schemas/AutoCreationRule"
+                                                "$ref": "#/components/schemas/Collection"
                                             }
                                         },
                                         "_links": {
@@ -1412,28 +1412,28 @@
                 }
             },
             "post": {
-                "operationId": "createAutoCreationRule",
-                "summary": "Creates an auto-creation rule",
+                "operationId": "createCollection",
+                "summary": "Creates a collection",
                 "tags": [
-                    "Auto Creation Rules"
+                    "Collections"
                 ],
                 "requestBody": {
                     "required": true,
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/CreateAutoCreationRule"
+                                "$ref": "#/components/schemas/CreateCollection"
                             }
                         }
                     }
                 },
                 "responses": {
                     "201": {
-                        "description": "Created auto-creation rule",
+                        "description": "Created collection",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/AutoCreationRule"
+                                    "$ref": "#/components/schemas/Collection"
                                 }
                             }
                         }
@@ -1449,7 +1449,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/CreateAutoCreationRuleError"
+                                    "$ref": "#/components/schemas/CreateCollectionError"
                                 }
                             }
                         }
@@ -1457,28 +1457,28 @@
                 }
             }
         },
-        "/v2/auto-creation-rules/{owner}/{auto_creation_rule_id}": {
+        "/v2/collections/{owner}/{collection_id}": {
             "parameters": [
                 {
                     "$ref": "#/components/parameters/owner"
                 },
                 {
-                    "$ref": "#/components/parameters/auto_creation_rule_id"
+                    "$ref": "#/components/parameters/collection_id"
                 }
             ],
             "get": {
-                "operationId": "getAutoCreationRule",
-                "summary": "Gets an auto-creation rule",
+                "operationId": "getCollection",
+                "summary": "Gets a collection",
                 "tags": [
-                    "Auto Creation Rules"
+                    "Collections"
                 ],
                 "responses": {
                     "200": {
-                        "description": "Auto-creation rule",
+                        "description": "Collection details",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/AutoCreationRule"
+                                    "$ref": "#/components/schemas/Collection"
                                 }
                             }
                         }
@@ -1487,33 +1487,33 @@
                         "$ref": "#/components/responses/Unauthorized"
                     },
                     "404": {
-                        "$ref": "#/components/responses/LoginNotFound"
+                        "description": "Collection not found"
                     }
                 }
             },
             "put": {
-                "operationId": "updateAutoCreationRule",
-                "summary": "Updates an auto-creation rule",
+                "operationId": "updateCollection",
+                "summary": "Updates a collection",
                 "tags": [
-                    "Auto Creation Rules"
+                    "Collections"
                 ],
                 "requestBody": {
                     "required": true,
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/UpdateAutoCreationRule"
+                                "$ref": "#/components/schemas/UpdateCollection"
                             }
                         }
                     }
                 },
                 "responses": {
                     "200": {
-                        "description": "Updated auto-creation rule",
+                        "description": "Collection updated successfully",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/AutoCreationRule"
+                                    "$ref": "#/components/schemas/Collection"
                                 }
                             }
                         }
@@ -1522,14 +1522,14 @@
                         "$ref": "#/components/responses/Unauthorized"
                     },
                     "404": {
-                        "$ref": "#/components/responses/LoginNotFound"
+                        "description": "Collection not found"
                     },
                     "422": {
                         "description": "Request is not valid",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/UpdateAutoCreationRuleError"
+                                    "$ref": "#/components/schemas/UpdateCollectionError"
                                 }
                             }
                         }
@@ -1537,30 +1537,20 @@
                 }
             },
             "delete": {
-                "operationId": "deleteAutoCreationRule",
-                "summary": "Deletes an auto-creation rule",
+                "operationId": "deleteCollection",
+                "summary": "Deletes a collection",
                 "tags": [
-                    "Auto Creation Rules"
+                    "Collections"
                 ],
                 "responses": {
                     "204": {
-                        "description": "Auto-creation rule deleted successfully"
+                        "description": "Collection deleted successfully"
                     },
                     "403": {
                         "$ref": "#/components/responses/Unauthorized"
                     },
                     "404": {
-                        "$ref": "#/components/responses/LoginNotFound"
-                    },
-                    "422": {
-                        "description": "Request is not valid",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/UpdateAutoCreationRuleError"
-                                }
-                            }
-                        }
+                        "description": "Collection not found"
                     }
                 }
             }
@@ -1724,14 +1714,14 @@
                     "example": "dbba955a-7567-4300-8630-088054db2222"
                 }
             },
-            "auto_creation_rule_id": {
-                "name": "auto_creation_rule_id",
-                "description": "Auto-creation rule ID",
+            "collection_id": {
+                "name": "collection_id",
+                "description": "Collection ID",
                 "in": "path",
                 "required": true,
                 "schema": {
                     "type": "string",
-                    "x-tie-haskell-type": "Scarf.Capability.Parameters.AutoCreationRuleId",
+                    "x-tie-haskell-type": "Scarf.Capability.Parameters.CollectionId",
                     "example": "3kTMd"
                 }
             }
@@ -2984,155 +2974,6 @@
                     },
                     "message": {
                         "type": "string"
-                    }
-                }
-            },
-            "AutoCreationRule": {
-                "type": "object",
-                "required": [
-                    "id",
-                    "owner",
-                    "pattern",
-                    "public_domain",
-                    "backend_domain",
-                    "created_at",
-                    "updated_at"
-                ],
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "example": "d14ea96f-f497-4238-956f-99aeba743b97"
-                    },
-                    "owner": {
-                        "type": "string",
-                        "example": "joes-pizza-place"
-                    },
-                    "pattern": {
-                        "type": "string",
-                        "example": "pizza-joes/*"
-                    },
-                    "public_domain": {
-                        "type": "string",
-                        "example": "cr.pizza-place-locator.tiki"
-                    },
-                    "backend_domain": {
-                        "type": "string",
-                        "example": "docker.io"
-                    },
-                    "created_at": {
-                        "type": "string",
-                        "format": "date-time"
-                    },
-                    "updated_at": {
-                        "type": "string",
-                        "format": "date-time"
-                    }
-                }
-            },
-            "CreateAutoCreationRule": {
-                "type": "object",
-                "required": [
-                    "pattern",
-                    "backend_domain"
-                ],
-                "properties": {
-                    "pattern": {
-                        "type": "string",
-                        "example": "pizza-joes/*"
-                    },
-                    "public_domain": {
-                        "type": "string",
-                        "example": "cr.pizza-place-locator.tiki"
-                    },
-                    "backend_domain": {
-                        "type": "string",
-                        "example": "docker.io"
-                    }
-                }
-            },
-            "CreateAutoCreationRuleError": {
-                "type": "object",
-                "required": [
-                    "message",
-                    "code"
-                ],
-                "properties": {
-                    "message": {
-                        "type": "string"
-                    },
-                    "code": {
-                        "type": "string",
-                        "enum": [
-                            "backend-registry-is-empty",
-                            "backend-registry-has-invalid-characters",
-                            "public-domain-is-empty",
-                            "public-domain-is-already-in-use",
-                            "public-domain-has-invalid-characters",
-                            "public-domain-is-invalid-scarf-domain",
-                            "rule-is-conflicting",
-                            "pattern-is-empty",
-                            "pattern-is-invalid",
-                            "pattern-is-duplicated",
-                            "pattern-has-invalid-characters"
-                        ]
-                    }
-                }
-            },
-            "UpdateAutoCreationRule": {
-                "type": "object",
-                "required": [
-                    "pattern",
-                    "backend_domain"
-                ],
-                "properties": {
-                    "pattern": {
-                        "type": "string",
-                        "example": "pizza-joes/*"
-                    },
-                    "public_domain": {
-                        "type": "string",
-                        "example": "cr.pizza-place-locator.tiki"
-                    },
-                    "backend_domain": {
-                        "type": "string",
-                        "example": "docker.io"
-                    }
-                }
-            },
-            "UserSearch": {
-                "type": "object",
-                "properties": {
-                    "username": {
-                        "type": "string",
-                        "example": "janedoe"
-                    }
-                }
-            },
-            "UpdateAutoCreationRuleError": {
-                "type": "object",
-                "required": [
-                    "message",
-                    "code"
-                ],
-                "properties": {
-                    "message": {
-                        "type": "string"
-                    },
-                    "code": {
-                        "type": "string",
-                        "enum": [
-                            "backend-registry-is-empty",
-                            "backend-registry-has-invalid-characters",
-                            "public-domain-is-empty",
-                            "public-domain-is-already-in-use",
-                            "public-domain-has-invalid-characters",
-                            "public-domain-is-invalid-scarf-domain",
-                            "rule-is-conflicting",
-                            "pattern-is-empty",
-                            "pattern-is-invalid",
-                            "pattern-is-duplicated",
-                            "pattern-has-invalid-characters"
-                        ]
                     }
                 }
             },
