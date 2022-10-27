@@ -8,8 +8,10 @@ on:
 
 jobs:
   build:
+
     name: Deploy docs
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
     steps:
       - name: Checkout main
         uses: actions/checkout@v2
