@@ -125,7 +125,7 @@ It will print out the JSON payload, as well as any debugging information.
 
 #### I distribute a package on npm, and scarf-js is in our dependency tree. Can I disable the analytics for my downstream dependents?
 
-Yes. By opting out of analytics via `package.json`, any package upstream will have analytics disbabled.
+Yes. By opting out of analytics via `package.json`, any package upstream will have analytics disabled.
 
 ```json5
 // your-package/package.json

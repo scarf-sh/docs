@@ -53,8 +53,7 @@ This example will show how to add an additional route. For curl-runnings an addi
 1.) In the top menu click on Tools then in the drop down menu click on Packages.
 ![Packages menu](assets/pics/qs-file-packages/file-package-menu-packages.png)
 
-2.) In the package list dashboard there will be a list of all your packages. These can be filtered by type of packages by selecting the package package types you'd like to see. In our example as we just created a file package we're going to want to select File.
-![Packages type filetering](assets/pics/qs-file-packages/packages-filter.png)
+2.) In the package list dashboard there will be a list of all your packages. These can be filtered by type of packages by selecting the package types you'd like to see. In our example as we just created a file package we're going to want to select File.
 
 3.) Navigate to our newly create file package and in the top right of it's box click the `View Details` button.
 ![Click the Show Detials button](assets/pics/qs-file-packages/file-package-view-details.png)

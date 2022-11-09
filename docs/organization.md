@@ -4,7 +4,7 @@ To create an organization, in the header menu click on the `Organization` button
 
 ![Organization button](assets/pics/orgs/organization-button.png)
 
-alternatively you can access it via the plus iccon and selecting `New Organization`
+alternatively, you can access it via the plus icon and selecting `New Organization`
 
 ![Organization button](assets/pics/orgs/create-new-organization.png)
 
@@ -22,7 +22,7 @@ As you can see you are presented with two options:
 
 If your current username is what you would like your organization to be called, you can convert your account into an organization. To do this, please follow the steps below:
 
-From the spash screen shown above click on `Convert Account to organization`. You will be presented with the following:
+From the splash screen shown above click on `Convert Account to organization`. You will be presented with the following:
 
 ![Image title](assets/pics/orgs/convert-account-spash.png)
 Click on `Get Started` and you will see:
@@ -31,13 +31,13 @@ Click on `Get Started` and you will see:
 
 You now need to select a new username as your current username will be converted into an organization and the new username will be the owner of this newly created organization. Fill in the other inputs as required.
 
-Lastly before clicking `Save` be mindfull that all of your account’s packages will be transferred to the organization.
+Lastly before clicking `Save` be mindful that all of your account’s packages will be transferred to the organization.
 
 That's it you have now converted your account into an organization, the next screen you will see is the organization screen.
 
 ![Organization page](assets/pics/orgs/organization-page.png)
 
-Now as previously promted log out and back into your account. You will be presented with the following home page just like when you first open your account. Do not be alarmed, not all is lost it's just that all your data/packages have been transferred to your new organization.
+Now as previously prompted log out and back into your account. You will be presented with the following home page just like when you first open your account. Do not be alarmed, not all is lost it's just that all your data/packages have been transferred to your new organization.
 ![Welcome to Scarf](assets/pics/orgs/welcome-to-scarf.png)
 
 To access these you now have access to new menu items in the top right header menu, it will look as follows:
