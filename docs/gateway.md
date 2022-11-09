@@ -160,37 +160,16 @@ If your container is on Docker Hub as `acme/rocket-skates`, your install command
 
 Rather than creating packages entries for each container in your namespace, you can specify rules to automaically forward all matching traffic and create package entries automatically. By using a template, e.g. ``repository/*``, every time an image matching that template is first downloaded, Scarf will automatically create a page for that package (e.g. repository/test01, repository/new-item).
 
-### Creating an Auto Package Rule from Settings
-To get started, navigate to your user-settings page.
+### Creating Collections
+To acces Collections, in the top menu click `Tools` > `Collections`.
 
-![Image title](assets/pics/auto-creation/user_settings_pg.png)
+![Collections menu](assets/pics/auto-creation/collections-menu.png)
 
-Next, please navigate to the Automatic Creation Paths table. Here, you’ll find all your current templates- with the options to edit, delete, and create new rules.
+You will now be presented with the `Collections` page that give you the options to edit, delete, and create new collections.
 
-![Image title](assets/pics/auto-creation/user_auto_creation_table.png)
+![Collections page](assets/pics/auto-creation/collections-page.png)
 
-To create a new rule, please first insert the template that will be used. It can be anything of the form: ``repository/*``, ``repository/{ variable1, variable2 }``, etc. Next, insert the backend domain, the domain where your images are hosted (e.g. registry-1.docker.io, ghcr.io, gcr.io). Please keep in mind, each public domain should map to one backend domain. (E.g. If you’re using your Scarf domain for your images hosted on docker, you will not be able to use your Scarf domain for your images hosted on Amazon.) Submit your new rule!
-
-
-### Creating an Auto Package Rule for Your Organization
-
-To begin, navigate to “Manage Organizations.”
-![Image title](assets/pics/auto-creation/manage_org_page.png)
-
-Please select the organization you would like to add a template for.
-
-In the Edit Organization Details page for that specific organization, you will find the Auto Creation Paths table at the very bottom.
-
-![Image title](assets/pics/auto-creation/org_auto_creation_table.png)
-
-From here, please first insert the template that will be used. It can be anything of the form: ``repository/*``, ``repository/{ variable1, variable2 }``, etc.
-
-Next, insert the backend domain, the domain where your images are hosted (e.g. registry-1.docker.io, ghcr.io, gcr.io). Please keep in mind, each public domain should map to one backend domain. (E.g. If you’re using your Scarf domain for your images hosted on docker, you will not be able to use your Scarf domain for your images hosted on Amazon.)
-
-Submit your new rule!
-
-
-![Image title](assets/pics/auto-creation/create_org_auto_path.png)
+To create a new collection, please first insert the template that will be used. It can be anything of the form: ``repository/*``, ``repository/{ variable1, variable2 }``, etc. Next, insert the backend domain, the domain where your images are hosted (e.g. registry-1.docker.io, ghcr.io, gcr.io). Please keep in mind, each public domain should map to one backend domain. (E.g. If you’re using your Scarf domain for your images hosted on docker, you will not be able to use your Scarf domain for your images hosted on Amazon.) Submit your new rule!
 
 ## FAQ
 

@@ -1,67 +1,65 @@
-### Creating an organization
+## Creating an organization
 
-To create an organization, navigate to your Scarf dashboard. Clicking the username dropdown will bring a few new options:
+To create an organization, in the header menu click on the `Organization` button
 
-- Your dashboard
-- Dashboards for each organization you belong to
-- Manage organizations
-- Create an organization
+![Organization button](assets/pics/orgs/organization-button.png)
 
-Here, you’ll want to click on “Create an organization”:
+alternatively, you can access it via the plus icon and selecting `New Organization`
 
-![Image title](assets/pics/orgs/navigate_create_org.gif)
+![Organization button](assets/pics/orgs/create-new-organization.png)
 
-This will take you to the Create an Organization form:
+If you haven't already setup an organization you will be presented with the following screen:
 
-![Image title](assets/pics/orgs/create_org_form.png)
+![Image title](assets/pics/orgs/organization-splash-screen.png)
 
+As you can see you are presented with two options:
 
-There are two distinct ways to create an organization:
+1. Create Organization: This is if you are happy to keep your user and create a free standing organization.
 
-### Converting your current account to an organization
+2. Convert Account to organization: If it happens that you've added lots of new packages and found that you'd like to put these under an organization umbrella this is the perfect way to achieve that.
 
-If your current username is what you would like your organization to be called, you can  to convert your account into an organization. To do this, please follow the steps below:
+## Converting your current account to an organization
 
-**STEP 1:** Check “Convert my account to an Org” at the top of the form.
-	
-![Image title](assets/pics/orgs/convert_current_account.png)
+If your current username is what you would like your organization to be called, you can convert your account into an organization. To do this, please follow the steps below:
 
+From the splash screen shown above click on `Convert Account to organization`. You will be presented with the following:
 
-This action takes your current username and transfers it to your new organization. You will be prompted to enter a new username that will be given to your user account to replace the transferred one. All of your account’s packages will be transferred to the new organization.
+![Image title](assets/pics/orgs/convert-account-spash.png)
+Click on `Get Started` and you will see:
 
-**STEP 2:** Choose a fresh username of your liking!
+![convert to organization splash screen](assets/pics/orgs/convert-to-organization.png)
 
-![Image title](assets/pics/orgs/create_new_username.png)
+You now need to select a new username as your current username will be converted into an organization and the new username will be the owner of this newly created organization. Fill in the other inputs as required.
 
+Lastly before clicking `Save` be mindful that all of your account’s packages will be transferred to the organization.
 
-Your new username will be used to generate Scarf links for your user account as usual.
+That's it you have now converted your account into an organization, the next screen you will see is the organization screen.
 
-**STEP 3:** Fill out the rest of the form.
+![Organization page](assets/pics/orgs/organization-page.png)
 
-![Image title](assets/pics/orgs/fill_out_org_form.png)
+Now as previously prompted log out and back into your account. You will be presented with the following home page just like when you first open your account. Do not be alarmed, not all is lost it's just that all your data/packages have been transferred to your new organization.
+![Welcome to Scarf](assets/pics/orgs/welcome-to-scarf.png)
 
-**STEP 4:** Click submit! The conversion process will begin, and your account’s packages will be moved to the new organization. You will be logged out and can then log back in with your new username.
+To access these you now have access to new menu items in the top right header menu, it will look as follows:
 
+![New organization menu items](assets/pics/orgs/new-org-menu.png)
 
-After logging in, you’ll see that you’ll be taken to the new user dashboard. Don’t be alarmed! This means your packages have been moved successfully under your new organization.
+Now select the organization and you will see all of your previously created packages and data.
 
-![Image title](assets/pics/orgs/new_homepage.png)
+A little helpful feature is when looking at the top right header menu you will now see two circles. The larger being what organization you are accessing and the smaller one being the user you are doing it with.
 
-If you click the dropdown at the top, you’ll notice a new option underneath your username. That’s correct! It’s your new organization.
+![New organization menu items](assets/pics/orgs/acting-as-organisation.png)
 
-![Image title](assets/pics/orgs/dash_username_dropdown.png)
-
-Using the dropdown menu, you can switch views between your personal user and your various organizations:
-
-![Image title](assets/pics/orgs/switch_dashboards.gif)
+If you ever want to go back to your user then simply select it in the dropdown menu.
 
 
-### Directly creating an organization
-**STEP 1:** Choose an organization name and fill out the form with the correct details.
+## Directly creating an organization
+In a very similar fashion to the converting you current account to an organization, simply select the option from the plus icon dropdown menu.
+![Organization button](assets/pics/orgs/create-new-organization.png)
 
-![Image title](assets/pics/orgs/directly_create_org.png)
+The next screen will prompt you to add your new organization name and other details, click `Save`
+![Organization button](assets/pics/orgs/new-organization.png)
 
+Et voilà! You now have new organization
 
-**STEP 2:** Hit submit! You will be taken to the Manage Organizations page, where your new organization will be listed.
-
-![Image title](assets/pics/orgs/create_org_success.gif)
+![Organization page](assets/pics/orgs/organization-edit-page.png)
