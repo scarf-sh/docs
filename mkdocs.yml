@@ -38,3 +38,4 @@ extra:
       link: https://www.youtube.com/channel/UCiJRrlBKBOgYFRO9eb6pfdg
 plugins:
   - render_swagger
+  - search
