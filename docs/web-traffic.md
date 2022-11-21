@@ -1,5 +1,9 @@
-Scarf can help you identify your commercial users via the web traffic to your project's documentation pages, READMEs, and other web properties. Unlike traditional JavaScript-based web analytics, image-based telemetry works in places where JavaScript execution is not accessible. If you observe commercial users who frequently view your project documentation, this can indicate an opportunity for landing support contracts or even potential sponsorship, to financially support your project.
-
+ Scarf can help you understand how people and companies discover and learn about your project by surfacing insights based on the web traffic to your project's documentation pages, READMEs, and other web properties. Scarf offers lightweight, cookie-free analytics pixels that work anywhere on the internet your content is read. Unlike traditional JavaScript-based web analytics, image-based telemetry works in places where JavaScript execution is not accessible. Not using cookies means no annoying cookie banners are needed, and your readers are never tracked as they continue to surf the web. 
+ 
+ If you observe readers from a particular company frequently viewing your project documentation, this can indicate an opportunity for landing support contracts or sponsorship to financially support your project. Seeing repeat visitors to certain pages in your docs may hint at parts of your project that are confusing or can be clarified. 
+ 
+ Pairing _Documentation Insights_ with Scarf's package analytics can help you better understand your OSS-user-journey, and your associated conversion rates. Given that someone sees your landing page, what's the likelyhood they continue on to download your latest binary, container image, or other artifact?
+ 
 ### Features
 
 Scarf's project Documentation Insights offers insights into:
@@ -8,6 +12,8 @@ Scarf's project Documentation Insights offers insights into:
   * Aggregated location information associated with this web traffic.
   * Which parts of your documentation are looked at most.
   * With tooling that works in READMEs (or rendered docs generally), emails, and other places on the web where JavaScript is not typically executed.
+  * Conversion rates from viewing docs to downloading your artifacts
+
 
 ### How it works
 
