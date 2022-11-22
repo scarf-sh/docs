@@ -1,6 +1,6 @@
 ### Overview
 
-![Gateway.png](https://s3.us-west-2.amazonaws.com/static.scarf.sh/docs/scarf-gateway-full-diagram.png)
+![Gateway.png](./assets/pics/gateway-diagrams/gateway-full.png)
 
 Scarf Gateway is a service that sits in front of your existing software hosting platform(s), acting as a single access-point to all of your artifacts, regardless of where they are actually hosted. By making it easy to host content from your own domain, Scarf Gateway decouples your distribution from your hosting provider and provides in-depth download analytics.
 
@@ -28,7 +28,7 @@ To create your package entry, click "New Package" in the navbar in your Scarf da
 
 #### Container Image Packages
 
-![Gateway.png](https://s3.us-west-2.amazonaws.com/static.scarf.sh/scarf-docker-gateway-infographic.png)
+![Gateway.png](./assets/pics/gateway-diagrams/gateway-containers.png)
 
 Scarf Gateway configuration for a Docker container image entry has two main considerations:
 
@@ -41,7 +41,7 @@ See [Figure 0](#figure_0) to see how these pieces fit together visually.
 
 #### File Packages
 
-![Gateway.png](https://s3.us-west-2.amazonaws.com/static.scarf.sh/scarf-file-gateway-infographic.png)
+![Gateway.png](./assets/pics/gateway-diagrams/gateway-files.png)
 
 Scarf Gateway configuration for a file package entry has three main considerations:
 
@@ -53,7 +53,7 @@ See [Figure 3](#figure_3) to see how these pieces fit together visually.
 
 #### Python Packages
 
-![Gateway.png](https://s3.us-west-2.amazonaws.com/static.scarf.sh/docs/Python+Gateway+Diagram)
+![Gateway.png](./assets/pics/gateway-diagrams/gateway-python.png)
 
 Scarf Gateway configuration for a Python package entry has three main considerations:
 
