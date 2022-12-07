@@ -32,6 +32,10 @@
         {
             "name": "Collections",
             "description": "Manage Collections"
+        },
+        {
+            "name": "Search",
+            "description": "Search packages, tracking pixels and collections"
         }
     ],
     "security": [
@@ -44,6 +48,9 @@
             "post": {
                 "operationId": "search",
                 "summary": "Searches an entities Packages, Tracking Pixels",
+                "tags": [
+                    "Search"
+                ],
                 "requestBody": {
                     "required": true,
                     "content": {
@@ -311,6 +318,9 @@
             ],
             "get": {
                 "operationId": "exportEntityPackageEvents",
+                "tags": [
+                    "Packages"
+                ],
                 "responses": {
                     "200": {
                         "description": "Exports all the package events of an entity",
@@ -375,6 +385,9 @@
             ],
             "get": {
                 "operationId": "exportEntityTrackingPixelEvents",
+                "tags": [
+                    "Tracking Pixels"
+                ],
                 "responses": {
                     "200": {
                         "description": "Exports all the tracking pixel events of an entity",
@@ -442,6 +455,9 @@
             ],
             "get": {
                 "operationId": "exportPackageEvents",
+                "tags": [
+                    "Packages"
+                ],
                 "responses": {
                     "200": {
                         "description": "Exports all the package events of a given package or tracking pixel id",
