@@ -15,11 +15,11 @@
     "tags": [
         {
             "name": "Users",
-            "description": "Public information about users."
+            "description": "Manage Users"
         },
         {
             "name": "Organizations",
-            "description": "Control organizations and their users."
+            "description": "Manage Organizations"
         },
         {
             "name": "Packages",
@@ -31,7 +31,7 @@
         },
         {
             "name": "Collections",
-            "description": "Manage Package Collections"
+            "description": "Manage Collections"
         }
     ],
     "security": [
@@ -40,6 +40,56 @@
         }
     ],
     "paths": {
+        "/v2/search": {
+            "post": {
+                "operationId": "search",
+                "summary": "Searches an entities Packages, Tracking Pixels",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "required": [
+                                    "query"
+                                ],
+                                "properties": {
+                                    "query": {
+                                        "type": "string"
+                                    },
+                                    "context": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Search result",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "required": [
+                                        "results"
+                                    ],
+                                    "properties": {
+                                        "results": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/SearchResultItem"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/v2/packages/{owner}/overview": {
             "parameters": [
                 {
@@ -66,12 +116,20 @@
                         }
                     },
                     {
+                        "name": "permission",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/components/schemas/PackagePermissionLevel"
+                        }
+                    },
+                    {
                         "name": "after",
                         "in": "query",
                         "required": false,
                         "schema": {
                             "type": "string",
-                            "example": "b9aef4a5-f4b4-472c-ad49-088781a175d4"
+                            "example": "library/ubuntu"
                         }
                     },
                     {
@@ -135,12 +193,20 @@
                         }
                     },
                     {
+                        "name": "permission",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/components/schemas/PackagePermissionLevel"
+                        }
+                    },
+                    {
                         "name": "after",
                         "in": "query",
                         "required": false,
                         "schema": {
                             "type": "string",
-                            "example": "b9aef4a5-f4b4-472c-ad49-088781a175d4"
+                            "example": "library/ubuntu"
                         }
                     },
                     {
@@ -216,6 +282,209 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/CreatePackageError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/packages/{owner}/events": {
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/owner"
+                },
+                {
+                    "$ref": "#/components/parameters/start_date"
+                },
+                {
+                    "$ref": "#/components/parameters/end_date"
+                },
+                {
+                    "name": "query",
+                    "in": "query",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "operationId": "exportEntityPackageEvents",
+                "responses": {
+                    "200": {
+                        "description": "Exports all the package events of an entity",
+                        "content": {
+                            "text/csv": {}
+                        },
+                        "headers": {
+                            "Content-Disposition": {
+                                "description": "File name for download in a browser",
+                                "required": true,
+                                "schema": {
+                                    "type": "string",
+                                    "example": "attachment; filename=\"filename.jpg\""
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid parameter",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PackageEventExportError"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PackageEventExportError"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Owner or package not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PackageEventExportError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/tracking-pixels/{owner}/events": {
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/owner"
+                },
+                {
+                    "$ref": "#/components/parameters/start_date"
+                },
+                {
+                    "$ref": "#/components/parameters/end_date"
+                }
+            ],
+            "get": {
+                "operationId": "exportEntityTrackingPixelEvents",
+                "responses": {
+                    "200": {
+                        "description": "Exports all the tracking pixel events of an entity",
+                        "content": {
+                            "text/csv": {}
+                        },
+                        "headers": {
+                            "Content-Disposition": {
+                                "description": "File name for download in a browser",
+                                "required": true,
+                                "schema": {
+                                    "type": "string",
+                                    "example": "attachment; filename=\"filename.jpg\""
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid parameter",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PackageEventExportError"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PackageEventExportError"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Owner or package not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PackageEventExportError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/packages/{owner}/{package_id}/events": {
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/owner"
+                },
+                {
+                    "$ref": "#/components/parameters/package_id"
+                },
+                {
+                    "$ref": "#/components/parameters/start_date"
+                },
+                {
+                    "$ref": "#/components/parameters/end_date"
+                }
+            ],
+            "get": {
+                "operationId": "exportPackageEvents",
+                "responses": {
+                    "200": {
+                        "description": "Exports all the package events of a given package or tracking pixel id",
+                        "content": {
+                            "text/csv": {}
+                        },
+                        "headers": {
+                            "Content-Disposition": {
+                                "description": "File name for download in a browser",
+                                "required": true,
+                                "schema": {
+                                    "type": "string",
+                                    "example": "attachment; filename=\"filename.jpg\""
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid parameter",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PackageEventExportError"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PackageEventExportError"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Owner or package not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PackageEventExportError"
                                 }
                             }
                         }
@@ -782,8 +1051,21 @@
                     "204": {
                         "description": "Package permission deleted successfully"
                     },
+                    "403": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
                     "404": {
                         "description": "Not found"
+                    },
+                    "422": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeletePackagePermissionError"
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -1627,6 +1909,24 @@
                     "$ref": "#/components/schemas/Order"
                 }
             },
+            "start_date": {
+                "name": "start_date",
+                "in": "query",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "format": "date"
+                }
+            },
+            "end_date": {
+                "name": "end_date",
+                "in": "query",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "format": "date"
+                }
+            },
             "package_id": {
                 "name": "package_id",
                 "in": "path",
@@ -1954,9 +2254,14 @@
                     {
                         "type": "object",
                         "required": [
-                            "backend_registry"
+                            "backend_registry",
+                            "repository_name"
                         ],
                         "properties": {
+                            "repository_name": {
+                                "type": "string",
+                                "example": "library/ubuntu"
+                            },
                             "backend_registry": {
                                 "type": "string",
                                 "example": "docker.io"
@@ -2213,6 +2518,8 @@
                             "outgoing-url-must-be-absolute",
                             "incoming-path-invalid-url-template",
                             "incoming-path-must-be-relative",
+                            "outgoing-url-must-not-be-empty",
+                            "incoming-path-must-not-be-empty",
                             "incoming-path-must-start-with-slash",
                             "incoming-path-missing-variables",
                             "invalid-python-project-name",
@@ -2551,6 +2858,24 @@
                     }
                 }
             },
+            "DeletePackagePermissionError": {
+                "type": "object",
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "enum": [
+                            "cannot-delete-owner"
+                        ]
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                }
+            },
             "PackageRoute": {
                 "type": "object",
                 "required": [
@@ -2623,8 +2948,10 @@
                             "not-a-file-package",
                             "outgoing-url-invalid-url-template",
                             "outgoing-url-must-be-absolute",
+                            "outgoing-url-must-not-be-empty",
                             "incoming-path-invalid-url-template",
                             "incoming-path-must-be-relative",
+                            "incoming-path-must-not-be-empty",
                             "incoming-path-must-start-with-slash",
                             "incoming-path-missing-variables"
                         ]
@@ -2969,7 +3296,8 @@
                         "type": "string",
                         "enum": [
                             "name-is-empty",
-                            "name-already-exists"
+                            "name-already-exists",
+                            "invalid-package-owner"
                         ]
                     },
                     "message": {
@@ -2990,7 +3318,8 @@
                     "code": {
                         "type": "string",
                         "enum": [
-                            "cannot-delete-owner"
+                            "cannot-delete-owner",
+                            "billing-error"
                         ]
                     }
                 }
@@ -3008,7 +3337,260 @@
                     "code": {
                         "type": "string",
                         "enum": [
-                            "cannot-revoke-ownership"
+                            "cannot-revoke-ownership",
+                            "billing-error"
+                        ]
+                    }
+                }
+            },
+            "Collection": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "owner",
+                    "pattern",
+                    "public_domain",
+                    "backend_domain",
+                    "type",
+                    "created_at",
+                    "updated_at"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "example": "d14ea96f-f497-4238-956f-99aeba743b97"
+                    },
+                    "owner": {
+                        "type": "string",
+                        "example": "joes-pizza-place"
+                    },
+                    "pattern": {
+                        "type": "string",
+                        "example": "pizza-joes/*"
+                    },
+                    "public_domain": {
+                        "type": "string",
+                        "example": "cr.pizza-place-locator.tiki"
+                    },
+                    "backend_domain": {
+                        "type": "string",
+                        "example": "docker.io"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "docker"
+                        ]
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            },
+            "CreateCollection": {
+                "type": "object",
+                "required": [
+                    "pattern",
+                    "backend_domain",
+                    "type"
+                ],
+                "properties": {
+                    "pattern": {
+                        "type": "string",
+                        "example": "pizza-joes/*"
+                    },
+                    "public_domain": {
+                        "type": "string",
+                        "example": "cr.pizza-place-locator.tiki"
+                    },
+                    "backend_domain": {
+                        "type": "string",
+                        "example": "docker.io"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "docker"
+                        ]
+                    }
+                }
+            },
+            "CreateCollectionError": {
+                "type": "object",
+                "required": [
+                    "message",
+                    "code"
+                ],
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    },
+                    "code": {
+                        "type": "string",
+                        "enum": [
+                            "backend-registry-is-empty",
+                            "backend-registry-has-invalid-characters",
+                            "public-domain-is-empty",
+                            "public-domain-is-already-in-use",
+                            "public-domain-has-invalid-characters",
+                            "public-domain-is-invalid-scarf-domain",
+                            "collection-is-conflicting",
+                            "pattern-is-empty",
+                            "pattern-is-invalid",
+                            "pattern-is-duplicated",
+                            "pattern-has-invalid-characters",
+                            "type-is-invalid"
+                        ]
+                    }
+                }
+            },
+            "UpdateCollection": {
+                "type": "object",
+                "required": [
+                    "pattern",
+                    "backend_domain"
+                ],
+                "properties": {
+                    "pattern": {
+                        "type": "string",
+                        "example": "pizza-joes/*"
+                    },
+                    "public_domain": {
+                        "type": "string",
+                        "example": "cr.pizza-place-locator.tiki"
+                    },
+                    "backend_domain": {
+                        "type": "string",
+                        "example": "docker.io"
+                    }
+                }
+            },
+            "UpdateCollectionError": {
+                "type": "object",
+                "required": [
+                    "message",
+                    "code"
+                ],
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    },
+                    "code": {
+                        "type": "string",
+                        "enum": [
+                            "backend-registry-is-empty",
+                            "backend-registry-has-invalid-characters",
+                            "public-domain-is-empty",
+                            "public-domain-is-already-in-use",
+                            "public-domain-has-invalid-characters",
+                            "public-domain-is-invalid-scarf-domain",
+                            "collection-is-conflicting",
+                            "pattern-is-empty",
+                            "pattern-is-invalid",
+                            "pattern-is-duplicated",
+                            "pattern-has-invalid-characters"
+                        ]
+                    }
+                }
+            },
+            "SearchResultItemType": {
+                "type": "string",
+                "enum": [
+                    "package",
+                    "tracking-pixel"
+                ]
+            },
+            "PackageSearchResultItem": {
+                "type": "object",
+                "required": [
+                    "type",
+                    "package"
+                ],
+                "properties": {
+                    "type": {
+                        "$ref": "#/components/schemas/SearchResultItemType"
+                    },
+                    "package": {
+                        "$ref": "#/components/schemas/PackageIdentifier"
+                    }
+                }
+            },
+            "TrackingPixelSearchResultItem": {
+                "type": "object",
+                "required": [
+                    "type",
+                    "tracking-pixel"
+                ],
+                "properties": {
+                    "type": {
+                        "$ref": "#/components/schemas/SearchResultItemType"
+                    },
+                    "tracking-pixel": {
+                        "type": "object",
+                        "required": [
+                            "id",
+                            "owner",
+                            "name"
+                        ],
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "example": "dbba955a-7567-4300-8630-088054db2222"
+                            },
+                            "owner": {
+                                "type": "string",
+                                "example": "joes-pizza-place"
+                            },
+                            "name": {
+                                "type": "string",
+                                "example": "Pizza-place-locator documentation"
+                            },
+                            "package": {
+                                "$ref": "#/components/schemas/PackageIdentifier"
+                            }
+                        }
+                    }
+                }
+            },
+            "SearchResultItem": {
+                "discriminator": {
+                    "propertyName": "type",
+                    "mapping": {
+                        "package": "#/components/schemas/PackageSearchResultItem",
+                        "tracking-pixel": "#/components/schemas/TrackingPixelSearchResultItem"
+                    }
+                },
+                "oneOf": [
+                    {
+                        "$ref": "#/components/schemas/PackageSearchResultItem"
+                    },
+                    {
+                        "$ref": "#/components/schemas/TrackingPixelSearchResultItem"
+                    }
+                ]
+            },
+            "PackageEventExportError": {
+                "type": "object",
+                "required": [
+                    "message",
+                    "code"
+                ],
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    },
+                    "code": {
+                        "type": "string",
+                        "enum": [
+                            "not-found",
+                            "not-a-pro-member",
+                            "range-too-long",
+                            "invalid-package-query"
                         ]
                     }
                 }
