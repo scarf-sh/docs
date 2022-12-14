@@ -1,3 +1,7 @@
+!!! warning
+
+    This version of Scarf's API is deprecated. If you're just getting started see the latest version [here](/api-v2).
+
 Scarf offers API access to the maintainer toolchain, rooted at `https://scarf.sh/api`.
 
 ### Authentication
