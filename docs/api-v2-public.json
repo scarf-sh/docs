@@ -296,6 +296,75 @@
                 }
             }
         },
+        "/v2/packages/{owner}/aggregates": {
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/owner"
+                },
+                {
+                    "$ref": "#/components/parameters/start_date"
+                },
+                {
+                    "$ref": "#/components/parameters/end_date"
+                },
+                {
+                    "name": "query",
+                    "in": "query",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "operationId": "exportEntityAggregates",
+                "tags": [
+                    "Packages"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Exports all the package events of an entity",
+                        "content": {
+                            "application/x-ndjson": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Aggregate"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid parameter",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PackageEventExportError"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PackageEventExportError"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Owner or package not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PackageEventExportError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/v2/packages/{owner}/events": {
             "parameters": [
                 {
@@ -3608,6 +3677,81 @@
                             "range-too-long",
                             "invalid-package-query"
                         ]
+                    }
+                }
+            },
+            "Aggregate": {
+                "type": "object",
+                "required": [
+                    "breakdown",
+                    "date",
+                    "artifact",
+                    "total"
+                ],
+                "properties": {
+                    "date": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "artifact": {
+                        "type": "string"
+                    },
+                    "breakdown": {
+                        "type": "string",
+                        "enum": [
+                            "by-country",
+                            "by-cloudprovider",
+                            "by-company",
+                            "by-variable",
+                            "by-platform",
+                            "by-version",
+                            "by-total",
+                            "by-total-do-not-track",
+                            "by-client",
+                            "by-domain",
+                            "by-referer",
+                            "by-educational-organization",
+                            "by-govermental-organization"
+                        ]
+                    },
+                    "company_name": {
+                        "type": "string"
+                    },
+                    "company_domain": {
+                        "type": "string"
+                    },
+                    "cloud_provider_name": {
+                        "type": "string"
+                    },
+                    "cloud_provider_domain": {
+                        "type": "string"
+                    },
+                    "country": {
+                        "type": "string"
+                    },
+                    "platform": {
+                        "type": "string"
+                    },
+                    "version": {
+                        "type": "string"
+                    },
+                    "client": {
+                        "type": "string"
+                    },
+                    "variable": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": "string"
+                    },
+                    "total_unique": {
+                        "type": "integer"
+                    },
+                    "total": {
+                        "type": "integer"
+                    },
+                    "domain": {
+                        "type": "string"
                     }
                 }
             }
