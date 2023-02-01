@@ -314,6 +314,32 @@
                     "schema": {
                         "type": "string"
                     }
+                },
+                {
+                    "name": "rollup",
+                    "in": "query",
+                    "required": false,
+                    "style": "form",
+                    "explode": true,
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Rollup"
+                        }
+                    }
+                },
+                {
+                    "name": "breakdown",
+                    "in": "query",
+                    "required": false,
+                    "style": "form",
+                    "explode": true,
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Breakdown"
+                        }
+                    }
                 }
             ],
             "get": {
@@ -873,6 +899,16 @@
                     },
                     "404": {
                         "description": "Not found"
+                    },
+                    "422": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeletePackageDomainError"
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -2943,6 +2979,24 @@
                     }
                 }
             },
+            "DeletePackageDomainError": {
+                "type": "object",
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "enum": [
+                            "package-must-have-one-domain"
+                        ]
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                }
+            },
             "DeletePackagePermissionError": {
                 "type": "object",
                 "required": [
@@ -3423,7 +3477,8 @@
                         "type": "string",
                         "enum": [
                             "cannot-revoke-ownership",
-                            "billing-error"
+                            "billing-error",
+                            "max-organization-members-reached"
                         ]
                     }
                 }
@@ -3686,7 +3741,8 @@
                     "breakdown",
                     "date",
                     "artifact",
-                    "total"
+                    "total",
+                    "rollup"
                 ],
                 "properties": {
                     "date": {
@@ -3697,22 +3753,7 @@
                         "type": "string"
                     },
                     "breakdown": {
-                        "type": "string",
-                        "enum": [
-                            "by-country",
-                            "by-cloudprovider",
-                            "by-company",
-                            "by-variable",
-                            "by-platform",
-                            "by-version",
-                            "by-total",
-                            "by-total-do-not-track",
-                            "by-client",
-                            "by-domain",
-                            "by-referer",
-                            "by-educational-organization",
-                            "by-govermental-organization"
-                        ]
+                        "$ref": "#/components/schemas/Breakdown"
                     },
                     "company_name": {
                         "type": "string"
@@ -3752,8 +3793,38 @@
                     },
                     "domain": {
                         "type": "string"
+                    },
+                    "rollup": {
+                        "$ref": "#/components/schemas/Rollup"
                     }
                 }
+            },
+            "Rollup": {
+                "type": "string",
+                "enum": [
+                    "daily",
+                    "weekly",
+                    "monthly",
+                    "yearly"
+                ]
+            },
+            "Breakdown": {
+                "type": "string",
+                "enum": [
+                    "by-country",
+                    "by-cloudprovider",
+                    "by-company",
+                    "by-variable",
+                    "by-platform",
+                    "by-version",
+                    "by-total",
+                    "by-total-do-not-track",
+                    "by-client",
+                    "by-domain",
+                    "by-referer",
+                    "by-educational-organization",
+                    "by-govermental-organization"
+                ]
             }
         }
     }
