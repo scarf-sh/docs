@@ -1,8 +1,6 @@
-# API V1 (Deprecated)
-
 !!! warning
 
-    This version of Scarf's API is deprecated. If you're just getting started see the latest version [here](/api-v2).
+    此版本的 Scarf API 已弃用。 如果您刚刚开始，请在 [此处](/api-v2)查看最新版本。
 
 Scarf offers API access to the maintainer toolchain, rooted at `https://scarf.sh/api`.
 
