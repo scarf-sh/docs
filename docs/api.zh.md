@@ -1,3 +1,5 @@
+# API V1 (Deprecated)
+
 !!! warning
 
     此版本的 Scarf API 已弃用。 如果您刚刚开始，请在 [此处](/api-v2)查看最新版本。
