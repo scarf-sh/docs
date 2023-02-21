@@ -1,5 +1,3 @@
-# API V1 (Deprecated)
-
 !!! warning
 
     This version of Scarf's API is deprecated. If you're just getting started see the latest version [here](/api-v2).

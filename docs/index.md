@@ -1,4 +1,4 @@
-# Introduction
+# Scarf Documentation
 
 Scarf is a platform for download and adoption metrics for open source software projects. 
 

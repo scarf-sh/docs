@@ -1,6 +1,4 @@
-# Quick Start
-
-## Introduction
+# Introduction
 
 Scarf Gateway is a service that provides a central access point to your containers and packages, no matter where you host them.
 
