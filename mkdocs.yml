@@ -64,7 +64,7 @@ plugins:
   - i18n:
       languages:
         en: "English"
-        zh: "中国人"
+        zh: "中文 (简体)"
       default_language: 'en'
       no_translation:
         en: "This page isn't translated to English."
