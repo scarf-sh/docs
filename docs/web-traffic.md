@@ -1,6 +1,4 @@
-# Documentation Insights
-
-Scarf can help you understand how people and companies discover and learn about your project by surfacing insights based on the web traffic to your project's documentation pages, READMEs, and other web properties. Scarf offers lightweight, cookie-free analytics pixels that work anywhere on the internet your content is read. Unlike traditional JavaScript-based web analytics, image-based telemetry works in places where JavaScript execution is not accessible. Not using cookies means no annoying cookie banners are needed, and your readers are never tracked as they continue to surf the web. 
+ Scarf can help you understand how people and companies discover and learn about your project by surfacing insights based on the web traffic to your project's documentation pages, READMEs, and other web properties. Scarf offers lightweight, cookie-free analytics pixels that work anywhere on the internet your content is read. Unlike traditional JavaScript-based web analytics, image-based telemetry works in places where JavaScript execution is not accessible. Not using cookies means no annoying cookie banners are needed, and your readers are never tracked as they continue to surf the web. 
  
  If you observe readers from a particular company frequently viewing your project documentation, this can indicate an opportunity for landing support contracts or sponsorship to financially support your project. Seeing repeat visitors to certain pages in your docs may hint at parts of your project that are confusing or can be clarified. 
  
