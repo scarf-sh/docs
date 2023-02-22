@@ -8,15 +8,23 @@ site_description: |
 extra_css:
   - "stylesheets/extra.css"
 nav:
-  - Introduction: "index.md"
-  - Quick Start - Docker: "quick-start.md"
-  - Quick Start - File Packages: "quick-start_file.md"
-  - Scarf Gateway: "gateway.md"
-  - SDKs for Package Authors: "package-analytics.md"
-  - Documentation Insights: "web-traffic.md"
-  - Organizations: "organization.md"
-  - API V2: "api-v2.md"
-  - API V1 (deprecated): "api.md"
+- index.md
+- index.zh.md
+- quick-start.md
+- quick-start.zh.md
+- quick-start_file.md
+- quick-start_file.zh.md
+- gateway.md
+- gateway.zh.md
+- package-analytics.md
+- package-analytics.zh.md
+- web-traffic.md
+- web-traffic.zh.md
+- organizations.md
+- organizations.zh.md
+- API-V2.md
+- api.md
+- api.zh.md
 copyright: Copyright &copy; 2019 - 2023 Scarf Systems, Inc. <img referrerpolicy="no-referrer-when-downgrade" src="https://static.scarf.sh/a.png?x-pxid=c9065f3a-a090-4243-8f69-145d5de7bfca" />
 google_analytics:
   - auto
@@ -38,6 +46,26 @@ extra:
       link: https://tinyurl.com/scarf-community-slack
     - icon: fontawesome/brands/youtube
       link: https://www.youtube.com/channel/UCiJRrlBKBOgYFRO9eb6pfdg
+
+  # Default mkdocs-material alternate links for untranslated pages
+  # https://squidfunk.github.io/mkdocs-material/setup/changing-the-language/#site-language-selector
+  alternate:
+    - name: English
+      link: ''
+      lang: en
+
+    - name: Chinese
+      link: index.zh
+      lang: zh
+
 plugins:
   - render_swagger
   - search
+  - i18n:
+      languages:
+        en: "English"
+        zh: "中国人"
+      default_language: 'en'
+      no_translation:
+        en: "This page isn't translated to English."
+        zh: "此页面未翻译成中文"
