@@ -1,2 +1,9 @@
 # Mac
 *.DS_Store
+
+# Devenv
+.devenv*
+devenv.local.nix
+*direnv*
+.envrc
+
