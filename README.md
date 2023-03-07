@@ -14,12 +14,23 @@ The site uses [MkDocs](https://www.mkdocs.org/) to generate the doc site from ma
 
 ### Running locally
 
+#### pip
+
 ```bash
 # Setup
 pip install mkdocs-material
 pip install mkdocs-render-swagger-plugin
 # Serve
 mkdocs serve
+```
+
+#### [devenv.sh](https://devenv.sh)
+
+```bash
+# drop into a shell with dependencies installed
+devenv shell
+# run the dev server
+devenv up
 ```
 
 ### Deploy
