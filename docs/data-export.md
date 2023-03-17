@@ -35,6 +35,8 @@ The data export includes the following categories:
 
 ### Integrations
 
-While no Scarf data export integrations are currently publicly available, this may be considered in the future.
+Integrations are in development, if you have particular data sources you'd like Scarf to integrate with, we'd love to hear from you. 
+
+- Scarf to PostgreSQL https://github.com/scarf-sh/scarf-postgres-exporter
 
 *Note*: Exporting data from Scarf will only work if you are on a [Scarf Professional Tier plan](https://about.scarf.sh/#pricing-section).
