@@ -46,7 +46,7 @@
         "summary": "Import external package events in bulk\n",
         "description": "",
         "requestBody": {
-          "description": "The request body should be a stream of newline-delimited JSON values, where each line in the  stream represents a valid JSON object that adheres to the Event schema. An `Event` is represented by a JSON object that permits any valid key-value pairs, with the exception of properties prefixed by `$`, which are handled in a distinct manner by Scarf. For additional information, please refer to the `Event` properties.\n",
+          "description": "The request body should be a stream of newline-delimited JSON values, where each line in the  stream represents a valid JSON object that adheres to the `Event` schema. An `Event` is represented by a JSON object that permits any valid key-value pairs, with the exception of properties prefixed by `$`, which are handled in a distinct manner by Scarf. For additional information, please refer to the `Event` properties.\n",
           "x-tie-haskell-request-body-as-stream": true,
           "required": true,
           "content": {
@@ -106,7 +106,7 @@
         "summary": "Import external tracking-pixel events in bulk\n",
         "description": "",
         "requestBody": {
-          "description": "The request body should be a stream of newline-delimited JSON values, where each line in the stream represents a valid JSON object that adheres to the `Event` schema. An Event is represented by a JSON object that permits any valid key-value pairs, with the exception of properties prefixed by `$`, which are handled in a distinct manner by Scarf. For additional information, please refer to the `Event` properties.\n",
+          "description": "The request body should be a stream of newline-delimited JSON values, where each line in the stream represents a valid JSON object that adheres to the `Event` schema. An `Event` is represented by a JSON object that permits any valid key-value pairs, with the exception of properties prefixed by `$`, which are handled in a distinct manner by Scarf. For additional information, please refer to the `Event` properties.\n",
           "x-tie-haskell-request-body-as-stream": true,
           "required": true,
           "content": {
