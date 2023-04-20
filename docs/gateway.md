@@ -106,7 +106,7 @@ All interactions through Scarf Gateway occur over HTTPS. Scarf Gateway will proc
 
 #### Do Not Track
 
-Our gateway respects the HTTP Headers as defined in [DNT](https://www.w3.org/2011/tracking-protection/drafts/tracking-dnt.html) and [GPC](https://globalprivacycontrol.github.io/gpc-spec/). If you send an HTTP request to our Scarf Gateway with the HTTP header "DNT=1" or "Sec-GPC=1", we will not count your request in our statistics nor will we lookup your IP address to determine if you are a business. Basically, it will be as if you didn't request anything from our gateway but we will still serve the content to you.
+Our gateway respects the HTTP Headers as defined in [DNT](https://www.w3.org/2011/tracking-protection/drafts/tracking-dnt.html) and [GPC](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-GPC). If you send an HTTP request to our Scarf Gateway with the HTTP header "DNT=1" or "Sec-GPC=1", we will not count your request in our statistics nor will we lookup your IP address to determine if you are a business. Basically, it will be as if you didn't request anything from our gateway but we will still serve the content to you.
 
 Please note that this behavior works for all packages and pixels that are served through our gateway. If users have DNT turned on in their browser settings, we will not track file downloads or pixel views.
 

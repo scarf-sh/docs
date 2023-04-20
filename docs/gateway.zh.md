@@ -106,7 +106,7 @@ Scarf 根据 [Docker Hub defines them](https://docs.docker.com/docker-hub/downlo
 
 #### 不跟踪
 
-我们的网关遵循 [DNT](https://www.w3.org/2011/tracking-protection/drafts/tracking-dnt.html) 和 [GPC](https://globalprivacycontrol.github.io/gpc-spec/) 中定义的 HTTP 标头。如果您向我们的 Scarf 网关发送带有 HTTP 标头 "DNT=1" 或 "Sec-GPC=1"的 HTTP 请求， 我们不会将您的请求计入我们的统计数据中，也不会查找您的 IP 地址以确定您是否是企业。 基本上，就好像您没有从我们的网关请求任何内容，但我们仍会为您提供内容。
+我们的网关遵循 [DNT](https://www.w3.org/2011/tracking-protection/drafts/tracking-dnt.html) 和 [GPC](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-GPC) 中定义的 HTTP 标头。如果您向我们的 Scarf 网关发送带有 HTTP 标头 "DNT=1" 或 "Sec-GPC=1"的 HTTP 请求， 我们不会将您的请求计入我们的统计数据中，也不会查找您的 IP 地址以确定您是否是企业。 基本上，就好像您没有从我们的网关请求任何内容，但我们仍会为您提供内容。
 
 请注意，此行为适用于通过我们的网关提供的所有包和像素。 如果用户在其浏览器设置中启用了 DNT，我们将不会跟踪文件下载或像素浏览量。
 
