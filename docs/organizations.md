@@ -65,3 +65,27 @@ The next screen will prompt you to add your new organization name and other deta
 Et voilà! You now have new organization
 
 ![Organization page](assets/pics/orgs/organization-edit-page.png)
+
+## Managing your organization
+
+### Data providers
+
+Scarf partners with 3rd party data providers in order to surface IP-address metadata like the location or company behind any event in your account.
+
+Scarf's enhanced company matching capabilities feature a Clearbit integration to help us offer best-in-class data quality. Enabling Clearbit for your organization is free! Additional terms apply.
+
+To enable this Clearbit for your organization, navigate to your organization overview page, and find the section `Toggle Data Providers`. It is not enabled by default.
+
+![Manage Clearbit](assets/pics/orgs/enable-clearbit.png)
+
+**Complementary Clearbit access is already included in your Scarf plan**
+
+| Scarf Tier | Included Clearbit calls per month                        |
+|------------|----------------------------------------------------------|
+| Free       | 10,000 calls/month included (for a limited time)         |
+| Basic      | 10,000 calls/month included                              |
+| Premium    | 25,000 calls/month included, with pay-per-usage upgrades |
+
+For more information about enhanced company insights, [contact our sales team](mailto:help@scarf.sh).
+
+
