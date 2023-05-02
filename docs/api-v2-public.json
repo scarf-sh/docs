@@ -812,7 +812,7 @@
             },
             "post": {
                 "operationId": "createPackageDomain",
-                "summary": "Creates a new package domain",
+                "summary": "Creates a new package domain.",
                 "tags": [
                     "Packages"
                 ],
