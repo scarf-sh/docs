@@ -812,7 +812,7 @@
             },
             "post": {
                 "operationId": "createPackageDomain",
-                "summary": "Creates a new package domain. Currently, it only works for File and Python packages",
+                "summary": "Creates a new package domain",
                 "tags": [
                     "Packages"
                 ],
