@@ -236,34 +236,34 @@ Scarf 网关由 Scarf 团队管理。 我们计划在 Scarf Gateway 结束当前
 
 #### 图 0：作为维护者使用 Scarf (Docker) 网关
 
-![img](gateway-diagram-maintainer-docker.png)
+![img](https://s3.us-west-2.amazonaws.com/static.scarf.sh/docs/fig-0-gateway-maintainer-docker.png)
 
 <a id="figure_1"></a>
 
 #### 图 1：以用户身份从 Scarf (Docker) Gateway 拉取 Docker 容器镜像
 
-![img](gateway-diagram-end-user-docker.png)
+![img](https://s3.us-west-2.amazonaws.com/static.scarf.sh/docs/fig-1-gateway-docker-user.png)
 
 <a id="figure_2"></a>
 
 #### 图 2：完整系统图 (Docker)
 
-![img](gateway-diagram-internal-docker.png)
+![img](https://s3.us-west-2.amazonaws.com/static.scarf.sh/docs/fig-2-full-diagram-docker.png)
 
 <a id="figure_3"></a>
 
 #### 图 3：作为维护者使用 Scarf（File）网关
 
-![img](gateway-diagram-maintainer-file.png)
+![img](https://s3.us-west-2.amazonaws.com/static.scarf.sh/docs/fig-3-gateway-maintainer-file.png)
 
 <a id="figure_4"></a>
 
 #### 图 4：以用户身份从 Scarf（File）Gateway下载File
 
-![img](gateway-diagram-end-user-file.png)
+![img](https://s3.us-west-2.amazonaws.com/static.scarf.sh/docs/fig-4-gateway-file-user.png)
 
 <a id="figure_5"></a>
 
 #### 图 5：完整系统图（File）
 
-![img](gateway-diagram-internal-file.png)
+![img](https://s3.us-west-2.amazonaws.com/static.scarf.sh/docs/fig-5-full-diagram-file.png)
