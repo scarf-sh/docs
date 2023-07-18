@@ -18,8 +18,8 @@ The site uses [MkDocs](https://www.mkdocs.org/) to generate the doc site from ma
 
 ```bash
 # Setup
-pip install mkdocs-material
-pip install mkdocs-render-swagger-plugin
+pip install -r requirements.txt
+
 # Serve
 mkdocs serve
 ```
@@ -29,6 +29,7 @@ mkdocs serve
 ```bash
 # drop into a shell with dependencies installed
 devenv shell
+
 # run the dev server
 devenv up
 ```

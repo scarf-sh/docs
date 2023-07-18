@@ -33,8 +33,7 @@ nav:
 - index.zh.md
 - quick-start.md
 - quick-start.zh.md
-- quick-start_file.md
-- quick-start_file.zh.md
+- packages.md
 - gateway.md
 - gateway.zh.md
 - package-analytics.md
@@ -55,8 +54,9 @@ google_analytics:
   - G-GH3EXW7112
 repo_url: https://github.com/scarf-sh/docs
 markdown_extensions:
-  - meta
-  - admonition
+  meta: {}
+  admonition: {}
+  pymdownx.superfences: {}
 
 extra:
   social:
