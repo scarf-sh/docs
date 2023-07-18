@@ -15,8 +15,7 @@ Scarf is a dynamic platform designed to empower open-source software maintainers
 5. **Documentation Insights (Pixels):** Uncover insights about your product's usage through Scarf's innovative pixel tracking.
 6. **Organizations:** Learn how to manage and collaborate with your teams within Scarf's platform.
 7. **Data Export:** Export your data for customized analysis. Explore the potential of data manipulation to suit your needs.
-8. **API Lifecycle:** Grasp the lifecycle of your API for effective management and optimization.
-9. **API Docs:** Understand the capabilities of a specific API version and its available endpoints.
+8. **API Docs:** Understand the capabilities of a specific API version and its available endpoints.
 
 ## Contribution
 
