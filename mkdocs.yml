@@ -28,6 +28,8 @@ site_description: |
   Scarf's Technical Documentation & API Reference
 extra_css:
   - "stylesheets/extra.css"
+  - "stylesheets/theme-default-muted.css"
+  - "stylesheets/theme-slate-muted.css"
 nav:
 - index.md
 - index.zh.md
