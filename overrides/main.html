@@ -16,8 +16,5 @@
 {% endblock %}
 
 {% block libs %}
-    {{ super() }}
-    {% if page and page.title == 'API V2 (beta)' %}
-    <script src="{{ base_url }}/scripts/hide-sidebar.js"></script>
-    {% endif %}
+    <script src="{{ base_url }}/scripts/setup-links.js"></script>
 {% endblock %}
