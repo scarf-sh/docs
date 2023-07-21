@@ -2,8 +2,28 @@
 
 ## Intro
 
-This is the user guide to best practices when using scarf.
+This is a user guide to best practices when using scarf.  Consider this not only a guide but also an FAQ.  
 
+Currently this guide contains:
+
+1. How to use Scarf Data in exsiting sales and marketing efforts
+	1. Events you should be tracking
+	2. The goal ongoing usage 
+	3. How to use Scarf to infer ongoing usage 
+	4. Basic lead scoring with Scarf
+	5. Sample customer journey 
+	6. What to do with companies identified by Scarf
+	7. Common ways to inject Scarf into existing sales/marketing activities 
+	8. Common ways for startups to build their first sales and marketing processes 
+2. How to use confidence intervals
+3. Best Practices to track multiple projects and packages
+	1. Handling different projects
+	2. Handling different versions
+	3. Handling different platforms
+	4. Container best practices
+	5. Variables 
+    6. Pixels for each project	
+4. Tracking external link clicks
 
 ## How to use Scarf data in existing sales and marketing efforts
 
@@ -52,6 +72,7 @@ In essence, your application would asynchronously call back to the gateway websi
 - Look for companies activities over an extended period of time. Repeated downloads over 30/90/180 days is a very predictive indicator of ongoing reliance 
 - Look for companies who download incremental versions of your software over time
 - Look at documentation views over time, especially upgrade docs and operational docs from the same user/company
+- Condsider adding a ping or call back within your software to an empty page behind a Scarf Gateway URL, this will allow you see these calls within Scarf.  
 
 ### Basic lead scoring and customer journey mapping with Scarf
 
