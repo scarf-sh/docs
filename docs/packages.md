@@ -126,7 +126,7 @@ Example:
 
 ## What’s Next?
 
-- [Create a Pixel](/pixels)
+- [Create a Pixel](/web-traffic)
 - [Learn more about the Scarf Gateway](/gateway)
 
 If you have questions or need help, join our [Slack community](https://tinyurl.com/scarf-community-slack).
