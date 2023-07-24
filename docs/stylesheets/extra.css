@@ -35,7 +35,7 @@
   --md-default-bg-color--lightest: var(--scarf-color-gray-300);
 
   --md-primary-fg-color: var(--scarf-color-blue-500);
-  --md-primary-fg-color--light: var(--scarf-color-blue-light-500);
+  --md-primary-fg-color--light: var(--scarf-color-blue-dark-500);
   --md-primary-fg-color--dark:  var(--scarf-color-blue-light-500);
   --md-primary-bg-color: var(--scarf-color-font-light);
   --md-primary-bg-color--light: #ffffffb3;
@@ -63,6 +63,8 @@
 
   --md-typeset-color: var(--md-default-fg-color);
   --md-typeset-a-color: var(--md-primary-fg-color);
+  --md-typeset-a-color--light: var(--md-primary-fg-color--light);
+  --md-typeset-a-color--dark: var(--md-primary-fg-color--dark);
   --md-typeset-mark-color: var(--scarf-color-warning-500);
   --md-typeset-del-color: #f5503d26;
   --md-typeset-ins-color: var(--scarf-color-success-500);
@@ -85,6 +87,11 @@
   --md-shadow-z3: 0 0.2rem 0.5rem #0003,0 0 0.05rem #00000059;
 }
 
+[data-md-color-primary=indigo] {
+  --md-primary-fg-color--light: var(--scarf-color-blue-dark-500);
+  --md-primary-fg-color--dark:  var(--scarf-color-blue-light-500);
+}
+
 .md-header__button.md-logo img, .md-header__button.md-logo svg {
   color: var(--scarf-color-font-light);
   height: 1.2rem;
@@ -101,6 +108,15 @@ mode. Gets the job done for now */
   color: var(--scarf-color-font-light) !important;
 }
 
-[data-md-color-scheme="slate"] .swagger-ui .header-example , [data-md-color-scheme="slate"]  p , [data-md-color-scheme="slate"]  .header-col, [data-md-color-scheme="slate"]  .response-col_status , [data-md-color-scheme="slate"]  .tabitem , [data-md-color-scheme="slate"]  .response-col_links , [data-md-color-scheme="slate"]  .response-col_description , [data-md-color-scheme="slate"]  .response+ .response p, [data-md-color-scheme="slate"]  tr+ tr .parameters-col_name , [data-md-color-scheme="slate"]  .parameter__in , [data-md-color-scheme="slate"]  .required , [data-md-color-scheme="slate"]  .parameter__type , [data-md-color-scheme="slate"]  .col_header, [data-md-color-scheme="slate"]  .model-box, [data-md-color-scheme="slate"]  .model-title__text, [data-md-color-scheme="slate"]  .model-title, [data-md-color-scheme="slate"]  .prop-enum, [data-md-color-scheme="slate"]  .opblock-summary-path, [data-md-color-scheme="slate"]  .opblock-summary-description , [data-md-color-scheme="slate"]  .info__license {
+[data-md-color-scheme="slate"] .swagger-ui .header-example, [data-md-color-scheme="slate"]  p, [data-md-color-scheme="slate"]  .header-col, [data-md-color-scheme="slate"]  .response-col_status, [data-md-color-scheme="slate"]  .tabitem, [data-md-color-scheme="slate"]  .response-col_links, [data-md-color-scheme="slate"]  .response-col_description, [data-md-color-scheme="slate"]  .response+ .response p, [data-md-color-scheme="slate"]  tr+ tr .parameters-col_name, [data-md-color-scheme="slate"]  .parameter__in, [data-md-color-scheme="slate"]  .required, [data-md-color-scheme="slate"]  .parameter__type, [data-md-color-scheme="slate"]  .col_header, [data-md-color-scheme="slate"]  .model-box, [data-md-color-scheme="slate"]  .model-title__text, [data-md-color-scheme="slate"]  .model-title, [data-md-color-scheme="slate"]  .prop-enum, [data-md-color-scheme="slate"]  .opblock-summary-path, [data-md-color-scheme="slate"]  .opblock-summary-description, [data-md-color-scheme="slate"]  .info__license {
   color: var(--scarf-color-font-light) !important;
+}
+
+[data-md-color-scheme="default"] .md-typeset a,
+[data-md-color-scheme="default"] .md-nav__link--active {
+  color: var(--md-primary-fg-color--light);
+}
+[data-md-color-scheme="slate"] .md-typeset a,
+[data-md-color-scheme="slate"] .md-nav__link--active {
+  color: var(--md-primary-fg-color--dark);
 }
