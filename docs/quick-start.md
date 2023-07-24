@@ -14,7 +14,7 @@ In this guide, you will learn:
 
 - You will need to sign up for a [Scarf account](https://scarf.sh/signup).
   You can sign up with a valid email address or your GitHub account.
-- The container you're looking to track must be published to an existing public registry, eg Docker Hub, GitHub Container Registry. 
+- The container you're looking to track must be published to an existing public registry, eg Docker Hub, GitHub Container Registry.
   This guide will use the `hello-world` [docker image](https://hub.docker.com/_/hello-world).
 
 ### Creating a Docker Package
@@ -29,12 +29,12 @@ Using Scarf, users can pull your Docker container images via Scarf Gateway using
 3. In the first drop-down click on the package type you would like to create. For this section you will click `Docker`.
 ![Enter the docker pull command](assets/pics/quick-start/create-docker.png)
 
-    
+
 4.  Enter the current pull command for your Docker container.
     The Docker command for the `hello-world` package is `docker pull hello-world`.
 
     ![Enter the docker pull command](assets/pics/quick-start/docker-package-pull-command.png)
-    
+
 5. Optional: You can add a custom domain or use the domain provided by Scarf Gateway.
 
 6. Click the `Submit` button to be redirected to a success screen with some additional information as to what you can do next.
@@ -49,7 +49,7 @@ Any time your image is downloaded, Scarf will report some basic information:
 - Company information of your users
 - Downloads by versions/tags
 
-In the next section, you will create a tracking pixel that can be added to your project’s documentation or any other web properties associated with your project. 
+In the next section, you will create a tracking pixel that can be added to your project’s documentation or any other web properties associated with your project.
 
 ### Creating a Tracking Pixel for Your Package
 
@@ -95,5 +95,9 @@ Every time a user pulls your Docker container images from Scarf Gateway the data
 
 ## What’s Next?
 
-For more detailed information about Scarf Gateway please see the [Scarf Gateway](https://docs.scarf.sh/gateway/) section of our documentation.
+For more detailed information, please see the relevant documentation;
+
+- [Packages](/packages)
+- [Scarf Gateway](/gateway)
+
 If you have questions or need help, join our [Slack community](https://tinyurl.com/scarf-community-slack).

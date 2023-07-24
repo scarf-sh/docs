@@ -278,7 +278,7 @@ Deletes a package domain.
 #### List package domains
 `GET https://scarf.sh/api/v1/packages/{package-id}/domains`
 
-List all package domains for the user. You can find more information about package domains in the [Gateway Docs](https://docs.scarf.sh/gateway/#python-packages)
+List all package domains for the user. You can find more information about package domains in the [Gateway Docs](/gateway/#python-packages)
 
 Returns a `JSON`-encoded list of [PackageDomainV1](#packagedomainv1)
 
