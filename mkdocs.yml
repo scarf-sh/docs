@@ -1,16 +1,19 @@
+# Project Information
 site_name: Scarf Documentation
+site_description: |
+  Scarf's Technical Documentation & API Reference
+copyright: Copyright &copy; 2019 - 2023 Scarf Systems, Inc. <img referrerpolicy="no-referrer-when-downgrade" src="https://static.scarf.sh/a.png?x-pxid=c9065f3a-a090-4243-8f69-145d5de7bfca" />
+
+# Repository
+repo_name: scarf-sh/docs
+repo_url: https://github.com/scarf-sh/docs
+
+# Config
 theme:
   name: material
   logo: assets/scarf_text.svg
   custom_dir: overrides
   palette:
-
-    # Palette toggle for automatic mode
-    - media: "(prefers-color-scheme)"
-      toggle:
-        icon: material/brightness-auto
-        name: Switch to light mode
-
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -23,13 +26,19 @@ theme:
       scheme: slate
       toggle:
         icon: material/brightness-4
-        name: Switch to system preference
-site_description: |
-  Scarf's Technical Documentation & API Reference
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/new_scarf.svg
+  icon:
+    logo: assets/new_scarf.svg
+
+# Styles
 extra_css:
   - "stylesheets/extra.css"
-  - "stylesheets/theme-default-muted.css"
-  - "stylesheets/theme-slate-muted.css"
+
+# Docs Navigation
 nav:
 - index.md
 - index.zh.md
@@ -50,16 +59,19 @@ nav:
   - api-v2-import.md
 - api.md
 - api.zh.md
-copyright: Copyright &copy; 2019 - 2023 Scarf Systems, Inc. <img referrerpolicy="no-referrer-when-downgrade" src="https://static.scarf.sh/a.png?x-pxid=c9065f3a-a090-4243-8f69-145d5de7bfca" />
+
+# Analytics
 google_analytics:
   - auto
   - G-GH3EXW7112
-repo_url: https://github.com/scarf-sh/docs
+
+# Extensions
 markdown_extensions:
   meta: {}
   admonition: {}
   pymdownx.superfences: {}
 
+# Customization
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -84,6 +96,7 @@ extra:
       link: index.zh
       lang: zh
 
+# Plugins
 plugins:
   - render_swagger
   - search
