@@ -11,7 +11,7 @@ repo_url: https://github.com/scarf-sh/docs
 # Config
 theme:
   name: material
-  logo: assets/scarf_text.svg
+  logo: assets/scarf-tm-logo-white.svg
   custom_dir: overrides
   palette:
     # Palette toggle for light mode
