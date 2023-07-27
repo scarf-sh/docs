@@ -1,7 +1,7 @@
 # Getting Started Checklist
 
 
-1. Register for an account 
+1. Register for an account on the [Scarf app](https://app.scarf.sh/login).
 2. Setup and test downloads:
     1. Setup a new package URL via the Scarf Gateway within your Scarf Dashboard.
     2. Point this URL to your current download endpoints.
