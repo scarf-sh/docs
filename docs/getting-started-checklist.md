@@ -14,7 +14,7 @@
 	3. Check that the pixel is loading
 	4. Return to the scarf dashboard and check for pixel view data
 4. Setup and test link tracking and social monitoring:
-    1. Create a new URL in the Scarf Gateway as a redirect/link shortener to your website, Youtube, Hacker News, or other sites.  
+    1. Create a new URL in the [Scarf Gateway](/gateway) as a redirect/link shortener to your website, Youtube, Hacker News, or other sites.  
     2. When posting links on social media use the new URL instead of the main link.  Data will then be available in the Scarf dashboard.
 5. Setup and test basic call home functionality:
     1. Create a basic URL in Scarf Gateway that will act as an endpoint for your applications to ping.
