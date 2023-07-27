@@ -202,7 +202,7 @@ You could do the following:
 
 ### Containers 
 
-For containers, we recommend setting up a "Collection" to sit in front of your entire namespace, i.e., `company/*` on Docker Hub or your preferred container registry. Collections automatically sync and keep up to date with container registries making it easy to release new versions without having to worry about Scarf being up to date with new releases. To learn more, check out the Docs for collections here: https://docs.scarf.sh/gateway/#creating-collections
+For containers, we recommend setting up a "Collection" to sit in front of your entire namespace, i.e., `company/*` on Docker Hub or your preferred container registry. Collections automatically sync and keep up to date with container registries making it easy to release new versions without having to worry about Scarf being up to date with new releases. To learn more, check out the [collections docs](/gateway/#creating-collections)
 
 You can use variables just like you do for other downloads. 
 
