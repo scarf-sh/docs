@@ -3,7 +3,7 @@
 
 1. Register for an account on the [Scarf app](https://app.scarf.sh/login).
 2. Setup and test downloads:
-    1. Setup a new package URL via the Scarf Gateway within your Scarf Dashboard.
+    1. Setup a [new package URL](/packages) via the [Scarf Gateway](/gateway) within your Scarf Dashboard.
     2. Point this URL to your current download endpoints.
     3. Update installation and setup documentation to direct users to use the gateway.
     4. Test the route either via your webbrowser, curl, or with wget
