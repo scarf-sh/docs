@@ -45,6 +45,7 @@ nav:
 - quick-start.md
 - quick-start.zh.md
 - packages.md
+- getting-started-checklist.md
 - gateway.md
 - gateway.zh.md
 - package-analytics.md
@@ -54,9 +55,8 @@ nav:
 - organizations.md
 - organizations.zh.md
 - data-export.md
-- API V2:
-  - api-v2.md
-  - api-v2-import.md
+- user_best_practices.md
+- API V2: https://api-docs.scarf.sh/v2.html
 - api.md
 - api.zh.md
 
