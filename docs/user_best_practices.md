@@ -30,7 +30,7 @@ Currently this guide contains:
 
 ### Events we should be tracking:
 
-There are 3 events I would suggest everyone track.  
+There are 3 events we would suggest everyone track. 
 
 - Downloads/Pull events
 - Views of documentation
