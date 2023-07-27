@@ -17,7 +17,7 @@
     1. Create a new URL in the [Scarf Gateway](/gateway) as a redirect/link shortener to your website, Youtube, Hacker News, or other sites.  
     2. When posting links on social media use the new URL instead of the main link.  Data will then be available in the Scarf dashboard.
 5. Setup and test basic call home functionality:
-    1. Create a basic URL in Scarf Gateway that will act as an endpoint for your applications to ping.
+    1. Create a basic URL in [Scarf Gateway](/gateway) that will act as an endpoint for your applications to ping.
     2. Point the URL to a blank page on your site.
     3. In your software issue an async web call/ping/or page load using (your favorite tool/library/or command i.e. curl/libcurl, etc).  Note you can call this on start, daily, every time something runs, up to you.  You can throw away the result, the mere background call to open the URL is enough.
 6. After testing the various methods you can use to measure downloads, views, and access with Scarf, build a plan for what you want to track and what sort of data you want to see. 
