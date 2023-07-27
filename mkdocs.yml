@@ -35,6 +35,7 @@ nav:
 - quick-start.zh.md
 - quick-start_file.md
 - quick-start_file.zh.md
+- getting-started-checklist.md
 - gateway.md
 - gateway.zh.md
 - package-analytics.md
@@ -44,6 +45,8 @@ nav:
 - organizations.md
 - organizations.zh.md
 - data-export.md
+- user_best_practices.md
+
 - API V2:
   - api-v2.md
   - api-v2-import.md
