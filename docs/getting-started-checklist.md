@@ -9,7 +9,7 @@
     4. Test the route either via your web browser, curl, or with wget.
 	5. Check the dashboard to see you download was registered
 3. Setup and test documentation or website tracking:
-    1. Create a Scarf tracking pixel 
+    1. Create a Scarf [tracking pixel](/web-traffic)
 	2. Add it to the pages you want analytics for (whether on your site or on third party sites).
 	3. Check that the pixel is loading
 	4. Return to the scarf dashboard and check for pixel view data
