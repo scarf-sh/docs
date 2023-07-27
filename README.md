@@ -20,6 +20,7 @@ The site uses [MkDocs](https://www.mkdocs.org/) to generate the doc site from ma
 # Setup
 pip install mkdocs-material
 pip install mkdocs-render-swagger-plugin
+pip install mkdocs-i18n
 # Serve
 mkdocs serve
 ```
