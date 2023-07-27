@@ -157,7 +157,7 @@ In your Scarf dashboards you will often see a confidence flag associated with ev
 
 The confidence is a measurement of Scarf's confidence in the IP/metadata -> organization match for each event. Some of our metadata providers like Clearbit provide their own confidence scores and Scarf will take those into account, but we also account for what other providers say. We will make our own adjustments in many cases, for instance, if there is disagreement between the different data providers we use, or if we find irregularities in the metadata.
 
-Confidence intervals have 2 data points associated with them. The first is the overall flag which is low ( red ), medium ( yellow), and green ( high confidence). This gives you a quick way to associate high-probability matches with low ones. When looking into the flags, you will find a % of confidence associated with each company and event, and these percentages can be used to further differentiate which companies and events to prioritize.
+Confidence intervals have 2 data points associated with them. The first is the overall flag which is low (red), medium (yellow), and high (green) confidence. This gives you a quick way to associate high-probability matches with low ones. When looking into the flags, you will find a percent (%) of confidence associated with each company and event, and these percentages can be used to differentiate further which companies and events to prioritize.
 
 | Confidence | Description | How to Use |
 |------------| ----------- | ---------- |
