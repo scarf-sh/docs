@@ -245,7 +245,6 @@ Now you will be able to classify and score users' activities based on what sort 
 
 You can embed multiple pixels on the same page for different reasons to facilitate more detailed reporting. For instance, you may want to create one pixel for each project, but you may also want to create a pixel for just specific types of content on your website or elsewhere on the web. For instance, maybe you want everyone looking at blogs or tutorials on a critical feature to be tracked and have metrics reported on.  
 
-
 ## Tracking external link clicks
 
 A gateway route does not have to link back to a file to download; it can also forward traffic to a URL and track the traffic who clicked the link. This allows you to track who is clicking on links in social media, watching videos, clicking on links in external content, etc. We created a tutorial on this here:
