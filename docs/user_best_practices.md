@@ -140,7 +140,7 @@ Promoted content can be a powerful tool in these campaigns. Aimed at users in th
 
 Understanding the customer journey is crucial in a startup or new marketing environment. By mapping out this journey and identifying combinations of events and thresholds, you can strategize when to increase or decrease marketing activities for optimal effect. This dynamic approach can keep your marketing efforts agile and responsive to user behavior.
 
-Social media platforms like LinkedIn offer a targeted way to reach specific companies.
+Social media platforms like [LinkedIn](https://www.linkedin.com/company/scarf-sh/) offer a targeted way to reach specific companies.
 
 - Use this data to build a lightweight marketing and growth engine.
 - Approach the process as a life cycle or nurture-type campaign. Nurture potential users until they become productive users.
