@@ -148,6 +148,7 @@ Social media platforms like LinkedIn offer a targeted way to reach specific comp
 - Once users are actively using your software, shift the focus to ongoing maintenance and new releases. Then, start introducing your paid offerings or services.
 - Use social media to engage potential users, specifically for companies you identified
 - Integrate the scarf platform into your existing community activity to help nurture and guide potential users.
+
 ## How to use confidence intervals
 
 In your Scarf dashboards you will often see a confidence flag associated with events and companies.
