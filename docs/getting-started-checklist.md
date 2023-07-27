@@ -6,7 +6,7 @@
     1. Setup a [new package URL](/packages) via the [Scarf Gateway](/gateway) within your Scarf Dashboard.
     2. Point this URL to your current download endpoints.
     3. Update installation and setup documentation to direct users to use the gateway.
-    4. Test the route either via your webbrowser, curl, or with wget
+    4. Test the route either via your web browser, curl, or with wget.
 	5. Check the dashboard to see you download was registered
 3. Setup and test documentation or website tracking:
     1. Create a Scarf tracking pixel 
