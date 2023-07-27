@@ -1,4 +1,5 @@
-# Scarf User Guide & Best Practices
+# User Guide & Best Practices
+
 
 ## Intro
 
