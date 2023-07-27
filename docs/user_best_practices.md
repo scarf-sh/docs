@@ -166,6 +166,7 @@ Confidence intervals have 2 data points associated with them. The first is the o
 
 
 <a id="MultiplePackages"></a>
+
 ## Best practices to track multiple packages or projects
 
 Many of our customers offer downloads of multiple different open source projects, different versions, or downloads for different platforms. There are some best practices we have found useful for many of our customers when faced with dozens or even hundreds of unique packages. Your decisions on how to handle multiple packages, projects, or versions ultimately will come down to a.) how you want to report the data and b.) personal preference. 
