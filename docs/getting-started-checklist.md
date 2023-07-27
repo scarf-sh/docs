@@ -1,4 +1,5 @@
-# Scarf - Getting Started Checklist
+# Getting Started Checklist
+
 
 1. Register for an account 
 2. Setup and test downloads:
