@@ -1,6 +1,6 @@
 # Introduction
 
-Welcome to Scarf's documentation, your one-stop guide for understanding and leveraging our platform's powerful tools to track metrics for your open-source software projects.
+Welcome to Scarf's documentation, your one-stop guide for understanding and leveraging our platform's powerful tools to track usage metrics for your open-source software projects.
 
 ## About
 
