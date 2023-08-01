@@ -4,7 +4,7 @@ Welcome to Scarf's documentation, your one-stop guide for understanding and leve
 
 ## About
 
-Scarf is a dynamic platform designed to empower open-source software maintainers with in-depth insights about their product usage. By providing robust analytics and tracking capabilities, Scarf uncovers how and where your software is being utilized, revealing invaluable data such as users' IP addresses, companies, and more. This data aids maintainers to understand their product's reach, enabling them to identify growth opportunities and devise strategies for enhanced engagement. With its ethos firmly rooted in the open-source community, Scarf is not just a tool but an ally in your software project's journey towards success.
+Scarf provides open-source software maintainers with deep insights about their project's usage. With best-in-class open-source usage analytics and tracking capabilities, Scarf uncovers how and where your software is being utilized, which companies are relying on it, and much more. This data helps maintainers understand their project's reach, identify growth opportunities, and devise strategies for enhanced engagement. With its ethos firmly rooted in the open-source community, Scarf is not just a platform but a partner in your software project's journey toward success.
 
 ## Documentation Sections Overview
 
