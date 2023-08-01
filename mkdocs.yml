@@ -30,7 +30,7 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  favicon: assets/new_scarf.svg
+  favicon: assets/icon.svg
   icon:
     logo: assets/new_scarf.svg
 
