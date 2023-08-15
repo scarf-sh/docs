@@ -28,9 +28,9 @@ Scarf网关是一项服务，可以为您的容器(containers)和包(packages)�
 ![Enter the docker pull command](assets/pics/quick-start/create-docker.png)
 
 4.  为您的 Docker 容器输入当前的拉取命令。 `hello-world` 包的 Docker 命令是`docker pull hello-world`.
-    
+
     ![Enter the docker pull command](assets/pics/quick-start/docker-package-pull-command.png)
-    
+
 5. 可选项：您可以添加自定义域或使用 Scarf Gateway 提供的域。
 
 6. 单击 `Submit` 按钮将重定向到成功屏幕，其中包含一些关于您下一步可以做什么的附加信息。
@@ -80,7 +80,7 @@ Scarf网关是一项服务，可以为您的容器(containers)和包(packages)�
 1. 导航到您的包的详细信息视图。
    ![Package dashboard](assets/pics/quick-start/docker-copy-pull-command.png)
 2. 复制Pull命令。
-3. 导航到计算机上的终端并运行 Pull 命令。 
+3. 导航到计算机上的终端并运行 Pull 命令。
    ![Run Scarf pull command](assets/pics/quick-start/terminal_pull.png)
    **注意：**确保 docker 守护进程正在您的计算机上运行。
 
@@ -91,5 +91,5 @@ Scarf网关是一项服务，可以为您的容器(containers)和包(packages)�
 
 ## 下一步？
 
-有关 Scarf网关的更多详细信息，请参阅我们文档的 [Scarf网关](https://docs.scarf.sh/gateway/) 部分。
+有关 Scarf网关的更多详细信息，请参阅我们文档的 [Scarf网关](/gateway) 部分。
 如果您有任何疑问或需要帮助，请加入我们的 [Slack 社区](https://tinyurl.com/scarf-community-slack)。

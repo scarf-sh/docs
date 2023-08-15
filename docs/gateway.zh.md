@@ -94,7 +94,7 @@ Scarf 尚不支持组织级权限，但很快就会支持。
 
 #### Docker 包：定义容器拉取
 
-Scarf 根据 [Docker Hub defines them](https://docs.docker.com/docker-hub/download-rate-limit/) 来定义拉取。
+Scarf 根据 [Docker Hub defines them](/docker-hub/download-rate-limit/) 来定义拉取。
 
 拉取定义为对托管提供商清单 URL (`/v2/*/manifests/*`)的一个或多个 `GET`请求。 HEAD 请求不算作拉取。
 
@@ -118,7 +118,7 @@ Scarf 网关部署在全球多个区域的 AWS 上； 它甚至可以容错整�
 
 我们期望达到每月 99.9% 的服务正常运行时间百分比。 我们的服务级别协议的保证将在未来提供。
 
-要查看 Scarf 的正常运行时间和系统状态，您可以在[此处](https://status.scarf.sh)查看状态页面。 
+要查看 Scarf 的正常运行时间和系统状态，您可以在[此处](https://status.scarf.sh)查看状态页面。
 
 ### 徽章
 

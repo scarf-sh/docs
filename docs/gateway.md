@@ -94,7 +94,7 @@ Scarf does not yet support organization-level permissions but will soon.
 
 #### Docker Packages: Defining a container pull
 
-Scarf defines a pull based on how [Docker Hub defines them](https://docs.docker.com/docker-hub/download-rate-limit/) for the purposes of their rate-limiting functionality.
+Scarf defines a pull based on how [Docker Hub defines them](/docker-hub/download-rate-limit) for the purposes of their rate-limiting functionality.
 
 A pull is defined as one or more `GET` requests on hosting provider manifest URLs (`/v2/*/manifests/*`). `HEAD` requests are not counted as a pull.
 

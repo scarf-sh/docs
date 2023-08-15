@@ -2,7 +2,7 @@
 
 !!! warning
 
-    此版本的 Scarf API 已弃用。 如果您刚刚开始，请在 [此处](/api-v2)查看最新版本。
+    此版本的 Scarf API 已弃用。 如果您刚刚开始，请在 [此处](https://api-docs.scarf.sh/v2.html)查看最新版本。
 
 Scarf offers API access to the maintainer toolchain, rooted at `https://scarf.sh/api`.
 
@@ -278,7 +278,7 @@ Deletes a package domain.
 #### List package domains
 `GET https://scarf.sh/api/v1/packages/{package-id}/domains`
 
-List all package domains for the user. You can find more information about package domains in the [Gateway Docs](https://docs.scarf.sh/gateway/#python-packages)
+List all package domains for the user. You can find more information about package domains in the [Gateway Docs](/gateway/#python-packages)
 
 Returns a `JSON`-encoded list of [PackageDomainV1](#packagedomainv1)
 
