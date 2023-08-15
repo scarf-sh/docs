@@ -15,7 +15,7 @@ Scarf provides open-source software maintainers with deep insights about their p
 5. **[Documentation Insights (Pixels)](/web-traffic):** Uncover insights about your product's usage through Scarf's innovative pixel tracking.
 6. **[Organizations](/organizations):** Learn how to manage and collaborate with your teams within Scarf's platform.
 7. **[Data Export](/data-export):** Export your data for customized analysis. Explore the potential of data manipulation to suit your needs.
-8. **[API Docs](/api-v2):** Understand the capabilities of a specific API version and its available endpoints.
+8. **[API Docs](https://api-docs.scarf.sh/v2.html):** Understand the capabilities of a specific API version and its available endpoints.
 
 ## Contribution
 

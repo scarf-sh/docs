@@ -2,7 +2,7 @@
 
 !!! warning
 
-    This version of Scarf's API is deprecated. Access and support to API V1 will end of life September 1, 2023. If you're just getting started see the latest version [here](/api-v2).
+    This version of Scarf's API is deprecated. Access and support to API V1 will end of life September 1, 2023. If you're just getting started see the latest version [here](https://api-docs.scarf.sh/v2.html).
 
 Scarf offers API access to the maintainer toolchain, rooted at `https://scarf.sh/api`.
 

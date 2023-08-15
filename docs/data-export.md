@@ -8,7 +8,7 @@ To export data out of Scarf, go to the main dashboard and click "Export packages
 
 The data you can export from Scarf includes all events (defined as package downloads and pixel views) from every user that has interacted with your Scarf-enabled artifacts (packages and pixels). Upon clicking "Export packages data", this data will download as a .csv file.
 
-You can also export this data using [the Scarf API](/api-v2).
+You can also export this data using [the Scarf API](https://api-docs.scarf.sh/v2.html).
 
 ### Data Fields
 
