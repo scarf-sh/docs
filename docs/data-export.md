@@ -32,6 +32,7 @@ The data export includes the following categories:
 - **origin_company**: If Scarf is able to associate the event with a known business entity, that business entity is listed here
 - **origin_domain**: If Scarf is able to associate the event with a known business entity, that business entity's web domain address is listed here
 - **dnt**: If the user includes a DNT request in their header, that is logged here and [they will not be tracked](/gateway/#do-not-track)
+- **endpoint_id**: This uniquely identifies the public-facing device that has interacted with a Scarf event. Unlike origin_id, it is notably not sensitive to changes in device information like client, user agent, etc.
 
 ### Integrations
 
