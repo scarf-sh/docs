@@ -6,7 +6,7 @@ Scarf provides a robust platform for tracking package downloads and pixel views.
 
 ## Prerequisites
 
-Exporting data from Scarf will only work if you are on a [Scarf Premium Tier plan](https://about.scarf.sh/#pricing-section).
+Exporting data from Scarf will only work if you are on a [Scarf Paid Plan](https://about.scarf.sh/#pricing).
 
 ## How to Export Data from Scarf
 
