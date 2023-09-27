@@ -1,6 +1,8 @@
 # Open Source Qualified Leads ( OQLs )
 
-## Definition: What is an Open Source Qualified Lead (OQL)?
+## Definition
+
+### What is an Open Source Qualified Lead (OQL)?
 
 An Open Source Qualified Lead (OQL) is an individual or organization that has shown a measurable level of engagement in open-source communities or projects, indicating a likely interest in a particular product or service that adds value to their open-source activities. This data-driven insight is crucial for identifying growth strategies, developer relations initiatives, and targeted sales or marketing campaigns.
 
@@ -19,6 +21,13 @@ This involves assigning a numerical value to each lead based on various factors 
 #### Lead Qualification
 
 This is the process of filtering leads based on specific criteria such as demographic information and behavioral actions. For OQL, this could involve analyzing the types of open-source projects they are involved in, their level of activity, and their expressed needs or pain points.
+
+### Why should you track OQL’s?
+
+- Building a baseline and tracking the growth of your user base
+- Planning activities to accelerate the adoption of your open source
+- Enriching and expanding the sales pipeline
+- Determining potential risk from users leaving your ecosystem
 
 ### OQL Point System
 
@@ -87,14 +96,6 @@ Here, you could have three different levels of OQLs:
 3. Open Source Qualified Lead Level 3 - Commercial Interest
 
 If you are tracking a company's OQL status over time, this can help you estimate churn and understand potential changes in the sentiment of your project.  Consider if you have a user who reached an OQL level 3 (OQL3) and purchased something from your company.  For 2 years this company has maintained an OQL3 status.  Then for the last 2 months, they have not reached the same status.  Why has their download pattern changed?  Why did they stop participating in your community?  Are they going to move to something else?  Knowing this enables you to get ahead of any potential issue.
-
-## Why should you track OQL’s?
-
-- Building a baseline and tracking the growth of your user base
-- Planning activities to accelerate the adoption of your open source
-- Enriching and expanding the sales pipeline
-- Determining potential risk from users leaving your ecosystem
-
 
 ## Sample Setup
 
