@@ -1,13 +1,67 @@
 # Open Source Qualified Leads ( OQLs )
 
-## Definition:  What is an Open Source Qualified Lead (OQL)?
+## Definition: What is an Open Source Qualified Lead (OQL)?
 
-An OQL is a potential user or customer who has performed a certain number of activities in the open-source space that are predictive of the potential usage or need for a specific value-added product or service.  This knowledge is then used to assess and drive growth opportunities, potential DevRel activities, or sales/marketing opportunities.
+An Open Source Qualified Lead (OQL) is an individual or organization that has shown a measurable level of engagement in open-source communities or projects, indicating a likely interest in a particular product or service that adds value to their open-source activities. This data-driven insight is crucial for identifying growth strategies, developer relations initiatives, and targeted sales or marketing campaigns.
+
+### Relevant Content for Further Understanding
+
+By incorporating these broader concepts into the definition of an OQL, it becomes easier for everyone in an organization to understand and utilize the term effectively.
+
+#### Lead Generation
+
+In marketing, lead generation stimulates interest in a product or service to develop a sales pipeline. In the context of open source, this could involve tracking contributions, forum activity, or other community engagement metrics.
+
+#### Lead Scoring
+
+This involves assigning a numerical value to each lead based on various factors like their level of interest, fit with the target market, and likelihood of becoming a customer. This could be based on the number of pull requests, issues raised, or other community contributions in the open-source context.
+
+#### Lead Qualification
+
+This is the process of filtering leads based on specific criteria such as demographic information and behavioral actions. For OQL, this could involve analyzing the types of open-source projects they are involved in, their level of activity, and their expressed needs or pain points.
+
+### OQL Point System
+
+#### Page Views
+
+| Event Value | Points | Limits | Example(s) |
+| --- | --- | --- | --- |
+| Low | 0.25 | ≤ 2 points/day<br/>≤ 10 points/month | example |
+| Medium | 0.5 | ≤ 3 points/day<br/>≤ 20 points/month | example |
+| High | 1 | ≤ 5 points/day<br/>≤ 30 points/month | example |
+
+#### Download/Pull/Installs
+
+| Event Value | Points | Limits | Example(s) |
+| --- | --- | --- | --- |
+| Low | 2 | ≤ 6 points/day<br/>≤ 30 points/month | example |
+| Medium | 5 | ≤ 10 points/day<br/>≤ 50 points/month | example |
+| High | 8 | ≤ 16 points/day<br/>≤ 42 points/month | example |
+
+#### Community activities
+
+Additional recommended activities and events to be tracked based on community activity.
+
+| Event Value | Points | Limits | Example(s) |
+| --- | --- | --- | --- |
+| Low | 2 | ≤ 2 points/day<br/>≤ 10 points/month | Open an issue |
+| Medium | 5 | ≤ 10 points/day<br/>≤ 50 points/month | Pull Request submitted<br/>Slack signup |
+| High | 8 | ≤ 24 points/day<br/>≤ 48 points/month | example |
+
+### OQL Status Levels
+
+- OQL0 - Former OQL that qualified, but overtime has gone cold or is unverified.
+	- Previously reach an OQL1->3 status, but no longer meets this requirement
+- OQL1 - Enough activity has occurred for us to suspect the company is actively investigating this open source
+	- Has activily reached more than 10 points but less then 40
+- OQL2 - Enough activity has occurred for us to suspect the company is actively using this open source software for one or more production systems
+	- Has activity that has reached 40 to 70 points
+- OQL3 - Enough activity has been detected for us to suggest that this user may be ready to be a customer and should feed into the sales/marketing pipeline if available.  If this is not a commercial open-source project, OQL3 would be a good indicator that this company may be a good sponsorship target or may prove to be a valuable advocate in the in the community.
+	- Has activity that has reached 70+ points
 
 ## Practical Example:
 
 There are different ways to build an OQL depending on the project, outcome, and needs.  But for our example, let’s say that we determine an OQL should perform the following:
-
 
 - Download the software packages more than once over the course of more than 3 days
   - Indicating more than merely a passive one-time download
@@ -35,48 +89,20 @@ Here, you could have three different levels of OQLs:
 If you are tracking a company's OQL status over time, this can help you estimate churn and understand potential changes in the sentiment of your project.  Consider if you have a user who reached an OQL level 3 (OQL3) and purchased something from your company.  For 2 years this company has maintained an OQL3 status.  Then for the last 2 months, they have not reached the same status.  Why has their download pattern changed?  Why did they stop participating in your community?  Are they going to move to something else?  Knowing this enables you to get ahead of any potential issue.
 
 ## Why should you track OQL’s?
+
 - Building a baseline and tracking the growth of your user base
 - Planning activities to accelerate the adoption of your open source
 - Enriching and expanding the sales pipeline
 - Determining potential risk from users leaving your ecosystem
 
 
-## Sample Setup:
+## Sample Setup
+
 Below we will outline a basic setup for scoring and qualifying OQL’s.   We recommend starting with a simple point system to qualify leads over a 30/60/90 day period.  In a point system each activity is worth a certain amount of points, once you reach a certain number of points and/or logic gates that moves a lead to the appropriate lead level.  We also recommend that you track OQL’s at the company level.  Many of the activities will occur from servers and won’t be associated with end user accounts.
 
-### OQL Point System:
-- Documentation views
-	- Limit points to 5 a day, 20 points a month
-	- Any page view 0.25 points
-	- High Value page view 1 point ( if any )
-- Blog/tutorial views
-	- Limit points to 2 a day, 5 points a month
-	- Any page view 0.25 points
-	- High Value page view 1 point ( if any )
-- Website views
-	- Limit points to 5 a day, 20 points a month
-	- Any page view 0.10 points
-	- High Value page view 1 point ( if any, pages like pricing or support )
-- Download/pull/install
-	- Limit points to 10 a day, 20 a week, 50 a month
-	- Download 5 pts
-- Community activities
-	- Limit points to 5 a day, 20 a month
-	- Open an issue 2 points
-	- PR 5 points
-	- Slack signup 5 points
+## FAQ
 
-### OQL Status Levels:
-- OQL0 - Former OQL that qualified, but overtime has gone cold or is unverified.
-	- Previously reach an OQL1->3 status, but no longer meets this requirement
-- OQL1 - Enough activity has occurred for us to suspect the company is actively investigating this open source
-	- Has activily reached more than 10 points but less then 40
-- OQL2 - Enough activity has occurred for us to suspect the company is actively using this open source software for one or more production systems
-	- Has activity that has reached 40 to 70 points
-- OQL3 - Enough activity has been detected for us to suggest that this user may be ready to be a customer and should feed into the sales/marketing pipeline if available.  If this is not a commercial open-source project, OQL3 would be a good indicator that this company may be a good sponsorship target or may prove to be a valuable advocate in the in the community.
-	- Has activity that has reached 70+ points
-
-## How is an OQL different from an MQL?
+### How is an OQL different from an MQL?
 
 A marketing qualified lead ( MQL ) is similar to an OQL but contains different activities and is focused on a different part of a user's journey.  While an OQL is tracking user and community activities, the MQL will track interactions with marketing activities.  We recommend overlapping webpage visits for both MQL’s and OQL’s, but other than that the OQL is focused on open source adoption, and then the MQL is focused on closing new commercial customers.
 
