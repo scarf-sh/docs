@@ -83,22 +83,22 @@ Additional recommended activities and events to be tracked based on community ac
 There are different ways to build an OQL depending on the project, outcome, and needs.  But for our example, let’s say that we determine an OQL should perform the following:
 
 - Download the software packages more than once over the course of more than 3 days
-  - Indicating more than merely a passive one-time download
+    - Indicating more than merely a passive one-time download
 - Viewing the docs over the course of multiple days
-  - The more unique people from the same company the better
+    - The more unique people from the same company the better
 - Active participation in 1 or more community channels ( github, slack, forums, etc )
-  - This shows more investment in understanding and using the software… but often only 1 out 10 users will show up here.
+    - This shows more investment in understanding and using the software… but often only 1 out 10 users will show up here.
 - Activity ( either downloads , documentation views, slack messages, etc  ) within the last 31 days
 
 Assuming you have seen a single company or person do the above activities, you have high confidence that this company is at least investigating your software.
 
 We could enrich this data even further by looking at things like:
 - Activities over a 3 month or 6 month period
-	- This would indicate ongoing usage
+  	- This would indicate ongoing usage
 - Ongoing or repeated page views or searches for a specific feature or solution
-	- This would help identify a potential desire to use or better understand a specific feature.  This could also represent a place where they are stuck.
+  	- This would help identify a potential desire to use or better understand a specific feature.  This could also represent a place where they are stuck.
 - Page views to pricing or signup pages
-	- This, combined with ongoing activities over a sustained period, would indicate a strong potential interest for a commercial relationship
+  	- This, combined with ongoing activities over a sustained period, would indicate a strong potential interest for a commercial relationship
 
 If you are tracking a company's OQL status over time, this can help you estimate churn and understand potential changes in the sentiment of your project.  Consider if you have a user who reached an Ongoing Usage and purchased something from your company.  For 2 years this company has maintained this status.  Then, for the last 2 months, they have not reached the same status.  Why has their download pattern changed?  Why did they stop participating in your community?  Are they going to move to something else?  Knowing this enables you to get ahead of any potential issue.
 
