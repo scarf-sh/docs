@@ -60,23 +60,23 @@ Additional recommended activities and events to be tracked based on community ac
 ### OQL Status Levels
 
 1. **Interest** - Just viewing docs or site, any downloads immediately trigger Investigation stage.
-    a. Less than 10 points.
-    b. Just pixel activity -  any downloads trigger Investigation stage.
+    1. Less than 10 points.
+    2. Just pixel activity -  any downloads trigger Investigation stage.
 2. **Investigation** - Enough activity has occurred for us to suspect the company is actively investigating this open source
-    a. Has activily reached more than 10 points but less then 40.
-		b. They have downloaded at least 1 package and poked around the docs (multiple pixels).
-		c. Or, we see 2 consecutive weeks of pixel activity.
+    1. Has activily reached more than 10 points but less then 40.
+    2. They have downloaded at least 1 package and poked around the docs (multiple pixels).
+    3. Or, we see 2 consecutive weeks of pixel activity.
 3. **Experimentation** - Enough activity has occurred for us to suspect the company is actively using this open source software for one or more production systems
-    a. Has activity that has reached 40 to 70 points.
-    b. Multiple downloads and pixels over the course of 30 days.
-    c. Or, single download and multiple pixels over the course of 60 days.
-    d. and Active in the last 30 days.
+    1. Has activity that has reached 40 to 70 points.
+    2. Multiple downloads and pixels over the course of 30 days.
+    3. Or, single download and multiple pixels over the course of 60 days.
+    4. and Active in the last 30 days.
 4. **Ongoing Usage** - Enough activity has been detected for us to suggest that this user may be ready to be a customer and should feed into the sales/marketing pipeline if available. If this is not a commercial open-source project, OQL3 would be a good indicator that this company may be a good sponsorship target or may prove to be a valuable advocate in the in the community.
-    a. Has activity that has reached 70+ points.
-    b. Continued downloads or pixel fetches, over 90 days of history, active in the last 90 days.
+    1. Has activity that has reached 70+ points.
+    2. Continued downloads or pixel fetches, over 90 days of history, active in the last 90 days.
 5. **Inactive** - Former OQL that qualified, but overtime has gone cold or is unverified.
-    a. We saw activity at some point, but we haven’t seen anything in 60 days.
-    b. Previously reach an Investigation, Experimentation, or Ongoing Usage status, but no longer meets this requirement.
+    1. We saw activity at some point, but we haven’t seen anything in 60 days.
+    2. Previously reach an Investigation, Experimentation, or Ongoing Usage status, but no longer meets this requirement.
 
 ## Practical Example:
 
