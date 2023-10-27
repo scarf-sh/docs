@@ -94,11 +94,11 @@ Assuming you have seen a single company or person do the above activities, you h
 
 We could enrich this data even further by looking at things like:
 - Activities over a 3 month or 6 month period
-  	- This would indicate ongoing usage
+    - This would indicate ongoing usage
 - Ongoing or repeated page views or searches for a specific feature or solution
-  	- This would help identify a potential desire to use or better understand a specific feature.  This could also represent a place where they are stuck.
+    - This would help identify a potential desire to use or better understand a specific feature.  This could also represent a place where they are stuck.
 - Page views to pricing or signup pages
-  	- This, combined with ongoing activities over a sustained period, would indicate a strong potential interest for a commercial relationship
+    - This, combined with ongoing activities over a sustained period, would indicate a strong potential interest for a commercial relationship
 
 If you are tracking a company's OQL status over time, this can help you estimate churn and understand potential changes in the sentiment of your project.  Consider if you have a user who reached an Ongoing Usage and purchased something from your company.  For 2 years this company has maintained this status.  Then, for the last 2 months, they have not reached the same status.  Why has their download pattern changed?  Why did they stop participating in your community?  Are they going to move to something else?  Knowing this enables you to get ahead of any potential issue.
 
