@@ -51,11 +51,11 @@ This is the process of filtering leads based on specific criteria such as demogr
 
 Additional recommended activities and events to be tracked based on community activity.
 
-| Event Value | Points | Limits | Example(s) |
-| --- | --- | --- | --- |
-| Low | 2 | ≤ 2 points/day<br/>≤ 10 points/month | Open an issue |
-| Medium | 5 | ≤ 10 points/day<br/>≤ 50 points/month | Pull Request submitted<br/>Slack signup |
-| High | 8 | ≤ 24 points/day<br/>≤ 48 points/month | example |
+| Event Value | Points | Limits                                | Example(s)                  |
+|-------------|--------|---------------------------------------|-----------------------------|
+| Low         | 2      | ≤ 2 points/day<br/>≤ 10 points/month  | Issue comment reaction      |
+| Medium      | 5      | ≤ 10 points/day<br/>≤ 50 points/month | Slack signup, open an issue |
+| High        | 8      | ≤ 24 points/day<br/>≤ 48 points/month | Pull Request submitted      |
 
 ### OQL Status Levels
 
