@@ -33,19 +33,19 @@ This is the process of filtering leads based on specific criteria such as demogr
 
 #### Page Views
 
-| Event Value | Points | Limits | Example(s) |
-| --- | --- | --- | --- |
-| Low | 0.25 | ≤ 2 points/day<br/>≤ 10 points/month | example |
-| Medium | 0.5 | ≤ 3 points/day<br/>≤ 20 points/month | example |
-| High | 1 | ≤ 5 points/day<br/>≤ 30 points/month | example |
+| Event Value | Points | Limits                               | Example(s)        |
+|-------------|--------|--------------------------------------|-------------------|
+| Low         | 0.25   | ≤ 2 points/day<br/>≤ 10 points/month | Blog post view    |
+| Medium      | 0.5    | ≤ 3 points/day<br/>≤ 20 points/month | Home page view    |
+| High        | 1      | ≤ 5 points/day<br/>≤ 30 points/month | Pricing page view |
 
 #### Download/Pull/Installs
 
-| Event Value | Points | Limits | Example(s) |
-| --- | --- | --- | --- |
-| Low | 2 | ≤ 6 points/day<br/>≤ 30 points/month | example |
-| Medium | 5 | ≤ 10 points/day<br/>≤ 50 points/month | example |
-| High | 8 | ≤ 16 points/day<br/>≤ 42 points/month | example |
+| Event Value | Points | Limits                                | Example(s)                              |
+|-------------|--------|---------------------------------------|-----------------------------------------|
+| Low         | 2      | ≤ 6 points/day<br/>≤ 30 points/month  | Pull `latest`                           |
+| Medium      | 5      | ≤ 10 points/day<br/>≤ 50 points/month | Pull a stable community edition release |
+| High        | 8      | ≤ 16 points/day<br/>≤ 42 points/month | Pull an enterprise edition              |
 
 #### Community activities
 
