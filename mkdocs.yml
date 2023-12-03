@@ -58,6 +58,7 @@ nav:
 - user_best_practices.md
 - oql.md
 - API V2: https://api-docs.scarf.sh/v2.html
+- troubleshooting.md
 
 # Analytics
 google_analytics:
