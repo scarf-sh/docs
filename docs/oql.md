@@ -33,29 +33,29 @@ This is the process of filtering leads based on specific criteria such as demogr
 
 #### Page Views
 
-| Event Value | Points | Limits | Example(s) |
-| --- | --- | --- | --- |
-| Low | 0.25 | ≤ 2 points/day<br/>≤ 10 points/month | example |
-| Medium | 0.5 | ≤ 3 points/day<br/>≤ 20 points/month | example |
-| High | 1 | ≤ 5 points/day<br/>≤ 30 points/month | example |
+| Event Value | Points | Limits                               | Example(s)        |
+|-------------|--------|--------------------------------------|-------------------|
+| Low         | 0.25   | ≤ 2 points/day<br/>≤ 10 points/month | Blog post view    |
+| Medium      | 0.5    | ≤ 3 points/day<br/>≤ 20 points/month | Home page view    |
+| High        | 1      | ≤ 5 points/day<br/>≤ 30 points/month | Pricing page view |
 
 #### Download/Pull/Installs
 
-| Event Value | Points | Limits | Example(s) |
-| --- | --- | --- | --- |
-| Low | 2 | ≤ 6 points/day<br/>≤ 30 points/month | example |
-| Medium | 5 | ≤ 10 points/day<br/>≤ 50 points/month | example |
-| High | 8 | ≤ 16 points/day<br/>≤ 42 points/month | example |
+| Event Value | Points | Limits                                | Example(s)                              |
+|-------------|--------|---------------------------------------|-----------------------------------------|
+| Low         | 2      | ≤ 6 points/day<br/>≤ 30 points/month  | Pull `latest`                           |
+| Medium      | 5      | ≤ 10 points/day<br/>≤ 50 points/month | Pull a stable community edition release |
+| High        | 8      | ≤ 16 points/day<br/>≤ 42 points/month | Pull an enterprise edition              |
 
 #### Community activities
 
 Additional recommended activities and events to be tracked based on community activity.
 
-| Event Value | Points | Limits | Example(s) |
-| --- | --- | --- | --- |
-| Low | 2 | ≤ 2 points/day<br/>≤ 10 points/month | Open an issue |
-| Medium | 5 | ≤ 10 points/day<br/>≤ 50 points/month | Pull Request submitted<br/>Slack signup |
-| High | 8 | ≤ 24 points/day<br/>≤ 48 points/month | example |
+| Event Value | Points | Limits                                | Example(s)                  |
+|-------------|--------|---------------------------------------|-----------------------------|
+| Low         | 2      | ≤ 2 points/day<br/>≤ 10 points/month  | Issue comment reaction      |
+| Medium      | 5      | ≤ 10 points/day<br/>≤ 50 points/month | Slack signup, open an issue |
+| High        | 8      | ≤ 24 points/day<br/>≤ 48 points/month | Pull Request submitted      |
 
 ### OQL Status Levels
 
