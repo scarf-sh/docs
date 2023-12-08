@@ -2,7 +2,7 @@
 
 ## Creating an organization
 
-To create an organization, in the header menu click on the `Organization` button
+To create an organization, in the header menu click on the `Organizations` button
 
 ![Organization button](assets/pics/orgs/organization-button.png)
 
