@@ -88,7 +88,7 @@ In this section you will download your package with the pull command found in yo
    ![Run Scarf pull command](assets/pics/quick-start/terminal_pull.png)
 **Note:** Make sure the docker daemon is running on your computer.
 
-4. Back to the package details view and click on `View Alytics`. You should now see the Package Insights starting to populate with data.
+4. Back to the package details view and click on `View Analytics`. You should now see the Package Insights starting to populate with data.
 It may take a few minutes before you see data pulled in.
 ![Data from packages](assets/pics/quick-start/package-analytics.png)
 Every time a user pulls your Docker container images from Scarf Gateway the data in your Package Insights will be updated.
