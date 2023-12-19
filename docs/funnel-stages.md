@@ -13,27 +13,27 @@ As events by a user/organization occur, such as views or downloads, Scarf assign
 
 ## Interest <a id="interest"></a>
 
-These events are like viewing your documentation, your README, or your site (pixel activity only - a download would trigger the investigation stage). Less than 10 points are accrued in this stage.  
+A company enters this stage following initial events such as viewing your documentation, README, or site (pixel activity only - a download would trigger the investigation stage).   
 
 
 ## Investigation <a id="investigation"></a>
 
-Enough activity has occurred for us to suspect the user/organization is actively investigating your OSS. Between 10 and 39 points are accrued in this stage with events such as at least one package download with multiple docs views or at least two weeks of consecutive pixel view activity, and the company has been active in the last 30 days. 
+Enough activity has occurred for us to suspect the user/organization is actively investigating your OSS. This stage includes the occurrence of multiple events such as at least one package download with multiple docs views or at least two weeks of consecutive pixel view activity, and the company has been active in the last 30 days. 
 
 
 ## Experimentation<a id="experimentation"></a>
 
-Sufficient activity has occurred for us to suspect the company is actively using your OSS for one or more production systems. Between 40 and 69 points are accrued in this stage with events such as multiple downloads and page views over 30 days or a single download and multiple page views over 60 days, and the company has had activity in the last 90 days. 
+Sufficient activity has occurred for us to suspect the company is actively using your OSS for one or more production systems. Events such as multiple downloads and page views will have occurred over 30 days or a single download and multiple page views over 60 days, and the company has had activity in the last 90 days. 
 
 
 ## Ongoing Usage <a id="ongoing-usage"></a>
 
-Companies in this stage may be ready to become paying customers and should be moved into your sales/marketing pipeline where available. For non-commercial open-source projects, companies in this stage may be good sponsorship targets or valuable advocates in the community. These companies will have event activity over the course of the past 90 days, such as continued downloads or views, and will have accrued 70 or more points.
+Companies in this stage may be ready to become paying customers and should be moved into your sales/marketing pipeline where available. For non-commercial open-source projects, companies in this stage may be good sponsorship targets or valuable advocates in the community. These companies will have event activity over the course of the past 90 days, such as continued downloads or views.
 
 
 ## Inactive<a id="inactive"></a>
 
-Companies may move into an inactive stage when activity drops and does not resume over 60 or more days. If activity resumes, the company will return to the last active stage, and points will reset. 
+Companies may move into an inactive stage when activity drops off and does not resume over 60 or more days. If activity resumes, the company will return to the last active stage. 
 
 
 # Recommended Sort<a id="recommended-sort"></a>
