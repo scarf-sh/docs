@@ -1,6 +1,6 @@
 # Open Source Funnel Stages<a id="funnel-stages"></a>
 
-Scarf assigns a point value, or score, to companies based on event activity, such as documentation views or artifact downloads. This score considers the recency, frequency of event activity, and Event Importance, combining the benefits of traditional lead scoring and intent data. That point value is used to determine the **Funnel Stage**, which helps to clearly identify a company’s readiness for various types of marketing or sales engagement. 
+Scarf analyzes how companies interact with your open-source project to infer their progress toward adopting it. Funnel Stages represent the portion of the user journey that best describes any given company or lead, from the moment they learn of your project, to when they deploy it to production, and beyond. 
 
 All paid subscribers and active trial participants will see a **Funnel Stage** on Company Views/Downloads in your Package and Pixel Analytics. Funnel Stages begin at the most basic level with interest, increasing all the way to ongoing usage.
 
