@@ -65,57 +65,7 @@ Use the Event Importance slider to set or edit the importance of a Package or Pi
 
 # Using Your Scarf Funnel Stage Data<a id="using-your-scarf-funnel-stage-data"></a>
 
-Scarf's data combines lead scoring's best features with intent data. Real-time activity highlights the companies actively researching and testing your open-source software. This data facilitates operationalizing the usage and intent data provided by your Scarf Gateway. 
-
-
-## Build More Accurate User Personas & Ideal Customer Profiles<a id="build-more-accurate-user-personas--ideal-customer-profiles"></a>
-
-Your Scarf Analytics can help you identify key facets of your users, including: 
-
-- Demographic data such as location
-
-- Common browsers and operating systems in use
-
-- Common download pathways
-
-- Most active versions
-
-- Distribution of cloud providers
-
-- Level and frequency of activity
-
-- The content referenced most frequently
-
-
-## Better Target Your Marketing Activities<a id="better-target-your-marketing-activities"></a>
-
-A Scarf Funnel Stage of Investigation or Experimentation may indicate companies that are a good fit for some of the following retargeting & nurturing strategies: 
-
-- Pay-per-click or other advertising
-
-- Email marketing / general outreach sequences
-
-- Freemium access
-
-- Community engagement (user forums, contributor programs)
-
-
-## Optimize Your Sales Activities<a id="optimize-your-sales-activities"></a>
-
-A Scarf Funnel Stage of Ongoing Usage may indicate companies that are a good fit for some of the following strategies: 
-
-- Cold calling
-
-- Event/trade show invitations
-
-- Targeted communications & content creation
-
-- Partnerships & collaborations
-
-Use the data provided by your Scarf funnel to better understand and segment your prospective customers and investors.
-
-
-## Predict Churn Ahead of Time<a id="predict-churn-ahead-of-time"></a>
+Scarf's data combines lead scoring's best features with intent data. Real-time activity highlights the companies actively researching and testing your open-source software. This data facilitates operationalizing the usage and intent data provided by your Scarf Gateway. Utilize the data to track trends in usage over time to indicate your ideal customer profile, highlight opportunities and risks, such as early indicators of potential churn, or documentation that needs more frequent updating.
 
 Sudden and/or unexpected changes in activity levels or types may indicate a company looking to make a change. While this change may be good or bad, it is worthy of attention and investigation. Key examples include:
 
@@ -124,19 +74,6 @@ Sudden and/or unexpected changes in activity levels or types may indicate a comp
 - An existing paying customer of yours becomes very active with OSS, potentially indicating a downgrade before it actually happens
 
 - You begin to see more traffic to documents explaining data export by certain users
-
-
-## Analyze Your Business with Your Investors in Mind<a id="analyze-your-business-with-your-investors-in-mind"></a>
-
-Investors in the open-source space are constantly looking for more fine-grained metrics to indicate the potential success of their portfolio companies. Scarf Funnel data helps your current and prospective investors by letting you:
-
-- Provide more granular and higher-intent commercial data than just GitHub stars or community Slack members
-
-- Show the types of companies that are using your OSS and the level & length of usage
-
-- Identify with a good degree of confidence the companies that have incorporated your OSS in production
-
-- Identify trends that indicate your ideal customer profile
 
 
 ## Go Even Further with Your Outreach<a id="go-even-further-with-your-outreach"></a>
