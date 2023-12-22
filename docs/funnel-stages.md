@@ -1,4 +1,4 @@
-# Open Source Funnel Stages<a id="funnel-stages"></a>
+# Open Source Adoption Funnel Stages<a id="funnel-stages"></a>
 
 Scarf analyzes how companies interact with your open-source project to infer their progress toward adopting it. Funnel Stages represent the portion of the user journey that best describes any given company or lead, from the moment they learn of your project, to when they deploy it to production, and beyond. 
 
