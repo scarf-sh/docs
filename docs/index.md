@@ -10,12 +10,16 @@ Scarf provides open-source software maintainers with deep insights about their p
 
 1. **[Quick Start](/quick-start):** Jumpstart your journey with Scarf. A concise guide to get you up and running with our platform quickly.
 2. **[Packages](/packages):** Delve into the specifics of working with various package types, such as Docker, npm, Python, Hackage, and more. Learn about API Endpoints, Custom Events, Helm Charts, and Repository details.
-3. **[Scarf Gateway](/gateway):** Understand the nuances of Scarf's secure and powerful gateway.
-4. **[Scarf SDKs](/package-analytics):** Discover how our Software Development Kits (SDKs) can accelerate your development process.
-5. **[Documentation Insights (Pixels)](/web-traffic):** Uncover insights about your product's usage through Scarf's innovative pixel tracking.
-6. **[Organizations](/organizations):** Learn how to manage and collaborate with your teams within Scarf's platform.
-7. **[Data Export](/data-export):** Export your data for customized analysis. Explore the potential of data manipulation to suit your needs.
-8. **[API Docs](https://api-docs.scarf.sh/v2.html):** Understand the capabilities of a specific API version and its available endpoints.
+3. **[Getting Started Checklist](/getting-started-checklist):** This checklist is your go-to guide for setting up and testing various Scarf functionalities. Follow these steps to ensure a smooth integration and explore the full potential of Scarf's features.
+4. **[Scarf Gateway](/gateway):** Understand the nuances of Scarf's secure and powerful gateway.
+5. **[Scarf SDKs](/package-analytics):** Discover how our Software Development Kits (SDKs) can accelerate your development process.
+6. **[Documentation Insights (Pixels)](/web-traffic):** Uncover insights about your product's usage through Scarf's innovative pixel tracking.
+7. **[Organizations](/organizations):** Learn how to manage and collaborate with your teams within Scarf's platform.
+8. **[Data Export](/data-export):** Export your data for customized analysis. Explore the potential of data manipulation to suit your needs.
+9. **[User Guide & Best Practices](/user_best_practices):** Explore a concise summary of tested techniques, approaches, and suggestions to use Scarf optimally and productively.
+10. **[Open Source Qualified Leads (OQLs)](/oql):** Learn about OQLs (Open Source Qualified Leads) in our documentation—understand their importance, track them strategically with distinct status levels, and gain insights through practical examples. 
+11. **[Open Source Adoption Funnel Stages](/funnel-stages):** Understand the user journey, from project discovery to production deployment and beyond.
+12. **[API Docs](https://api-docs.scarf.sh/v2.html):** Understand the capabilities of a specific API version and its available endpoints.
 
 ## Contribution
 
