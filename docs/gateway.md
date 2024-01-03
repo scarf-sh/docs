@@ -206,7 +206,9 @@ Scarf looks up IP address metadata, but the raw IP addresses are discarded and n
   - Coarse-grained location
   - Device/OS information
   - Company information, cloud providers, etc.
-  - Additionally, Scarf sees metadata about the containers that are being downloaded such as:
+
+Additionally, Scarf sees metadata about the containers that are being downloaded such as:
+
   - Tags/versions (variables)
   - Client runtime and version
 
