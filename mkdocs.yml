@@ -42,24 +42,24 @@ extra_css:
 nav:
 - index.md
 - index.zh.md
+- getting-started-checklist.md
 - quick-start.md
 - quick-start.zh.md
-- packages.md
-- getting-started-checklist.md
 - gateway.md
 - gateway.zh.md
+- organizations.md
+- organizations.zh.md
+- packages.md
 - package-analytics.md
 - package-analytics.zh.md
 - web-traffic.md
 - web-traffic.zh.md
-- organizations.md
-- organizations.zh.md
-- data-export.md
-- user_best_practices.md
 - oql.md
 - funnel-stages.md
-- API V2: https://api-docs.scarf.sh/v2.html
+- data-export.md
+- user_best_practices.md
 - troubleshooting.md
+- API V2: https://api-docs.scarf.sh/v2.html
 
 # Analytics
 google_analytics:
