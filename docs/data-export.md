@@ -46,6 +46,7 @@ The data export includes the following data fields:
 | **origin_longitude** | `numeric` | This is the longitude of the location Scarf is able to identify for the event. |
 | **origin_country** | `text` | This is the country of the location Scarf is able to identify for the event. |
 | **origin_city** | `text` | This is the city of the location Scarf is able to identify for the event. |
+| **origin_state** | `text` | This is the state of the location Scarf is able to identify for the event. |
 | **origin_postal** | `text` | This is the postal code (ZIP code, in the US) of the location Scarf is able to identify for the event. |
 | **origin_connection_type** | `text` | This categorizes the type of IP address Scarf is able to identify (e.g. business, isp, hosting, etc.). |
 | **origin_company** | `text` | If Scarf is able to associate the event with a known business entity, that business entity is listed here. |
