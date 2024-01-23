@@ -79,7 +79,7 @@ curl -o scarf-score.csv \
     "https://api.scarf.sh/v2/companies/{owner}/scoring"
 ```
 
-The scarf score export includes the following data fields:
+The Scarf Score export includes the following data fields:
 
 | name               | type      | description                                         |
 |--------------------|-----------|-----------------------------------------------------|
