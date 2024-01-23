@@ -88,7 +88,7 @@ The Scarf Score export includes the following data fields:
 | **scarf_score**    | `numeric` | Scarf's score for a company                         |
 | **funnel_stage**   | `text`    | Stage of a company's journey in using your software |
 | **first_seen**     | `text`    | Date when a company was first seen                  |
-| **last_seen**      | `text`    | Date when a company was last seen                   |
+| **last_seen**      | `text`    | Date when a company was most recently seen.                   |
 
 ## How to Export Company Events
 
