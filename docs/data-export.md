@@ -70,7 +70,7 @@ curl -o {filename}.jsonl \
 
 ## How to Export Company Scarf Scores
 
-The documentation for exporting company scarf score can be found in [Export Company Scarf Scores](https://api-docs.scarf.sh/v2.html#tag/Company/operation/exportEntityScarfScores)
+The documentation for exporting company Scarf Score can be found in [Export Company Scarf Scores](https://api-docs.scarf.sh/v2.html#tag/Company/operation/exportEntityScarfScores).
 Here's an example curl request to download scarf score data.
 ```sh
 curl -o scarf-score.csv \
