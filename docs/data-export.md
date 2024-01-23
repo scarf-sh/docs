@@ -92,7 +92,7 @@ The Scarf Score export includes the following data fields:
 
 ## How to Export Company Events
 
-The documentation for exporting company events can be found in [Export Company Events](https://api-docs.scarf.sh/v2.html#tag/Company/operation/exportEntityCompanyEvents)
+The documentation for exporting company events can be found in [Export Company Events](https://api-docs.scarf.sh/v2.html#tag/Company/operation/exportEntityCompanyEvents).
 Here's and exampe curl request to download company events data.
 ```sh
 curl -o company-events.csv \
