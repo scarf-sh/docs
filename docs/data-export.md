@@ -59,7 +59,7 @@ The event data export includes the following data fields
 
 ## How to Export Aggregate Data 
 
-The documentation for exporting aggregates can be found in [Export aggregates](https://api-docs.scarf.sh/v2.html#tag/Packages/operation/exportEntityAggregates)
+The documentation for exporting aggregates can be found in [Export aggregates](https://api-docs.scarf.sh/v2.html#tag/Packages/operation/exportEntityAggregates).
 Here's an example curl request to download aggregate data. The output is newline delimited json.
 ```sh
 curl -o {filename}.jsonl \
