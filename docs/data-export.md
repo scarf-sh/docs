@@ -29,7 +29,8 @@ You can also export this data using [the Scarf API](https://api-docs.scarf.sh/v2
 
 ## What Data is Exported
 
-<a id="export-fields"></a>
+### Export Fields
+
 The event data export includes the following data fields
 
 | name | type | description |
