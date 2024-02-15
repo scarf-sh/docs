@@ -35,6 +35,19 @@ a9568445d3bd345cea84346818c25b24-6f1f1dde0ccf3ad2.elb.us-west-2.amazonaws.com. 6
 ;; MSG SIZE  rcvd: 221
 ```
 
+Another factor is domain verification. On package creation you'll be prompted to verify your custom domain, if it hasn't been verified just yet. 
+
+Use `dig` to inspect the verification TXT record. You should see something like 
+
+```bash
+~ ❯❯❯ dig txt _scarf-sh-challenge-ORGANIZATION.org.example.com
+
+;; ANSWER SECTION:
+_scarf-sh-challenge-ORGANIZATION.org.example.com. 300 IN TXT "NDVTRE6YP25CAM2PHR2B"
+```
+
+Remember to substitute `ORGANIZATION` for your account name and `org.example.com` for your custom domain.
+
 #### My package is setup up, but when I pull I'm seeing the error: `tls: failed to verify certificate: x509: certificate is valid for ingress.local`
 
 This error means Scarf is still propagating your custom DNS setup across our datacenters globally. Typically this takes up to 15 minutes the first time you configure your custom domain. If you've been waiting longer and are still seeing this issue, please let us know.

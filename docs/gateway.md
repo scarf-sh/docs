@@ -37,7 +37,7 @@ Scarf Gateway configuration for a Docker container image entry has two main cons
 - **Backend URL**: This refers to where your container is actually hosted, the location where Scarf will direct requests to pull the container. Scarf will ask for your container's current pull command. This could be `rocket-skates`, `acme/rocket-skates` (implicitly specifying Docker Hub as the hosting provider, `registry-1.docker.io/acme/rocket-skates`), or a fully qualified container image name `docker.acme.come/acme/rocket-skates`. You can modify this backend URL attribute later, and your user's Docker pulls will be instantly moved over to the new destination without having to communicate anything to them.
 - **Domain**: This can be your own domain, or a Scarf-supplied domain, of the form `<username>.docker.scarf.sh`. By default your Scarf domain will be used if this field is left empty. Note that this will be part of your Docker pull command for your users. While you can update this domain, updating your public domain is a breaking change for any users on the current domain! Edit this value with caution.
 
-If you elect to use your own domain, you'll need to add a CNAME for that domain to `gateway.scarf.sh`. See your DNS provider's instructions for how to add a CNAME.
+If you elect to use your own domain, you'll need to add a CNAME for that domain to `gateway.scarf.sh`. Additionally we require you to verify your ownership of the domain by setting a TXT with a value that Scarf provides upon package creation. See your DNS provider's instructions for how to add CNAME and TXT records.
 
 See [Figure 0](#figure_0) to see how these pieces fit together visually.
 
@@ -47,7 +47,7 @@ See [Figure 0](#figure_0) to see how these pieces fit together visually.
 
 Scarf Gateway configuration for a file package entry has three main considerations:
 
-- **Domain**: Just like Docker container images, you may choose to use your own domain(s) for serving files. You may also choose to use `<username>.gateway.scarf.sh` provided by default by Scarf. Remember, if you elect to use your own domain, you'll need to add a CNAME for that domain to `gateway.scarf.sh`
+- **Domain**: Just like Docker container images, you may choose to use your own domain(s) for serving files. You may also choose to use `<username>.gateway.scarf.sh` provided by default by Scarf. Remember, if you elect to use your own domain, you'll need to add a CNAME for that domain to `gateway.scarf.sh` as well as verify ownership of that domain.
 - **Incoming Path**: This refers to where a path on a given domain where Scarf will direct requests to fetch a file asset. This could be static path like `/downloads/rocket-skates.tar.gz` or a template path with variables like `/files/{version}/{platform}/rocket-skates-{platform}-{version}.tar.gz`. You may use variables in your incoming path as specified in [RFC 6570](https://datatracker.ietf.org/doc/html/rfc6570). You can modify a path value later, but be careful to communicate to your users because this would be a breaking change.
 - **Outgoing URL**: This is an *optional* full URL to your asset on your HTTP/S hosting provider. It is a template (or static) URL that may also use any variables defined in the Incoming Path. For example `https://besthostingprovider.com/acme/{platform}/rocket-skates-{version}.tar.gz`. If an Outgoing URL is not provided, the Gateway will return 200 with no redirect.
 
@@ -72,7 +72,7 @@ my-pkg==0.0.1
 
 NOTE: We have noticed indeterminate behavior in some versions of Pip that have resulted in the public registry being used for download regardless of the --extra-index-url addition. This is a client-specific problem and we are investigating.
 
-If you elect to use your own domain, you'll need to add a CNAME for that domain to `gateway.scarf.sh`. See your DNS provider's instructions for how to add a CNAME.
+If you elect to use your own domain, you'll need to add a CNAME for that domain to `gateway.scarf.sh`. Additionally we require you to verify your ownership of the domain by setting a TXT with a value that Scarf provides upon package creation. See your DNS provider's instructions for how to add CNAME and TXT records.
 
 ### How it works
 
