@@ -226,7 +226,7 @@ Scarf Gateway is managed by the Scarf team. We plan an open source release of Sc
 
 **How long will it take for any given container download to show up in my analytics dashboard?**
 
-Downloads will typically show up in your dashboard within minutes.
+Downloads will typically show up in your dashboard in 30 minutes and up to 2-3 hours.
 
 **Is there an API I can use to pull my stats, manage my packages, etc?**
 

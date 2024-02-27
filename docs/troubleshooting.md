@@ -35,9 +35,9 @@ a9568445d3bd345cea84346818c25b24-6f1f1dde0ccf3ad2.elb.us-west-2.amazonaws.com. 6
 ;; MSG SIZE  rcvd: 221
 ```
 
-Another factor is domain verification. On package creation you'll be prompted to verify your custom domain, if it hasn't been verified just yet. 
+Another factor is domain verification. On package creation you'll be prompted to verify your custom domain, if it hasn't been verified just yet.
 
-Use `dig` to inspect the verification TXT record. You should see something like 
+Use `dig` to inspect the verification TXT record. You should see something like
 
 ```bash
 ~ ❯❯❯ dig txt _scarf-sh-challenge-ORGANIZATION.org.example.com
@@ -50,15 +50,17 @@ Remember to substitute `ORGANIZATION` for your account name and `org.example.com
 
 #### My package is setup up, but when I pull I'm seeing the error: `tls: failed to verify certificate: x509: certificate is valid for ingress.local`
 
-This error means Scarf is still propagating your custom DNS setup across our datacenters globally. Typically this takes up to 15 minutes the first time you configure your custom domain. If you've been waiting longer and are still seeing this issue, please let us know.
+This error means Scarf is still propagating your custom DNS setup across our datacenters globally. Typically this takes up to 30 minutes or up to 2-3 hours the first time you configure your custom domain. If you've been waiting longer and are still seeing this issue, please let us know.
+
+You can also see your package's domain verification status in the details overview. Expand the section for Verification to also see the CNAME and certificate status.
 
 #### My downloads are working but I'm still not seeing the data in my dashboard
 
-Typically it takes up to 15 minutes for any given event to be reflected in your dashboard. We occasionally experience processing delays if our system is experiencing high volume of events, but your data isn't lost. If you're noticing unexpected delays, check our Community Slack for updates on processing delays or to report one.
+Typically it takes up to 30 minutes or up to 2-3 hours for any given event to be reflected in your dashboard. We occasionally experience processing delays if our system is experiencing high volume of events, but your data isn't lost. If you're noticing unexpected delays, check our Community Slack for updates on processing delays or to report one.
 
 #### I have set up a Docker collection, and the downloads are working, but package entries are not being created.
 
-This also sometimes takes up to 15 minutes, and is occasionally delayed if our system is impacted by data processing pipeline delays due to high volume. If you are still not seeing your collection be created, get in touch with us.
+This also sometimes takes up to 30 minutes or up to 2-3 hours, and is occasionally delayed if our system is impacted by data processing pipeline delays due to high volume. If you are still not seeing your collection be created, get in touch with us.
 
 #### I want to update a Docker package to point to a different registry, but am getting a `Public domains for Docker packages may only point to a single backend registry at a time.` error. How can I fix this?
 
@@ -81,4 +83,3 @@ IP -> Company matching is an imperfect approach and incorrect matches do happen.
 Over time, low confidence scores are outweighed by observing company traffic in aggregate over a longer period of time rather than over-indexing on a single one-off event.
 
 If you're seeing persistent issues with a particular company or IP address, let us know so we can update our records accordingly and ensure high accuracy of matches.
-
