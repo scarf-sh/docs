@@ -1,0 +1,1227 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Scarf's Technical Documentation & API Reference
+">
+      
+      
+      
+      
+        <link rel="prev" href="../quick-start.zh/">
+      
+      
+        <link rel="next" href="../organizations.zh/">
+      
+      <link rel="icon" href="../assets/icon.svg">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.6">
+    
+    
+      
+        <title>Scarf Gateway - Scarf Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.558e4712.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    <script src="../scripts/setup-links.js"></script>
+
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+
+
+
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Scarf Documentation - Scarf Gateway" />
+<meta property="og:description" content="Scarf's Technical Documentation & API Reference
+" />
+<meta property="og:url" content="None" />
+<meta property="og:image" content="https://scarf-sh.s3.us-west-2.amazonaws.com/images/scarf-og-v2.png" />
+<meta property="og:image:type" content="image/png" />
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#scarf-gateway" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="Scarf Documentation" class="md-header__button md-logo" aria-label="Scarf Documentation" data-md-component="logo">
+      
+  <img src="../assets/scarf-tm-logo-white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Scarf Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Scarf Gateway
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="选择当前语言">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../gateway/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+              
+                <li class="md-select__item">
+                  <a href="./" hreflang="zh" class="md-select__link">
+                    中文 (简体)
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/scarf-sh/docs" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    scarf-sh/docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Scarf Documentation" class="md-nav__button md-logo" aria-label="Scarf Documentation" data-md-component="logo">
+      
+  <img src="../assets/scarf-tm-logo-white.svg" alt="logo">
+
+    </a>
+    Scarf Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/scarf-sh/docs" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    scarf-sh/docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.zh/" class="md-nav__link">
+        Scarf文档
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started-checklist/" class="md-nav__link">
+        Getting Started Checklist (English)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick-start.zh/" class="md-nav__link">
+        快速开始
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Scarf Gateway
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Scarf Gateway
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    概述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    配置
+  </a>
+  
+    <nav class="md-nav" aria-label="配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scarf" class="md-nav__link">
+    Scarf 包条目
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    容器镜像包
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    文件包
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    Python 包
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirementstxt-python" class="md-nav__link">
+    通过 requirements.txt 安装 Python 包
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    如何运行？
+  </a>
+  
+    <nav class="md-nav" aria-label="如何运行？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    Docker 包：定义容器拉取
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    安全
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    不跟踪
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    可用性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    徽章
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    注意事项和限制
+  </a>
+  
+    <nav class="md-nav" aria-label="注意事项和限制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    容器的自动包创建
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    创建集合
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    常见问题
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    说明图
+  </a>
+  
+    <nav class="md-nav" aria-label="说明图">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0-scarf-docker" class="md-nav__link">
+    图 0：作为维护者使用 Scarf (Docker) 网关
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-scarf-docker-gateway-docker" class="md-nav__link">
+    图 1：以用户身份从 Scarf (Docker) Gateway 拉取 Docker 容器镜像
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-docker" class="md-nav__link">
+    图 2：完整系统图 (Docker)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-scarffile" class="md-nav__link">
+    图 3：作为维护者使用 Scarf（File）网关
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-scarffilegatewayfile" class="md-nav__link">
+    图 4：以用户身份从 Scarf（File）Gateway下载File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5file" class="md-nav__link">
+    图 5：完整系统图（File）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../organizations.zh/" class="md-nav__link">
+        组织
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../packages/" class="md-nav__link">
+        Packages (English)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../package-analytics.zh/" class="md-nav__link">
+        用于库和包作者的 Scarf SDK
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-traffic.zh/" class="md-nav__link">
+        Documentation Insights
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oql/" class="md-nav__link">
+        Open Source Qualified Leads ( OQLs ) (English)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../funnel-stages/" class="md-nav__link">
+        Open Source Adoption Funnel Stages<a id="funnel-stages"></a> (English)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-export/" class="md-nav__link">
+        Data Export (English)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_best_practices/" class="md-nav__link">
+        User Guide & Best Practices (English)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        Troubleshooting (English)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://api-docs.scarf.sh/v2.html" class="md-nav__link">
+        API V2
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    概述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    配置
+  </a>
+  
+    <nav class="md-nav" aria-label="配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scarf" class="md-nav__link">
+    Scarf 包条目
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    容器镜像包
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    文件包
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    Python 包
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirementstxt-python" class="md-nav__link">
+    通过 requirements.txt 安装 Python 包
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    如何运行？
+  </a>
+  
+    <nav class="md-nav" aria-label="如何运行？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    Docker 包：定义容器拉取
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    安全
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    不跟踪
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    可用性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    徽章
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    注意事项和限制
+  </a>
+  
+    <nav class="md-nav" aria-label="注意事项和限制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    容器的自动包创建
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    创建集合
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    常见问题
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    说明图
+  </a>
+  
+    <nav class="md-nav" aria-label="说明图">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0-scarf-docker" class="md-nav__link">
+    图 0：作为维护者使用 Scarf (Docker) 网关
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-scarf-docker-gateway-docker" class="md-nav__link">
+    图 1：以用户身份从 Scarf (Docker) Gateway 拉取 Docker 容器镜像
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-docker" class="md-nav__link">
+    图 2：完整系统图 (Docker)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-scarffile" class="md-nav__link">
+    图 3：作为维护者使用 Scarf（File）网关
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-scarffilegatewayfile" class="md-nav__link">
+    图 4：以用户身份从 Scarf（File）Gateway下载File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5file" class="md-nav__link">
+    图 5：完整系统图（File）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+
+<ul>
+<li class="i18n-link i18n-link-found i18n-link-en"><a href="../gateway/">English</a></li>
+</ul>
+<h1 id="scarf-gateway">Scarf Gateway</h1>
+<h3 id="_1">概述</h3>
+<p><img alt="Gateway.png" src="../assets/pics/gateway-diagrams/gateway-full.png" /></p>
+<p>Scarf网关是一项位于现有软件托管平台之前的服务，充当所有中间件的单一接入点，无论它们实际托管在何处。 Scarf网关使您可以轻松托管来自您自己域的内容，从而将您的分发与托管提供商分离，并提供深入的下载分析。</p>
+<p>假设您在 Docker Hub 上维护一个 Docker 容器镜像  <code>acme/rocket-skates</code> . 您的用户通常会直接从 Docker 中心拉取您的容器镜像(<code>docker pull acme/rocket-skates</code>.) 使用 Scarf，他们会使用您的私有域 (<code>docker pull docker.acme.com/acme/rocket-skates</code>.) 在您使用 Scarf 时会记录重要分析并与您共享，您可以随时更改您的托管服务提供商，而无需更改您的容器镜像名称或文档。</p>
+<p>您的用户将始终使用您的域来拉取您的 Docker 容器镜像。 您的 Docker 容器镜像可以保留在其当前的托管服务提供商处，但将通过您自己的域提供服务，例如：</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 让你通过你自己的域提供现有的可用容器</span>
+$<span class="w"> </span>docker<span class="w"> </span>pull<span class="w"> </span>docker.acme.com/acme/rocket-skates
+
+<span class="c1"># 如果你想使用我们的域，Scarf 也提供了一个</span>
+$<span class="w"> </span>docker<span class="w"> </span>pull<span class="w"> </span>acme.docker.scarf.sh/acme/rocket-skates
+</code></pre></div>
+<p>可以在 Scarf 仪表盘中找到有关 Docker 容器镜像下载的数据洞察。 从那里，您还可以管理 Scarf 网关配置、访问控制、等等。</p>
+<h3 id="_2">配置</h3>
+<h4 id="scarf">Scarf 包条目</h4>
+<p>通过 Scarf 网关提供和跟踪的所有内容都需要在 <a href="scarf.sh">scarf.sh</a> 上有一个相应的包条目。配置、分析和权限都在包等级别或单个仓库中完成。 <code>rocket-skates</code>, <code>acme/rocket-skates</code> 都是有效的包条目。由于包可以无缝地更改其托管服务提供商， 因此主机名（例如 <code>gcr.io</code>）不是 Scarf 上包标识符的一部分（例如 <code>acme/rocket-skates</code> 而不是 <code>gcr.io/acme/rocket-skates</code>.）</p>
+<p>要创建包条目，请单击 Scarf 仪表盘导航栏中的 "New Package" ，或者<a href="https://scarf.sh/create-package">单击此处</a>. 然后为您的中间件选择相应的包类型。</p>
+<h4 id="_3">容器镜像包</h4>
+<p><img alt="Gateway.png" src="../assets/pics/gateway-diagrams/gateway-containers.png" /></p>
+<p>Docker 容器镜像条目的Scarf网关配置有两个主要考虑因素：</p>
+<ul>
+<li><strong>后端 URL：</strong> 这是指你的容器实际托管的位置，也就是Scarf 将请求拉取容器的位置。Scarf 将询问您容器的当前拉取命令。这可能是 <code>rocket-skates</code>, <code>acme/rocket-skates</code> （隐式指定Docker Hub 作为托管服务提供商， <code>registry-1.docker.io/acme/rocket-skates</code>）， 或者一个完全限定的容器镜像名称 <code>docker.acme.come/acme/rocket-skates</code>. 您可以以后修改此后端 URL 属性，您的用户的 Docker 拉取将立即移动到新目的地，而无需与他们进行任何通知。</li>
+<li><strong>域：</strong>这可以是您自己的域，也可以是 Scarf 提供的域，格式为 <code>&lt;username&gt;.docker.scarf.sh</code>. 如果此字段留空，将默认使用您的 Scarf 域。 请注意，这将成为您用户的 Docker pull 命令的一部分。 虽然您可以更新此域，但更新您的公共域对当前域中的任何用户来说都是一项重大更改！ 谨慎编辑此值。</li>
+</ul>
+<p>如果您选择使用自己的域，则需要将该域的 CNAME 添加到 <code>gateway.scarf.sh</code>. 请参阅您的 DNS 提供商的说明，了解如何添加 CNAME。</p>
+<p>请参见 <a href="#figure_0">图 0</a> 以了解这些部分如何组合在一起。</p>
+<h4 id="_4">文件包</h4>
+<p><img alt="Gateway.png" src="../assets/pics/gateway-diagrams/gateway-files.png" /></p>
+<p>文件包入口的 Scarf网关配置主要考虑三个方面：</p>
+<ul>
+<li><strong>域：</strong>就像 Docker 容器镜像一样，您可以选择使用自己的域来提供文件。 您也可以选择使用 Scarf 默认提供的 <code>&lt;username&gt;.gateway.scarf.sh</code> .请记住，如果您选择使用自己的域，则需要将该域的 CNAME 添加到 <code>gateway.scarf.sh</code></li>
+<li><strong>传入路径：</strong>这是指给定域上的路径，Scarf 将在其中定向请求以获取文件资产。 这可以是静态路径，例如<code>/downloads/rocket-skates.tar.gz</code> 也可以是带有变量的模板路径，例如 <code>/files/{version}/{platform}/rocket-skates-{platform}-{version}.tar.gz</code>. 您可以按照<a href="https://datatracker.ietf.org/doc/html/rfc6570">RFC 6570</a>中的规定在您的传入路径中使用变量。您可以以后修改路径值，但要小心与您的用户沟通，因为这将是一个重大更改。</li>
+<li><strong>传出 URL：</strong>这是 HTTP/S 托管提供商上您的资产的完整 URL。 它是一个模板（或静态）URL，也可以使用传入路径中定义的任何变量。 例如  <code>https://besthostingprovider.com/acme/{platform}/rocket-skates-{version}.tar.gz</code></li>
+</ul>
+<p>请参见 <a href="#figure_3">图 3</a> 以了解这些部分如何组合在一起。</p>
+<h4 id="python">Python 包</h4>
+<p><img alt="Gateway.png" src="../assets/pics/gateway-diagrams/gateway-python.png" /></p>
+<p>Python 包入口的Scarf 网关配置主要考虑三个方面：</p>
+<ul>
+<li><strong>pip 命令：</strong> 这是当前用于安装包的 pip 命令。 对于 PyPI.org 上的包，将采用  <code>pip install my-pkg</code> 的形式，并且如果您的包托管在其他地方，则将包括 <code>--extra-index-url https://my-python-project-domain.com</code>. 这定义了安装包时用户将被重定向到的位置。</li>
+<li><strong>域：</strong>这可以是您自己的域，也可以是 Scarf 提供的域，格式为 <code>&lt;username&gt;.gateway.scarf.sh</code>. 默认情况下，如果此字段留空，将使用您的 Scarf 域。</li>
+</ul>
+<h4 id="requirementstxt-python">通过 requirements.txt 安装 Python 包</h4>
+<p>在 requirements.txt 的顶部添加 --extra-index-url 选项：</p>
+<div class="highlight"><pre><span></span><code>--extra-index-url https://my-python-project-domain.com/simple/
+my-pkg==0.0.1
+</code></pre></div>
+<p>注意：我们注意到某些版本的 Pip 中的不确定行为导致公共注册表被用于下载，而不管是否添加了“--extra-index-url”参数。 这是一个特定于客户的问题，我们正在调查。</p>
+<p>如果您选择使用自己的域，则需要将该域的 CNAME 添加到 <code>gateway.scarf.sh</code>.  请参阅您的 DNS 提供商的说明，了解如何添加 CNAME。</p>
+<h3 id="_5">如何运行？</h3>
+<p>当用户通过 Scarf 请求 Docker 容器镜像时，Scarf 只需发出重定向响应，指向您为容器配置的任何托管服务提供商。 某些容器运行时在身份验证期间无法正确处理重定向（即使是匿名拉取也是必需的），并且在这些情况下，Scarf 会将请求代理到主机而不是重定向。 要从最终用户的角度看系统的可视化，请参见 <a href="#figure_1">图 1</a>. 要查看整个系统的概览，请参见 <a href="#figure_2">图 2</a>.</p>
+<p>当用户通过 Scarf 请求文件时，Scarf 只需发出重定向响应，指向您为文件配置的任何托管服务提供商。 要从最终用户的角度看系统的可视化，请参见 <a href="#figure_4">图 4</a>. 要查看整个系统的概览，请参见 <a href="#figure_5">图 5</a>。</p>
+<p>仪表盘和数据访问</p>
+<p>您的包的使用数据将在您的 Scarf 仪表盘中提供给您。 您也可以从您包的详细信息页面授予其他人访问您包的使用数据的权限。当前支持的权限级别是：</p>
+<table>
+<thead>
+<tr>
+<th>访问级别</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>所有者</td>
+<td>可以读取所有包级数据、编辑包配置并授予其他成员访问权限</td>
+</tr>
+<tr>
+<td>管理员</td>
+<td>可以读取所有包级数据，编辑包配置，并授予其他成员访问权限（但不能删除其他管理员）</td>
+</tr>
+<tr>
+<td>会员</td>
+<td>可以读取所有包级数据</td>
+</tr>
+</tbody>
+</table>
+<p>Scarf 尚不支持组织级权限，但很快就会支持。</p>
+<h4 id="docker">Docker 包：定义容器拉取</h4>
+<p>Scarf 根据 <a href="/docker-hub/download-rate-limit/">Docker Hub defines them</a> 来定义拉取。</p>
+<p>拉取定义为对托管提供商清单 URL (<code>/v2/*/manifests/*</code>)的一个或多个 <code>GET</code>请求。 HEAD 请求不算作拉取。</p>
+<p>请注意，即使客户端下载了包含任何给定容器的 blob，容器的清单文件可能已经缓存在客户端上，这意味着下载不会计入 Scarf 的分析。 Scarf 数据处理管道的未来版本将更加智能，并将跟踪部分下载、blob 提取等内容。</p>
+<h4 id="_6">安全</h4>
+<p>通过 Scarf网关的所有交互都通过 HTTPS 进行。 Scarf Gateway 将通过  <a href="https://letsencrypt.org">LetsEncrypt </a>获取有效的 TLS 证书，并对流量进行 TLS 终止。Scarf 网关反过来会为请求发出重定向，或将请求代理到托管服务提供商。</p>
+<h4 id="_7">不跟踪</h4>
+<p>我们的网关遵循 <a href="https://www.w3.org/2011/tracking-protection/drafts/tracking-dnt.html">DNT</a> 和 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-GPC">GPC</a> 中定义的 HTTP 标头。如果您向我们的 Scarf 网关发送带有 HTTP 标头 "DNT=1" 或 "Sec-GPC=1"的 HTTP 请求， 我们不会将您的请求计入我们的统计数据中，也不会查找您的 IP 地址以确定您是否是企业。 基本上，就好像您没有从我们的网关请求任何内容，但我们仍会为您提供内容。</p>
+<p>请注意，此行为适用于通过我们的网关提供的所有包和像素。 如果用户在其浏览器设置中启用了 DNT，我们将不会跟踪文件下载或像素浏览量。</p>
+<h3 id="_8">可用性</h3>
+<p>Scarf 网关是一项免费托管服务，按原样和可用状态提供给维护人员和用户。</p>
+<p>Scarf 网关部署在全球多个区域的 AWS 上； 它甚至可以容错整个区域离线，并且可以自动弹性扩展我们的后端容量以满足我们任何用户流量需求。</p>
+<p>我们期望达到每月 99.9% 的服务正常运行时间百分比。 我们的服务级别协议的保证将在未来提供。</p>
+<p>要查看 Scarf 的正常运行时间和系统状态，您可以在<a href="https://status.scarf.sh">此处</a>查看状态页面。</p>
+<h3 id="_9">徽章</h3>
+<p>Scarf 网关上的所有包都自动提供动态的 Scarf-powered README 徽章。 前往您的包页面，徽章将显示在顶部附近的详细信息部分。 复制 URL，根据您使用的任何文档格式将其粘贴到项目的 README 中，一切就绪。</p>
+<p><img alt="Scarf-badge-details-page" src="https://user-images.githubusercontent.com/52803/120844406-2bd7f580-c524-11eb-80cb-9a8d213348b5.png" /></p>
+<p><strong>下载徽章和公司徽章有什么区别？</strong></p>
+<p>商业用途徽章显示了上个月有多少不同的公司被识别为获取您的 Scarf Gateway 包。下载徽章报告所有用户的下载总数。</p>
+<p>这个徽章的用途是什么？</p>
+<p>README徽章可让您通过共享有关下载流量和企业级的高级实时数据来展示您的项目，以便读者可以快速评估有关您项目的一些基本细节。 Scarf-powered README 徽章是一种公开共享项目使用数据的简单方法，无论您的文档在互联网上的哪个位置呈现。 告诉潜在的新用户有多少公司使用您的项目是表明您的项目可靠且值得采用的好方法。</p>
+<p>徽章的URL格式是什么</p>
+<p>徽章可用于以下格式：</p>
+<ul>
+<li>
+<p>公司徽章</p>
+<ul>
+<li>https://scarf.sh/package/company-badge/{package-id}</li>
+<li>https://scarf.sh/company-badge/{username}/{package-name}?package-type={package-type}</li>
+</ul>
+</li>
+<li>
+<p>下载徽章</p>
+<ul>
+<li>https://scarf.sh/package/installs-badge/{package-id}</li>
+<li>https://scarf.sh/installs-badge/{username}/{package-name}?package-type={package-type}</li>
+</ul>
+</li>
+</ul>
+<p>您还可以通过查询字符串将一些额外的设置传递给徽章：<code>color</code>, <code>label-color</code>, <code>logo</code>, <code>logo-color</code> 和 <code>style</code>. 例如，<code>https://scarf.sh/package/installs-badge/{package-id}?color=red&amp;style=flat</code>. 请参阅 https://shields.io/#colors 以了解有关每个设置支持的值的更多信息。</p>
+<h3 id="_10"><a name="caveats"></a>注意事项和限制</h3>
+<p>如果您在多个不同的注册表上有 Docker 容器镜像，您目前需要使用多个不同的子域（每个托管服务提供商一个）。 此限制是由于 Docker 注册表授权的当前实施。 要开始拉取容器，需要发送身份验证请求，该请求必须传递给您配置 Scarf 网关使用的托管服务提供商。 遗憾的是，初始授权请求不包含任何关于它试图拉取什么镜像的信息，所有 Scarf 网关必须在最开始继续使用主机名拉取 Docker 容器镜像。 后续的 Docker API 请求会执行镜像的实际“拉取”。 问题的核心是，如果您尝试使用一个注册表进行授权并从另一个注册表中提取图像，它将因授权错误而失败。</p>
+<p><strong>容器的新拉取命令中使用的路径必须与后端容器注册表中的路径匹配</strong></p>
+<p>如果您的容器作为 <code>acme/rocket-skates</code>在 Docker Hub 上，您的安装命令必须是：<code>docker pull ~&lt;your-domain.com&gt;/acme/rocket-skates</code>.  镜像名称路径 (acme/rocket-status) 目前无法更改。 这是由于 Docker 客户端的 OAuth 实现（授权中包含被请求的镜像名称路径）。如果 Scarf 网关重定向到其他路径，授权将失效，导致Docker 拉取失败。</p>
+<h4 id="_11">容器的自动包创建</h4>
+<p>您可以指定规则以自动转发所有匹配的流量并自动创建包条目，而不是为命名空间中的每个容器创建包条目。 通过使用模板，例如 <code>repository/*</code>, 每次首次下载与该模板匹配的镜像时，Scarf 会自动为该包创建一个页面 (例如 repository/test01, repository/new-item).</p>
+<h3 id="_12">创建集合</h3>
+<p>要访问集合，请在顶部菜单中单击 <code>Tools</code> &gt; <code>Collections</code>.</p>
+<p><img alt="Collections menu" src="../assets/pics/auto-creation/collections-menu.png" /></p>
+<p>您现在将看到 <code>Collections</code>页面，您可以在其中选择编辑、删除和创建新集合。</p>
+<p><img alt="Collections page" src="../assets/pics/auto-creation/collections-page.png" /></p>
+<p>要创建新集合，请先插入将要使用的模板。 它可以是以下任何形式：<code>repository/*</code>, <code>repository/{ variable1, variable2 }</code>,等。接下来，插入后端域，即托管镜像的域 (例如 registry-1.docker.io, ghcr.io, gcr.io). 请记住，每个公共域都应映射到一个后端域。（例如，如果您将 Scarf 域用于托管在 docker 上的镜像，则您将无法将 Scarf 域用于托管在 Amazon 上的图像）。</p>
+<h2 id="_13">常见问题</h2>
+<p>如何开始使用 Scarf 网关？</p>
+<p>首先，如果您还没有在 Scarf 上创建一个帐户，请先创建一个帐户。 注册后，系统会提示您创建一个新包。 如果您已经在使用 Scarf，则可以单击导航栏中的New Package。</p>
+<p>选择“Docker”作为您的包类型，然后输入有关您的容器的所需详细信息。 Scarf Gateway 目前支持 Docker 容器。 对更多包和中间件类型的支持正在进行中。 敬请关注。</p>
+<p><strong>如果我使用自定义域在 Scarf 托管我的容器，我现有的用户会怎样？ 他们都必须更新吗？</strong></p>
+<p>通过 Scarf 在您的自定义域上托管容器对您现有的用户没有影响； 您的域为用户添加了一个新路径来下载您的包。 您可以鼓励最终用户将他们的拉取命令切换到您的新域，但他们可以继续直接从您的注册表提供商拉取而不会产生负面影响。</p>
+<p>如果您稍后决定切换注册表，当前用户将不得不将他们的拉取命令更新为您的自定义域或新的注册表 URL。 如果他们直接进入注册表，则每次您决定切换注册表时，他们都需要更新。 如果他们使用您的自定义域，他们将永远不需要再次更新它。</p>
+<p><strong>是Scarf 网关在托管我的包吗？</strong></p>
+<p>不，您的包将继续托管在您当前的托管服务提供商处，而不是 Scarf 本身。 Scarf Gateway 只是您的提供商前面的一个薄重定向层。 由于 Scarf Gateway 是您包在 Internet 上的稳定位置，因此您始终可以自由地将它们托管在您选择的任何提供商处。</p>
+<p><strong>我当前注册表中的 Docker 容器映像名称是 <code>acme/rocket-skates</code>, 当用户通过 Scarf 拉取时，我可以将其更改为 <code>rocket-skates</code> 吗？</strong></p>
+<p>遗憾的是，除非您可以在托管容器的注册表上更改此名称，否则这是不可能的。 您在 Scarf 上的容器名称必须与托管它的注册表中的容器名称相匹配，因为 Docker 客户端使用该名称来签署请求并验证来自注册表的响应。 如果响应签名无效，Docker 客户端将拒绝下载。 有关详细信息，请参阅 <a href="#caveats">注意事项</a> 部分。</p>
+<p><strong>Scarf Gateway如何管理获得的关于我的项目的使用数据？ 你在存储我的用户数据吗？</strong></p>
+<p>Scarf Gateway 不会存储有关您用户的任何个人身份信息或敏感数据。</p>
+<p>Scarf 查找 IP 地址元数据，但原始 IP 地址被丢弃并且永远不会公开。 IP 元数据可能包含：</p>
+<ul>
+<li>粗粒度定位</li>
+<li>设备/操作系统信息</li>
+<li>公司信息、云提供商等</li>
+<li>此外，Scarf 会看到有关正在下载的容器的元数据，例如：</li>
+<li>标签/版本（变量）</li>
+<li>客户端运行时和版本</li>
+</ul>
+<p><strong>Scarf 网关接下来计划支持哪些包类型？</strong></p>
+<p>我们很乐意收到您的意见，以帮助我们确定对其他包类型的支持的优先级。 Java、RPM 和其他正在计划中。 Scarf Gateway 最终将被推广以支持任意中间件类型。</p>
+<p><strong>使用 Scarf 网关需要多少费用？</strong></p>
+<p>Scarf 网关当前的功能集是免费的，并将继续免费。 我们将添加额外的功能、特性、服务水平协议等，有些是免费的，有些是付费的。</p>
+<p><strong>Scarf 网关是自托管还是由 Scarf 管理？</strong></p>
+<p>Scarf 网关由 Scarf 团队管理。 我们计划在 Scarf Gateway 结束当前的公开测试期并全面上市后，为自托管发布一个开源版本。</p>
+<p><strong>任何给定的容器下载需要多长时间才能显示在我的分析仪表盘中？</strong></p>
+<p>下载通常会在几分钟内显示在您的仪表盘中。</p>
+<p><strong>有没有我可以用来提取统计信息、管理我的包等的 API？</strong></p>
+<p>有的！ 有关详细信息，请参阅我们的 <a href="/api"> API 文档</a> 。</p>
+<p><strong>我有更多问题，哪里方便提问？</strong></p>
+<p>加入我们的<a href="https://tinyurl.com/scarf-community-slack"> Slack</a>, 我们非常乐意提供帮助。</p>
+<h2 id="_14">说明图</h2>
+<p><a id="figure_0"></a></p>
+<h4 id="0-scarf-docker">图 0：作为维护者使用 Scarf (Docker) 网关</h4>
+<p><img alt="img" src="https://s3.us-west-2.amazonaws.com/static.scarf.sh/docs/fig-0-gateway-maintainer-docker.png" /></p>
+<p><a id="figure_1"></a></p>
+<h4 id="1-scarf-docker-gateway-docker">图 1：以用户身份从 Scarf (Docker) Gateway 拉取 Docker 容器镜像</h4>
+<p><img alt="img" src="https://s3.us-west-2.amazonaws.com/static.scarf.sh/docs/fig-1-gateway-docker-user.png" /></p>
+<p><a id="figure_2"></a></p>
+<h4 id="2-docker">图 2：完整系统图 (Docker)</h4>
+<p><img alt="img" src="https://s3.us-west-2.amazonaws.com/static.scarf.sh/docs/fig-2-full-diagram-docker.png" /></p>
+<p><a id="figure_3"></a></p>
+<h4 id="3-scarffile">图 3：作为维护者使用 Scarf（File）网关</h4>
+<p><img alt="img" src="https://s3.us-west-2.amazonaws.com/static.scarf.sh/docs/fig-3-gateway-maintainer-file.png" /></p>
+<p><a id="figure_4"></a></p>
+<h4 id="4-scarffilegatewayfile">图 4：以用户身份从 Scarf（File）Gateway下载File</h4>
+<p><img alt="img" src="https://s3.us-west-2.amazonaws.com/static.scarf.sh/docs/fig-4-gateway-file-user.png" /></p>
+<p><a id="figure_5"></a></p>
+<h4 id="5file">图 5：完整系统图（File）</h4>
+<p><img alt="img" src="https://s3.us-west-2.amazonaws.com/static.scarf.sh/docs/fig-5-full-diagram-file.png" /></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2019 - 2023 Scarf Systems, Inc. <img referrerpolicy="no-referrer-when-downgrade" src="https://static.scarf.sh/a.png?x-pxid=c9065f3a-a090-4243-8f69-145d5de7bfca" />
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/scarf-sh" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/scarf_oss" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/scarf-sh" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://tinyurl.com/scarf-community-slack" target="_blank" rel="noopener" title="tinyurl.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/channel/UCiJRrlBKBOgYFRO9eb6pfdg" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.51d95adb.min.js"></script>
+      
+    
+  </body>
+</html>
