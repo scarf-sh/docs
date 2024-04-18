@@ -52,6 +52,7 @@ nav:
 - packages.md
 - package-analytics.md
 - package-analytics.zh.md
+- custom-telemetry.md
 - web-traffic.md
 - web-traffic.zh.md
 - oql.md
