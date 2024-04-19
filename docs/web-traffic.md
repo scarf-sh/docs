@@ -21,9 +21,13 @@ Scarf's project Documentation Insights offers insights into:
 
 Scarf gathers web traffic insights via a simple transparent tracking pixel. You copy an `<img>` tag from Scarf into your project's README, docs, or any other web property, and any time a user loads the image from us, Scarf will look up any business metadata associated with the address and surface that information to you (and only you) via your free Scarf account. Scarf does not store the IP address itself, so no personally identifiable information is collected.
 
-### Getting started
+### Creating a pixel
 
-Head to your Scarf dashboard and locate the `Documentation Insights Management` section. Give your pixel(s) a name, and optionally attach it to a package you manage on Scarf. Click the "copy" button to copy the `<img>` tag to your clipboard, and then paste the tag into your project's README, docs, and any other web properties where you want to gather insights into who is using your documentation pages.
+Head to your Scarf dashboard and click the `+` in the top-right corner, then click `New Pixel`. Give your pixel(s) a name, select an Owner to manage its scope (your organization recommended), and optionally attach it to a package you manage on Scarf. This package attachment is optional and is solely used for visualizing the statistics for a pixel and a package together on the same page within the Scarf dashboard UI. 
+
+### Embedding and using the pixel
+
+Head to your Scarf dashboard and, in the `Tools` dropdown, select `Pixels`. Click `Copy Pixel Snippet` to copy the `<img>` tag to your clipboard, and then paste the tag into your project's README, docs, and any other web properties where you want to gather insights into who is using your documentation pages.
 
 ### Caveats
 
@@ -33,4 +37,4 @@ View counts from Documentation Insights data should be considered as approximate
 
 #### Sources
 
-Pixel-based telemetry will work on standard webpages, rendered markdown documentation on package registry sites like `npm` and `PyPi`, and anywhere an image can be embedded, with a notable exception being GitHub. When GitHub renders markdown, it rewrites URLs from their original web address to https://camo.githubusercontent.com/<path>, where GitHub hosts any linked images themselves. This prevents Scarf from providing insights to maintainers, since all that can now be detected at the original web address via the tracking pixel is undifferentiated traffic from GitHub.
+Pixel-based telemetry will work on standard webpages, rendered markdown documentation on package registry sites like `DockerHub, `npm`, and `PyPi`, and anywhere an image can be embedded, with a notable exception being GitHub. When GitHub renders markdown, it rewrites URLs from their original web address to https://camo.githubusercontent.com/<path>, where GitHub hosts any linked images themselves. This prevents Scarf from providing insights to maintainers, since all that can now be detected at the original web address via the tracking pixel is undifferentiated traffic from GitHub.
