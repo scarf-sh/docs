@@ -138,3 +138,57 @@ For more details, you can visit the [GitHub repository](https://github.com/scarf
 ### Future Integrations
 
 Integrations are in development, if you have particular data sources you'd like Scarf to integrate with, we'd love to hear from you.
+
+## Daily Scheduled Exports
+Schedule the daily exports via the api endpoint [https://api.scarf.sh/v2/exports/{owner}/schedule-export](https://api-docs.scarf.sh/v2.html#tag/Packages/operation/scheduleExport). The daily export feature exports event data for packages, tracking pixels, companies, and aggregates to the s3 bucket that you indicate in the `s3_uri_destination` field. The s3 uri that you submit will be considered as the bucket name. So do not specify an object key. The service will generate the object key with the format `<package-events|tracking-pixel-events|company-events|company-rollups|aggregates>-scarf-export-<start date>-<end date>.csv`. 
+
+**Setting up your s3 account**
+
+Create a policy that states we can assume a role. Here's an example of that policy
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "sts:AssumeRole",
+                "sts:*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:*"
+            ],
+            "Resource": [
+                "arn:aws:s3:::<bucket-name>/<folder-a>/<subfolder-a>/*"
+            ]
+        }
+    ]
+}
+```
+After creating the policy, create a role and attach the policy. Once you've created the role, you should have an ARN that looks like this
+```
+arn:aws:iam::<account-id>:role/<role-name>
+```
+The easiest way to create a role is to pick "AWS Account" in the "Select trusted entity" section. Then in the "An AWS Account", pick "Another AWS Account". This will ask for an account aws account id. This is where you will put in scarf's account id `032190491485`.
+
+After creating the role, go to the "Trust relationships" and add the following trust policy
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::032190491485:user/production-v2-scarf-server"
+            },
+            "Action": "sts:AssumeRole"
+        }
+    ]
+}
+```
+
+The ARN role is what you will need in the `arn_role` [api field](https://api-docs.scarf.sh/v2.html#tag/Packages/operation/scheduleExport).
