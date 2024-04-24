@@ -40,4 +40,4 @@ This function, `scarf_analytics()`, is responsible for collecting and sending te
 
 **Important Notes:**
 
-It’s important to have mechanisms to track user opt-int/out. This function respects user privacy preferences according to multiple standards. Users can set the  `DO_NOT_TRACK` environment variable or the `SCARF_NO_ANALYTICS` environment variable.
+It’s important to have mechanisms to track user opt-in/out. This function respects user privacy preferences according to multiple standards. Users can set the  `DO_NOT_TRACK` environment variable or the `SCARF_NO_ANALYTICS` environment variable.
