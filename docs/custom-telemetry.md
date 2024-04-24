@@ -2,7 +2,7 @@
 
 Scarf provides you the ability to collect custom telemetry from within your application by utilizing our API. To enable this you'll need a Scarf account and a File Package created. Enable Event Collection Only. 
 
-Once this has been done, you are able to send telemetry data and associate it with the File Package you just created. Scarf has published and maintains an example in [bash or shell](https://github.com/scarf-sh/scarf-shell/), included below is an example Python function developed by one of our customers.
+Once this has been done, you can send telemetry data and associate it with the Scarf package you just created via HTTP requests to your configured endpoint. Here is a real world example from Unstructured.io in Python:
 
 
 ```python
