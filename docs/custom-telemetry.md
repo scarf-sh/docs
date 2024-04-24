@@ -27,6 +27,8 @@ def scarf_analytics():
     except Exception:
         pass
 ```
+Scarf has also published and maintains an example in bash or shell [bash or shell](https://github.com/scarf-sh/scarf-shell/blob/main/scarf.sh).
+
 **Description:**
 
 This function, `scarf_analytics()`, is responsible for collecting and sending telemetry data about the current system environment to a server you host. This data helps users understand how their Python library is being used across different platforms and configurations.
