@@ -4,7 +4,6 @@ Scarf provides you the ability to collect custom telemetry from within your appl
 
 Once this has been done, you are able to send telemetry data and associate it with the File Package you just created. Scarf has published and maintains an example in [bash or shell](https://github.com/scarf-sh/scarf-shell/), included below is an example Python function developed by one of our customers.
 
-_\*\*Thank you to Unstructured for their wonderful documentation and code samples. We have borrowed some of that as an example here. All rights reserved to Unstructured._
 
 ```python
 # Copyright 2022 Unstructured Technologies, Inc
