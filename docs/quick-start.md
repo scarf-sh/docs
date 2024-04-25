@@ -59,7 +59,7 @@ In the next section, you will create a tracking pixel that can be added to your 
 
 Tracking pixels are used to leverage the web traffic from your project’s documentation to learn which companies are using your software.
 
-1. Navigate to [https://scarf.sh/home](https://scarf.sh/home).
+1. Navigate to the [Scarf homepage](https://app.scarf.sh/home/).
 
 2. Pixels can be created from two locations, one is directly from the packages details view. In top menu click on `Tools` > `Packages`. Then in the next screen find our package `hello-world` and click on `View details`.
 ![view details](assets/pics/quick-start/docker-package-view-details.png)
