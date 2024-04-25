@@ -2,31 +2,35 @@
 
 ## Introduction
 
-Scarf Gateway is a service that provides a central access point to your containers and packages, no matter where you host them.
+Scarf is a platform that helps you track download and usage analytics for your open source project. Scarf can collect analytics for you by:
+
+- Tracking the downloads of your software at the point of distribution, regardless of how they are distributed (Docker containers, binaries, Python packages, npm packages, and more).
+- Tracking user interactions with your web artifacts (your marketing site, your documentation, and your READMEs), without introducing cookies or JavaScript.
+- Enriching any existing data you're already collecting on software usage.
 
 In this guide, you will learn:
 
 - How to create track pulls of your Docker containers with Scarf
 - How to create a tracking pixel to track views of your package's documentation
-- How to download your packages and fetch associated pixels
+- How to test your setup by downloading your Scarf packages and fetching your associated Scarf pixels
 
 ## Prerequisites
 
 - You will need to sign up for a [Scarf account](https://scarf.sh/signup).
   You can sign up with a valid email address or your GitHub account.
-- The container you're looking to track must be published to an existing public registry, eg Docker Hub, GitHub Container Registry.
+- The container you're looking to track must be published to an existing public registry (e.g., Docker Hub or GitHub Container Registry).
   This guide will use the `hello-world` [docker image](https://hub.docker.com/_/hello-world).
 
 ### Creating a Docker Package
 
-Using Scarf, users can pull your Docker container images via Scarf Gateway using your custom domain.
+Using Scarf, users can pull your Docker container images via Scarf Gateway using your custom domain. Scarf Gateway is a service that provides a central access point to your containers and packages, no matter where you host them. 
 
-1.  Once signed in to Scarf, navigate to the home page.
+1.  Once signed in to Scarf, navigate home by clicking on the Scarf icon in the top-left corner of the screen.
 
-2. Click plus icon in the top navigation, then select `New Package`.
+2. Click the plus icon in the top navigation bar, then select `New Package`.
 ![Create a new package](assets/pics/qs-file-packages/create-new-package.png)
 
-3. In the first drop-down click on the package type you would like to create. For this section you will click `Docker`.
+3. In the first dropdown, click on the package type you would like to create. For this section, you will click `Docker`.
 ![Enter the docker pull command](assets/pics/quick-start/create-docker.png)
 
 
@@ -35,11 +39,11 @@ Using Scarf, users can pull your Docker container images via Scarf Gateway using
 
     ![Enter the docker pull command](assets/pics/quick-start/docker-package-pull-command.png)
 
-5. Optional: You can add a custom domain or use the domain provided by Scarf Gateway.
+5. Optional: You can add a custom domain or use the domain provided by Scarf Gateway. If you choose to create a custom domain, you will need to [CNAME your custom domain to the domain provided by Scarf Gateway]([url](https://www.cloudflare.com/learning/dns/dns-records/dns-cname-record/)).
 
 6. Click the `Submit` button to be redirected to a success screen with some additional information as to what you can do next.
 
-7. Click on on `Go to your package` to view your package details view.
+7. Click on `Go to your package` to view the Package Details.
 ![Enter the docker pull command](assets/pics/quick-start/docker-packages-succces-screen.png)
 
 Now you’re all set to start tracking your Docker images with Scarf.
