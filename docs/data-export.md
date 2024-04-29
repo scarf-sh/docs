@@ -115,9 +115,9 @@ The Scarf to PostgreSQL Exporter is a script designed to pull down your raw Scar
 
 #### Prerequisites
 
-- `psql` must be installed and available in your environment.
-- You will need an account on the [Scarf Dashboard](https://app.scarf.sh).
-- You will need a Scarf API access token. You can generate an API Token from the settings in your [Scarf Dashboard](https://app.scarf.sh) account.
+- `psql` must be installed and available in your environment (or use the Docker container with everything you need). 
+- A [Scarf Account](https://app.scarf.sh).
+- Your Scarf API token. You can find your API Token from your [user settings page](https://app.scarf.sh/account).
 
 #### Settings
 
@@ -140,9 +140,10 @@ For more details, you can visit the [GitHub repository](https://github.com/scarf
 Integrations are in development, if you have particular data sources you'd like Scarf to integrate with, we'd love to hear from you.
 
 ## Daily Scheduled Exports
-Schedule the daily exports via the api endpoint [https://api.scarf.sh/v2/exports/{owner}/schedule-export](https://api-docs.scarf.sh/v2.html#tag/Packages/operation/scheduleExport). The daily export feature exports event data for packages, tracking pixels, companies, and aggregates to the s3 bucket that you indicate in the `s3_uri_destination` field. The s3 uri that you submit will be considered as the bucket name. So do not specify an object key. The service will generate the object key with the format `<package-events|tracking-pixel-events|company-events|company-rollups|aggregates>-scarf-export-<start date>-<end date>.csv`. 
 
-**Setting up your s3 account**
+Schedule a daily export via the API endpoint [https://api.scarf.sh/v2/exports/{owner}/schedule-export](https://api-docs.scarf.sh/v2.html#tag/Packages/operation/scheduleExport). The daily export both raw and aggregated data to the S3 bucket that you indicate in the `s3_uri_destination` field. The S3 uri that you submit will be considered as the bucket name. Do not specify an object key. The service will generate the object key with the format `<package-events|tracking-pixel-events|company-events|company-rollups|aggregates>-scarf-export-<start date>-<end date>.csv`. 
+
+**Setting up your S3 account**
 
 Create a policy that states we can assume a role. Here's an example of that policy
 ```json
