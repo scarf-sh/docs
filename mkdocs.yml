@@ -41,20 +41,14 @@ extra_css:
 # Docs Navigation
 nav:
 - index.md
-- index.zh.md
 - getting-started-checklist.md
 - quick-start.md
-- quick-start.zh.md
 - gateway.md
-- gateway.zh.md
 - organizations.md
-- organizations.zh.md
 - packages.md
 - package-analytics.md
-- package-analytics.zh.md
 - custom-telemetry.md
 - web-traffic.md
-- web-traffic.zh.md
 - oql.md
 - funnel-stages.md
 - data-export.md
@@ -87,26 +81,7 @@ extra:
     - icon: fontawesome/brands/youtube
       link: https://www.youtube.com/channel/UCiJRrlBKBOgYFRO9eb6pfdg
 
-  # Default mkdocs-material alternate links for untranslated pages
-  # https://squidfunk.github.io/mkdocs-material/setup/changing-the-language/#site-language-selector
-  alternate:
-    - name: English
-      link: ''
-      lang: en
-
-    - name: Chinese
-      link: index.zh
-      lang: zh
-
 # Plugins
 plugins:
   - render_swagger
   - search
-  - i18n:
-      languages:
-        en: "English"
-        zh: "中文 (简体)"
-      default_language: 'en'
-      no_translation:
-        en: "This page isn't translated to English."
-        zh: "此页面未翻译成中文"
