@@ -193,3 +193,5 @@ After creating the role, go to the "Trust relationships" and add the following t
 ```
 
 The ARN role is what you will need in the `arn_role` [api field](https://api-docs.scarf.sh/v2.html#tag/Packages/operation/scheduleExport).
+
+This is not an exhaustive documentation of how to setup a shared s3 bucket. Please refer to the aws documentation for more information.
