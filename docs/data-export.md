@@ -141,7 +141,7 @@ Integrations are in development, if you have particular data sources you'd like 
 
 ## Daily Scheduled Exports
 
-Schedule a daily export via the API endpoint [https://api.scarf.sh/v2/exports/{owner}/schedule-export](https://api-docs.scarf.sh/v2.html#tag/Packages/operation/scheduleExport). The daily export both raw and aggregated data to the S3 bucket that you indicate in the `s3_uri_destination` field. The S3 uri that you submit will be considered as the bucket name. Do not specify an object key. The service will generate the object key with the format `<package-events|tracking-pixel-events|company-events|company-rollups|aggregates>-scarf-export-<start date>-<end date>.csv`. 
+Schedule a daily export via the API endpoint [https://api.scarf.sh/v2/exports/{owner}/schedule-export](https://api-docs.scarf.sh/v2.html#tag/Packages/operation/scheduleExport). The daily export both raw and aggregated data to the S3 bucket that you indicate in the `s3_uri_destination` field. The S3 uri that you submit will be considered as the bucket name. Do not specify an object key. The service will generate the object key with the format `<events|company-rollups>-scarf-export-<start date>-<end date>.csv`. 
 
 **Setting up your S3 account**
 
