@@ -4,7 +4,7 @@ Scarf can help you understand how people and companies discover and learn about 
  
  If you observe readers from a particular company frequently viewing your project documentation, this can indicate an opportunity for landing support contracts or sponsorship to financially support your project. Seeing repeat visitors to certain pages in your docs may hint at parts of your project that are confusing or can be clarified. 
  
- Pairing _Documentation Insights_ with Scarf's package analytics can help you better understand your OSS-user-journey, and your associated conversion rates. Given that someone sees your landing page, what's the likelyhood they continue on to download your latest binary, container image, or other artifact?
+ Pairing _Documentation Insights_ with Scarf's package analytics can help you better understand your OSS-user-journey, and your associated conversion rates. Given that someone sees your landing page, what's the likelihood they continue on to download your latest binary, container image, or other artifact?
  
 ### Features
 
