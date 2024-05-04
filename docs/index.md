@@ -14,7 +14,7 @@ Scarf provides open-source software maintainers with deep insights about their p
 4. **[Organizations](/organizations):** Learn how to manage and collaborate with your teams within Scarf's platform.
 5. **[Packages](/packages):** Delve into the specifics of working with various Scarf package types, such as Docker, Helm, npm, Python, and more.
 6. **[Scarf SDKs](/package-analytics):** Discover how our Software Development Kits (SDKs) can accelerate your development process.
-7. **[Custom Telemetry](/custom-telemetry):** Scarf provides you the ability to collect custom telemetry from within your application by utilizing our API.
+7. **[Custom Telemetry](/custom-telemetry):** Track any custom behaviors by sending event data to Scarf from your code. 
 8. **[Documentation Insights (Pixels)](/web-traffic):** Uncover insights about your product's usage and onboarding through Scarf's cookie-free pixel tracking.
 9. **[Open Source Qualified Leads (OQLs)](/oql):** Identify organizations and individuals that have engaged with your OSS.
 10. **[Open Source Adoption Funnel Stages](/funnel-stages):** Understand the level of engagement of potential leads.
