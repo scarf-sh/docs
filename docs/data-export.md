@@ -69,28 +69,6 @@ curl -o {filename}.jsonl \
   "https://api.scarf.sh/v2/packages/{owner}/aggregates?start_date={start_date}&end_date={end_date}&breakdown=by-company"
 ```
 
-## How to Export Company Scarf Scores
-
-The documentation for exporting company Scarf Score can be found in [Export Company Scarf Scores](https://api-docs.scarf.sh/v2.html#tag/Company/operation/exportEntityScarfScores).
-Here's an example curl request to download scarf score data.
-```sh
-curl -o scarf-score.csv \
-    -H "Authorization: Bearer {token} \
-    -H "Content-Type: text/csv" \
-    "https://api.scarf.sh/v2/companies/{owner}/scoring"
-```
-
-The Scarf Score export includes the following data fields:
-
-| name               | type      | description                                         |
-|--------------------|-----------|-----------------------------------------------------|
-| **company**        | `text`    | Name of the company                                 |
-| **company_domain** | `text`    | Domain of the company. Eg. company.com              |
-| **scarf_score**    | `numeric` | Scarf's score for a company                         |
-| **funnel_stage**   | `text`    | Stage of a company's journey in using your software |
-| **first_seen**     | `text`    | Date when a company was first seen                  |
-| **last_seen**      | `text`    | Date when a company was most recently seen.                   |
-
 ## How to Export Company Events
 
 The documentation for exporting company events can be found in [Export Company Events](https://api-docs.scarf.sh/v2.html#tag/Company/operation/exportEntityCompanyEvents).
