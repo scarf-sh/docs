@@ -69,6 +69,39 @@ curl -o {filename}.jsonl \
   "https://api.scarf.sh/v2/packages/{owner}/aggregates?start_date={start_date}&end_date={end_date}&breakdown=by-company"
 ```
 
+## How to Export Company Data
+The documentation for exporting company data that is rolled up with a daily interval can be found in [Export Company Data](https://api-docs.scarf.sh/v2.html#tag/Company/operation/exportCompanyRollup)
+
+Here's an example curl request to download company rolled up data.
+```sh
+curl -o company-rollup.csv \
+    -H "Authorization: Bearer {token} \
+    -H "Content-Type: text/csv" \
+    https://api.scarf.sh/v2/packages/{owner}/company-rollup
+```
+
+The company data export includes the following data fields.
+
+| name                           | type      | description                                                         |
+|--------------------------------|-----------|---------------------------------------------------------------------|
+| **company_name**               | `text`    | Name of the company                                                 |
+| **company_domain**             | `text`    | Domain of the company. Eg. scarf.sh                                 |
+| **funnel_stage**               | `text`    | Stage of a company's journey in using your software                 |
+| **total_events**               | `numeric` | Count of total events                                               |
+| **events**                     | `numeric` | Count of unique events                                              |
+| **first_seen**                 | `text`    | Date of when the first event occured                                |
+| **last_seen**                  | `text`    | Date of when the last event occured                                 |
+| **company_linkedin_url**       | `text`    | A company's LinkedIn link                                           |
+| **company_industry**           | `text`    | A company's industry. Eg. Tech, Government, etc.                    |
+| **company_size**               | `text`    | A company's approximated employee count                             |
+| **company_country**            | `text`    | A company's country location                                        |
+| **company_state**              | `text`    | A company's state location                                          |
+| **interest_start_date**        | `text`    | Date when a company started in the *interest* funnel_stage          |
+| **investigation_start_date**   | `text`    | Date when a company started in the *investigation* funnel_stage     |
+| **experimentation_start_date** | `text`    | Date when a company started in the *experimentation* funnel_stage   |
+| **ongoing_usage_start_date**   | `text`    | Date when a company started in the *ongoing usage* funnel_stage     |
+| **inactive_start_date**        | `text`    | Date when a company started in the *inactive* funnel_stage          |
+
 ## How to Export Company Events
 
 The documentation for exporting company events can be found in [Export Company Events](https://api-docs.scarf.sh/v2.html#tag/Company/operation/exportEntityCompanyEvents).
