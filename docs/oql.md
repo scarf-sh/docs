@@ -22,7 +22,7 @@ This involves assigning a numerical value to each lead based on various factors 
 
 This is the process of filtering leads based on specific criteria such as demographic information and behavioral actions. For OQL, this could involve analyzing the types of open-source projects they are involved in, their level of activity, and their expressed needs or pain points.
 
-### Why should you track OQL’s?
+### Why should you track OQLs?
 
 - Building a baseline and tracking the growth of your user base
 - Planning activities to accelerate the adoption of your open source
