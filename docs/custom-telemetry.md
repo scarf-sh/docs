@@ -27,7 +27,7 @@ def scarf_analytics():
     except Exception:
         pass
 ```
-Scarf has also published and maintains an example in bash or shell [bash or shell](https://github.com/scarf-sh/scarf-shell/blob/main/scarf.sh).
+Scarf has also published and maintains an example in [bash or shell](https://github.com/scarf-sh/scarf-shell/blob/main/scarf.sh).
 
 **Description:**
 
