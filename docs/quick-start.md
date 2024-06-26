@@ -16,7 +16,7 @@ In this guide, you will learn:
 
 ## Prerequisites
 
-- You will need to sign up for a [Scarf account](https://scarf.sh/signup).
+- You will need to sign up for a [Scarf account](http://app.scarf.sh/register).
   You can sign up with a valid email address or your GitHub account.
 - The container you're looking to track must be published to an existing public registry (e.g., Docker Hub or GitHub Container Registry).
   This guide will use the `hello-world` [docker image](https://hub.docker.com/_/hello-world).
@@ -39,7 +39,7 @@ Using Scarf, users can pull your Docker container images via Scarf Gateway using
 
     ![Enter the docker pull command](assets/pics/quick-start/docker-package-pull-command.png)
 
-5. Optional: You can add a custom domain or use the domain provided by Scarf Gateway. If you choose to create a custom domain, you will need to [CNAME your custom domain to the domain provided by Scarf Gateway]([url](https://www.cloudflare.com/learning/dns/dns-records/dns-cname-record/)).
+5. Optional: You can add a custom domain or use the domain provided by Scarf Gateway. If you choose to create a custom domain, you will need to [CNAME your custom domain to the domain provided by Scarf Gateway](https://www.cloudflare.com/learning/dns/dns-records/dns-cname-record/).
 
 6. Click the `Submit` button to be redirected to a success screen with some additional information as to what you can do next.
 
