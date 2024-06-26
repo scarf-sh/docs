@@ -82,7 +82,7 @@ By default, scarf-js will only trigger analytics when your package is installed 
   - Is your project growing or shrinking? Where? On which platforms?
 - Which versions of your package are being used?
 
-#### What information does scarf js send?
+#### What information does scarf-js send?
 
 See more [here](#data-collection-and-privacy).
 
