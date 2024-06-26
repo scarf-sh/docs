@@ -26,7 +26,7 @@ Data insights about your Docker container image's downloads can be found in your
 
 Everything that is served and tracked via Scarf Gateway needs a corresponding _package_ entry on [scarf.sh](scarf.sh). Configuration, analytics, and permissions are all done at the level of a package, or single repository. `rocket-skates`, `acme/rocket-skates` are all valid package entries. Because packages can seamlessly change their hosting provider, hostnames (e.g. `gcr.io`) are not part of the package identifier on Scarf (e.g. `acme/rocket-skates` and not `gcr.io/acme/rocket-skates`.)
 
-To create your package entry, click "New Package" in the navbar in your Scarf dashboard, or [click here](https://scarf.sh/create-package). Then select the corresponding package type for your artifact.
+To create your package entry, click "New Package" in the navbar in your Scarf dashboard. Then select the corresponding package type for your artifact.
 
 #### Container Image Packages
 
