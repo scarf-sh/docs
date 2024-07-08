@@ -33,6 +33,7 @@ In this example, the name of this file is `events.ndjson`
 {"$package":"970493a1-4ca0-4a4d-a085-fdce578e5a08","$remote_address":"600.188.717.651","$time":"2024-06-01T00:00:00Z","$unique_id":"9053a19a-15a9-3695-bd37-b055a45949c1"}
 {"$package":"970493a1-4ca0-4a4d-a085-fdce578e5a08","$remote_address":"665.921.984.205","$time":"2024-06-25T00:00:00Z","$unique_id":"09b5b69a-0af0-8002-2c2b-39df3d5685a4"}
 ```
+
 Then, this is the example import script
 ```bash
 #!/usr/bin/env bash
@@ -44,7 +45,13 @@ curl -v \
   --data-binary @events.ndjson
 ```
 
+To re-iterate the docs regarding the [$unique_id](https://api-docs.scarf.sh/v2.html#tag/External-event-import/operation/importEvents) field,
+
+> Unique identifier that uniquely identifies the event and is used for de-duplication purposes, if provided.
+
+If the same value for the `$unique_id` field is used, only the first event will be processed and the rest will be ignored. If `$unique_id` is not provided, we will generate one internally.
+
 ## Automation
 
-Currently, there is a limit of 5 concurrent imports but there are no limits on how many lines of events per import. A rough estimate of an import that has 1000 events takes about 1.2 minutes. So if you have an automation with our import api, it would be ideal to set a sleep interval after the concurrent import limit based on the estimated 1 import duration. This means that if you already have 5 imports in progress, you should schedule the next import after 1.2 minutes.
+Currently, there is a limit of 15 concurrent imports but there are no limits on how many lines of events per import. A rough estimate of an import that has 1000 events takes about 1.2 minutes when the system is not under heavy load. So if you have an automation with our import api, it would be ideal to set a sleep interval after the concurrent import limit based on the estimated 1 import duration, the sleep interval ideally should have an exponential backoff. This means that if you already have 15 imports in progress, you should schedule the next import after 1.2 minutes.
 

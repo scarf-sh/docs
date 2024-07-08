@@ -20,8 +20,8 @@ Scarf provides open-source software maintainers with deep insights about their p
 10. **[Open Source Adoption Funnel Stages](/funnel-stages):** Understand the level of engagement of potential leads.
 11. **[Data Export](/data-export):** Export your data for customized analysis. Explore the potential of data manipulation to suit your needs.
 12. **[Event Import](/event-import):** Import your data
-14. **[User Guide & Best Practices](/user_best_practices):** Make a plan to use the data uncovered in your OQLs.
-15. **[Troubleshooting](/troubleshooting):** Find solutions to common issues and questions.
+13. **[User Guide & Best Practices](/user_best_practices):** Make a plan to use the data uncovered in your OQLs.
+14. **[Troubleshooting](/troubleshooting):** Find solutions to common issues and questions.
 16. **[API Docs](https://api-docs.scarf.sh/v2.html):** Understand the capabilities of a specific API version and its available endpoints.
 
 ## Contribution
