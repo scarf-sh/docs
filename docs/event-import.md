@@ -2,7 +2,7 @@
 
 The external event import API provides a way for you to integrate with other applications and platforms that may be generating event data that  you need to track and manage.
 
-To start the import process, users can utilize either of these endpoints depending on their use case.
+To start the import process, multiple endpoints are available for different use cases.
 
 - [Import events in bulk](https://api-docs.scarf.sh/v2.html#tag/External-event-import/operation/importEvents)
     - For this endpoint, on top of the required fields, you will need either the `package id`,`tracking pixel id`, or both depending on which artifact you want to associate the events.
