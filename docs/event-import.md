@@ -1,6 +1,6 @@
 # Event Import 
 
-The external event import API provides a way for you to integrate with other applications and platforms that may be generating event data that  you need to track and manage.
+The external event import API provides a way to integrate with other applications and platforms that may be generating event data you care about.
 
 To start the import process, multiple endpoints are available for different use cases.
 
