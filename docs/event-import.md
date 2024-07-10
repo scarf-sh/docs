@@ -53,5 +53,5 @@ If the same value for the `$unique_id` field is used, only the first event will 
 
 ## Automation
 
-Currently, there is a limit of 15 concurrent imports but there are no limits on how many lines of events per import. A rough estimate of an import that has 1000 events takes about 1.2 minutes when the system is not under heavy load. So if you have an automation with our import api, it would be ideal to set a sleep interval after the concurrent import limit based on the estimated 1 import duration, the sleep interval ideally should have an exponential backoff. This means that if you already have 15 imports in progress, you should schedule the next import after 1.2 minutes.
+Currently, there is a limit of 15 concurrent imports but there are no limits on how many lines of events per import. If you go beyond the concurrent limit you will get a "too many active imports" error. So if you have automation with our import api, it would be ideal to set a sleep interval with an exponential backoff.
 
