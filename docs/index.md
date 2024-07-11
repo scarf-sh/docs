@@ -22,7 +22,7 @@ Scarf provides open-source software maintainers with deep insights about their p
 12. **[Event Import](/event-import):** Import your data
 13. **[User Guide & Best Practices](/user_best_practices):** Make a plan to use the data uncovered in your OQLs.
 14. **[Troubleshooting](/troubleshooting):** Find solutions to common issues and questions.
-16. **[API Docs](https://api-docs.scarf.sh/v2.html):** Understand the capabilities of a specific API version and its available endpoints.
+15. **[API Docs](https://api-docs.scarf.sh/v2.html):** Understand the capabilities of a specific API version and its available endpoints.
 
 ## Contribution
 
