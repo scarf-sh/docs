@@ -24,3 +24,25 @@
 	1. Roll out tracking to all your projects/sites.
 	2. Update your documentation and tutorials to point to your custom URL.
 7. If you are looking to improve your lead flow, once you have data flowing into your system, fill out the lead generation form and get a trial of leads for your sales team coming directly from your download and web traffic.  
+
+<!-- HTML Meta Tags -->
+<title>Scarf Documentation - Getting Started Checklist</title>
+<meta name="description" content="Scarf's Technical Documentation & API Reference
+">
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://docs.scarf.sh/getting-started-checklist/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Scarf Documentation - Getting Started Checklist">
+<meta property="og:description" content="Scarf's Technical Documentation & API Reference
+">
+<meta property="og:image" content="https://opengraph.b-cdn.net/production/images/56a13ae6-1048-4ff3-8ad8-8641de2da3cd.png?token=-GmnRV9BER1Oi-VtwtrP6Udvx8VxLJylzzKPTbSN-qM&height=590&width=1200&expires=33257078184">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="docs.scarf.sh">
+<meta property="twitter:url" content="https://docs.scarf.sh/getting-started-checklist/">
+<meta name="twitter:title" content="Scarf Documentation - Getting Started Checklist">
+<meta name="twitter:description" content="Scarf's Technical Documentation & API Reference
+">
+<meta name="twitter:image" content="https://opengraph.b-cdn.net/production/images/56a13ae6-1048-4ff3-8ad8-8641de2da3cd.png?token=-GmnRV9BER1Oi-VtwtrP6Udvx8VxLJylzzKPTbSN-qM&height=590&width=1200&expires=33257078184">
