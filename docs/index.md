@@ -33,3 +33,25 @@ For engaging discussions, interactive Q&A sessions, and to meet our dynamic comm
 Stay updated with Scarf's system status and uptime on our status page [here](https://status.scarf.sh).
 
 ### Welcome aboard, and happy exploring!
+
+<!-- HTML Meta Tags -->
+<title>Scarf Documentation</title>
+<meta name="description" content="Scarf's Technical Documentation & API Reference
+">
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://docs.scarf.sh/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Scarf Documentation">
+<meta property="og:description" content="Scarf's Technical Documentation & API Reference
+">
+<meta property="og:image" content="https://opengraph.b-cdn.net/production/images/1f3135d3-52d6-4f77-b6d7-ef119914ddb4.png?token=mSQX6IkbDva90lDYe8e3S69QIbSdDDrkUHcs3RO59Rk&height=590&width=1200&expires=33257077765">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="docs.scarf.sh">
+<meta property="twitter:url" content="https://docs.scarf.sh/">
+<meta name="twitter:title" content="Scarf Documentation">
+<meta name="twitter:description" content="Scarf's Technical Documentation & API Reference
+">
+<meta name="twitter:image" content="https://opengraph.b-cdn.net/production/images/1f3135d3-52d6-4f77-b6d7-ef119914ddb4.png?token=mSQX6IkbDva90lDYe8e3S69QIbSdDDrkUHcs3RO59Rk&height=590&width=1200&expires=33257077765">
