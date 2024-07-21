@@ -56,7 +56,7 @@ The event data export includes the following data fields
 | **dnt** | `boolean` | If the user includes a DNT request in their header, that is logged here and [they will not be tracked](/gateway/#do-not-track). |
 | **confidence** | `numeric` | The probability of correct identification of the data. |
 | **endpoint_id** | `text` | This uniquely identifies the public-facing device that has interacted with a Scarf event. Unlike origin_id, it is notably not sensitive to changes in device information like client, user agent, etc. |
-
+| **mtc_quota_exceeded** | `boolean` | A value of `true` indicates the company information from the event data row was scrubbed due to exceeding the MTC limit. |
 
 ## How to Export Aggregate Data 
 
