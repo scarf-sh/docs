@@ -156,7 +156,7 @@ Schedule a daily export via the API endpoint [https://api.scarf.sh/v2/exports/{o
 
 **Setting up your S3 account**
 
-Create a policy that states we can assume a role. Here's an example of that policy
+Create a policy that states we can assume a role. Here's an example of that policy. This example is a highly permissive role. If you want to customize the role, please refer to the proper AWS documentation.
 ```json
 {
     "Version": "2012-10-17",
