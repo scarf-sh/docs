@@ -112,13 +112,13 @@ Please note that this behavior works for all packages and pixels that are served
 
 ### Availability
 
-Scarf Gateway is a free hosted service that is provided to maintainers and users as-is and as-available.
+Scarf Gateway is a free hosted service that is publicly provided as-is and as-available.
 
-Scarf Gateway is deployed on AWS in multiple regions around the globe; it is fault tolerant even to entire regions going offline, and can automatically and elasticly scale our backend capacity to meet whatever user traffic demands of us.
+Scarf Gateway is deployed on AWS in multiple regions around the globe; it is fault tolerant even to entire regions going offline, and can automatically scale our backend capacity to meet whatever user traffic demands of us.
 
-We are expecting to meet a monthly service uptime percentage of 99.9%. Guarantees of our service-level agreement will be made available in the future.
+We aim for a monthly service uptime percentage of 99.9%. If you need uptime and/or support SLAs to guarantee that uptime for your company, please contact [sales@scarf.sh](mailto:sales@scarf.sh)
 
-To see Scarf's uptime and system status, you can view the status page [here](https://status.scarf.sh).
+To see Scarf's historical uptime and system status, you can view the status page [here](https://status.scarf.sh).
 
 ### Badges
 
@@ -160,7 +160,7 @@ If your container is on Docker Hub as `acme/rocket-skates`, your install command
 
 #### Automatic Package Creation for Containers
 
-Rather than creating packages entries for each container in your namespace, you can specify rules to automaically forward all matching traffic and create package entries automatically. By using a template, e.g. ``repository/*``, every time an image matching that template is first downloaded, Scarf will automatically create a page for that package (e.g. repository/test01, repository/new-item).
+Rather than creating packages entries for each container in your namespace, you can specify rules to automatically forward all matching traffic and create package entries automatically. By using a template, e.g. ``repository/*``, every time an image matching that template is first downloaded, Scarf will automatically create a page for that package (e.g. repository/test01, repository/new-item).
 
 ### Creating Collections
 To acces Collections, in the top menu click `Tools` > `Collections`.
