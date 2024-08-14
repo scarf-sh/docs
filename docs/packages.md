@@ -59,6 +59,14 @@ It will usually take 30 minutes and up to 2-3 hours before you see data pulled i
 
 ## Files
 
+File Packages on Scarf are a flexible and low-level package type that can track visits and downloads on arbitrary URLs. File packages were originally created to track published tar balls, but it has since expanded to many other use cases and will likely be renamed in future versions of Scarf. You can think of File Packages as a powerful and fully customizable link shortener. Common use cases include:
+
+- Tracking downloads of GitHub release artifacts
+- Tracking downloads of every artifact on your company/project "downloads" page
+- Tracking downloads of Homebrew packages from a tap/formula that you control
+- Sending custom telemetry or other events from your application
+- Tracking and attributing visits to marketing and sales content on your site.
+
 ### Creating a File Package
 1. Once signed in to Scarf, navigate to the home page.
 

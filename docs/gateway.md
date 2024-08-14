@@ -43,13 +43,23 @@ See [Figure 0](#figure_0) to see how these pieces fit together visually.
 
 #### File Packages
 
+File Packages on Scarf are a flexible and low-level package type that can track visits and downloads on arbitrary URLs. File packages were originally created to track published tar balls, but it has since expanded to many other use cases and will likely be renamed in future versions of Scarf. You can think of File Packages as a powerful and fully customizable link shortener. Common use cases include:
+
+- Tracking downloads of GitHub release artifacts
+- Tracking downloads of every artifact on your company/project "downloads" page
+- Tracking downloads of Homebrew packages from a tap/formula that you control
+- Sending custom telemetry or other events from your application
+- Tracking and attributing visits to marketing and sales content on your site.
+
 ![Gateway.png](./assets/pics/gateway-diagrams/gateway-files.png)
 
-Scarf Gateway configuration for a file package entry has three main considerations:
+Scarf Gateway configuration for a file package entry has a few main considerations:
 
 - **Domain**: Just like Docker container images, you may choose to use your own domain(s) for serving files. You may also choose to use `<username>.gateway.scarf.sh` provided by default by Scarf. Remember, if you elect to use your own domain, you'll need to add a CNAME for that domain to `gateway.scarf.sh` as well as verify ownership of that domain.
 - **Incoming Path**: This refers to where a path on a given domain where Scarf will direct requests to fetch a file asset. This could be static path like `/downloads/rocket-skates.tar.gz` or a template path with variables like `/files/{version}/{platform}/rocket-skates-{platform}-{version}.tar.gz`. You may use variables in your incoming path as specified in [RFC 6570](https://datatracker.ietf.org/doc/html/rfc6570). You can modify a path value later, but be careful to communicate to your users because this would be a breaking change.
 - **Outgoing URL**: This is an *optional* full URL to your asset on your HTTP/S hosting provider. It is a template (or static) URL that may also use any variables defined in the Incoming Path. For example `https://besthostingprovider.com/acme/{platform}/rocket-skates-{version}.tar.gz`. If an Outgoing URL is not provided, the Gateway will return 200 with no redirect.
+- **Catch-all redirects**: Select this option if you intend to configure a domain-level redirect with your File Package (ie, redirecting `site.com/*` -> `anothersite.com/*`).
+- **Event collection only**: Select this option if you intend to use Scarf Gateway as a telemetry endpoint to send events from your code, and do not intend to redirect your user to another URL or artifact to download. Packages configured with this option will not return a redirect to the client that sends a matching request. Scarf will instead return a simple 200 status code indicating that the event was received successfully.
 
 See [Figure 3](#figure_3) to see how these pieces fit together visually.
 
