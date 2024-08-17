@@ -134,7 +134,7 @@ To see Scarf's historical uptime and system status, you can view the status page
 
 All packages on Scarf Gateway offer dynamic Scarf-powered README badges automatically. Head to your package page, and the badges will be shown in the details section near the top. Copy the URL, paste it into your project’s README based on whatever doc format you are using and you’re all set.
 
-![Scarf-badge-details-page](https://user-images.githubusercontent.com/52803/120844406-2bd7f580-c524-11eb-80cb-9a8d213348b5.png)
+<img width="652" alt="Package Badges" src="https://github.com/user-attachments/assets/a7e191f1-306c-48fb-9512-13c75f4c9e42">
 
 **What is the difference between the downloads badge and the company badge?**
 
