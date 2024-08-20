@@ -15,7 +15,7 @@ def scarf_analytics():
             requests.get(
 		  # CUSTOMER_ENDPOINT is a DNS CNAME configured within your Scarf account
 		  # FILE_PACKAGE_NAME is the Scarf collection under which these data points will be collected
-                "https://CUSOMER_ENDPOINT.scarf.sh/FILE_PACKAGE_NAME?version="
+                "https://CUSTOMER_ENDPOINT.scarf.sh/FILE_PACKAGE_NAME?version="
                 + __version__
                 + "&platform="
                 + platform.system()
