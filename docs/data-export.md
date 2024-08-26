@@ -38,6 +38,7 @@ The event data export includes the following data fields
 | **id** | `text` | This uniquely identifies the event (pixel view or package download) that occurred. |
 | **type** | `text` | This categorizes the type of event that occurred (e.g. *pixel-fetch*, *manifest-fetch*, *binary-download*, etc.). |
 | **package** | `text` | For Scarf package downloads, this specifies which package has been downloaded. |
+| **pixel** | `text` | For Scarf page views, this specifies which pixel has been downloaded. |
 | **version** | `text` | For Scarf package downloads, this specifies which version of the package has been downloaded. |
 | **time** | `timestamp` | This refers to the time in UTC that the event occurred. |
 | **referer** | `text` | For Scarf pixel views, this refers to the page that was viewed. |
