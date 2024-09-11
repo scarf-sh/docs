@@ -153,11 +153,11 @@ Integrations are in development, if you have particular data sources you'd like 
 
 ## Daily Scheduled Exports
 
-Schedule a daily export via the API endpoint [https://api.scarf.sh/v2/exports/{owner}/schedule-export](https://api-docs.scarf.sh/v2.html#tag/Packages/operation/scheduleExport). The daily export both raw and aggregated data to the S3 bucket that you indicate in the `s3_uri_destination` field. The S3 uri that you submit will be considered as the bucket name. Do not specify an object key. The service will generate the object key with the format `<events|company-rollups>-scarf-export-<start date>-<end date>.csv`. 
+Schedule a daily export via the API endpoint [https://api.scarf.sh/v2/exports/{owner}/schedule-export](https://api-docs.scarf.sh/v2.html#tag/Packages/operation/scheduleExport). This export has the capability to export both raw events and company rollup aggregated data to the bucket indicated in the s3_uri_destination field. The S3 uri that you submit will be considered as the bucket name. Do not specify an object key. The service will generate the object key with the format `<events|company-rollups>-scarf-export-<start date>-<end date>.csv`. 
 
 **Setting up your S3 account**
 
-Create a policy that states we can assume a role. Here's an example of that policy. This example is a highly permissive role. If you want to customize the role, please refer to the proper AWS documentation.
+Create a policy that states we can assume a role. Here's an example of that policy. This example is a highly permissive role. If you want to customize the role, please refer to the proper [AWS documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-policy-language-overview.html).
 ```json
 {
     "Version": "2012-10-17",
@@ -206,4 +206,4 @@ After creating the role, go to the "Trust relationships" and add the following t
 
 The ARN role is what you will need in the `arn_role` [api field](https://api-docs.scarf.sh/v2.html#tag/Packages/operation/scheduleExport).
 
-This is not an exhaustive documentation of how to setup a shared s3 bucket. Please refer to the aws documentation for more information.
+This is not an exhaustive documentation of how to setup a shared s3 bucket. Please refer to the [AWS documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-policy-language-overview.html) for more information.
