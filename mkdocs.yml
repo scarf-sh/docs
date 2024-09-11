@@ -68,6 +68,7 @@ markdown_extensions:
   meta: {}
   admonition: {}
   pymdownx.superfences: {}
+  tables: {}
 
 # Customization
 extra:
