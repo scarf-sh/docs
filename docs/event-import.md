@@ -150,6 +150,6 @@ _Example_
 [api.scarf.sh/v2/imports/{owner}/{event_import_id}/abort](https://api-docs.scarf.sh/v2.html#tag/External-event-import/operation/abortEventImport)
 
 ```bash
-$ curl […] -I -X POST "https://api.scarf53.sh/v2/imports/YourOrg/abc01234-0000-0000-0000-000000000000/abort"
+$ curl […] -I -X POST "https://api.scarf.sh/v2/imports/YourOrg/abc01234-0000-0000-0000-000000000000/abort"
 HTTP/2 204
 ```
