@@ -135,9 +135,7 @@ _Example_
 }
 ```
 
-Alternatively, you can go to the Imports page in your organization settings to see a history of imports and see sample of warning and error logs:
-
-_app.scarf.sh/organizations/YourOrg/imports_
+Alternatively, you can go to the [Imports page](https://app.scarf.sh/organizations/default/imports) in your organization settings to see a history of imports and see sample of warning and error logs:
 
 ![Import Log Ui](assets/pics/event-import/import-log-ui.png)
 
