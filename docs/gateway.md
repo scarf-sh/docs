@@ -240,7 +240,7 @@ Downloads will typically show up in your dashboard in 30 minutes and up to 2-3 h
 
 **Is there an API I can use to pull my stats, manage my packages, etc?**
 
-Yes! See [our API documentation](/api) for more information.
+Yes! See [our API documentation](https://api-docs.scarf.sh/v2.html) for more information.
 
 **I have more questions, where is the best place to ask?**
 
