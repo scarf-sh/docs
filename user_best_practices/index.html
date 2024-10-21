@@ -1,0 +1,1286 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Scarf's Technical Documentation & API Reference
+">
+      
+      
+      
+      
+        <link rel="prev" href="../data-export/">
+      
+      
+        <link rel="next" href="../troubleshooting/">
+      
+      <link rel="icon" href="../assets/icon.svg">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.6">
+    
+    
+      
+        <title>User Guide & Best Practices - Scarf Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.558e4712.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    <script src="../scripts/setup-links.js"></script>
+
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+
+
+
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Scarf Documentation - User Guide & Best Practices" />
+<meta property="og:description" content="Scarf's Technical Documentation & API Reference
+" />
+<meta property="og:url" content="None" />
+<meta property="og:image" content="https://static-assets.scarf.sh/Scarf_Documentation.png" />
+<meta property="og:image:type" content="image/png" />
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#user-guide-best-practices" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Scarf Documentation" class="md-header__button md-logo" aria-label="Scarf Documentation" data-md-component="logo">
+      
+  <img src="../assets/scarf-tm-logo-white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Scarf Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              User Guide & Best Practices
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/scarf-sh/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    scarf-sh/docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Scarf Documentation" class="md-nav__button md-logo" aria-label="Scarf Documentation" data-md-component="logo">
+      
+  <img src="../assets/scarf-tm-logo-white.svg" alt="logo">
+
+    </a>
+    Scarf Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/scarf-sh/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    scarf-sh/docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started-checklist/" class="md-nav__link">
+        Getting Started Checklist
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick-start/" class="md-nav__link">
+        Quick Start
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gateway/" class="md-nav__link">
+        Scarf Gateway
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../organizations/" class="md-nav__link">
+        Organizations
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../packages/" class="md-nav__link">
+        Packages
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../package-analytics/" class="md-nav__link">
+        Scarf SDKs for library and package authors
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom-telemetry/" class="md-nav__link">
+        Custom telemetry
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-traffic/" class="md-nav__link">
+        Documentation Insights
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oql/" class="md-nav__link">
+        Open Source Qualified Leads ( OQLs )
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../funnel-stages/" class="md-nav__link">
+        Open Source Adoption Funnel Stages<a id="funnel-stages"></a>
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sales-prospecting/" class="md-nav__link">
+        Scarf’s Sales Prospecting Service
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../event-import/" class="md-nav__link">
+        Importing Events
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-export/" class="md-nav__link">
+        Data Export
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          User Guide & Best Practices
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        User Guide & Best Practices
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    Intro
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-scarf-data-in-existing-sales-and-marketing-efforts" class="md-nav__link">
+    How to use Scarf data in existing sales and marketing efforts
+  </a>
+  
+    <nav class="md-nav" aria-label="How to use Scarf data in existing sales and marketing efforts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#events-we-should-be-tracking" class="md-nav__link">
+    Events we should be tracking:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-riskiest-but-most-valuable-metric-ongoing-usage" class="md-nav__link">
+    The Riskiest But Most Valuable Metric: Ongoing Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use-scarf-to-infer-ongoing-usage" class="md-nav__link">
+    How to use Scarf to infer ongoing usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-lead-scoring-and-customer-journey-mapping-with-scarf" class="md-nav__link">
+    Basic lead scoring and customer journey mapping with Scarf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customer-journey-example-with-scarf" class="md-nav__link">
+    Customer journey example with Scarf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-to-do-with-companies-identified-by-scarf" class="md-nav__link">
+    What to do with companies identified by Scarf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-ways-to-inject-scarf-into-salesmarketing-activities" class="md-nav__link">
+    Common ways to inject Scarf into sales/marketing activities:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-ways-for-startups-to-build-their-first-salesmarketing-process-with-scarf" class="md-nav__link">
+    Common ways for startups to build their first sales/marketing process with Scarf:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-confidence-intervals" class="md-nav__link">
+    How to use confidence intervals
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices-to-track-multiple-packages-or-projects" class="md-nav__link">
+    Best practices to track multiple packages or projects
+  </a>
+  
+    <nav class="md-nav" aria-label="Best practices to track multiple packages or projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#handling-different-projects" class="md-nav__link">
+    Handling different projects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-different-versions" class="md-nav__link">
+    Handling different versions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-different-platforms" class="md-nav__link">
+    Handling different platforms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#containers" class="md-nav__link">
+    Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-order" class="md-nav__link">
+    Variable order
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unique-pixels-for-each-projects-docs" class="md-nav__link">
+    Unique pixels for each projects docs
+  </a>
+  
+    <nav class="md-nav" aria-label="Unique pixels for each projects docs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pixels-for-lead-gen" class="md-nav__link">
+    Pixels for lead gen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overlapping-pixels-for-tags" class="md-nav__link">
+    Overlapping pixels for tags
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tracking-external-link-clicks" class="md-nav__link">
+    Tracking external link clicks
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://api-docs.scarf.sh/v2.html" class="md-nav__link">
+        API V2
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    Intro
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-scarf-data-in-existing-sales-and-marketing-efforts" class="md-nav__link">
+    How to use Scarf data in existing sales and marketing efforts
+  </a>
+  
+    <nav class="md-nav" aria-label="How to use Scarf data in existing sales and marketing efforts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#events-we-should-be-tracking" class="md-nav__link">
+    Events we should be tracking:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-riskiest-but-most-valuable-metric-ongoing-usage" class="md-nav__link">
+    The Riskiest But Most Valuable Metric: Ongoing Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use-scarf-to-infer-ongoing-usage" class="md-nav__link">
+    How to use Scarf to infer ongoing usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-lead-scoring-and-customer-journey-mapping-with-scarf" class="md-nav__link">
+    Basic lead scoring and customer journey mapping with Scarf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customer-journey-example-with-scarf" class="md-nav__link">
+    Customer journey example with Scarf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-to-do-with-companies-identified-by-scarf" class="md-nav__link">
+    What to do with companies identified by Scarf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-ways-to-inject-scarf-into-salesmarketing-activities" class="md-nav__link">
+    Common ways to inject Scarf into sales/marketing activities:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-ways-for-startups-to-build-their-first-salesmarketing-process-with-scarf" class="md-nav__link">
+    Common ways for startups to build their first sales/marketing process with Scarf:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-confidence-intervals" class="md-nav__link">
+    How to use confidence intervals
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices-to-track-multiple-packages-or-projects" class="md-nav__link">
+    Best practices to track multiple packages or projects
+  </a>
+  
+    <nav class="md-nav" aria-label="Best practices to track multiple packages or projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#handling-different-projects" class="md-nav__link">
+    Handling different projects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-different-versions" class="md-nav__link">
+    Handling different versions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-different-platforms" class="md-nav__link">
+    Handling different platforms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#containers" class="md-nav__link">
+    Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-order" class="md-nav__link">
+    Variable order
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unique-pixels-for-each-projects-docs" class="md-nav__link">
+    Unique pixels for each projects docs
+  </a>
+  
+    <nav class="md-nav" aria-label="Unique pixels for each projects docs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pixels-for-lead-gen" class="md-nav__link">
+    Pixels for lead gen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overlapping-pixels-for-tags" class="md-nav__link">
+    Overlapping pixels for tags
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tracking-external-link-clicks" class="md-nav__link">
+    Tracking external link clicks
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+
+<h1 id="user-guide-best-practices">User Guide &amp; Best Practices</h1>
+<h2 id="intro">Intro</h2>
+<p>This is a user guide to best practices when using Scarf.  Consider this not only a guide but also an FAQ.  </p>
+<p>Currently this guide contains:</p>
+<ol>
+<li>How to use Scarf Data in existing  sales and marketing efforts<ol>
+<li>Events you should be tracking</li>
+<li>The goal is ongoing usage </li>
+<li>How to use Scarf to infer ongoing usage </li>
+<li>Basic lead scoring with Scarf</li>
+<li>Sample customer journey </li>
+<li>What to do with companies identified by Scarf</li>
+<li>Common ways to inject Scarf into existing sales/marketing activities </li>
+<li>Common ways for startups to build their first sales and marketing processes </li>
+</ol>
+</li>
+<li>How to use confidence intervals</li>
+<li>Best Practices to track multiple projects and packages<ol>
+<li>Handling different projects</li>
+<li>Handling different versions</li>
+<li>Handling different platforms</li>
+<li>Container best practices</li>
+<li>Variables </li>
+<li>Pixels for each project  </li>
+</ol>
+</li>
+<li>Tracking external link clicks</li>
+</ol>
+<h2 id="how-to-use-scarf-data-in-existing-sales-and-marketing-efforts">How to use Scarf data in existing sales and marketing efforts</h2>
+<h3 id="events-we-should-be-tracking">Events we should be tracking:</h3>
+<p>There are 3 events we would suggest everyone track. </p>
+<ul>
+<li>Downloads/Pull events</li>
+<li>Views of documentation</li>
+<li>Views of content/website (pages, blogs, tutorials)</li>
+</ul>
+<p>The first is <em>downloads</em> (no matter if it's direct on your website, via a container registry, or via public repositories. Scarf allows you to track and aggregate downloads across all these different channels). This is probably the most valuable action. A download means someone has not only some interest in your product but enough interest to try it out.</p>
+<p>There are three aspects to downloads which you should be paying attention to:</p>
+<ul>
+<li>The number of downloads from unique sources at a company - more than one machine/source downloading is good.</li>
+<li>The volume of downloads over a time period at the company - you want to see continued downloads over time, this implies ongoing usage.</li>
+<li>Is the company downloading newer versions of the software over time - this is gold as it implies not only are they downloading but they are trying to keep things up to date and implies the software is critical enough to have maintenance procedures around it.</li>
+</ul>
+<p>The second on the list is <em>documentation views</em>. People using your software will often have questions about how to install, use, and upgrade the software. You will see patterns evolve over time in the usage of the software docs depending on the software. Initially you will see more traffic to the installation and setup sections. This coupled with download events is a great indicator of testing or trying things out. Then users will evolve more into troubleshooting or optimization views. See more page views shift to this is normal. Then you should see views to readmes or upgrade pages as they settle into maintenance and sustain mode. Ultimately I would be looking for views over an extended period of time to ensure they are invested and not just kicking the tires.  </p>
+<p>The third on the list is <em>content/website views</em>. Not all views will be coming from docs, in fact for commercial purposes there are certain pages on your website that may be highly predictive of potential interest in becoming a customer (i.e. the pricing pages). But I recommend looking for ongoing views and traffic hitting blogs and other news on the product and upcoming releases.  </p>
+<p>For each of the events, I would recommend breaking down all the activities into either good/better/best or low/medium/high impact events. </p>
+<p>Here is a suggested list of criteria when it comes to classifying events:</p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>GOOD</th>
+<th>BETTER</th>
+<th>BEST</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Downloads</td>
+<td>1 or more downloads in a week.</td>
+<td>More than 1 download over a 30-day period.</td>
+<td>Multiple downloads over a 90-day period, including incremental downloads of new versions.</td>
+</tr>
+<tr>
+<td>Documentation Views</td>
+<td>Repeated views on installation and setup instructions.</td>
+<td>Documentation views spanning more than 30 days from multiple sources.</td>
+<td>More than just install page views.    Documentation views spanning more than 90 days from multiple sources. Doc views on upgrades and maintenance procedures.</td>
+</tr>
+<tr>
+<td>Website Traffic</td>
+<td>Multiple pages visited and viewed by 1 company over a week period.</td>
+<td>Multiple pages visited and viewed by 1 company over a 30-day period.</td>
+<td>Page views to medium value content. I.e. Reading technical blogs, visiting forum pages, product feature pages.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-riskiest-but-most-valuable-metric-ongoing-usage">The Riskiest But Most Valuable Metric: Ongoing Usage</h3>
+<p>While the three activities above are straightforward and generally not viewed with too much concern, there is a fourth activity or metric you can (and probably should) track.  An essential, albeit controversial, activity that serves as a highly valuable metric for any organization seeking to understand the usage patterns of its software - the use of 'call-home' functionality, also known as ongoing usage tracking. The call-home functionality is a mechanism within your software that sends a signal, or a 'ping', back to a designated server or gateway. This signal provides you with real-time information about your software's usage in live production environments, surpassing the insight level gained from just tracking downloads.</p>
+<p>While download data can indicate interest and repeated use of your software, the ongoing, consistent 'ping' or call-home activity serves as a definitive predictor of your software's actual usage. Consider this the 'Nirvana' of metrics for your projects, the golden standard that allows you to measure the exact magnitude of your active install base and the frequency of software usage and deployment.</p>
+<p>However, implementing this mechanism requires a degree of technical adaptation. Platforms like Scarf, for instance, offer this capability out of the box. But to make full use of it, you'll need to adjust your application accordingly. There are different ways to accomplish this; for JavaScript applications, a package called <a href="https://www.npmjs.com/package/@scarf/scarf"><code>scarf-js</code></a> can be used. Alternatively, a lightweight, background 'ping' or activity back to a Scarf gateway event can be employed. This ping can be triggered when your application starts up, is used, or at any other specified event.</p>
+<p>In essence, your application would asynchronously call back to the gateway website, which doesn't return any data but rather tracks that the application was active. If you can successfully implement this, you can then monitor the number of unique pings over a certain period from various sources. This is incredibly valuable for lead scoring as it provides consistent, ongoing proof of life from these systems, making it the most valuable event or activity you could track.</p>
+<h3 id="how-to-use-scarf-to-infer-ongoing-usage">How to use Scarf to infer ongoing usage</h3>
+<ul>
+<li>Look for companies activities over an extended period of time. Repeated downloads over 30/90/180 days is a very predictive indicator of ongoing reliance </li>
+<li>Look for companies who download incremental versions of your software over time</li>
+<li>Look at documentation views over time, especially upgrade docs and operational docs from the same user/company</li>
+<li>Consider adding a ping or call back within your software to an empty page behind a Scarf Gateway URL, this will allow you see these calls within Scarf.  </li>
+</ul>
+<h3 id="basic-lead-scoring-and-customer-journey-mapping-with-scarf">Basic lead scoring and customer journey mapping with Scarf</h3>
+<p>Not all people visiting your website and downloading your software are equally likely to become customers. In fact you will find 3x, 5x, or even 10x more drive by traffic as you will find those interested in commercial offerings. To become efficient at finding which companies and users you should focus on, let's explore the concept of “lead scoring”. </p>
+<p>Lead scoring is a methodology used by sales and marketing departments to determine the worthiness of leads, or potential customers, by assigning values to them based on their behavior relating to their interest level in products or services. These values, or scores, are derived from a variety of factors like the professional information they've submitted, how they've engaged with the company's website, or their response to marketing efforts. The purpose of lead scoring is to prioritize leads who are more likely to convert into customers, allowing teams to focus their time and resources effectively. It's a vital part of creating an efficient sales and marketing strategy.</p>
+<p>If you've already established a lead scoring system and are utilizing marketing software, consider events in open-source channels as additional data points to further qualify or uncover leads. For instance, a software download could be treated as a high-value (or high-score) activity, whereas a documentation view might be scored similarly to other website visits. It could be beneficial to categorize documentation and page views into high, medium, and low scoring pages, as certain pages (like pricing or install pages) can be more predictive and valuable than others.</p>
+<p>The key distinction between traditional lead scoring and the incorporation of open-source download and traffic data lies in the summarization of data at the company level, requiring decisions on scoring criteria. Most marketing lead management tools track users based on sign-ups, cookies, or other mechanisms, capturing specifics such as Matt from Scarf signing up for a webinar. With data from anonymous sources, the best we can do is infer that someone from Scarf has downloaded your software.</p>
+<p>The question then becomes: if you know Matt attended a webinar and works at Scarf, does the Scarf download make Matt a more qualified lead? Or should you shift your focus to other individuals at Scarf, possibly higher up in the management hierarchy? There's no absolute right or wrong answer, but my inclination would be to enrich the data of the known user who has already shown interest.</p>
+<p>Additionally, it's important to note that software downloads can often be automated. Seeing ten downloads a day doesn't necessarily equate to thousands of servers or the potential for a massive deal. This data needs to be scrutinized, at the very least, by examining the unique systems or origins from where these downloads originate.</p>
+<p>Lastly, when incorporating open-source downloads and traffic data, the timeline of events becomes critical. A single download could mean anything, but consistent downloads over several months, especially with each new version release, suggests a real, potentially highly qualified user.</p>
+<h3 id="customer-journey-example-with-scarf">Customer journey example with Scarf</h3>
+<table>
+<thead>
+<tr>
+<th>Different Phases of Interest</th>
+<th>Description</th>
+<th>Events</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Passive interest:</strong> <br>Hello World</td>
+<td>Someone discovered or visited your website. They may or may not have any interest in your software or projects.</td>
+<td>Web traffic to docs or websites over the course of 1 or 2 days.</td>
+<td>I would not take any action here.</td>
+</tr>
+<tr>
+<td>Intrigued in your software: <br>This looks interesting</td>
+<td>Someone takes more than a drive by interest in your software.  They are truly interested in what you have.</td>
+<td>Documentation views. Looking at install docs and/or feature lists. Typically this is over multiple days.</td>
+<td>I would consider promoting content tothat company's target audience (engineers?) on other external channels.</td>
+</tr>
+<tr>
+<td>Trial &amp; Exploration: <br>Let me try this out</td>
+<td>They move from just learning about the software to actually downloading it.</td>
+<td>Documentation and website views of high value pages along with at least 1 download event.You still see this traffic over multiple days but typically over a week or two.</td>
+<td>I would recommend promoting blogs or how-tos that are interesting to this group of customers. You could even promote this content directly on your website when these visitors appear.</td>
+</tr>
+<tr>
+<td>Testing &amp; Evaluation: <br>I wonder if I can usethis for this project</td>
+<td>Now someone is looking deeper into this and is starting to either use it or seriously consider it.</td>
+<td>Sustained page views and multiple downloads over a month period.</td>
+<td>Here is where additional content promotion is still a good idea, but where there is a strong commercial offering targeting these customers can be effective.</td>
+</tr>
+<tr>
+<td>Implementation &amp; Reliance: <br>This is cool, let's use this in production</td>
+<td>Someone is using this over a longer period of time and looks to be beyond merely testing/trying out.</td>
+<td>If you see activities (both downloads and traffic) spread over a 90 day period, there is a high confidence in their usage in a critical space.</td>
+<td>This is the best time to seek out conversations. <br>- Cold outreach <br>- Targeted ads <br>- Seek out devs at conferences</td>
+</tr>
+<tr>
+<td>Maintenance &amp; Ongoing Upkeep: <br>Keeping things updated and safe</td>
+<td>Someone has been using your software for months and is grabbing new versions of your software and reading readmes or regular updates (like blogs).</td>
+<td>Look for activities over months (3-12 months), with downloads of multiple versions. Also look for views on readmes or product specific content (blogs, etc).</td>
+<td>This is the best time to seek out conversations. <br>- Cold outreach <br>- Targeted ads <br>- Seek out devs at conferences</td>
+</tr>
+<tr>
+<td>Waning Interest &amp; Potential Churn: <br>Uh oh… this user is at risk</td>
+<td>Usage is dropping and there is risk that this user may turn from an active user to a former user.</td>
+<td>If you see massive drop offs in traffic and downloads over a 30 day period this sends up red flags.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="what-to-do-with-companies-identified-by-scarf">What to do with companies identified by Scarf</h3>
+<p>Effectively employing this data requires a strategic and tailored approach to meet the unique needs and goals of each organization. Below are some general recommendations that apply to most situations:</p>
+<ul>
+<li>Understand Your Audience: Use download data and website traffic information to build a deeper understanding of your audience. This involves analyzing who is downloading your software, viewing your documentation, and browsing your website. With this information, you can enrich your existing leads, score potential ones, and build a well-informed customer profile.</li>
+<li>Customize Your Approach: Once you've gathered and analyzed your data, tailor your marketing and sales processes to align with your findings. Whether you're focusing on sales/marketing or product, align your strategies and activities with the preferences and behaviors of your users. This could involve adjusting lead scoring based on the activity level or nurturing potential users to become ongoing ones.</li>
+<li>Integrate Data with Existing Processes: Integrate your new data with your existing sales, marketing, and customer success processes. For instance, using download patterns to assess the churn potential can help you anticipate and mitigate customer attrition.</li>
+<li>Adopt a Nurturing Approach: When it comes to new or startup sales/marketing processes, take a nurturing approach. This means guiding users through a lifecycle where they are initially familiarized with your software, then nurtured to become regular users, and eventually led to become paid customers.</li>
+<li>Leverage Social Media: Social media platforms offer targeted marketing opportunities. Platforms like LinkedIn allow you to aim your promoted content towards specific companies and job titles.</li>
+<li>Optimize Content: Make use of your existing content and create new content based on where your users and companies are spending the most time. Calls-to-action (CTAs) on these pages can effectively guide users through your marketing funnel.</li>
+<li>Community Engagement: Encourage users to join your community, participate in events, and engage in discussions. Community engagement can serve as a powerful tool for user retention and organic growth.</li>
+<li>Monitor and Adapt: Regularly assess the effectiveness of your strategies and be willing to make necessary adjustments. The digital landscape is ever-evolving, and your strategies should be adaptable to accommodate these changes.</li>
+</ul>
+<h3 id="common-ways-to-inject-scarf-into-salesmarketing-activities">Common ways to inject Scarf into sales/marketing activities:</h3>
+<p>Existing sales and marketing activities can be significantly enriched by smartly integrating download data and website traffic information. By revising your lead scoring methodology to include new data points such as software downloads and page visits, you can ensure that you are incorporating the latest indicators of interest from your audience. The enhanced lead scoring will provide a more nuanced understanding of your prospective customers, paving the way for more targeted and effective outreach.</p>
+<p>Use the company lists generated from this data in your cold outreach activities. By focusing your outreach efforts on these companies, you are targeting organizations already demonstrating interest, thereby increasing your chances of gaining a receptive audience. These lists can also serve as a valuable resource for your Business Development Representatives (BDRs), equipping them with a list of vetted leads, saving time and improving their efficiency.</p>
+<p>Additionally, using this data, you can strategically plan meetings at conferences, events, and similar networking platforms with representatives from companies using or showing interest in your product. This targeted networking can lead to higher-value interactions and ultimately result in stronger leads.</p>
+<p>Incorporating the pattern of downloads into your customer success and renewal operations can provide a more comprehensive customer overview. Such insights into customer behavior can inform your renewal strategies, equipping you with necessary foresight to address potential issues and ensure customer satisfaction. Moreover, the data can be a key indicator of potential churn risks, allowing you to proactively manage customer retention by identifying and addressing their concerns before they choose to discontinue your service.</p>
+<ul>
+<li>Use the data to enrich your existing set of leads. You can add additional events to your lead scoring process.</li>
+<li>Use the data to build a highly qualified list for outreach activities. Target companies that are using your software or are interested in your software.</li>
+<li>Use this data to inform your marketing strategies. For example, prioritize individuals from companies that have shown interest in your software at meetings, conferences, and events.</li>
+<li>If you have a fully fleshed out sales, marketing, and customer success process, use the data to assess churn risk.</li>
+</ul>
+<h3 id="common-ways-for-startups-to-build-their-first-salesmarketing-process-with-scarf">Common ways for startups to build their first sales/marketing process with Scarf:</h3>
+<p>For startups or companies initiating new sales and marketing initiatives, creating a lightweight growth engine that nurtures potential users can be the key to driving growth. Setting up a lifecycle or nurture campaign can guide potential users through your marketing funnel, providing them with the right content at the right time to foster interest and engagement.</p>
+<p>Promoted content can be a powerful tool in these campaigns. Aimed at users in the early stages of engagement, this content can educate users about your software, showcasing its features and benefits and encouraging them to explore it further. As these potential users turn into ongoing users, you can begin to introduce promoted content, offers, and cold outreach to convert them into paying customers.</p>
+<p>Understanding the customer journey is crucial in a startup or new marketing environment. By mapping out this journey and identifying combinations of events and thresholds, you can strategize when to increase or decrease marketing activities for optimal effect. This dynamic approach can keep your marketing efforts agile and responsive to user behavior.</p>
+<p>Social media platforms like <a href="https://www.linkedin.com/company/scarf-sh/">LinkedIn</a> offer a targeted way to reach specific companies.</p>
+<ul>
+<li>Use this data to build a lightweight marketing and growth engine.</li>
+<li>Approach the process as a life cycle or nurture-type campaign. Nurture potential users until they become productive users.</li>
+<li>Use promoted content targeted towards companies that are downloading or have looked at your documentation.</li>
+<li>Once users are actively using your software, shift the focus to ongoing maintenance and new releases. Then, start introducing your paid offerings or services.</li>
+<li>Use social media to engage potential users, specifically for companies you identified</li>
+<li>Integrate the scarf platform into your existing community activity to help nurture and guide potential users.</li>
+</ul>
+<h2 id="how-to-use-confidence-intervals">How to use confidence intervals</h2>
+<p>In your Scarf dashboards you will often see a confidence flag associated with events and companies.</p>
+<p><img alt="Confidence.png" src="../assets/pics/user-guide/Medium_Confidence_Example.png" /></p>
+<p>The confidence is a measurement of Scarf's confidence in the IP/metadata -&gt; organization match for each event. Some of our metadata providers like Clearbit provide their own confidence scores and Scarf will take those into account, but we also account for what other providers say. We will make our own adjustments in many cases, for instance, if there is disagreement between the different data providers we use, or if we find irregularities in the metadata.</p>
+<p>Confidence intervals have 2 data points associated with them. The first is the overall flag which is low (red), medium (yellow), and high (green) confidence. This gives you a quick way to associate high-probability matches with low ones. When looking into the flags, you will find a percent (%) of confidence associated with each company and event, and these percentages can be used to differentiate further which companies and events to prioritize.</p>
+<table>
+<thead>
+<tr>
+<th>Confidence</th>
+<th>Description</th>
+<th>How to Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Low</td>
+<td>Low confidence matches, based on available data we suspect these events are associated with this company, but can not be 100% sure.</td>
+<td>We do not recommend taking direct action on small numbers of low confidence matches.  Consider these to be very low quality leads, if leads at all. This data however is valuable if correlated with outside data for this organization.  For instance if you know this organization is active in the community or if you see multiple low confidence leads over the course of weeks or months from unique end points, this may indicate these are higher quality then our data suggests.</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>These events have an above average chance of being from associated companies.  We have been able to match multiple checks in the metadata and our external providers have an above average confidence in their match.</td>
+<td>Medium confidence matches should be considered second tier data, with leads being followed up after processing higher condfidence data. This data is valuable in enriching other data source and we would feel confident in using it for trends, analysis, and as part of a broader customer intelligence effort. In part of an ABM (account based marketing) strategy we would feel confident in using these matches correlated with a list of targeted accounts. This is also a good list of organizations for BDR and prospecting activities.</td>
+</tr>
+<tr>
+<td>High</td>
+<td>The events and organizations that have a high confidence interval mean that we have multiple high probability indicators of a match to an organization for these events.</td>
+<td>High confidence matches provide the highest quality data. We are confident in people using this data for their sales pipelines, lead scoring, etc. These records could be integrated into exsiting tools to give a complete picture of a customers journey</td>
+</tr>
+</tbody>
+</table>
+<p><a id="MultiplePackages"></a></p>
+<h2 id="best-practices-to-track-multiple-packages-or-projects">Best practices to track multiple packages or projects</h2>
+<p>Many of our customers offer downloads of multiple different open source projects, different versions, or downloads for different platforms. There are some best practices we have found useful for many of our customers when faced with dozens or even hundreds of unique packages. Your decisions on how to handle multiple packages, projects, or versions ultimately will come down to a.) how you want to report the data and b.) personal preference. </p>
+<p>Keep in mind you can export data and report on a variety of metrics by package, variable, etc. However, if you want to get quick analytics using the Scarf dashboards, reporting is done for all your packages (global), an individual package, or a specific pixel. You can see metrics for each variable under a package or pixel. As of July 2023, variable reporting on a package or pixel is limited to a single dimension. i.e.  I can see a report for <code>{variable1}</code> or <code>{variable2}</code> for a package or pixel, but I can not see data for <code>{variable1}</code> correlated with <code>{variable2}</code>. You can, of course, do this correlation and analysis by exporting and using your own analytics tool. Keep this in mind as you build your packages and routes.  </p>
+<h3 id="handling-different-projects">Handling different projects</h3>
+<p>You may have different open-source projects you support and ship to the community. For these we recommend setting up a new package for each project.</p>
+<h3 id="handling-different-versions">Handling different versions</h3>
+<p>In the gateway, we recommend setting up a minimum of 1 package per project. Each package created within Scarf should have 1 or more routes. i.e., <code>http://companyname.gateway.scarf.sh/projectname/file.gz</code> would be the minimum. We recommend using variables for each version you are currently supporting, i.e., <code>http://companyname.gateway.scarf.sh/projectname/{version}/file.gz</code> or <code>http://companyname.gateway.scarf.sh/projectname/file.{version}.gz</code> this allows you to update and release versions without having to create new routes for each. This also enables reporting in the Scarf dashboard to track downloads and growth of each version.  </p>
+<p>Some people have found it easier to create routes for new major versions, but you could also use multiple variables for this. I.e.</p>
+<ul>
+<li><code>http://companyname.gateway.scarf.sh/projectname/V1/file.{minorversion}.gz</code></li>
+<li><code>http://companyname.gateway.scarf.sh/projectname/V2/file.{minorversion}.gz</code></li>
+<li><code>http://companyname.gateway.scarf.sh/projectname/{majorversion}/file.{minorversion}.gz</code></li>
+</ul>
+<p>Depending on your needs, you could create a new package for each major version, but it is not required.</p>
+<h3 id="handling-different-platforms">Handling different platforms</h3>
+<p>Similar to handling different versions, you can use variables if you are shipping different package types or for different platforms. So instead of:</p>
+<p><code>http://companyname.gateway.scarf.sh/projectname/RHEL5/{majorversion}/file.{minorversion}.gz</code> and 
+<code>http://companyname.gateway.scarf.sh/projectname/RHEL6/{majorversion}/file.{minorversion}.gz</code></p>
+<p>You could do the following:</p>
+<p><code>http://companyname.gateway.scarf.sh/projectname/{osversion}/{majorversion}/file.{minorversion}.gz</code></p>
+<h3 id="containers">Containers</h3>
+<p>For containers, we recommend setting up a "Collection" to sit in front of your entire namespace, i.e., <code>company/*</code> on Docker Hub or your preferred container registry. Collections automatically sync and keep up to date with container registries making it easy to release new versions without having to worry about Scarf being up to date with new releases. To learn more, check out the <a href="/gateway/#creating-collections">collections docs</a></p>
+<p>You can use variables just like you do for other downloads. </p>
+<h3 id="variable-order">Variable order</h3>
+<p>No matter what kind of package you are using, we recommend ensuring your different file packages have distinct, concrete prefixes in their route to prevent ambiguous overlap in redirect config. For instance: </p>
+<p><code>http://companyname.gateway.scarf.sh/{os}/{os_version}/packagename/{filename}</code> </p>
+<p>Technically would work, but this will limit reporting and cause overlapping issues. As a result, we would recommend hardcoding routes to the attributes you want to report on first in your route, with variables stored towards the back of the route. So, for instance : </p>
+<p><code>http://companyname.gateway.scarf.sh/packagename/{os}/{os_version}/{filename}</code>. </p>
+<p>Doing so will allow you to report on each package name separately, with slices broken out by each variable as needed.  </p>
+<h3 id="unique-pixels-for-each-projects-docs">Unique pixels for each projects docs</h3>
+<p>While optional, it can be a good idea to make unique pixels specific to docs pages pertaining to the package to easily correlate web/docs traffic pertaining to certain packages. Ultimately this is more of a convenience when it comes to analyzing the data, but it's not at all necessary.</p>
+<p>Depending on your needs, here are two strategies you may find useful:</p>
+<h4 id="pixels-for-lead-gen">Pixels for lead gen</h4>
+<p>If you have different types of content, some content or pages may, in fact, be more valuable for users than others. In this case, one strategy may be to create multiple pixels for different types of pages. Consider this:</p>
+<p>Create 4 pixels:</p>
+<ul>
+<li>General traffic<ul>
+<li>Embed the general traffic pixel on all pages.  </li>
+</ul>
+</li>
+<li>high value <ul>
+<li>Embed the high value on your pricing pages, support pages, and other highly desirable docs/website pages.  </li>
+</ul>
+</li>
+<li>medium value<ul>
+<li>Embed the medium value pixel on your installation and setup docs, tutorials, or other mid-level docs. </li>
+</ul>
+</li>
+<li>low value<ul>
+<li>Embed the low-value pixel on everything else.  </li>
+</ul>
+</li>
+</ul>
+<p>Now you will be able to classify and score users' activities based on what sort of content they viewed. You can even bake this into your existing lead-scoring system.  </p>
+<h4 id="overlapping-pixels-for-tags">Overlapping pixels for tags</h4>
+<p>You can embed multiple pixels on the same page for different reasons to facilitate more detailed reporting. For instance, you may want to create one pixel for each project, but you may also want to create a pixel for just specific types of content on your website or elsewhere on the web. For instance, maybe you want everyone looking at blogs or tutorials on a critical feature to be tracked and have metrics reported on.  </p>
+<h2 id="tracking-external-link-clicks">Tracking external link clicks</h2>
+<p>A gateway route does not have to link back to a file to download; it can also forward traffic to a URL and track the traffic who clicked the link. This allows you to track who is clicking on links in social media, watching videos, clicking on links in external content, etc. We created a tutorial on this here:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wlo7286ETMA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2019 - 2024 Scarf Systems, Inc. <img referrerpolicy="no-referrer-when-downgrade" src="https://static.scarf.sh/a.png?x-pxid=c9065f3a-a090-4243-8f69-145d5de7bfca" />
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/scarf-sh" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/scarf_oss" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/scarf-sh" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://tinyurl.com/scarf-community-slack" target="_blank" rel="noopener" title="tinyurl.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/channel/UCiJRrlBKBOgYFRO9eb6pfdg" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.51d95adb.min.js"></script>
+      
+    
+  </body>
+</html>

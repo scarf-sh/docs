@@ -1,0 +1,1318 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Scarf's Technical Documentation & API Reference
+">
+      
+      
+      
+      
+        <link rel="prev" href="../event-import/">
+      
+      
+        <link rel="next" href="../user_best_practices/">
+      
+      <link rel="icon" href="../assets/icon.svg">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.6">
+    
+    
+      
+        <title>Data Export - Scarf Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.558e4712.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    <script src="../scripts/setup-links.js"></script>
+
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+
+
+
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Scarf Documentation - Data Export" />
+<meta property="og:description" content="Scarf's Technical Documentation & API Reference
+" />
+<meta property="og:url" content="None" />
+<meta property="og:image" content="https://static-assets.scarf.sh/Scarf_Documentation.png" />
+<meta property="og:image:type" content="image/png" />
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#data-export" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Scarf Documentation" class="md-header__button md-logo" aria-label="Scarf Documentation" data-md-component="logo">
+      
+  <img src="../assets/scarf-tm-logo-white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Scarf Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Data Export
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/scarf-sh/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    scarf-sh/docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Scarf Documentation" class="md-nav__button md-logo" aria-label="Scarf Documentation" data-md-component="logo">
+      
+  <img src="../assets/scarf-tm-logo-white.svg" alt="logo">
+
+    </a>
+    Scarf Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/scarf-sh/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    scarf-sh/docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started-checklist/" class="md-nav__link">
+        Getting Started Checklist
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick-start/" class="md-nav__link">
+        Quick Start
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gateway/" class="md-nav__link">
+        Scarf Gateway
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../organizations/" class="md-nav__link">
+        Organizations
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../packages/" class="md-nav__link">
+        Packages
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../package-analytics/" class="md-nav__link">
+        Scarf SDKs for library and package authors
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom-telemetry/" class="md-nav__link">
+        Custom telemetry
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-traffic/" class="md-nav__link">
+        Documentation Insights
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oql/" class="md-nav__link">
+        Open Source Qualified Leads ( OQLs )
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../funnel-stages/" class="md-nav__link">
+        Open Source Adoption Funnel Stages<a id="funnel-stages"></a>
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sales-prospecting/" class="md-nav__link">
+        Scarf’s Sales Prospecting Service
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../event-import/" class="md-nav__link">
+        Importing Events
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Data Export
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Data Export
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-export-event-data" class="md-nav__link">
+    How to Export Event Data
+  </a>
+  
+    <nav class="md-nav" aria-label="How to Export Event Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scarf-dashboard" class="md-nav__link">
+    Scarf Dashboard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scarf-api" class="md-nav__link">
+    Scarf API
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-data-is-exported" class="md-nav__link">
+    What Data is Exported
+  </a>
+  
+    <nav class="md-nav" aria-label="What Data is Exported">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#export-fields" class="md-nav__link">
+    Export Fields
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-export-aggregate-data" class="md-nav__link">
+    How to Export Aggregate Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-export-company-data" class="md-nav__link">
+    How to Export Company Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-export-company-events" class="md-nav__link">
+    How to Export Company Events
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integrations" class="md-nav__link">
+    Integrations
+  </a>
+  
+    <nav class="md-nav" aria-label="Integrations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scarf-to-postgresql" class="md-nav__link">
+    Scarf to PostgreSQL
+  </a>
+  
+    <nav class="md-nav" aria-label="Scarf to PostgreSQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites_1" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settings" class="md-nav__link">
+    Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#future-integrations" class="md-nav__link">
+    Future Integrations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daily-scheduled-exports" class="md-nav__link">
+    Daily Scheduled Exports
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_best_practices/" class="md-nav__link">
+        User Guide & Best Practices
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://api-docs.scarf.sh/v2.html" class="md-nav__link">
+        API V2
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-export-event-data" class="md-nav__link">
+    How to Export Event Data
+  </a>
+  
+    <nav class="md-nav" aria-label="How to Export Event Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scarf-dashboard" class="md-nav__link">
+    Scarf Dashboard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scarf-api" class="md-nav__link">
+    Scarf API
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-data-is-exported" class="md-nav__link">
+    What Data is Exported
+  </a>
+  
+    <nav class="md-nav" aria-label="What Data is Exported">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#export-fields" class="md-nav__link">
+    Export Fields
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-export-aggregate-data" class="md-nav__link">
+    How to Export Aggregate Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-export-company-data" class="md-nav__link">
+    How to Export Company Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-export-company-events" class="md-nav__link">
+    How to Export Company Events
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integrations" class="md-nav__link">
+    Integrations
+  </a>
+  
+    <nav class="md-nav" aria-label="Integrations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scarf-to-postgresql" class="md-nav__link">
+    Scarf to PostgreSQL
+  </a>
+  
+    <nav class="md-nav" aria-label="Scarf to PostgreSQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites_1" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settings" class="md-nav__link">
+    Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#future-integrations" class="md-nav__link">
+    Future Integrations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daily-scheduled-exports" class="md-nav__link">
+    Daily Scheduled Exports
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+
+<h1 id="data-export">Data Export</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Scarf provides a robust platform for tracking package downloads and pixel views. The ability to export this data is crucial for analytics, reporting, and integrating with other tools. This guide aims to provide a clear and concise explanation of how to export data from Scarf, what data is exported, and how to make use of any available integrations.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Exporting data from Scarf will only work if you are on a <a href="https://about.scarf.sh/pricing">Scarf Paid Plan</a>.</p>
+<h2 id="how-to-export-event-data">How to Export Event Data</h2>
+<h3 id="scarf-dashboard">Scarf Dashboard</h3>
+<p>To export data out of Scarf,</p>
+<ol>
+<li>go to the main dashboard and</li>
+<li>click "Export packages data".</li>
+</ol>
+<p>This will export all data, for the default period, over the past month.</p>
+<p><img alt="Export packages data" src="../assets/pics/data-export/export-packages-data.png" /></p>
+<p>The data you can export from Scarf includes all events (defined as package downloads and pixel views) from every user that has interacted with your Scarf-enabled artifacts (packages and pixels). Upon clicking "Export packages data", this data will download as a .csv file.</p>
+<h3 id="scarf-api">Scarf API</h3>
+<p>You can also export this data using <a href="https://api-docs.scarf.sh/v2.html">the Scarf API</a>.</p>
+<h2 id="what-data-is-exported">What Data is Exported</h2>
+<h3 id="export-fields">Export Fields</h3>
+<p>The event data export includes the following data fields</p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td><code>text</code></td>
+<td>This uniquely identifies the event (pixel view or package download) that occurred.</td>
+</tr>
+<tr>
+<td><strong>type</strong></td>
+<td><code>text</code></td>
+<td>This categorizes the type of event that occurred (e.g. <em>pixel-fetch</em>, <em>manifest-fetch</em>, <em>binary-download</em>, etc.).</td>
+</tr>
+<tr>
+<td><strong>package</strong></td>
+<td><code>text</code></td>
+<td>For Scarf package downloads, this specifies which package has been downloaded.</td>
+</tr>
+<tr>
+<td><strong>pixel</strong></td>
+<td><code>text</code></td>
+<td>For Scarf page views, this specifies which pixel has been downloaded.</td>
+</tr>
+<tr>
+<td><strong>version</strong></td>
+<td><code>text</code></td>
+<td>For Scarf package downloads, this specifies which version of the package has been downloaded.</td>
+</tr>
+<tr>
+<td><strong>time</strong></td>
+<td><code>timestamp</code></td>
+<td>This refers to the time in UTC that the event occurred.</td>
+</tr>
+<tr>
+<td><strong>referer</strong></td>
+<td><code>text</code></td>
+<td>For Scarf pixel views, this refers to the page that was viewed.</td>
+</tr>
+<tr>
+<td><strong>user_agent</strong></td>
+<td><code>text</code></td>
+<td>This refers to the User-Agent, which provides information around the method of installation, often including information such as operating system, device, browser, architecture, and client.</td>
+</tr>
+<tr>
+<td><strong>variables</strong></td>
+<td><code>text</code></td>
+<td>This refers to any custom-specified variables that you might use Scarf to track in <a href="/packages/#files">file package downloads</a>.</td>
+</tr>
+<tr>
+<td><strong>origin_id</strong></td>
+<td><code>text</code></td>
+<td>This uniquely identifies the user (through a specific device) who has interacted with a Scarf event.</td>
+</tr>
+<tr>
+<td><strong>origin_latitude</strong></td>
+<td><code>numeric</code></td>
+<td>This is the latitude of the location Scarf is able to identify for the event.</td>
+</tr>
+<tr>
+<td><strong>origin_longitude</strong></td>
+<td><code>numeric</code></td>
+<td>This is the longitude of the location Scarf is able to identify for the event.</td>
+</tr>
+<tr>
+<td><strong>origin_country</strong></td>
+<td><code>text</code></td>
+<td>This is the country of the location Scarf is able to identify for the event.</td>
+</tr>
+<tr>
+<td><strong>origin_city</strong></td>
+<td><code>text</code></td>
+<td>This is the city of the location Scarf is able to identify for the event.</td>
+</tr>
+<tr>
+<td><strong>origin_state</strong></td>
+<td><code>text</code></td>
+<td>This is the state of the location Scarf is able to identify for the event.</td>
+</tr>
+<tr>
+<td><strong>origin_postal</strong></td>
+<td><code>text</code></td>
+<td>This is the postal code (ZIP code, in the US) of the location Scarf is able to identify for the event.</td>
+</tr>
+<tr>
+<td><strong>origin_connection_type</strong></td>
+<td><code>text</code></td>
+<td>This categorizes the type of IP address Scarf is able to identify (e.g. business, isp, hosting, etc.).</td>
+</tr>
+<tr>
+<td><strong>origin_company</strong></td>
+<td><code>text</code></td>
+<td>If Scarf is able to associate the event with a known business entity, that business entity is listed here.</td>
+</tr>
+<tr>
+<td><strong>origin_domain</strong></td>
+<td><code>text</code></td>
+<td>If Scarf is able to associate the event with a known business entity, that business entity's web domain address is listed here.</td>
+</tr>
+<tr>
+<td><strong>dnt</strong></td>
+<td><code>boolean</code></td>
+<td>If the user includes a DNT request in their header, that is logged here and <a href="/gateway/#do-not-track">they will not be tracked</a>.</td>
+</tr>
+<tr>
+<td><strong>confidence</strong></td>
+<td><code>numeric</code></td>
+<td>The probability of correct identification of the data.</td>
+</tr>
+<tr>
+<td><strong>endpoint_id</strong></td>
+<td><code>text</code></td>
+<td>This uniquely identifies the public-facing device that has interacted with a Scarf event. Unlike origin_id, it is notably not sensitive to changes in device information like client, user agent, etc.</td>
+</tr>
+<tr>
+<td><strong>mtc_quota_exceeded</strong></td>
+<td><code>boolean</code></td>
+<td>A value of <code>true</code> indicates the company information from the event data row was scrubbed due to exceeding the MTC limit.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="how-to-export-aggregate-data">How to Export Aggregate Data</h2>
+<p>The documentation for exporting aggregates can be found in <a href="https://api-docs.scarf.sh/v2.html#tag/Packages/operation/exportEntityAggregates">Export aggregates</a>.
+Here's an example curl request to download aggregate data. The output is newline delimited json.
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span><span class="o">{</span>filename<span class="o">}</span>.jsonl<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {token}&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/x-ndjson&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;https://api.scarf.sh/v2/packages/{owner}/aggregates?start_date={start_date}&amp;end_date={end_date}&amp;breakdown=by-company&quot;</span>
+</code></pre></div></p>
+<h2 id="how-to-export-company-data">How to Export Company Data</h2>
+<p>The documentation for exporting company data that is rolled up with a daily interval can be found in <a href="https://api-docs.scarf.sh/v2.html#tag/Company/operation/exportCompanyRollup">Export Company Data</a></p>
+<p>Here's an example curl request to download company rolled up data.
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>company-rollup.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {token} \</span>
+<span class="s2">    -H &quot;</span>Content-Type:<span class="w"> </span>text/csv<span class="s2">&quot; \</span>
+<span class="s2">    https://api.scarf.sh/v2/packages/{owner}/company-rollup</span>
+</code></pre></div></p>
+<p>The company data export includes the following data fields.</p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>company_name</strong></td>
+<td><code>text</code></td>
+<td>Name of the company</td>
+</tr>
+<tr>
+<td><strong>company_domain</strong></td>
+<td><code>text</code></td>
+<td>Domain of the company. Eg. scarf.sh</td>
+</tr>
+<tr>
+<td><strong>funnel_stage</strong></td>
+<td><code>text</code></td>
+<td>Stage of a company's journey in using your software</td>
+</tr>
+<tr>
+<td><strong>total_events</strong></td>
+<td><code>numeric</code></td>
+<td>Count of total events</td>
+</tr>
+<tr>
+<td><strong>unique_sources</strong></td>
+<td><code>numeric</code></td>
+<td>Number of distinct sources of traffic that comprise the total event count from this organization.</td>
+</tr>
+<tr>
+<td><strong>first_seen</strong></td>
+<td><code>text</code></td>
+<td>Date of when the first event occured</td>
+</tr>
+<tr>
+<td><strong>last_seen</strong></td>
+<td><code>text</code></td>
+<td>Date of when the last event occured</td>
+</tr>
+<tr>
+<td><strong>company_linkedin_url</strong></td>
+<td><code>text</code></td>
+<td>A company's LinkedIn link</td>
+</tr>
+<tr>
+<td><strong>company_industry</strong></td>
+<td><code>text</code></td>
+<td>A company's industry. Eg. Tech, Government, etc.</td>
+</tr>
+<tr>
+<td><strong>company_size</strong></td>
+<td><code>text</code></td>
+<td>A company's approximated employee count</td>
+</tr>
+<tr>
+<td><strong>company_country</strong></td>
+<td><code>text</code></td>
+<td>A company's country location</td>
+</tr>
+<tr>
+<td><strong>company_state</strong></td>
+<td><code>text</code></td>
+<td>A company's state location</td>
+</tr>
+<tr>
+<td><strong>interest_start_date</strong></td>
+<td><code>text</code> <code>format: yyyy-mm-dd</code></td>
+<td>Date when a company started in the <em>interest</em> funnel_stage</td>
+</tr>
+<tr>
+<td><strong>investigation_start_date</strong></td>
+<td><code>text</code> <code>format: yyyy-mm-dd</code></td>
+<td>Date when a company started in the <em>investigation</em> funnel_stage</td>
+</tr>
+<tr>
+<td><strong>experimentation_start_date</strong></td>
+<td><code>text</code> <code>format: yyyy-mm-dd</code></td>
+<td>Date when a company started in the <em>experimentation</em> funnel_stage</td>
+</tr>
+<tr>
+<td><strong>ongoing_usage_start_date</strong></td>
+<td><code>text</code> <code>format: yyyy-mm-dd</code></td>
+<td>Date when a company started in the <em>ongoing usage</em> funnel_stage</td>
+</tr>
+<tr>
+<td><strong>inactive_start_date</strong></td>
+<td><code>text</code> <code>format: yyyy-mm-dd</code></td>
+<td>Date when a company started in the <em>inactive</em> funnel_stage</td>
+</tr>
+</tbody>
+</table>
+<h2 id="how-to-export-company-events">How to Export Company Events</h2>
+<p>The documentation for exporting company events can be found in <a href="https://api-docs.scarf.sh/v2.html#tag/Company/operation/exportEntityCompanyEvents">Export Company Events</a>.
+Here's and exampe curl request to download company events data.
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>company-events.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {token}&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: text/csv&quot;</span><span class="w"> </span><span class="se">\ </span>
+<span class="w">  </span><span class="s2">&quot;https://api.scarf.sh/v2/companies/{owner}/{domain}/events?start_date={start_date}&amp;end_date={end_date}&quot;</span>
+</code></pre></div>
+The fields for this export can be found <a href="#export-fields">here</a></p>
+<h2 id="integrations">Integrations</h2>
+<h3 id="scarf-to-postgresql">Scarf to PostgreSQL</h3>
+<p><a href="https://github.com/scarf-sh/scarf-postgres-exporter">GitHub: https://github.com/scarf-sh/scarf-postgres-exporter</a></p>
+<h4 id="overview">Overview</h4>
+<p>The Scarf to PostgreSQL Exporter is a script designed to pull down your raw Scarf data and send it into a PostgreSQL database. This script is intended to be run as a daily batch job. It provides an automated way to backfill and update your PostgreSQL database with Scarf's enhanced data.</p>
+<h4 id="prerequisites_1">Prerequisites</h4>
+<ul>
+<li><code>psql</code> must be installed and available in your environment (or use the Docker container with everything you need). </li>
+<li>A <a href="https://app.scarf.sh">Scarf Account</a>.</li>
+<li>Your Scarf API token. You can find your API Token from your <a href="https://app.scarf.sh/account">user settings page</a>.</li>
+</ul>
+<h4 id="settings">Settings</h4>
+<p>The following environment variables are <strong>required</strong>:</p>
+<ul>
+<li><code>SCARF_API_TOKEN</code>: Your Scarf API access token.</li>
+<li><code>SCARF_ENTITY_NAME</code>: Your Scarf username or the name of your organization.</li>
+<li><code>PSQL_CONN_STRING</code>: The PostgreSQL connection string.</li>
+</ul>
+<p><strong>optional</strong></p>
+<ul>
+<li><code>BACKFILL_DAYS</code>: Number of days to backfill data. Defaults to 31 if not set.</li>
+</ul>
+<h4 id="getting-started">Getting Started</h4>
+<p>For more details, you can visit the <a href="https://github.com/scarf-sh/scarf-postgres-exporter">GitHub repository</a>.</p>
+<h3 id="future-integrations">Future Integrations</h3>
+<p>Integrations are in development, if you have particular data sources you'd like Scarf to integrate with, we'd love to hear from you.</p>
+<h2 id="daily-scheduled-exports">Daily Scheduled Exports</h2>
+<p>Schedule a daily export via the API endpoint <a href="https://api-docs.scarf.sh/v2.html#tag/Packages/operation/scheduleExport">https://api.scarf.sh/v2/exports/{owner}/schedule-export</a>. This export has the capability to export both raw events and company rollup aggregated data to the bucket indicated in the s3_uri_destination field. The S3 uri that you submit will be considered as the bucket name. Do not specify an object key. The service will generate the object key with the format <code>&lt;events|company-rollups&gt;-scarf-export-&lt;start date&gt;-&lt;end date&gt;.csv</code>. </p>
+<p><strong>Setting up your S3 account</strong></p>
+<p>Create a policy that states we can assume a role. Here's an example of that policy. This example is a highly permissive role. If you want to customize the role, please refer to the proper <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-policy-language-overview.html">AWS documentation</a>.
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Statement&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;Effect&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="s2">&quot;sts:AssumeRole&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="s2">&quot;sts:*&quot;</span>
+<span class="w">            </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;*&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;Effect&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="s2">&quot;s3:*&quot;</span>
+<span class="w">            </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="s2">&quot;arn:aws:s3:::&lt;bucket-name&gt;/&lt;folder-a&gt;/&lt;subfolder-a&gt;/*&quot;</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+After creating the policy, create a role and attach the policy. Once you've created the role, you should have an ARN that looks like this
+<div class="highlight"><pre><span></span><code>arn:aws:iam::&lt;account-id&gt;:role/&lt;role-name&gt;
+</code></pre></div>
+The easiest way to create a role is to pick "AWS Account" in the "Select trusted entity" section. Then in the "An AWS Account", pick "Another AWS Account". This will ask for an account aws account id. This is where you will put in scarf's account id <code>032190491485</code>.</p>
+<p>After creating the role, go to the "Trust relationships" and add the following trust policy
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Statement&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;Effect&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;Principal&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;AWS&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;arn:aws:iam::032190491485:user/production-v2-scarf-server&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sts:AssumeRole&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>The ARN role is what you will need in the <code>arn_role</code> <a href="https://api-docs.scarf.sh/v2.html#tag/Packages/operation/scheduleExport">api field</a>.</p>
+<p>This is not an exhaustive documentation of how to setup a shared s3 bucket. Please refer to the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-policy-language-overview.html">AWS documentation</a> for more information.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2019 - 2024 Scarf Systems, Inc. <img referrerpolicy="no-referrer-when-downgrade" src="https://static.scarf.sh/a.png?x-pxid=c9065f3a-a090-4243-8f69-145d5de7bfca" />
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/scarf-sh" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/scarf_oss" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/scarf-sh" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://tinyurl.com/scarf-community-slack" target="_blank" rel="noopener" title="tinyurl.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/channel/UCiJRrlBKBOgYFRO9eb6pfdg" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.51d95adb.min.js"></script>
+      
+    
+  </body>
+</html>

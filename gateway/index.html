@@ -1,0 +1,1258 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Scarf's Technical Documentation & API Reference
+">
+      
+      
+      
+      
+        <link rel="prev" href="../quick-start/">
+      
+      
+        <link rel="next" href="../organizations/">
+      
+      <link rel="icon" href="../assets/icon.svg">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.6">
+    
+    
+      
+        <title>Scarf Gateway - Scarf Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.558e4712.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    <script src="../scripts/setup-links.js"></script>
+
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+
+
+
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Scarf Documentation - Scarf Gateway" />
+<meta property="og:description" content="Scarf's Technical Documentation & API Reference
+" />
+<meta property="og:url" content="None" />
+<meta property="og:image" content="https://static-assets.scarf.sh/Scarf_Documentation.png" />
+<meta property="og:image:type" content="image/png" />
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#scarf-gateway" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Scarf Documentation" class="md-header__button md-logo" aria-label="Scarf Documentation" data-md-component="logo">
+      
+  <img src="../assets/scarf-tm-logo-white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Scarf Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Scarf Gateway
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/scarf-sh/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    scarf-sh/docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Scarf Documentation" class="md-nav__button md-logo" aria-label="Scarf Documentation" data-md-component="logo">
+      
+  <img src="../assets/scarf-tm-logo-white.svg" alt="logo">
+
+    </a>
+    Scarf Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/scarf-sh/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    scarf-sh/docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started-checklist/" class="md-nav__link">
+        Getting Started Checklist
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick-start/" class="md-nav__link">
+        Quick Start
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Scarf Gateway
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Scarf Gateway
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring" class="md-nav__link">
+    Configuring
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scarf-package-entries" class="md-nav__link">
+    Scarf Package Entries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-image-packages" class="md-nav__link">
+    Container Image Packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-packages" class="md-nav__link">
+    File Packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-packages" class="md-nav__link">
+    Python Packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-python-packages-via-requirementstxt" class="md-nav__link">
+    Installing Python packages via requirements.txt
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    How it works
+  </a>
+  
+    <nav class="md-nav" aria-label="How it works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-packages-defining-a-container-pull" class="md-nav__link">
+    Docker Packages: Defining a container pull
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    Security
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#do-not-track" class="md-nav__link">
+    Do Not Track
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#availability" class="md-nav__link">
+    Availability
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#badges" class="md-nav__link">
+    Badges
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caveats-and-limitations" class="md-nav__link">
+    Caveats and Limitations
+  </a>
+  
+    <nav class="md-nav" aria-label="Caveats and Limitations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automatic-package-creation-for-containers" class="md-nav__link">
+    Automatic Package Creation for Containers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-collections" class="md-nav__link">
+    Creating Collections
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    FAQ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#figures" class="md-nav__link">
+    Figures
+  </a>
+  
+    <nav class="md-nav" aria-label="Figures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#figure-0-using-scarf-docker-gateway-as-a-maintainer" class="md-nav__link">
+    Figure 0: Using Scarf (Docker) Gateway as a maintainer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#figure-1-pulling-a-docker-container-image-from-scarf-docker-gateway-as-a-user" class="md-nav__link">
+    Figure 1: Pulling a Docker container image from Scarf (Docker) Gateway as a User
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#figure-2-full-system-diagram-docker" class="md-nav__link">
+    Figure 2: Full System Diagram (Docker)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#figure-3-using-scarf-file-gateway-as-a-maintainer" class="md-nav__link">
+    Figure 3: Using Scarf (File) Gateway as a maintainer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#figure-4-downloading-a-file-from-scarf-file-gateway-as-a-user" class="md-nav__link">
+    Figure 4: Downloading a File from Scarf (File) Gateway as a User
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#figure-5-full-system-diagram-file" class="md-nav__link">
+    Figure 5: Full System Diagram (File)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../organizations/" class="md-nav__link">
+        Organizations
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../packages/" class="md-nav__link">
+        Packages
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../package-analytics/" class="md-nav__link">
+        Scarf SDKs for library and package authors
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom-telemetry/" class="md-nav__link">
+        Custom telemetry
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-traffic/" class="md-nav__link">
+        Documentation Insights
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oql/" class="md-nav__link">
+        Open Source Qualified Leads ( OQLs )
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../funnel-stages/" class="md-nav__link">
+        Open Source Adoption Funnel Stages<a id="funnel-stages"></a>
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sales-prospecting/" class="md-nav__link">
+        Scarf’s Sales Prospecting Service
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../event-import/" class="md-nav__link">
+        Importing Events
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-export/" class="md-nav__link">
+        Data Export
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_best_practices/" class="md-nav__link">
+        User Guide & Best Practices
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://api-docs.scarf.sh/v2.html" class="md-nav__link">
+        API V2
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring" class="md-nav__link">
+    Configuring
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scarf-package-entries" class="md-nav__link">
+    Scarf Package Entries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-image-packages" class="md-nav__link">
+    Container Image Packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-packages" class="md-nav__link">
+    File Packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-packages" class="md-nav__link">
+    Python Packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-python-packages-via-requirementstxt" class="md-nav__link">
+    Installing Python packages via requirements.txt
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    How it works
+  </a>
+  
+    <nav class="md-nav" aria-label="How it works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-packages-defining-a-container-pull" class="md-nav__link">
+    Docker Packages: Defining a container pull
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    Security
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#do-not-track" class="md-nav__link">
+    Do Not Track
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#availability" class="md-nav__link">
+    Availability
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#badges" class="md-nav__link">
+    Badges
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caveats-and-limitations" class="md-nav__link">
+    Caveats and Limitations
+  </a>
+  
+    <nav class="md-nav" aria-label="Caveats and Limitations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automatic-package-creation-for-containers" class="md-nav__link">
+    Automatic Package Creation for Containers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-collections" class="md-nav__link">
+    Creating Collections
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    FAQ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#figures" class="md-nav__link">
+    Figures
+  </a>
+  
+    <nav class="md-nav" aria-label="Figures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#figure-0-using-scarf-docker-gateway-as-a-maintainer" class="md-nav__link">
+    Figure 0: Using Scarf (Docker) Gateway as a maintainer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#figure-1-pulling-a-docker-container-image-from-scarf-docker-gateway-as-a-user" class="md-nav__link">
+    Figure 1: Pulling a Docker container image from Scarf (Docker) Gateway as a User
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#figure-2-full-system-diagram-docker" class="md-nav__link">
+    Figure 2: Full System Diagram (Docker)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#figure-3-using-scarf-file-gateway-as-a-maintainer" class="md-nav__link">
+    Figure 3: Using Scarf (File) Gateway as a maintainer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#figure-4-downloading-a-file-from-scarf-file-gateway-as-a-user" class="md-nav__link">
+    Figure 4: Downloading a File from Scarf (File) Gateway as a User
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#figure-5-full-system-diagram-file" class="md-nav__link">
+    Figure 5: Full System Diagram (File)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+
+<h1 id="scarf-gateway">Scarf Gateway</h1>
+<h3 id="overview">Overview</h3>
+<p><img alt="Gateway.png" src="../assets/pics/gateway-diagrams/gateway-full.png" /></p>
+<p>Scarf Gateway is a service that sits in front of your existing software hosting platform(s), acting as a single access-point to all of your artifacts, regardless of where they are actually hosted. By making it easy to host content from your own domain, Scarf Gateway decouples your distribution from your hosting provider and provides in-depth download analytics.</p>
+<p>Suppose you maintain a Docker container image <code>acme/rocket-skates</code> on Docker Hub. Your users would normally pull your container image from Docker hub directly (<code>docker pull acme/rocket-skates</code>.) Using Scarf, they would pull from Scarf Gateway using your private domain (<code>docker pull docker.acme.com/acme/rocket-skates</code>.) Important analytics are recorded and shared with you while you are using Scarf and you may change your hosting providers at any time without changing your container image name or documentation.</p>
+<p>Your users will always be using your domain to pull your Docker container images. Your Docker container images can stay on their current hosting provider, but will be served through your own domain, e.g.:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Make your existing container available through your own domain</span>
+$<span class="w"> </span>docker<span class="w"> </span>pull<span class="w"> </span>docker.acme.com/acme/rocket-skates
+
+<span class="c1"># Scarf provides a domain too if you&#39;d prefer to use ours</span>
+$<span class="w"> </span>docker<span class="w"> </span>pull<span class="w"> </span>acme.docker.scarf.sh/acme/rocket-skates
+</code></pre></div>
+<p>Data insights about your Docker container image's downloads can be found in your Scarf Dashboard. From there, you can also manage Scarf Gateway configuration, access controls, and more.</p>
+<h3 id="configuring">Configuring</h3>
+<h4 id="scarf-package-entries">Scarf Package Entries</h4>
+<p>Everything that is served and tracked via Scarf Gateway needs a corresponding <em>package</em> entry on <a href="scarf.sh">scarf.sh</a>. Configuration, analytics, and permissions are all done at the level of a package, or single repository. <code>rocket-skates</code>, <code>acme/rocket-skates</code> are all valid package entries. Because packages can seamlessly change their hosting provider, hostnames (e.g. <code>gcr.io</code>) are not part of the package identifier on Scarf (e.g. <code>acme/rocket-skates</code> and not <code>gcr.io/acme/rocket-skates</code>.)</p>
+<p>To create your package entry, click "New Package" in the navbar in your Scarf dashboard. Then select the corresponding package type for your artifact.</p>
+<h4 id="container-image-packages">Container Image Packages</h4>
+<p><img alt="Gateway.png" src="../assets/pics/gateway-diagrams/gateway-containers.png" /></p>
+<p>Scarf Gateway configuration for a Docker container image entry has two main considerations:</p>
+<ul>
+<li><strong>Backend URL</strong>: This refers to where your container is actually hosted, the location where Scarf will direct requests to pull the container. Scarf will ask for your container's current pull command. This could be <code>rocket-skates</code>, <code>acme/rocket-skates</code> (implicitly specifying Docker Hub as the hosting provider, <code>registry-1.docker.io/acme/rocket-skates</code>), or a fully qualified container image name <code>docker.acme.come/acme/rocket-skates</code>. You can modify this backend URL attribute later, and your user's Docker pulls will be instantly moved over to the new destination without having to communicate anything to them.</li>
+<li><strong>Domain</strong>: This can be your own domain, or a Scarf-supplied domain, of the form <code>&lt;username&gt;.docker.scarf.sh</code>. By default your Scarf domain will be used if this field is left empty. Note that this will be part of your Docker pull command for your users. While you can update this domain, updating your public domain is a breaking change for any users on the current domain! Edit this value with caution.</li>
+</ul>
+<p>If you elect to use your own domain, you'll need to add a CNAME for that domain to <code>gateway.scarf.sh</code>. Additionally we require you to verify your ownership of the domain by setting a TXT with a value that Scarf provides upon package creation. See your DNS provider's instructions for how to add CNAME and TXT records.</p>
+<p>See <a href="#figure_0">Figure 0</a> to see how these pieces fit together visually.</p>
+<h4 id="file-packages">File Packages</h4>
+<p>File Packages on Scarf are a flexible and low-level package type that can track visits and downloads on arbitrary URLs. File packages were originally created to track published tar balls, but it has since expanded to many other use cases and will likely be renamed in future versions of Scarf. You can think of File Packages as a powerful and fully customizable link shortener. Common use cases include:</p>
+<ul>
+<li>Tracking downloads of GitHub release artifacts</li>
+<li>Tracking downloads of every artifact on your company/project "downloads" page</li>
+<li>Tracking downloads of Homebrew packages from a tap/formula that you control</li>
+<li>Sending custom telemetry or other events from your application</li>
+<li>Tracking and attributing visits to marketing and sales content on your site.</li>
+</ul>
+<p><img alt="Gateway.png" src="../assets/pics/gateway-diagrams/gateway-files.png" /></p>
+<p>Scarf Gateway configuration for a file package entry has a few main considerations:</p>
+<ul>
+<li><strong>Domain</strong>: Just like Docker container images, you may choose to use your own domain(s) for serving files. You may also choose to use <code>&lt;username&gt;.gateway.scarf.sh</code> provided by default by Scarf. Remember, if you elect to use your own domain, you'll need to add a CNAME for that domain to <code>gateway.scarf.sh</code> as well as verify ownership of that domain.</li>
+<li><strong>Incoming Path</strong>: This refers to where a path on a given domain where Scarf will direct requests to fetch a file asset. This could be static path like <code>/downloads/rocket-skates.tar.gz</code> or a template path with variables like <code>/files/{version}/{platform}/rocket-skates-{platform}-{version}.tar.gz</code>. You may use variables in your incoming path as specified in <a href="https://datatracker.ietf.org/doc/html/rfc6570">RFC 6570</a>. You can modify a path value later, but be careful to communicate to your users because this would be a breaking change.</li>
+<li><strong>Outgoing URL</strong>: This is an <em>optional</em> full URL to your asset on your HTTP/S hosting provider. It is a template (or static) URL that may also use any variables defined in the Incoming Path. For example <code>https://besthostingprovider.com/acme/{platform}/rocket-skates-{version}.tar.gz</code>. If an Outgoing URL is not provided, the Gateway will return 200 with no redirect.</li>
+<li><strong>Catch-all redirects</strong>: Select this option if you intend to configure a domain-level redirect with your File Package (ie, redirecting <code>site.com/*</code> -&gt; <code>anothersite.com/*</code>).</li>
+<li><strong>Event collection only</strong>: Select this option if you intend to use Scarf Gateway as a telemetry endpoint to send events from your code, and do not intend to redirect your user to another URL or artifact to download. Packages configured with this option will not return a redirect to the client that sends a matching request. Scarf will instead return a simple 200 status code indicating that the event was received successfully.</li>
+</ul>
+<p>See <a href="#figure_3">Figure 3</a> to see how these pieces fit together visually.</p>
+<h4 id="python-packages">Python Packages</h4>
+<p><img alt="Gateway.png" src="../assets/pics/gateway-diagrams/gateway-python.png" /></p>
+<p>Scarf Gateway configuration for a Python package entry has three main considerations:</p>
+<ul>
+<li><strong>pip Command</strong>: This is the current pip command used to install your package. For packages on PyPI.org, this will be of the form <code>pip install my-pkg</code> and will include the <code>--extra-index-url https://my-python-project-domain.com</code> if your package is hosted elsewhere. This defines the location where the users will be redirected to when installing your package.</li>
+<li><strong>Domain</strong>: This can be your own domain, or a Scarf-supplied domain, of the form <code>&lt;username&gt;.gateway.scarf.sh</code>. By default, your Scarf domain will be used if this field is left empty.</li>
+</ul>
+<h4 id="installing-python-packages-via-requirementstxt">Installing Python packages via requirements.txt</h4>
+<p>Add the --extra-index-url option at the top of your requirements.txt:</p>
+<div class="highlight"><pre><span></span><code>--extra-index-url https://my-python-project-domain.com/simple/
+my-pkg==0.0.1
+</code></pre></div>
+<p>NOTE: We have noticed indeterminate behavior in some versions of Pip that have resulted in the public registry being used for download regardless of the --extra-index-url addition. This is a client-specific problem and we are investigating.</p>
+<p>If you elect to use your own domain, you'll need to add a CNAME for that domain to <code>gateway.scarf.sh</code>. Additionally we require you to verify your ownership of the domain by setting a TXT with a value that Scarf provides upon package creation. See your DNS provider's instructions for how to add CNAME and TXT records.</p>
+<h3 id="how-it-works">How it works</h3>
+<p>When a user requests a Docker container image through Scarf, Scarf simply issues a redirect response, pointing to whichever hosting provider you've configured for your container. Certain container runtimes do not handle redirects appropriately during authentication (which is required even for anonymous pulls), and, in those cases, Scarf will proxy the request to the host instead of redirecting. For a visualization of the system from the end-user's perspective, see <a href="#figure_1">Figure 1</a>. For an overview of the entire system, <a href="#figure_2">Figure 2</a>.</p>
+<p>When a user requests a file through Scarf, Scarf simply issues a redirect response, pointing to whichever hosting provider you've configured for your file. For a visualization of the system from the end-user's perspective, see <a href="#figure_4">Figure 4</a>. For an overview of the entire system, <a href="#figure_5">Figure 5</a>.</p>
+<p><strong>Dashboard and Data Access</strong></p>
+<p>Your package's usage data will be made available to you in your Scarf dashboard. You can grant others access to your package's usage data as well from your package details page. Current permission levels supported are:</p>
+<table>
+<thead>
+<tr>
+<th>Access Level</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Owner</td>
+<td>Can read all package-level data, edit package configuration, and grant access to other members</td>
+</tr>
+<tr>
+<td>Admin</td>
+<td>Can read all package-level data, edit package configuration, and grant access to other members (but can't remove other admins)</td>
+</tr>
+<tr>
+<td>Member</td>
+<td>Can read all package-level data</td>
+</tr>
+</tbody>
+</table>
+<p>Scarf does not yet support organization-level permissions but will soon.</p>
+<h4 id="docker-packages-defining-a-container-pull">Docker Packages: Defining a container pull</h4>
+<p>Scarf defines a pull based on how <a href="/docker-hub/download-rate-limit">Docker Hub defines them</a> for the purposes of their rate-limiting functionality.</p>
+<p>A pull is defined as one or more <code>GET</code> requests on hosting provider manifest URLs (<code>/v2/*/manifests/*</code>). <code>HEAD</code> requests are not counted as a pull.</p>
+<p>Note that even if a client downloads the blobs that comprise any given container, the container's manifest file may already be cached on the client, meaning the download would not be counted in Scarf's analytics. Future versions of Scarf's data processing pipelines will be more intelligent and will track things like partial downloads, blob fetches, etc.</p>
+<h4 id="security">Security</h4>
+<p>All interactions through Scarf Gateway occur over HTTPS. Scarf Gateway will procure a valid TLS certificate via <a href="https://letsencrypt.org">LetsEncrypt</a>, and perform TLS termination for the traffic. Scarf Gateway in turn will issue a redirect for the request, or proxy the request to the hosting provider.</p>
+<h4 id="do-not-track">Do Not Track</h4>
+<p>Our gateway respects the HTTP Headers as defined in <a href="https://www.w3.org/2011/tracking-protection/drafts/tracking-dnt.html">DNT</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-GPC">GPC</a>. If you send an HTTP request to our Scarf Gateway with the HTTP header "DNT=1" or "Sec-GPC=1", we will not count your request in our statistics nor will we lookup your IP address to determine if you are a business. Basically, it will be as if you didn't request anything from our gateway but we will still serve the content to you.</p>
+<p>Please note that this behavior works for all packages and pixels that are served through our gateway. If users have DNT turned on in their browser settings, we will not track file downloads or pixel views.</p>
+<h3 id="availability">Availability</h3>
+<p>Scarf Gateway is a free hosted service that is publicly provided as-is and as-available.</p>
+<p>Scarf Gateway is deployed on AWS in multiple regions around the globe; it is fault tolerant even to entire regions going offline, and can automatically scale our backend capacity to meet whatever user traffic demands of us.</p>
+<p>We aim for a monthly service uptime percentage of 99.9%. If you need uptime and/or support SLAs to guarantee that uptime for your company, please contact <a href="mailto:sales@scarf.sh">sales@scarf.sh</a></p>
+<p>To see Scarf's historical uptime and system status, you can view the status page <a href="https://status.scarf.sh">here</a>.</p>
+<h3 id="badges">Badges</h3>
+<p>All packages on Scarf Gateway offer dynamic Scarf-powered README badges automatically. Head to your package page, and the badges will be shown in the details section near the top. Copy the URL, paste it into your project’s README based on whatever doc format you are using and you’re all set.</p>
+<p><img width="652" alt="Package Badges" src="https://github.com/user-attachments/assets/a7e191f1-306c-48fb-9512-13c75f4c9e42"></p>
+<p><strong>What is the difference between the downloads badge and the company badge?</strong></p>
+<p>The <em>commercial usage</em> badge shows how many distinct companies have been identified to be fetching your Scarf Gateway package in the previous month. The <em>downloads</em> badge reports the total number of downloads across all users.</p>
+<p><strong>What is the purpose of this badge?</strong></p>
+<p>README badges let you show off your project by sharing high-level real-time data about your download traffic and commercial adoption, so readers can quickly assess some basic details about your project. Scarf-powered README badges are an easy way to share your project’s usage data publicly, regardless of where on the internet your docs are being rendered. Telling prospective new users how many companies use your project is a great way to show that your project is reliable and worth adopting.</p>
+<p><strong>What is the URL format of the badges</strong></p>
+<p>The badges can be used in the following formats:</p>
+<ul>
+<li>
+<p>Company Badge</p>
+<ul>
+<li>https://scarf.sh/package/company-badge/{package-id}</li>
+<li>https://scarf.sh/company-badge/{username}/{package-name}?package-type={package-type}</li>
+</ul>
+</li>
+<li>
+<p>Downloads Badge</p>
+<ul>
+<li>https://scarf.sh/package/installs-badge/{package-id}</li>
+<li>https://scarf.sh/installs-badge/{username}/{package-name}?package-type={package-type}</li>
+</ul>
+</li>
+</ul>
+<p>You can also pass some additional settings to your badges via query strings: <code>color</code>, <code>label-color</code>, <code>logo</code>, <code>logo-color</code> and <code>style</code>. For example, <code>https://scarf.sh/package/installs-badge/{package-id}?color=red&amp;style=flat</code>. See https://shields.io/#colors to know more about the supported values for each setting.</p>
+<h3 id="caveats-and-limitations"><a name="caveats"></a>Caveats and Limitations</h3>
+<p><strong>A given subdomain can only point to a single container registry at a time.</strong></p>
+<p>If you have Docker container images on multiple distinct registries, you'll currently need to use multiple distinct subdomains (one per hosting provider). This limitation is due to the current implementation of the Docker registry authorization. To begin pulling a container, an authentication request is sent, which must be passed to the hosting provider you configure Scarf Gateway to use. Unfortunately, the initial authorization request doesn't include any information about what image it's trying to pull all Scarf Gateway has to go on is the hostname used to begin to pull the Docker container image. Subsequent Docker API requests do the actual "pulling" of an image. The core of the problem is that, if you attempt to authorize with one registry and pull an image from another, it will fail with an authorization error.</p>
+<p><strong>The path used in your container's new pull command must match the path on the backend container registry</strong></p>
+<p>If your container is on Docker Hub as <code>acme/rocket-skates</code>, your install command must be: <code>docker pull ~&lt;your-domain.com&gt;/acme/rocket-skates</code>. The image name path (acme/rocket-status) is not something that can be changed at this time. This is due to the Docker client's OAuth implementation (authorization includes the image name path of the being requested.) If Scarf Gateway redirects to a different path, the authorization becomes invalid and the Docker pull will fail.</p>
+<h4 id="automatic-package-creation-for-containers">Automatic Package Creation for Containers</h4>
+<p>Rather than creating packages entries for each container in your namespace, you can specify rules to automatically forward all matching traffic and create package entries automatically. By using a template, e.g. <code>repository/*</code>, every time an image matching that template is first downloaded, Scarf will automatically create a page for that package (e.g. repository/test01, repository/new-item).</p>
+<h3 id="creating-collections">Creating Collections</h3>
+<p>To acces Collections, in the top menu click <code>Tools</code> &gt; <code>Collections</code>.</p>
+<p><img alt="Collections menu" src="../assets/pics/auto-creation/collections-menu.png" /></p>
+<p>You will now be presented with the <code>Collections</code> page that give you the options to edit, delete, and create new collections.</p>
+<p><img alt="Collections page" src="../assets/pics/auto-creation/collections-page.png" /></p>
+<p>To create a new collection, please first insert the template that will be used. It can be anything of the form: <code>repository/*</code>, <code>repository/{ variable1, variable2 }</code>, etc. Next, insert the backend domain, the domain where your images are hosted (e.g. registry-1.docker.io, ghcr.io, gcr.io). Please keep in mind, each public domain should map to one backend domain. (E.g. If you’re using your Scarf domain for your images hosted on docker, you will not be able to use your Scarf domain for your images hosted on Amazon.) Submit your new rule!</p>
+<h2 id="faq">FAQ</h2>
+<p><strong>How do I get started using Scarf Gateway?</strong></p>
+<p>First, create an account on Scarf, if you haven’t already done so.
+Once you’ve registered, you’ll be prompted to create a new package. If you’re already using Scarf, you’ll be able to click “New Package” in the navigation bar.</p>
+<p>Select “Docker” for your package type and enter in the requested details about your container.
+Scarf Gateway currently supports Docker containers. Support for more package and artifact types are on the way. Stay tuned.</p>
+<p><strong>If I use a custom domain to host my container through Scarf, what happens to my existing users? Do they all have to update?</strong></p>
+<p>Hosting containers on your custom domain via Scarf has no impact on your existing users; your domain adds a new path for users to download your package. You can encourage end-users to switch their pull commands over to your new domain, but they can continue pulling directly from your registry provider with no negative impact.</p>
+<p>Should you decide to switch registries later on, current users will have to update their pull commands to either your custom domain or to the new registry URL. If they go straight to the registry, they would need to update every time you decide to switch registries. If they use your custom domain, they will never need to update it again.</p>
+<p><strong>Are you actually hosting my packages?</strong></p>
+<p>No, your package continues to be hosted on your current hosting provider not on Scarf itself. Scarf Gateway is simply a thin redirect layer in front of your provider. Since Scarf Gateway acts as a stable location on the internet for your packages, you will always have the freedom to host them with any provider you choose.</p>
+<p><strong>My Docker container image name on my current registry is <code>acme/rocket-skates</code>, can I change that to just <code>rocket-skates</code> when users pull through Scarf?</strong></p>
+<p>Unfortunately this is not possible unless you can change this name on the registry that hosts your container. Your container name on Scarf must match the container name on the registry that hosts it, because the Docker client uses that name to sign the request and validate the response from the registry. The Docker client will reject the download if the response signature is invalid. See the <a href="#caveats">Caveats section</a> for more information.</p>
+<p><strong>How are you managing the usage data you get about my project? Are you storing my users’ data?</strong></p>
+<p>Scarf Gateway does not store any personally identifying information or sensitive data about your users.</p>
+<p>Scarf looks up IP address metadata, but the raw IP addresses are discarded and never exposed. IP metadata may contain:</p>
+<ul>
+<li>Coarse-grained location</li>
+<li>Device/OS information</li>
+<li>Company information, cloud providers, etc.</li>
+</ul>
+<p>Additionally, Scarf sees metadata about the containers that are being downloaded such as:</p>
+<ul>
+<li>Tags/versions (variables)</li>
+<li>Client runtime and version</li>
+</ul>
+<p><strong>What package types are you planning to support next?</strong></p>
+<p>We’d love your input to help us prioritize support for additional package types. Java, RPM and others are planned. Scarf Gateway will ultimately be generalized to support arbitrary artifact types.</p>
+<p><strong>How much does it cost to use Scarf Gateway?</strong></p>
+<p>Scarf Gateway’s current feature set is free and will remain free. We will be adding additional functionality, features, service level agreements, and more, some free and some paid.</p>
+<p><strong>Is Scarf Gateway self-hosted or managed by Scarf?</strong></p>
+<p>Scarf Gateway is managed by the Scarf team. We plan an open source release of Scarf Gateway for self-hosting, when it is out of the current open beta period and into general availability.</p>
+<p><strong>How long will it take for any given container download to show up in my analytics dashboard?</strong></p>
+<p>Downloads will typically show up in your dashboard in 30 minutes and up to 2-3 hours.</p>
+<p><strong>Is there an API I can use to pull my stats, manage my packages, etc?</strong></p>
+<p>Yes! See <a href="https://api-docs.scarf.sh/v2.html">our API documentation</a> for more information.</p>
+<p><strong>I have more questions, where is the best place to ask?</strong></p>
+<p><a href="https://tinyurl.com/scarf-community-slack">Join us in Slack</a>, we're more than happy to help.</p>
+<h2 id="figures">Figures</h2>
+<p><a id="figure_0"></a></p>
+<h4 id="figure-0-using-scarf-docker-gateway-as-a-maintainer">Figure 0: Using Scarf (Docker) Gateway as a maintainer</h4>
+<p><img alt="img" src="https://static-assets.scarf.sh/docs/fig-0-gateway-maintainer-docker.png" /></p>
+<p><a id="figure_1"></a></p>
+<h4 id="figure-1-pulling-a-docker-container-image-from-scarf-docker-gateway-as-a-user">Figure 1: Pulling a Docker container image from Scarf (Docker) Gateway as a User</h4>
+<p><img alt="img" src="https://static-assets.scarf.sh/docs/fig-1-gateway-docker-user.png" /></p>
+<p><a id="figure_2"></a></p>
+<h4 id="figure-2-full-system-diagram-docker">Figure 2: Full System Diagram (Docker)</h4>
+<p><img alt="img" src="https://static-assets.scarf.sh/docs/fig-2-full-diagram-docker.png" /></p>
+<p><a id="figure_3"></a></p>
+<h4 id="figure-3-using-scarf-file-gateway-as-a-maintainer">Figure 3: Using Scarf (File) Gateway as a maintainer</h4>
+<p><img alt="img" src="https://static-assets.scarf.sh/docs/fig-3-gateway-maintainer-file.png" /></p>
+<p><a id="figure_4"></a></p>
+<h4 id="figure-4-downloading-a-file-from-scarf-file-gateway-as-a-user">Figure 4: Downloading a File from Scarf (File) Gateway as a User</h4>
+<p><img alt="img" src="https://static-assets.scarf.sh/docs/fig-4-gateway-file-user.png" /></p>
+<p><a id="figure_5"></a></p>
+<h4 id="figure-5-full-system-diagram-file">Figure 5: Full System Diagram (File)</h4>
+<p><img alt="img" src="https://static-assets.scarf.sh/docs/fig-5-full-diagram-file.png" /></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2019 - 2024 Scarf Systems, Inc. <img referrerpolicy="no-referrer-when-downgrade" src="https://static.scarf.sh/a.png?x-pxid=c9065f3a-a090-4243-8f69-145d5de7bfca" />
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/scarf-sh" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/scarf_oss" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/scarf-sh" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://tinyurl.com/scarf-community-slack" target="_blank" rel="noopener" title="tinyurl.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/channel/UCiJRrlBKBOgYFRO9eb6pfdg" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.51d95adb.min.js"></script>
+      
+    
+  </body>
+</html>
