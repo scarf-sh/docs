@@ -252,34 +252,34 @@ Yes! See [our API documentation](https://api-docs.scarf.sh/v2.html) for more inf
 
 #### Figure 0: Using Scarf (Docker) Gateway as a maintainer
 
-![img](https://s3.us-west-2.amazonaws.com/static.scarf.sh/docs/fig-0-gateway-maintainer-docker.png)
+![img](https://static-assets.scarf.sh/docs/fig-0-gateway-maintainer-docker.png)
 
 <a id="figure_1"></a>
 
 #### Figure 1: Pulling a Docker container image from Scarf (Docker) Gateway as a User
 
-![img](https://s3.us-west-2.amazonaws.com/static.scarf.sh/docs/fig-1-gateway-docker-user.png)
+![img](https://static-assets.scarf.sh/docs/fig-1-gateway-docker-user.png)
 
 <a id="figure_2"></a>
 
 #### Figure 2: Full System Diagram (Docker)
 
-![img](https://s3.us-west-2.amazonaws.com/static.scarf.sh/docs/fig-2-full-diagram-docker.png)
+![img](https://static-assets.scarf.sh/docs/fig-2-full-diagram-docker.png)
 
 <a id="figure_3"></a>
 
 #### Figure 3: Using Scarf (File) Gateway as a maintainer
 
-![img](https://s3.us-west-2.amazonaws.com/static.scarf.sh/docs/fig-3-gateway-maintainer-file.png)
+![img](https://static-assets.scarf.sh/docs/fig-3-gateway-maintainer-file.png)
 
 <a id="figure_4"></a>
 
 #### Figure 4: Downloading a File from Scarf (File) Gateway as a User
 
-![img](https://s3.us-west-2.amazonaws.com/static.scarf.sh/docs/fig-4-gateway-file-user.png)
+![img](https://static-assets.scarf.sh/docs/fig-4-gateway-file-user.png)
 
 <a id="figure_5"></a>
 
 #### Figure 5: Full System Diagram (File)
 
-![img](https://s3.us-west-2.amazonaws.com/static.scarf.sh/docs/fig-5-full-diagram-file.png)
+![img](https://static-assets.scarf.sh/docs/fig-5-full-diagram-file.png)
