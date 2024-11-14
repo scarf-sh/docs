@@ -23,7 +23,7 @@ Enough activity has occurred for us to suspect the user/organization is actively
 
 ## Experimentation<a id="experimentation"></a>
 
-Sufficient activity has occurred for us to suspect the company is actively using your OSS for one or more production systems. Events such as multiple downloads and page views will have occurred over 30 days or a single download and multiple page views over 60 days, and the company has had activity in the last 90 days. 
+Sufficient activity has occurred for us to suspect the company is actively trying your OSS, but might not be relying on it in a production workload yet. Events such as multiple downloads and page views will have occurred over 30 days, or a single download and multiple page views over 60 days. The origanization may be in the development with your OSS, or prototyping, or running internal tests. We don't yet have enough evidence to make stronger conclusions about production usage. 
 
 
 ## Ongoing Usage <a id="ongoing-usage"></a>
