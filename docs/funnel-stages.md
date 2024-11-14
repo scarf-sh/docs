@@ -23,12 +23,12 @@ Enough activity has occurred for us to suspect the user/organization is actively
 
 ## Experimentation<a id="experimentation"></a>
 
-Sufficient activity has occurred for us to suspect the company is actively trying your OSS, but might not be relying on it in a production workload yet. Events such as multiple downloads and page views will have occurred over 30 days, or a single download and multiple page views over 60 days. The origanization may be in the development with your OSS, or prototyping, or running internal tests. We don't yet have enough evidence to make stronger conclusions about production usage. 
+Sufficient activity has occurred for us to suspect the company is actively trying your OSS, but might not be relying on it in a production workload yet. Events such as multiple downloads and page views will have occurred over 30 days, or a single download and multiple page views over 60 days. The origanization may be in the development with your OSS, or prototyping, or running internal tests. We don't yet have enough evidence to make stronger conclusions about production usage.
 
 
 ## Ongoing Usage <a id="ongoing-usage"></a>
 
-Companies in this stage may be ready to become paying customers and should be moved into your sales/marketing pipeline where available. For non-commercial open-source projects, companies in this stage may be good sponsorship targets or valuable advocates in the community. These companies will have event activity over the course of the past 90 days, such as continued downloads or views.
+By this stage, Scarf has enough data to conclude the company is using your software in an ongoing manner, potentially in a production environment.  Companies in this stage may be ready to become paying customers and should be moved into your sales/marketing pipeline where available. For non-commercial open-source projects, companies in this stage may be good sponsorship targets or valuable advocates in the community. These companies will have event activity over the course of the past 90 days, such as continued downloads or views.
 
 
 ## Inactive<a id="inactive"></a>
