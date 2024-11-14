@@ -13,13 +13,13 @@ def scarf_analytics():
 	 # If either environment variable is set, do not collect metrics and exit.
         if os.getenv("SCARF_NO_ANALYTICS") != "true" and os.getenv("DO_NOT_TRACK") != "true":
             requests.get(
-		  # CUSTOMER_ENDPOINT is a DNS CNAME configured within your Scarf account
+		  # ENDPOINT is a DNS CNAME configured within your Scarf account
 		  # FILE_PACKAGE_NAME is the Scarf collection under which these data points will be collected
-                "https://CUSTOMER_ENDPOINT.scarf.sh/FILE_PACKAGE_NAME?version="
+                "https://ENDPOINT.scarf.sh/FILE_PACKAGE_NAME?version="
                 + __version__
                 + "&platform="
                 + platform.system()
-                + "&python"
+                + "&python="
                 + python_version
                 + "&arch="
                 + platform.machine(),
