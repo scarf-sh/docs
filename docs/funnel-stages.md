@@ -28,7 +28,7 @@ Sufficient activity has occurred for us to suspect the company is actively tryin
 
 ## Ongoing Usage <a id="ongoing-usage"></a>
 
-Companies in this stage may be ready to become paying customers and should be moved into your sales/marketing pipeline where available. For non-commercial open-source projects, companies in this stage may be good sponsorship targets or valuable advocates in the community. These companies will have event activity over the course of the past 90 days, such as continued downloads or views.
+Experimentation activity has been recorded over an extended period of time and provides sufficient evidence to suggest that the company is likely utilizing your software in a production environment. Companies in this stage may be ready to become paying customers and should be moved into your sales/marketing pipeline where available. For non-commercial open-source projects, companies in this stage may be good sponsorship targets or valuable advocates in the community. These companies will have event activity over the course of the past 90 days, such as continued downloads or views.
 
 
 ## Inactive<a id="inactive"></a>
