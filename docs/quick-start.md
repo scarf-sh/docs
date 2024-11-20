@@ -10,7 +10,7 @@ Scarf is a platform that helps you track download and usage analytics for your o
 
 In this guide, you will learn:
 
-- How to create track pulls of your Docker containers with Scarf
+- How to create track artifact downloads with Scarf -- we will use a Docker container as an example.
 - How to create a tracking pixel to track views of your package's documentation
 - How to test your setup by downloading your Scarf packages and fetching your associated Scarf pixels
 
@@ -23,7 +23,9 @@ In this guide, you will learn:
 
 ### Creating a Docker Package
 
-Using Scarf, users can pull your Docker container images via Scarf Gateway using your custom domain. Scarf Gateway is a service that provides a central access point to your containers and packages, no matter where you host them. 
+NOTE: This quickstart outlines the process for tracking downloads of a Docker container via Scarf Gateway, but you can track downloads of many other types of OSS artifacts as well. Learn more about other package types on Scarf [here](/packages).
+
+Scarf Gateway is a service that provides a central access point to your containers and packages, no matter where you host them. Users can pull your containers via a Scarf provided domain, or custom domain that you CNAME to Scarf.
 
 1.  Once signed in to Scarf, navigate home by clicking on the Scarf icon in the top-left corner of the screen.
 
