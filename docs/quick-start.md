@@ -10,9 +10,9 @@ Scarf is a platform that helps you track download and usage analytics for your o
 
 In this guide, you will learn:
 
-- How to create track artifact downloads with Scarf -- we will use a Docker container as an example.
+- How to track artifact downloads with Scarf -- **we will use a Docker container as an example**.
 - How to create a tracking pixel to track views of your package's documentation
-- How to test your setup by downloading your Scarf packages and fetching your associated Scarf pixels
+- How to configure Scarf packages 
 
 ## Prerequisites
 
@@ -23,13 +23,13 @@ In this guide, you will learn:
 
 ### Creating a Docker Package
 
-NOTE: This quickstart outlines the process for tracking downloads of a Docker container via Scarf Gateway, but you can track downloads of many other types of OSS artifacts as well. Learn more about other package types on Scarf [here](/packages).
+**NOTE:** This quickstart outlines the process for tracking downloads of a Docker container via Scarf Gateway, but you can track downloads of many other types of OSS artifacts as well, such as files, npm or Python packages. Learn more about other package types on Scarf [here](/packages).
 
 Scarf Gateway is a service that provides a central access point to your containers and packages, no matter where you host them. Users can pull your containers via a Scarf provided domain, or custom domain that you CNAME to Scarf.
 
-1.  Once signed in to Scarf, navigate home by clicking on the Scarf icon in the top-left corner of the screen.
+1.  Once logged in to Scarf:
 
-2. Click the plus icon in the top navigation bar, then select `New Package`.
+2. Click the plus icon in the top right navigation bar, or under the "Tools" pull-down, then select `New Package`.
 ![Create a new package](assets/pics/qs-file-packages/create-new-package.png)
 
 3. In the first dropdown, click on the package type you would like to create. For this section, you will click `Docker`.
@@ -41,7 +41,7 @@ Scarf Gateway is a service that provides a central access point to your containe
 
     ![Enter the docker pull command](assets/pics/quick-start/docker-package-pull-command.png)
 
-5. Optional: You can add a custom domain or use the domain provided by Scarf Gateway. If you choose to create a custom domain, you will need to [CNAME your custom domain to the domain provided by Scarf Gateway](https://www.cloudflare.com/learning/dns/dns-records/dns-cname-record/).
+5. **Optional:** You can add a custom domain or use the domain provided by Scarf Gateway. If you choose to create a custom domain, you will need to [CNAME your custom domain to the domain provided by Scarf Gateway](https://www.cloudflare.com/learning/dns/dns-records/dns-cname-record/).
 
 6. Click the `Submit` button to be redirected to a success screen with some additional information as to what you can do next.
 
