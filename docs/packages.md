@@ -1,14 +1,14 @@
-# Packages
+# Setting up Scarf Packages
 
 ## Prerequisites
 
 - You will need to sign up for a [Scarf account](https://app.scarf.sh/register).
     > _**Note:** You can sign up with a valid email address or your GitHub account._
-- The container to be tracked must be published to a public registry; eg Docker Hub, GitHub Container Registry.
+- To track a container, it must be published to a public registry; eg Docker Hub, GitHub Container Registry.
 
 > **Note:** This guide will use the `hello-world` [docker image](https://hub.docker.com/_/hello-world).
 
-## Docker
+## Docker Packages
 
 ### Creating a Docker Package
 
@@ -57,7 +57,7 @@ In this section you will download your package with the pull command found in yo
 It will usually take 30 minutes and up to 2-3 hours before you see data pulled in. Every time a user pulls your Docker container images from Scarf Gateway the data in your Package Insights will be updated.
     ![Data from packages](assets/pics/quick-start/package-analytics.png)
 
-## Files
+## File Packages
 
 File Packages on Scarf are a flexible and low-level package type that can track visits and downloads on arbitrary URLs. File packages were originally created to track published tar balls, but it has since expanded to many other use cases and will likely be renamed in future versions of Scarf. You can think of File Packages as a powerful and fully customizable link shortener. Common use cases include:
 
@@ -132,9 +132,41 @@ Example:
 
 ![New file package route](assets/pics/qs-file-packages/file-package-new-route.png)
 
-## What’s Next?
+## Event Collection Packages
 
-- [Create a Pixel](/web-traffic)
-- [Learn more about the Scarf Gateway](/gateway)
+Event Collection Packages on Scarf are another flexible package type which can be used to collect event telemetry by fetching a URL or by importing event history. Event Collection Packages are an alias of File packages and share all the same traits. Common use cases include:
+
+- Sending custom telemetry or other events from your application
+- Importing log or event history from your hosted installations to Scarf
+
+### Creating an Event Collection Package
+1. Once signed in to Scarf, navigate to the home page.
+
+2. Click plus icon in the navigation, then select New Package.
+![Create a new package](assets/pics/qs-file-packages/create-new-package.png)
+
+3. In the first drop-down click on the package type you would like to create. For this section you will click `Event Collection`.
+![Create a package](assets/pics/qs-file-packages/create-file.png)
+
+4. Select the package owner from the dropdown.
+![Select package owner](assets/pics/qs-file-packages/file-package-select-owner.png)
+
+5. Give your package a name.
+![Name your package](assets/pics/qs-file-packages/file-package-name.png)
+
+### Adding an Incoming URL
+This section explains what the Outgoing and Incoming URLs are and how to use a URL template.
+
+1.) Add the URL path where your events will be collected. This is the user visible endpoint your application will connect to for event submission. This setting while required is not relevant when submitting events via the [Event Import API](https://docs.scarf.sh/event-import/).
+ > Note: The Outgoing URL is the full URL to your asset on your HTTP/S hosting provider. It can be a URL template but if you use variables in your URL they need to also be used in your Incoming Path that define in the next step.
+
+![path where files are located](assets/pics/qs-file-packages/file-package-outgoing-url.png)
+
+2.) Choose the domain where your events will be submitted. You may choose to use your own domain or you may choose to use `<username>.gateway.scarf.sh` provided by default by Scarf.
+
+3.) Click **Submit**.
+
+### Configuring Event Collection
+Once an Event Collection package has been created, you are ready to collect [Custom telemetry](https://docs.scarf.sh/custom-telemetry/)
 
 If you have questions or need help, join our [Slack community](https://tinyurl.com/scarf-community-slack).
