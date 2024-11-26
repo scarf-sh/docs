@@ -1,4 +1,4 @@
-# Packages
+# Creating Scarf Packages
 
 ## Prerequisites
 
@@ -59,7 +59,7 @@ It will usually take 30 minutes and up to 2-3 hours before you see data pulled i
 
 ## Files
 
-File Packages on Scarf are a flexible and low-level package type that can track visits and downloads on arbitrary URLs. File packages were originally created to track published tar balls, but it has since expanded to many other use cases and will likely be renamed in future versions of Scarf. You can think of File Packages as a powerful and fully customizable link shortener. Common use cases include:
+File Packages on Scarf are a flexible and low-level package type that can track visits and downloads on arbitrary URLs. File packages were originally created to track published tar balls, but it has since expanded to many other use cases. You can think of File Packages as a powerful and fully customizable link shortener. Common use cases include:
 
 - Tracking downloads of GitHub release artifacts
 - Tracking downloads of every artifact on your company/project "downloads" page
@@ -68,15 +68,15 @@ File Packages on Scarf are a flexible and low-level package type that can track 
 - Tracking and attributing visits to marketing and sales content on your site.
 
 ### Creating a File Package
-1. Once signed in to Scarf, navigate to the home page.
+1. Log in to your Scarf account.
 
-2. Click plus icon in the navigation, then select New Package.
+2. Click the plus icon in the top right navigation, then select New Package.
 ![Create a new package](assets/pics/qs-file-packages/create-new-package.png)
 
-3. In the first drop-down click on the package type you would like to create. For this section you will click `File`.
+3. In the first drop-down click on the package type you would like to create. For this section you will click `New File`.
 ![Create a package](assets/pics/qs-file-packages/create-file.png)
 
-4. Select the package owner from the dropdown.
+4. Select a package owner from the dropdown of Organizations you belong to.
 ![Select package owner](assets/pics/qs-file-packages/file-package-select-owner.png)
 
 5. Give your package a name.
@@ -91,7 +91,7 @@ This example uses 2 variables `{version}` and `{platform}`.
 
 ![path where files are located](assets/pics/qs-file-packages/file-package-outgoing-url.png)
 
-2.) Choose the domain where your files should be available from. You may choose to use your own domain for serving files. You may also choose to use `<username>.gateway.scarf.sh` provided by default by Scarf.
+2.) Choose the domain where your files will be available from. You may choose to use your own domain for serving files. You may also choose to use `<username>.gateway.scarf.sh` provided by default by Scarf.
 
 3.) Add the Incoming URL Path where Scarf will direct requests to fetch a file asset.
 
@@ -131,6 +131,75 @@ Example:
 7.) The modal will close and you will see the additional route you just added.
 
 ![New file package route](assets/pics/qs-file-packages/file-package-new-route.png)
+
+## npm Packages
+
+NPM Packages on Scarf are a convenient way to collect usage and event telemetry from your npm package by adding a dependncy on [scarf-js](https://www.npmjs.com/package/@scarf/scarf).
+
+### Creating an npm Package on Scarf
+1. Log in to your Scarf account.
+
+2. Click the plus icon in the navigation, then select New Package.
+![Create a new package](assets/pics/qs-file-packages/create-new-package.png)
+
+3. In the first drop-down click on the package type you would like to create. For this section you will click `npm`.
+![Create a package](assets/pics/qs-file-packages/create-file.png)
+
+4. Select the package owner from the dropdown list of Organizations you belong to.
+![Select package owner](assets/pics/qs-file-packages/file-package-select-owner.png)
+
+5. Give your npm package a name.
+This name should match the name of your package in the npm repository.
+![Name your package](assets/pics/qs-file-packages/file-package-name.png)
+
+6. Click **Submit**.
+
+### Configuring Telemetry for npm packages
+Once an npm entry has been created, you are ready to configure your package by adding scarf as a dependency
+```bash
+npm i --save @scarf/scarf
+```
+Once your library is published to npm with this change, Scarf will automatically
+receive stats on install, no additional code is required! For additional details on configuration of the scarf-js library please refer to the [scarf-js NPM entry](https://www.npmjs.com/package/@scarf/scarf).
+
+## Event Collection
+
+## Event Collection Packages
+
+Event Collection Packages on Scarf are another flexible package type which can be used to collect event telemetry by fetching a URL or by importing event history. Event Collection Packages are an alias of File packages and share all the same traits. Common use cases include:
+
+- Sending custom telemetry or other events from your application
+- Importing log or event history from your hosted installations to Scarf
+
+### Creating an Event Collection Package
+1. Log in to your Scarf acccount.
+
+2. Click plus icon in the navigation, then select New Package.
+![Create a new package](assets/pics/qs-file-packages/create-new-package.png)
+
+3. In the first drop-down click on the package type you would like to create. For this section you will click `Event Collection`.
+![Create a package](assets/pics/qs-file-packages/create-file.png)
+
+4. Select the package owner from the dropdown.
+![Select package owner](assets/pics/qs-file-packages/file-package-select-owner.png)
+
+5. Give your package a name.
+![Name your package](assets/pics/qs-file-packages/file-package-name.png)
+
+### Adding an Incoming URL
+This section explains what the Outgoing and Incoming URLs are and how to use a URL template.
+
+1.) Add the URL path where your events will be collected. This is the user visible endpoint your application will connect to for event submission. This setting while required is not relevant when submitting events via the [Event Import API](https://docs.scarf.sh/event-import/).
+ > Note: The Outgoing URL is the full URL to your asset on your HTTP/S hosting provider. It can be a URL template but if you use variables in your URL they need to also be used in your Incoming Path that define in the next step.
+
+![path where files are located](assets/pics/qs-file-packages/file-package-outgoing-url.png)
+
+2.) Choose the domain where your events will be submitted. You may choose to use your own domain or you may choose to use `<username>.gateway.scarf.sh` provided by default by Scarf.
+
+3.) Click **Submit**.
+
+4.) Configuring Telemetry
+Once an Event Collection package has been created, you are ready to collect [Custom telemetry](https://docs.scarf.sh/custom-telemetry/)
 
 ## What’s Next?
 
