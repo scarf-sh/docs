@@ -155,10 +155,10 @@ Event Collection Packages on Scarf are another flexible package type purpose bui
 ![Name your package](assets/pics/qs-file-packages/file-package-name.png)
 
 ### Adding an Incoming URL
-This section explains what the Outgoing and Incoming URLs are and how to use a URL template.
+This section explains what the Incoming URLs are and how to use a URL template for Event Collection. 
 
 1.) Add the URL path where your events will be collected. This is the user visible endpoint your application will connect to for event submission. This setting while required is not relevant when submitting events via the [Event Import API](https://docs.scarf.sh/event-import/).
- > Note: The Outgoing URL is the full URL to your asset on your HTTP/S hosting provider. It can be a URL template but if you use variables in your URL they need to also be used in your Incoming Path that define in the next step.
+ > Note: You can use a URL template, but if you use variables in your URL they need to also be used in your Incoming Path that is defined in the next step.
 
 ![path where files are located](assets/pics/qs-file-packages/file-package-outgoing-url.png)
 
