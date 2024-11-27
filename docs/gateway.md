@@ -100,8 +100,6 @@ Your package's usage data will be made available to you in your Scarf dashboard.
 | Admin        | Can read all package-level data, edit package configuration, and grant access to other members (but can't remove other admins) |
 | Member       | Can read all package-level data                                                                                                |
 
-Scarf does not yet support organization-level permissions but will soon.
-
 #### Docker Packages: Defining a container pull
 
 Scarf defines a pull based on how [Docker Hub defines them](/docker-hub/download-rate-limit) for the purposes of their rate-limiting functionality.
