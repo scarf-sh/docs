@@ -137,7 +137,7 @@ Example:
 Event Collection Packages on Scarf are another flexible package type purpose built for telemetry data in general. Event data can be sent to a public Scarf Gateway URL of your choice, or by bulk ingesting events through our authenticated API. Event Collection Packages are an alias of File packages and share all the same traits. Common use cases include:
 
 - Sending custom telemetry or other events from your application
-- Importing log or event history from your hosted installations to Scarf
+- Importing historical event data from an external application into to Scarf
 
 ### Creating an Event Collection Package
 1. Once signed in to Scarf, navigate to the home page.
