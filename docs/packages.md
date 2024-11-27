@@ -169,4 +169,22 @@ This section explains what the Incoming URLs are and how to use a URL template f
 ### Configuring Event Collection
 Once an Event Collection package has been created, you are ready to collect [Custom telemetry](https://docs.scarf.sh/custom-telemetry/)
 
+## Python Packages
+
+Scarf Gateway configuration for a Python package entry has three main considerations:
+
+- pip Command: This is the current pip command used to install your package. For packages on PyPI.org, this will be of the form pip install my-pkg and will include the --extra-index-url https://my-python-project-domain.com if your package is hosted elsewhere. This defines the location where the users will be redirected to when installing your package.
+- Domain: This can be your own domain, or a Scarf-supplied domain, of the form <username>.gateway.scarf.sh. By default, your Scarf domain will be used if this field is left empty.
+- Telemetry: This allows you to gather insights into how your package is used without collecting any personally identifiable information.
+
+Installing Python packages via requirements.txt
+Add the --extra-index-url option at the top of your requirements.txt:
+
+(''' --extra-index-url https://my-python-project-domain.com/simple/ ''')
+my-pkg==0.0.1
+
+NOTE: We have noticed indeterminate behavior in some versions of Pip that have resulted in the public registry being used for download regardless of the --extra-index-url addition.
+
+If you elect to use your own domain, you'll need to add a CNAME for that domain to <span style="color:grray;">https://gateway.scarf.sh</span>. Additionally we require you to verify your ownership of the domain by setting a TXT with a value that Scarf provides upon package creation. See your DNS provider's instructions for how to add CNAME and TXT records.
+
 If you have questions or need help, join our [Slack community](https://tinyurl.com/scarf-community-slack).
