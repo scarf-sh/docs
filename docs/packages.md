@@ -16,10 +16,12 @@ Using Scarf, users can pull your Docker container images via Scarf Gateway using
 
 1. Once signed in to Scarf, navigate to the home page.
 2. Click plus icon in the top navigation, then select `New Package`.
-    ![Create a new package](assets/pics/qs-file-packages/create-new-package.png)
-3. In the first drop-down click on the package type you would like to create. For this section you will click `Docker`.
-    ![Enter the docker pull command](assets/pics/quick-start/create-docker.png)
-4. Enter the current pull command for your Docker container.
+
+   <img src="assets/pics/qs-file-packages/create-new-package.png" alt="Create a new package" style="width:70%; height:auto;">
+   
+4. In the first drop-down click on the package type you would like to create. For this section you will click `Docker`.
+    <img src="assets/pics/quick-start/create-docker.png" alt="Select the package type" style="width:70%; height:auto;">
+5. Enter the current pull command for your Docker container.
 
     ```bash
     # `hello-world` package
@@ -27,12 +29,13 @@ Using Scarf, users can pull your Docker container images via Scarf Gateway using
     docker pull hello-world
     ```
 
-    ![Enter the docker pull command](assets/pics/quick-start/docker-package-pull-command.png)
+    <img src="assets/pics/quick-start/docker-package-pull-command.png" alt="Enter the docker pull command" style="width:70%; height:auto;">
 
-5. Optional: You can add a custom domain or use the domain provided by Scarf Gateway.
-6. Click the `Submit` button to be redirected to a success screen with some additional information as to what you can do next.
-7. Click on on `Go to your package` to view your package details view.
-    ![Enter the docker pull command](assets/pics/quick-start/docker-packages-succces-screen.png)
+6. Optional: You can add a custom domain or use the domain provided by Scarf Gateway.
+7. Click the `Submit` button to be redirected to a success screen with some additional information as to what you can do next.
+8. Click on on `Go to your package` to view your package details view.
+
+   <img src="assets/pics/quick-start/docker-packages-succces-screen.png" alt="Enter the docker pull command" style="width:70%; height:auto;">
 
 Now you’re all set to start tracking your Docker images with Scarf.
 Any time your image is downloaded, Scarf will report the following information:
@@ -48,14 +51,18 @@ In the next section, you will create a tracking pixel that can be added to your 
 In this section you will download your package with the pull command found in your package dashboard to start fetching data.
 
 1. Navigate to your package details view.
-    ![Package dashboard](assets/pics/quick-start/docker-copy-pull-command.png)
-2. Copy the Pull command.
-3. Navigate to a terminal on your computer and run the Pull command.
-    ![Run Scarf pull command](assets/pics/quick-start/terminal_pull.png)
+
+   <img src="assets/pics/quick-start/docker-copy-pull-command.png" alt="Package dashboard" style="width:70%; height:auto;">
+3. Copy the Pull command.
+4. Navigate to a terminal on your computer and run the Pull command.
+
+   <img src="assets/pics/quick-start/terminal_pull.png" alt="Run Scarf pull command" style="width:70%; height:auto;">
+    
     _**Note:** Make sure the docker daemon is running on your computer._
-4. Back to the package details view and click on `View Analytics`. You should now see the Package Insights starting to populate with data.
+6. Back to the package details view and click on `View Analytics`. You should now see the Package Insights starting to populate with data.
 It will usually take 30 minutes and up to 2-3 hours before you see data pulled in. Every time a user pulls your Docker container images from Scarf Gateway the data in your Package Insights will be updated.
-    ![Data from packages](assets/pics/quick-start/package-analytics.png)
+
+   <img src="assets/pics/quick-start/package-analytics.png" alt="Data from packages" style="width:70%; height:auto;">
 
 ## Files
 
@@ -71,16 +78,16 @@ File Packages on Scarf are a flexible and low-level package type that can track 
 1. Once signed in to Scarf, navigate to the home page.
 
 2. Click plus icon in the navigation, then select New Package.
-![Create a new package](assets/pics/qs-file-packages/create-new-package.png)
+<img src="assets/pics/qs-file-packages/create-new-package.png" alt="Create a new package" style="width:70%; height:auto;">
 
 3. In the first drop-down click on the package type you would like to create. For this section you will click `File`.
-![Create a package](assets/pics/qs-file-packages/create-file.png)
+<img src="assets/pics/qs-file-packages/create-file.png" alt="Create a package" style="width:70%; height:auto;">
 
 4. Select the package owner from the dropdown.
-![Select package owner](assets/pics/qs-file-packages/file-package-select-owner.png)
+<img src="assets/pics/qs-file-packages/file-package-select-owner.png" alt="Select package owner" style="width:50%; height:auto;">
 
 5. Give your package a name.
-![Name your package](assets/pics/qs-file-packages/file-package-name.png)
+<img src="assets/pics/qs-file-packages/file-package-name.png" alt="Name your package" style="width:70%; height:auto;">
 
 ### Adding an Outgoing and Incoming URL
 This section explains what the Outgoing and Incoming URLs are and how to use a URL template.
@@ -89,7 +96,7 @@ This section explains what the Outgoing and Incoming URLs are and how to use a U
 This example uses 2 variables `{version}` and `{platform}`.
  > Note: The Outgoing URL is the full URL to your asset on your HTTP/S hosting provider. It can be a URL template but if you use variables in your URL they need to also be used in your Incoming Path that define in the next step.
 
-![path where files are located](assets/pics/qs-file-packages/file-package-outgoing-url.png)
+<img src="assets/pics/qs-file-packages/file-package-outgoing-url.png" alt="Path where files are located" style="width:70%; height:auto;">
 
 2.) Choose the domain where your files should be available from. You may choose to use your own domain for serving files. You may also choose to use `<username>.gateway.scarf.sh` provided by default by Scarf.
 
@@ -97,7 +104,7 @@ This example uses 2 variables `{version}` and `{platform}`.
 
 > Note: Any variables used in your Outgoing URL path need to match your Incoming URL.
 
- ![Add the Incoming URL Path](assets/pics/qs-file-packages/file-package-incoming.png)
+ <img src="assets/pics/qs-file-packages/file-package-incoming.png" alt="Add the Incoming URL Path" style="width:70%; height:auto;">
 
 4.) Click **Submit**.
 
@@ -105,12 +112,12 @@ This example uses 2 variables `{version}` and `{platform}`.
 This example will show how to add an additional route. For curl-runnings an additional route that redirects to a specific version will be added, in this case, the most recent package release.
 
 1.) In the top menu click on Tools then in the drop down menu click on Packages.
-![Packages menu](assets/pics/qs-file-packages/file-package-menu-packages.png)
+<img src="assets/pics/qs-file-packages/file-package-menu-packages.png" alt="Packages menu" style="width:70%; height:auto;">
 
 2.) In the package list dashboard there will be a list of all your packages. These can be filtered by type of packages by selecting the package types you'd like to see. In our example as we just created a file package we're going to want to select File.
 
 3.) Navigate to our newly create file package and in the top right of the box click the `View Details` button.
-![Click the Show Detials button](assets/pics/qs-file-packages/file-package-view-details.png)
+<img src="assets/pics/qs-file-packages/file-package-view-details.png" alt="Click the Show Details button" style="width:70%; height:auto;">
 
 4.) In the popup modal, use the `File location` input to add a new host URL. You can use a template URL here.
 
@@ -124,13 +131,13 @@ Example:
 
 `/latest/{platform}`
 
-![Add desired route](assets/pics/qs-file-packages/file-package-aditional-route.png)
+<img src="assets/pics/qs-file-packages/file-package-aditional-route.png" alt="Add desired route" style="width:70%; height:auto;">
 
 6.) Click the `Submit` button.
 
 7.) The modal will close and you will see the additional route you just added.
 
-![New file package route](assets/pics/qs-file-packages/file-package-new-route.png)
+<img src="assets/pics/qs-file-packages/file-package-new-route.png" alt="New file package route" style="width:70%; height:auto;">
 
 ## What’s Next?
 
