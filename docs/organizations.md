@@ -87,7 +87,7 @@ To enable this Clearbit for your organization, navigate to your organization ove
 **Complementary Clearbit access is already included in your Scarf plan**
 
 | Scarf Tier | Included Clearbit calls per month                        |
-|------------|----------------------------------------------------------|     |
+|------------|----------------------------------------------------------|
 | Basic      | 10,000 calls/month included                              |
 | Premium    | 25,000 calls/month included, with pay-per-usage upgrades |
 
