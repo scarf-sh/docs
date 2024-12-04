@@ -180,7 +180,7 @@ Scarf Gateway configuration for a Python package entry has three main considerat
 Installing Python packages via requirements.txt
 Add the --extra-index-url option at the top of your requirements.txt:
 
-(''' --extra-index-url https://my-python-project-domain.com/simple/ ''')
+``` --extra-index-url https://my-python-project-domain.com/simple/ ```
 my-pkg==0.0.1
 
 NOTE: We have noticed indeterminate behavior in some versions of Pip that have resulted in the public registry being used for download regardless of the --extra-index-url addition.
