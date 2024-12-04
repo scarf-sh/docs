@@ -6,7 +6,7 @@
     > _**Note:** You can sign up with a valid email address or your GitHub account._
 - To track a container, it must be published to a public registry; eg Docker Hub, GitHub Container Registry.
 
-> **Note:** This guide will use the `hello-world` [docker image](https://hub.docker.com/_/hello-world).
+    > **Note:** This guide will use the `hello-world` [docker image](https://hub.docker.com/_/hello-world).
 
 ## Docker Packages
 
@@ -32,6 +32,7 @@ Using Scarf, users can pull your Docker container images via Scarf Gateway using
 5. Optional: You can add a custom domain or use the domain provided by Scarf Gateway.
 6. Click the `Submit` button to be redirected to a success screen with some additional information as to what you can do next.
 7. Click on on `Go to your package` to view your package details view.
+
     ![Enter the docker pull command](assets/pics/quick-start/docker-packages-succces-screen.png)
 
 Now you’re all set to start tracking your Docker images with Scarf.
@@ -48,12 +49,16 @@ In the next section, you will create a tracking pixel that can be added to your 
 In this section you will download your package with the pull command found in your package dashboard to start fetching data.
 
 1. Navigate to your package details view.
+
     ![Package dashboard](assets/pics/quick-start/docker-copy-pull-command.png)
-2. Copy the Pull command.
-3. Navigate to a terminal on your computer and run the Pull command.
+   
+3. Copy the Pull command.
+4. Navigate to a terminal on your computer and run the Pull command.
+
     ![Run Scarf pull command](assets/pics/quick-start/terminal_pull.png)
+   
     _**Note:** Make sure the docker daemon is running on your computer._
-4. Back to the package details view and click on `View Analytics`. You should now see the Package Insights starting to populate with data.
+6. Back to the package details view and click on `View Analytics`. You should now see the Package Insights starting to populate with data.
 It will usually take 30 minutes and up to 2-3 hours before you see data pulled in. Every time a user pulls your Docker container images from Scarf Gateway the data in your Package Insights will be updated.
     ![Data from packages](assets/pics/quick-start/package-analytics.png)
 
