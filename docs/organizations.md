@@ -2,7 +2,9 @@
 
 ## Creating an organization
 
-To create an organization, in the header menu click on the `Organization` button
+If you’re part of a company, open-source team, or have multiple stakeholders managing packages, converting to a Scarf Organization simplifies management and scales better than an individual account. 
+
+To create an organization, in the header menu click on the `Organization` button,
 
 ![Organization button](assets/pics/orgs/organization-button.png)
 
@@ -66,7 +68,11 @@ Et voilà! You now have new organization
 
 ![Organization page](assets/pics/orgs/organization-edit-page.png)
 
-## Managing your organization
+## Managing your Organization
+
+### Filter Settings
+
+You can manage Filter settings for your Organization by clicking into Filter Settings on your organization overview. 
 
 ### Data providers
 
@@ -82,7 +88,6 @@ To enable this Clearbit for your organization, navigate to your organization ove
 
 | Scarf Tier | Included Clearbit calls per month                        |
 |------------|----------------------------------------------------------|
-| Free       | 10,000 calls/month included (for a limited time)         |
 | Basic      | 10,000 calls/month included                              |
 | Premium    | 25,000 calls/month included, with pay-per-usage upgrades |
 
