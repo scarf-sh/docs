@@ -3,7 +3,9 @@
 ## Prerequisites
 
 - You will need to sign up for a [Scarf account](https://app.scarf.sh/register).
-    > _**Note:** You can sign up with a valid email address or your GitHub account._
+
+    > **Note:** You can sign up with a valid email address or your GitHub account.
+    
 - To track a container, it must be published to a public registry; eg Docker Hub, GitHub Container Registry.
 
     > **Note:** This guide will use the `hello-world` [docker image](https://hub.docker.com/_/hello-world).
