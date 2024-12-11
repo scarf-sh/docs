@@ -194,6 +194,6 @@ my-pkg==0.0.1
 
 NOTE: We have noticed indeterminate behavior in some versions of Pip that have resulted in the public registry being used for download regardless of the `--extra-index-url` addition.
 
-If you elect to use your own domain, you'll need to add a CNAME for that domain to `<span style="color:gray;">https://gateway.scarf.sh</span>`. Additionally we require you to verify your ownership of the domain by setting a TXT with a value that Scarf provides upon package creation. See your DNS provider's instructions for how to add CNAME and TXT records.
+If you elect to use your own domain, you'll need to add a CNAME for that domain to `gateway.scarf.sh`. Additionally we require you to verify your ownership of the domain by setting a TXT with a value that Scarf provides upon package creation. See your DNS provider's instructions for how to add CNAME and TXT records.
 
 If you have questions or need help, join our [Slack community](https://tinyurl.com/scarf-community-slack).
