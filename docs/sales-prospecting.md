@@ -1,4 +1,4 @@
-# Scarf’s Sales Prospecting Service
+# Lead Generation - Scarf’s Sales Prospecting Service
 
 In addition to identifying open-source qualified leads (OQLs), which are the companies already engaging with your OSS, Scarf can help you operationalize that data so you can focus on growing your revenue. 
 
@@ -9,10 +9,7 @@ By identifying contacts at these companies, you can better prospect for upgrades
 ## This is where Scarf’s Sales Prospecting Service comes in. 
 
 ### What is it? 
-- In addition to the company names provided in Scarf Basic, Scarf Premium users also get a custom report of contacts at those companies that meet your ideal customer profile (ICP) and key buyer personas.
-
-### Who has access to it? 
-- Customers who have purchased Scarf Premium.
+- In addition to the company names provided by Scarf, users also get a custom report of contacts at those companies that meet your ideal customer profile (ICP) and key buyer personas.
 
 ### How does it work? 
 - Scarf’s Prospecting Service is bespoke and highly customizable. Our team pulls your list of actively engaged companies and then narrows it based on your specified ICP.
@@ -41,7 +38,7 @@ By identifying contacts at these companies, you can better prospect for upgrades
     - Funnel Stage (Level of Engagement)
 
 ### How do I use it?
-- Contacts discovered through Scarf Premium are OQLs for your sales development efforts.
+- Companies discovered through Scarf are OQLs for your sales development efforts.
 - We recommend adding contacts to sales outreach campaigns based on the level of engagement (funnel stage). 
 - Contacts in early stages, such as Interest or Investigation, likely aren’t ready for a meeting. Instead, we would suggest advertising (targeted to the company) on LinkedIn or other social media where you have a strong presence to create blanket awareness.
     - Invite them to follow your LinkedIn page, X (Twitter) account, or other social media accounts.
