@@ -24,9 +24,11 @@ To create a new collection:
 
 As soon as your images are pulled, Scarf will create your package entries automatically. No additional configuration is needed as you push new containers to Artifact Registry.
 
+[Learn more about collections here.](../gateway/#creating-collections)
+
 ## Enhanced download tracking from Google Cloud Storage
 
-Create a File Package [as described](./packages.md) with a few GCP specific attributes
+Create a File Package [as described](../packages/#file-packages) with a few GCP specific attributes.
 
 For your `File location` template, enter `https://storage.googleapis.com/{bucket_name}/{object_name}`.
 
@@ -36,5 +38,5 @@ In your `Desired path format`, you can specify arbitrary formats, as long as any
 /{bucket_name}/{object}
 ```
 
-This can be customized as much as you need, or made more concrete for specific buckets or objects. Read more about [File Packages](./gateway/#file-packages) for more information.
+This can be customized further as needed, or made more concrete for specific buckets or objects. Read more about [File Packages](../gateway/#file-packages) for more information.
 
