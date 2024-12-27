@@ -6,7 +6,7 @@ Companies familiar with your OSS are more likely to respond to sales outreach; t
 
 By identifying contacts at these companies, you can better prospect for upgrades to a paid version or a commercial support plan. 
 
-## This is where Scarf’s (Lead Generation) Sales Prospecting Service comes in. 
+*This is where Scarf’s (Lead Generation) Sales Prospecting Service comes in.*
 
 ### What is it? 
 - In addition to the company names provided by Scarf, users also get a custom report of contacts at those companies who meet your ideal customer profile (ICP) and key buyer personas.
