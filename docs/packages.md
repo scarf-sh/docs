@@ -155,7 +155,7 @@ NPM Packages on Scarf are a convenient way to collect usage and event telemetry 
 ![Select package owner](assets/pics/qs-file-packages/file-package-select-owner.png)
 
 5. Give your npm package a name.
-This name should match the name of your package in the npm repository.
+This name should match the name of your package on npm, or the same as the `name` in your `package.json`.
 ![Name your package](assets/pics/qs-file-packages/file-package-name.png)
 
 6. Click **Submit**.
