@@ -6,13 +6,13 @@ Companies familiar with your OSS are more likely to respond to sales outreach; t
 
 By identifying contacts at these companies, you can better prospect for upgrades to a paid version or a commercial support plan. 
 
-## This is where Scarf’s Sales Prospecting Service comes in. 
+*This is where Scarf’s (Lead Generation) Sales Prospecting Service comes in.*
 
 ### What is it? 
-- In addition to the company names provided by Scarf, users also get a custom report of contacts at those companies that meet your ideal customer profile (ICP) and key buyer personas.
+- In addition to the company names provided by Scarf, users also get a custom report of contacts at those companies who meet your ideal customer profile (ICP) and key buyer personas.
 
 ### How does it work? 
-- Scarf’s Prospecting Service is bespoke and highly customizable. Our team pulls your list of actively engaged companies and then narrows it based on your specified ICP.
+- Scarf’s Prospecting Service is bespoke and highly customizable. Our team pulls your list of actively engaged companies and then narrows it based on your specified ICP and persona.
 - We identify key contacts at those organizations that meet your buyer persona criteria. 
 - We aim to provide at least 3 contacts per company interacting with your OSS, working very closely with you to iterate on criteria together.
 
@@ -38,7 +38,7 @@ By identifying contacts at these companies, you can better prospect for upgrades
     - Funnel Stage (Level of Engagement)
 
 ### How do I use it?
-- Companies discovered through Scarf are OQLs for your sales development efforts.
+- Contacts discovered through Scarf are OQLs for your sales development efforts.
 - We recommend adding contacts to sales outreach campaigns based on the level of engagement (funnel stage). 
 - Contacts in early stages, such as Interest or Investigation, likely aren’t ready for a meeting. Instead, we would suggest advertising (targeted to the company) on LinkedIn or other social media where you have a strong presence to create blanket awareness.
     - Invite them to follow your LinkedIn page, X (Twitter) account, or other social media accounts.
