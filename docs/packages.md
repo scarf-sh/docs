@@ -148,7 +148,7 @@ NPM Packages on Scarf are a convenient way to collect usage and event telemetry 
 2. Click the plus icon in the navigation, then select New Package.
 ![Create a new package](assets/pics/qs-file-packages/create-new-package.png)
 
-3. In the first drop-down click on the package type you would like to create. For this section you will click `npm`.
+3. In the first drop-down, select `npm` as the package type. 
 ![Create a package](assets/pics/qs-file-packages/create-file.png)
 
 4. Select the package owner from the dropdown list of Organizations you belong to.
