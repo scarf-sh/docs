@@ -44,7 +44,9 @@ nav:
 - getting-started-checklist.md
 - quick-start.md
 - gateway.md
-- organizations.md
+- Organizations:
+  - Setting up your organization: organizations.md
+  - mtc.md
 - packages.md
 - package-analytics.md
 - custom-telemetry.md

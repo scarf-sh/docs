@@ -1,0 +1,28 @@
+# Monthly Tracked Companies (MTCs)
+
+Scarf identifies which companies are viewing your documents, downloading your packages, or executing your software, and tracks their activity across the organization. These are referred to as Monthly Tracked Companies (MTCs). Scarf enriches IP addresses with several metadata sources to provide the most accurate data possible.
+
+## Consumption of MTCs
+MTCs are consumed any time a company is seen for the first time in a given month. For example, if you have purchased 100 MTCs, you will see the first 100 companies that interact with your open source and no further companies will be surfaced for the remainder of the month.
+
+NOTE: There is no way to predict which companies will surface, or how quickly. Companies are surfaced in the order they are seen, until your MTC limit is reached.
+
+Scarf will always show you the total number of companies interacting with your project at the bottom of the Company Insights page. You can update your plan's MTC quota in your Organization settings. You can also track your MTC usage by day in your Organization settings.
+
+## Match Feedback
+Match Feedback allows you to confirm, deny, or fix your company matches. Companies marked with negative match feedback will not consume MTCs the following month.
+
+## FAQ
+Q: How do I know how much of my MTC quota I’ve used?
+A: You will see a count of the currently used MTCs at the bottom of the Company Insights page.
+
+It is also available on the Organization settings page.
+
+Q: What if I want to see more of my MTCs?
+A: You can always increase the number of MTCs on your account to see more. If you are using the Scarf Starter package you can add up to 250 MTCs by going into your account Settings > Billing/Subscription and adding more. If you are using any other Scarf package, contact sales or your customer success manager for more information.
+
+Q: Why do I occasionally see fewer companies on my Scarf home page than I am allocated?
+A: Scarf’s home page will always show you metrics from the last 30 days. Because the MTC quota resets at the beginning of each month, there is sometimes a perceived “gap” in the number of companies shown on the home page in the “Events by Company” chart. While the home page is designed to provide an “at-a-glance” overview of overall activity, it may be easier to get the full picture of the companies present within a given period (within the MTC quota) by visiting the Company Insights page.
+
+Q: When I look at the results on the Company Insights page for last month (using the custom time range), I see that 3,045 of my 5,000 allocated companies are being shown. Why do I not see all 5,000 of my MTCs?
+A: Scarf displays the companies present at that point in time that are also present in the current month’s quota. In other words, 3,045 of the companies present last month are also in this month’s data. The remaining companies we matched last month are inactive in the current month’s data. As companies interact with your project in that given month, they will be added to the count until you reach your full MTC quota.
