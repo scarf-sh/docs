@@ -23,16 +23,6 @@ pip install -r requirements.txt
 mkdocs serve
 ```
 
-#### [devenv.sh](https://devenv.sh)
-
-```bash
-# drop into a shell with dependencies installed
-devenv shell
-
-# run the dev server
-devenv up
-```
-
 ### Deploy
 
 GitHub Actions are configured for this repository to deploy changes on every update to the master branch.
