@@ -13,6 +13,12 @@ Not relying on cookies has a some powerful effects:
 
 Head to your Scarf dashboard and click the + in the top-right corner, then click `New Pixel`. Give your pixel(s) a name, select an Owner to manage its scope (your organization recommended), and optionally attach it to a package you manage on Scarf. This package attachment is optional and is solely used for visualizing the statistics for a pixel and a package together on the same page within the Scarf dashboard.
 
+
+![scarf v](https://github.com/user-attachments/assets/11889d39-dcd2-4dac-80d5-8af0014e79db)
+
+![Create a pixel](https://github.com/user-attachments/assets/68a1d426-214e-43ad-9d5c-07389d17fa29)
+
+
 Pro Tip: All new pixels default to “Medium” importance. It’s a good idea to let Scarf start capturing data before determining if that needs to change.
 
 Once created, you can access this Pixel in the Tools dropdown, under Pixels. Here, you will see a full list of all your existing Pixels.
