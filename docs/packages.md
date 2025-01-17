@@ -141,7 +141,7 @@ Example:
 
 ## npm Packages
 
-NPM Packages on Scarf are a convenient way to collect usage and event telemetry from your npm packages by adding a dependncy on `[scarf-js](https://www.npmjs.com/package/@scarf/scarf)`.
+NPM Packages on Scarf are a convenient way to collect usage and event telemetry from your npm packages by adding a dependency on `[scarf-js](https://www.npmjs.com/package/@scarf/scarf)`.
 
 1. Log in to your Scarf account.
 
