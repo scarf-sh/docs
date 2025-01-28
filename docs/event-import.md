@@ -12,7 +12,7 @@ We provide three main ways to import events:
 
 <!-- prettier-ignore-start -->
 !!! Warning
-    The Event Import will only process fields **prefixed with `$`** . You will be **required** to provide date-time using the **`$time` field** at minimum (ISO or timestamp), and you may want to provide a unique identifier for each event using `$unique_id` . Note that this `$unique_id` will override previous events if reused. For importing multiple packages and pixels, you will have to provide the relevant ID through the `$package` and `$pixel` fields. See the API docs for more details: [https://api-docs.scarf.sh/v2.html#tag/External-event-import/operation/importEvents](https://api-docs.scarf.sh/v2.html#tag/External-event-import/operation/importEvents)
+    The Event Import system looks for fields **prefixed with `$`** as specific pre-defined fields which may impact the behavior of how the event is imported. Some `$` fields are required. For instance, you will be required to provide date-time using the **`$time` field** at minimum (ISO or timestamp), and you may want to provide a unique identifier for each event using `$unique_id` . Note that this `$unique_id` will override previous events if reused. For importing multiple packages and pixels, you will have to provide the relevant ID through the `$package` and `$pixel` fields. Any fields that are not prefixed with a `$` are treated as custom variables that will not impact any data processing otherwise. See the API docs for more details: [https://api-docs.scarf.sh/v2.html#tag/External-event-import/operation/importEvents](https://api-docs.scarf.sh/v2.html#tag/External-event-import/operation/importEvents)
 <!-- prettier-ignore-end -->
 
 <!-- prettier-ignore-start -->
