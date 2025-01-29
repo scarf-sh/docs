@@ -33,11 +33,6 @@ You will need to get the ID of your package from Scarf from the app or the [List
     You may want to save the ID returned from the Imports API, in case you need to cancel the import or see its status later. You can also call the imports list endpoint to get a list of your imports and their statuses even if you don’t save the ID from here.
 <!-- prettier-ignore-end -->
 
-<!-- prettier-ignore-start -->
-!!! Warning
-    The Event Import will only process fields **prefixed with `$`** . You will be **required** to provide date-time using the **`$time` field** at minimum (ISO or timestamp), and you may want to provide a unique identifier for each event using `$unique_id` . Note that this `$unique_id` will override previous events if reused.
-<!-- prettier-ignore-end -->
-
 _Example_
 
 [api.scarf.sh/v2/packages/{owner}/{package_id}/import](https://api-docs.scarf.sh/v2.html#tag/External-event-import/operation/importPackageEvents)
@@ -67,11 +62,6 @@ This will import three events into the package with ID `abc01234-…` .
 ### Importing into multiple packages and pixels
 
 Importing into multiple packages and pixels is the same as above, but require IDs from your packages and pixels. Make sure to include them in your events when your bring them into Scarf through the [Multi-Artifact Event Import endpoint.](https://api-docs.scarf.sh/v2.html#tag/External-event-import/operation/importEvents)
-
-<!-- prettier-ignore-start -->
-!!! Warning
-    The Event Import will only process fields **prefixed with `$`** . You will be **required** to provide date-time using the **`$time` field** at minimum (ISO or timestamp), and you may want to provide a unique identifier for each event using `$unique_id` . Note that this `$unique_id` will override previous events if reused. For importing multiple packages and pixels, you will have to provide the relevant ID through the `$package` and `$pixel` fields. See the API docs for more details: [https://api-docs.scarf.sh/v2.html#tag/External-event-import/operation/importEvents](https://api-docs.scarf.sh/v2.html#tag/External-event-import/operation/importEvents)
-<!-- prettier-ignore-end -->
 
 _Example_
 
