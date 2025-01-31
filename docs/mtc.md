@@ -3,7 +3,7 @@
 Scarf identifies which companies are viewing your documents, downloading your packages, or executing your software, and tracks their activity across the organization. These are referred to as Monthly Tracked Companies (MTCs). Scarf enriches IP addresses with several metadata sources to provide the most accurate data possible.
 
 ## Consumption of MTCs
-MTCs are consumed any time a company is seen for the first time in a given month. For example, if you have purchased 100 MTCs, you will see the first 100 companies that interact with your open source and no further companies will be surfaced for the remainder of the month.
+MTCs are consumed any time a company is seen for the first time in a given month. For example, if you have purchased 100 MTCs, you will see the first 100 companies that interact with your open source and no further companies will be surfaced for the remainder of the month. MTCs reset on a monthly basis at the start of the calendar month.
 
 NOTE: There is no way to predict which companies will surface, or how quickly. Companies are surfaced in the order they are seen, until your MTC limit is reached.
 
@@ -27,7 +27,7 @@ It is also available on the Organization settings page.
 
 
 Q: What if I want to see more companies?
-A: You can always increase the number of MTCs on your account to see more. If you are using the Scarf Starter package you can add up to 250 MTCs by going into your account Settings > Billing/Subscription and adding more. If you are using any other Scarf package, contact sales or your customer success manager for more information.
+A: You can always increase the number of MTCs on your account to see more. If you are using the Scarf Starter package you can add up to 500 MTCs by going into your account Settings > Billing/Subscription and adding more. If you are using any other Scarf package, contact sales or your customer success manager for more information.
 
 ![Upgrade your MTC limit](https://github.com/user-attachments/assets/e1c121d2-d5dc-434d-a39d-bdeca9e1d694)
 
