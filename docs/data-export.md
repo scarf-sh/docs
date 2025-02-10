@@ -155,6 +155,8 @@ Integrations are in development, if you have particular data sources you'd like 
 
 Schedule a daily export via the API endpoint [https://api.scarf.sh/v2/exports/{owner}/schedule-export](https://api-docs.scarf.sh/v2.html#tag/Packages/operation/scheduleExport). This export has the capability to export both raw events and company rollup aggregated data to the bucket indicated in the s3_uri_destination field. The S3 uri that you submit will be considered as the bucket name. Do not specify an object key. The service will generate the object key with the format `<events|company-rollups>-scarf-export-<start date>-<end date>.csv`. 
 
+After scheduling the export, we send a test file named `scarf-test.csv` to verify connectivity to your bucket. This file will only contain CSV headers. Once connectivity is confirmed, the export process will automatically begin sending files to your bucket at midnight UTC.
+
 **Setting up your S3 account**
 
 Create a policy that states we can assume a role. Here's an example of that policy. This example is a highly permissive role. If you want to customize the role, please refer to the proper [AWS documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-policy-language-overview.html).
