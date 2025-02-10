@@ -52,7 +52,7 @@ _import-to-package.bash_
 
 curl -v \
   -H "Authorization: Bearer {token}" \
-  -H "Content-Type: application/json" \
+  -H "Content-Type: application/ndjson" \
   -X POST https://api.scarf.sh/v2/packages/YourOrg/abc01234-0000-0000-0000-000000000000/import \
   --data-binary @events.ndjson
 ```
@@ -82,12 +82,31 @@ _import-multiple-artifacts.bash_
 
 curl -v \
   -H "Authorization: Bearer {token}" \
-  -H "Content-Type: application/json" \
+  -H "Content-Type: application/ndjson" \
   -X POST https://api.scarf.sh/v2/YourOrg/import
   --data-binary @events.ndjson
 ```
 
 This will import three events into the package with ID `abc01234-…` .
+
+### Importing compressed files
+Compress your file by doing the following command
+```bash
+gzip -k events.ndjson
+```
+This will output `events.ndjson.gz` and retain the uncompressed file.
+
+Here's an example of how to import a compressed file via curl. Reference the compressed file and make sure to specify the `Content-Encoding` header to `gzip` so our api will recognize that a compressed file is being imported.
+```bash
+#!/usr/bin/env bash
+
+curl -v \
+  -H "Authorization: Bearer {token}" \
+  -H "Content-Type: application/ndjson" \
+  -H "Content-Encoding: gzip" \
+  -X POST https://api.scarf.sh/v2/packages/YourOrg/abc01234-0000-0000-0000-000000000000/import \
+  --data-binary @events.ndjson.gz
+```
 
 ## Checking Import Status
 
