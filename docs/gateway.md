@@ -238,7 +238,11 @@ Downloads will typically show up in your dashboard in 30 minutes and up to 2-3 h
 
 **Is there an API I can use to pull my stats, manage my packages, etc?**
 
-Yes! See [our API documentation](https://api-docs.scarf.sh/v2.html) for more information.
+Yes! See [our API documentation](https://api-docs.scarf.sh/v2.html** for more information.
+
+**Is it possible to overwrite the IP adress used for a gateway event?**
+
+Yes, simply set the `X-Scarf-IP` header to overwrite the IP that will be associated with the request. For bulk event imports, use the `$remote_address` field in your event JSON payload.
 
 **I have more questions, where is the best place to ask?**
 
