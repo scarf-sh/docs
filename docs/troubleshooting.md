@@ -70,6 +70,12 @@ Due to the way the OCI spec is defined, Scarf is only able to map your public do
 
 See `Tools` -> `Packages` -> `Management` to bulk configure your packages. If you have a Collection set up, you'll also need to update it.
 
+#### Where can I generate an API access token?
+
+API tokens are managed at the user level and can be found in your account settings [here](https://app.scarf.sh/account).
+
+To locate your API token quickly, open the page and use Cmd + F (or Ctrl + F on Windows) to search for "API"—you’ll find it about halfway down the page.
+
 
 ## Data and analytics
 
