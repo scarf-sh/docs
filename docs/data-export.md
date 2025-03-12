@@ -152,12 +152,19 @@ For more details, you can visit the [GitHub repository](https://github.com/scarf
 Integrations are in development, if you have particular data sources you'd like Scarf to integrate with, we'd love to hear from you.
 
 ## Daily Scheduled Exports
+In your organization settings, fill in the details for the export.
 
-Schedule a daily export via the API endpoint [https://api.scarf.sh/v2/exports/{owner}/schedule-export](https://api-docs.scarf.sh/v2.html#tag/Packages/operation/scheduleExport). This export has the capability to export both raw events and company rollup aggregated data to the bucket indicated in the s3_uri_destination field. The S3 uri that you submit will be considered as the bucket name. Do not specify an object key. The service will generate the object key with the format `<events|company-rollups>-scarf-export-<start date>-<end date>.csv`. 
+Scheduling an export can also be done with our REST endpoint [https://api.scarf.sh/v2/exports/{owner}/schedule-export](https://api-docs.scarf.sh/v2.html#tag/Packages/operation/scheduleExport)
+
+We can export both raw events and company rollups.
 
 After scheduling the export, we send a test file named `scarf-test.csv` to verify connectivity to your bucket. This file will only contain CSV headers. Once connectivity is confirmed, the export process will automatically begin sending files to your bucket at midnight UTC.
 
+### AWS S3 Integration
+
 **Setting up your S3 account**
+
+The S3 uri that you submit will be considered as the bucket name. Do not specify an object key. The service will generate the object key with the format `<events|company-rollups>-scarf-export-<start date>-<end date>.csv`.
 
 Create a policy that states we can assume a role. Here's an example of that policy. This example is a highly permissive role. If you want to customize the role, please refer to the proper [AWS documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-policy-language-overview.html).
 ```json
@@ -209,3 +216,26 @@ After creating the role, go to the "Trust relationships" and add the following t
 The ARN role is what you will need in the `arn_role` [api field](https://api-docs.scarf.sh/v2.html#tag/Packages/operation/scheduleExport).
 
 This is not an exhaustive documentation of how to setup a shared s3 bucket. Please refer to the [AWS documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-policy-language-overview.html) for more information.
+
+### Google Storage Integration
+
+Before going through the steps of setting up an integration with scarf, ensure your google cloud account has `Service Account Credentials API` enabled. We will be using [service account impersonation](https://cloud.google.com/docs/authentication/use-service-account-impersonation) so we can integrate with your google account.
+
+Create a service account. You can can do this by following these steps.
+1. Go to the `IAM & Admin` page.
+2. Select `Service Accounts`.
+3. Click on `+ CREATE SERVICE ACCOUNT`.
+4. Fill in the details. 
+5. Grant the service account with the following roles:
+    * Storage Object User
+6. Click done, and you should be done creating the service account 🎉
+
+After creating the service account, grant scarf access to that service account by doing the following.
+1. Select the service account.
+2. Under the `PERMISSIONS` tab, you should see `GRANT ACCESS`. Click on it.
+3. After clicking `GRANT ACCESS`, you should see an input box for `New principals`.
+4. Add our account `storage@scarf-integration.iam.gserviceaccount.com`.
+5. Grant the scarf account the following role:
+    * Service Account Token Creator
+
+We will be streaming the content of the exports in chunks and using google storage's [compose api](https://cloud.google.com/storage/docs/composing-objects) to stitch all the chunks in a file. So for a brief moment you might see multiple temporary objects in the bucket you have provided us.
