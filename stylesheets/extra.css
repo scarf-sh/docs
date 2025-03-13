@@ -1,0 +1,122 @@
+:root {
+  --scarf-color-pink-500: #E74694;
+  --scarf-color-alert-500: #D81644;
+  --scarf-color-yellow-500: #FACA15;
+  --scarf-color-warning-500: #FDB022;
+  --scarf-color-success-500: #4DBB72;
+  --scarf-color-success-900: #0E5945;
+  --scarf-color-green-500: #31C48D;
+  --scarf-color-green-700: #188D78;
+  --scarf-color-green-900: #095C5E;
+  --scarf-color-blue-light-500: #97E0FF;
+  --scarf-color-blue-500: #0572F1;
+  --scarf-color-blue-dark-500: #113BA9;
+  --scarf-color-purple-500: #9061F9;
+  --scarf-color-gray-900: #111928;
+  --scarf-color-gray-800: #222B4A;
+  --scarf-color-gray-700: #35405C;
+  --scarf-color-gray-500: #6B7280;
+  --scarf-color-gray-300: #C3CCD8;
+  --scarf-color-gray-200: #E2E9F2;
+  --scarf-color-gray-100: #F0F4F8;
+  --scarf-color-font-dark: #101828;
+  --scarf-color-font-light: #FFFFFF;
+
+  --md-text-font: "Roboto";
+  --md-code-font: "Roboto Mono";
+
+  --md-default-fg-color: var(--scarf-color-font-dark);
+  --md-default-fg-color--light: var(--scarf-color-gray-900);
+  --md-default-fg-color--lighter: var(--scarf-color-gray-800);
+  --md-default-fg-color--lightest: var(--scarf-color-gray-700);
+  --md-default-bg-color: var(--scarf-color-font-light);
+  --md-default-bg-color--light: var(--scarf-color-gray-100);
+  --md-default-bg-color--lighter: var(--scarf-color-gray-200);
+  --md-default-bg-color--lightest: var(--scarf-color-gray-300);
+
+  --md-primary-fg-color: var(--scarf-color-blue-500);
+  --md-primary-fg-color--light: var(--scarf-color-blue-dark-500);
+  --md-primary-fg-color--dark:  var(--scarf-color-blue-light-500);
+  --md-primary-bg-color: var(--scarf-color-font-light);
+  --md-primary-bg-color--light: #ffffffb3;
+
+  --md-accent-fg-color: var(--scarf-color-blue-500);
+  --md-accent-fg-color--transparent: #526cfe1a;
+  --md-accent-bg-color: var(--scarf-color-font-light);
+  --md-accent-bg-color--light: #ffffffb3;
+
+  --md-code-fg-color: var(--scarf-color-font-dark);
+  --md-code-bg-color: var(--scarf-color-font-light);
+  --md-code-hl-color: var(--scarf-color-yellow-500);
+  --md-code-hl-number-color: var(--scarf-color-alert-500);
+  --md-code-hl-special-color: var(--scarf-color-pink-500);
+  --md-code-hl-function-color: var(--scarf-color-blue-dark-500);
+  --md-code-hl-constant-color: var(--scarf-color-purple-500);
+  --md-code-hl-keyword-color: var(--scarf-color-blue-500);
+  --md-code-hl-string-color: var(--scarf-color-green-900);
+  --md-code-hl-name-color: var(--md-code-fg-color);
+  --md-code-hl-operator-color: var(--md-default-fg-color--light);
+  --md-code-hl-punctuation-color: var(--md-default-fg-color--light);
+  --md-code-hl-comment-color: var(--md-default-fg-color--light);
+  --md-code-hl-generic-color: var(--md-default-fg-color--light);
+  --md-code-hl-variable-color: var(--md-default-fg-color--light);
+
+  --md-typeset-color: var(--md-default-fg-color);
+  --md-typeset-a-color: var(--md-primary-fg-color);
+  --md-typeset-a-color--light: var(--md-primary-fg-color--light);
+  --md-typeset-a-color--dark: var(--md-primary-fg-color--dark);
+  --md-typeset-mark-color: var(--scarf-color-warning-500);
+  --md-typeset-del-color: #f5503d26;
+  --md-typeset-ins-color: var(--scarf-color-success-500);
+  --md-typeset-kbd-color: var(--scarf-color-gray-100);
+  --md-typeset-kbd-accent-color: var(--scarf-color-font-light);
+  --md-typeset-kbd-border-color: var(--scarf-color-gray-500);
+  --md-typeset-table-color: var(--scarf-color-font-dark);
+
+  --md-admonition-fg-color: var(--md-default-fg-color);
+  --md-admonition-bg-color: var(--md-default-bg-color);
+
+  --md-footer-fg-color: var(--scarf-color-font-light);
+  --md-footer-fg-color--light: var(--md-default-bg-color--light);
+  --md-footer-fg-color--lighter: var(--md-default-bg-color--lighter);
+  --md-footer-bg-color: var(--scarf-color-font-dark);
+  --md-footer-bg-color--dark: var(--md-default-bg-color--dark);
+
+  --md-shadow-z1: 0 0.2rem 0.5rem #0000000d,0 0 0.05rem #0000001a;
+  --md-shadow-z2: 0 0.2rem 0.5rem #0000001a,0 0 0.05rem #00000040;
+  --md-shadow-z3: 0 0.2rem 0.5rem #0003,0 0 0.05rem #00000059;
+}
+
+[data-md-color-primary=indigo] {
+  --md-primary-fg-color--light: var(--scarf-color-blue-dark-500);
+  --md-primary-fg-color--dark:  var(--scarf-color-blue-light-500);
+}
+
+.md-header__button.md-logo img, .md-header__button.md-logo svg {
+  color: var(--scarf-color-font-light);
+  height: 1.2rem;
+  width: auto;
+}
+
+.md-ellipsis {
+  display: none;
+}
+
+/* A hack to get mkdocs-render-swagger-plugin to play nice with mkdocs dark
+mode. Gets the job done for now */
+[data-md-color-scheme="slate"] h1, [data-md-color-scheme="slate"] h2, [data-md-color-scheme="slate"] h3 {
+  color: var(--scarf-color-font-light) !important;
+}
+
+[data-md-color-scheme="slate"] .swagger-ui .header-example, [data-md-color-scheme="slate"]  p, [data-md-color-scheme="slate"]  .header-col, [data-md-color-scheme="slate"]  .response-col_status, [data-md-color-scheme="slate"]  .tabitem, [data-md-color-scheme="slate"]  .response-col_links, [data-md-color-scheme="slate"]  .response-col_description, [data-md-color-scheme="slate"]  .response+ .response p, [data-md-color-scheme="slate"]  tr+ tr .parameters-col_name, [data-md-color-scheme="slate"]  .parameter__in, [data-md-color-scheme="slate"]  .required, [data-md-color-scheme="slate"]  .parameter__type, [data-md-color-scheme="slate"]  .col_header, [data-md-color-scheme="slate"]  .model-box, [data-md-color-scheme="slate"]  .model-title__text, [data-md-color-scheme="slate"]  .model-title, [data-md-color-scheme="slate"]  .prop-enum, [data-md-color-scheme="slate"]  .opblock-summary-path, [data-md-color-scheme="slate"]  .opblock-summary-description, [data-md-color-scheme="slate"]  .info__license {
+  color: var(--scarf-color-font-light) !important;
+}
+
+[data-md-color-scheme="default"] .md-typeset a,
+[data-md-color-scheme="default"] .md-nav__link--active {
+  color: var(--md-primary-fg-color--light);
+}
+[data-md-color-scheme="slate"] .md-typeset a,
+[data-md-color-scheme="slate"] .md-nav__link--active {
+  color: var(--md-primary-fg-color--dark);
+}
