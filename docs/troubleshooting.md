@@ -89,3 +89,9 @@ IP -> Company matching is an imperfect approach and incorrect matches do happen.
 Over time, low confidence scores are outweighed by observing company traffic in aggregate over a longer period of time rather than over-indexing on a single one-off event.
 
 If you're seeing persistent issues with a particular company or IP address, let us know so we can update our records accordingly and ensure high accuracy of matches.
+
+## Scarf Gateway
+
+#### Pi-hole seems to be blocking me/my users from pulling artifacts through Scarf Gateway.
+
+Pi-hole loads analytics-specific block-lists, which may contain Scarf URLs which cause downloads through the gateway to fail. If using Pi-hole, you'll need to explicitly allow `*.scarf.sh` in your Pi-hole configuration. See their [docs](https://docs.pi-hole.net/main/pihole-command/) for more information explicitly allowing domains.
