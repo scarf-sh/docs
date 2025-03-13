@@ -92,6 +92,6 @@ If you're seeing persistent issues with a particular company or IP address, let 
 
 ## Scarf Gateway
 
-#### Pi-hole seems to be blocking me/my users from pulling artifacts through Scarf Gateway.
+#### DNS-based network blocking tools seem to be blocking me/my users from pulling artifacts through Scarf Gateway.
 
-Pi-hole loads analytics-specific block-lists, which may contain Scarf URLs which cause downloads through the gateway to fail. If using Pi-hole, you'll need to explicitly allow `*.scarf.sh` in your Pi-hole configuration. See their [docs](https://docs.pi-hole.net/main/pihole-command/) for more information explicitly allowing domains.
+Some DNS-based network blockers (eg, Pi-hole) are able to pull in analytics-specific block-lists, which may contain Scarf URLs which cause downloads through the gateway to fail. If one of these lists is blocking downloads through Scarf Gateway, you'll need to explicitly allow `*.scarf.sh` in your tool configuration.
