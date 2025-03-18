@@ -108,3 +108,4 @@ The basic CRM connection allows you to pair Scarf Surfaced Companies with Accoun
 | Scarf Sources MoM      | Scarf_total_unique_sources_MoM__c | number    | Change in Unique Sources over the previous Month |
 | Scarf Sources WoW      | Scarf_total_unique_sources_WoW__c | number    | Change in Unique Sources over the Previous Week |
 
+For a detailed guide on how to make the most of your Salesforce integration, check out our [Salesforce Integration Playbook](https://about.scarf.sh/post/sync-scarf-data-with-salesforce). It walks you through configuring the connection, matching and syncing companies.
