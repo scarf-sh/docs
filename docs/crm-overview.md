@@ -55,6 +55,7 @@ You may also click on `View logs` for the verbose output of the synchronization 
 **NOTE:** Sync history is retained for 30 days, after which records will be automatically deleted.
 
 The **Recent CRM Sync History** table provides a summary of each synchronization event. It includes the following columns:
+
 -   **Date** – The timestamp of when the sync event occurred.
 -   **Total** – A breakdown of the actions performed during the sync. This includes:
 	-   **Created** – The number of new accounts created in your CRM.
