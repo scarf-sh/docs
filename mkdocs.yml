@@ -56,7 +56,8 @@ nav:
 - sales-prospecting.md
 - event-import.md
 - data-export.md
-- crm-overview.md
+- CRM Integrations:
+  - crm-overview.md
   - salesforce.md
   - hubspot.md
 - user_best_practices.md
