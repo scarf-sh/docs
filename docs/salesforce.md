@@ -19,45 +19,44 @@
 ## Implementation Process
 
 ### Connection and Authentication
-1.  Login to Scarf as a user with Owner or Admin permissions.
-2.  Navigate to `Organization Settings` -> `Integrations`.
+1. Login to Scarf as a user with Owner or Admin permissions.
+2. Navigate to `Organization Settings` -> `Integrations`.
 
 <p align="center">
   <img src="https://static-assets.scarf.sh/docs/1%20-%20hubspot%20-%20salesforce%20-%20integrations%20button.png" alt="Hubspot Salesforce Integrations Button">
 </p>
 
-3.  Select `Connect CRM Instance`, confirm you want to sync companies and click `Finish linking CRM`.
+3. Select `Connect CRM Instance`, confirm you want to sync companies and click `Finish linking CRM`.
 
 <p align="center">
   <img src="https://static-assets.scarf.sh/docs/2%20-%20hubspot%20-%20salesforce%20-%20connect%20button.png" alt="Hubspot Salesforce Connect Button">
 </p>
 
-4.  Click `Salesforce` from the `Select integration` menu.
+4. Click `Salesforce` from the `Select integration` menu.
 
 <p align="center">
   <img src="https://static-assets.scarf.sh/docs/Salesforce/1%20-%20salesforce%20-%20select.png" alt="Salesforce Select">
 </p>
 
-5.  Review the presented data permissions, and click `Next`.
+5. Review the presented data permissions, and click `Next`.
   
 <p align="center">
   <img src="https://static-assets.scarf.sh/docs/Salesforce/2%20-%20salesforce%20-%20data%20permissions.png" alt="Salesforce Data Permissions">
 </p>
 
-
-6.  When prompted, enter your Salesforce subdomain, and click `Next`.
+6. When prompted, enter your Salesforce subdomain, and click `Next`.
 
 <p align="center">
   <img src="https://static-assets.scarf.sh/docs/Salesforce/3%20-%20salesforce%20-%20subdomain.png" alt="Salesforce Subdomain">
 </p>
 
-7.  You will now be prompted to log in to your Salesforce account.
+7. You will now be prompted to log in to your Salesforce account.
     
 <p align="center">
   <img src="https://static-assets.scarf.sh/docs/Salesforce/4%20-%20salesforce%20-%20login.png" alt="Salesforce Login">
 </p>
 
-8.  Once you enter your Salesforce credentials, Scarf will establish a connection with your Salesforce instance.
+8. Once you enter your Salesforce credentials, Scarf will establish a connection with your Salesforce instance.
 
 <p align="center">
   <img src="https://static-assets.scarf.sh/docs/Salesforce/5%20-%20salesforce%20-%20success.png" alt="Salesforce Success">
