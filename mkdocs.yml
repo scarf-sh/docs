@@ -75,6 +75,7 @@ markdown_extensions:
   admonition: {}
   pymdownx.superfences: {}
   tables: {}
+  sane_lists: {}
 
 # Customization
 extra:
