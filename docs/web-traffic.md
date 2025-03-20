@@ -36,6 +36,12 @@ The speed of domain verification will depend on how fast your DNS provider propa
 
 Once created, you can access this Pixel in the Tools dropdown, under Pixels. Here, you will see a full list of all your existing Pixels.
 
+### Tracking Pixel Custom Domains
+
+Multiple domains can be added to a tracking pixels. In the same menu, tracking pixel domains can be removed.
+
+![custom domain update](./assets/pics/scarf-pixels/tracking-pixel-add-delete.png)
+
 ## Embedding and using the pixel
 
 Head to your Scarf dashboard and, in the Tools dropdown, select Pixels. Click Copy Pixel Snippet to copy the `<img>` tag to your clipboard, and then paste the tag into your project's README, docs, and any other web properties where you want to gather insights into who is using your documentation pages.
