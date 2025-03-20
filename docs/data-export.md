@@ -222,6 +222,7 @@ This is not an exhaustive documentation of how to setup a shared s3 bucket. Plea
 Before going through the steps of setting up an integration with scarf, ensure your google cloud account has `Service Account Credentials API` enabled. We will be using [service account impersonation](https://cloud.google.com/docs/authentication/use-service-account-impersonation) so we can integrate with your google account.
 
 Create a service account. You can can do this by following these steps.
+
 1. Go to the `IAM & Admin` page.
 2. Select `Service Accounts`.
 3. Click on `+ CREATE SERVICE ACCOUNT`.
@@ -231,6 +232,7 @@ Create a service account. You can can do this by following these steps.
 6. Click done, and you should be done creating the service account 🎉
 
 After creating the service account, grant scarf access to that service account by doing the following.
+
 1. Select the service account.
 2. Under the `PERMISSIONS` tab, you should see `GRANT ACCESS`. Click on it.
 3. After clicking `GRANT ACCESS`, you should see an input box for `New principals`.
