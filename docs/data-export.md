@@ -213,7 +213,7 @@ After creating the role, go to the "Trust relationships" and add the following t
 }
 ```
 
-If you want to use an `ExternalId`, your trust policy should be modified to look like below
+If you want to use an `ExternalId`, your trust policy should be modified to look like the example below:
 ```json
 {
     "Version": "2012-10-17",
