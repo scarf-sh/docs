@@ -213,6 +213,27 @@ After creating the role, go to the "Trust relationships" and add the following t
 }
 ```
 
+If you want to use an `ExternalId`, your trust policy should be modified to look like below
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::032190491485:user/production-v2-scarf-server"
+            },
+            "Action": "sts:AssumeRole",
+            "Condition": {
+                "StringEquals": {
+                    "sts:ExternalId": "<can be any string>"
+                }
+            }
+        }
+    ]
+}
+```
+
 The ARN role is what you will need in the `arn_role` [api field](https://api-docs.scarf.sh/v2.html#tag/Packages/operation/scheduleExport).
 
 This is not an exhaustive documentation of how to setup a shared s3 bucket. Please refer to the [AWS documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-policy-language-overview.html) for more information.
