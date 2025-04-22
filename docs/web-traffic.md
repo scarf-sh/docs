@@ -37,7 +37,9 @@ Learn how to use Scarf Pixels for documentation insights in this [playbook](http
 
 ## Pixels and Single-Page-Application (SPA) sites
 
-If you want your pixel to be triggered on any page view within an SPA, there are two options:
+SPAs can sometimes be an initial challenge for a tracking pixel based approach if the pixel is not being re-loaded when user navigates to a new page. If your pixel is placed in your site's footer, for instance, it may not be re-loaded when a user navigates to a new page.
+
+To ensure your pixel will be triggered on any page view within an SPA, there are two options:
 
 1. If you have a standard template for each page's dynamic content, you can insert your pixel into that template, so it is re-rendered anytime the page changes
 2. Use the following script (or similar) to dynamically load your pixel on page change:
