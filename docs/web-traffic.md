@@ -60,11 +60,6 @@ To ensure your pixel will be triggered on any page view within an SPA, there are
         img.src = url;
       }
 
-      function handleLocationChange() {
-        updatePageTitle();
-        sendScarfPing();
-      }
-
       ['pushState', 'replaceState'].forEach(fn => {
         const original = history[fn];
         history[fn] = function () {
@@ -73,10 +68,10 @@ To ensure your pixel will be triggered on any page view within an SPA, there are
         };
       });
 
-      window.addEventListener('hashchange', handleLocationChange);
-      window.addEventListener('popstate', handleLocationChange);
-      window.addEventListener('scarf:locationchange', handleLocationChange);
+      window.addEventListener('hashchange', sendScarfPing);
+      window.addEventListener('popstate', sendScarfPing);
+      window.addEventListener('scarf:locationchange', sendScarfPing);
 
-      handleLocationChange(); // initial page load
+      sendScarfPing(); // initial page load
     })();
 ```
