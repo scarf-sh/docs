@@ -34,3 +34,47 @@ Head to your Scarf dashboard and, in the Tools dropdown, select Pixels. Click Co
 Scarf pixel tracking will work on standard web pages, rendered markdown documentation on package registry sites like Docker Hub, npm, and PyPI, and anywhere an image can be embedded, but a place with notably less visibility is GitHub. When GitHub renders markdown, it rewrites any image URLs from their original web address to `https://camo.githubusercontent.com/$`, where GitHub hosts any linked images themselves. This prevents Scarf from providing insights like company information to maintainers, since the end-user information is obfuscated from Scarf.
 
 Learn how to use Scarf Pixels for documentation insights in this [playbook](https://about.scarf.sh/post/track-your-projects-documentation-views).
+
+## Pixels and Single-Page-Application (SPA) sites
+
+If you want your pixel to be triggered on any page view within an SPA, there are two options:
+
+1. If you have a standard template for each page's dynamic content, you can insert your pixel into that template, so it is re-rendered anytime the page changes
+2. Use the following script (or similar) to dynamically load your pixel on page change:
+
+```javascript
+    (function () {
+      const pixelID = '<your pixelID>';
+      let lastHref = null;
+
+      function sendScarfPing() {
+        const currentHref = window.location.href;
+        if (currentHref === lastHref) return;
+        lastHref = currentHref;
+
+        const url = `https://static.scarf.sh/a.png?x-pxid=${pixelID}`;
+        const img = new Image();
+        img.referrerPolicy = 'no-referrer-when-downgrade';
+        img.src = url;
+      }
+
+      function handleLocationChange() {
+        updatePageTitle();
+        sendScarfPing();
+      }
+
+      ['pushState', 'replaceState'].forEach(fn => {
+        const original = history[fn];
+        history[fn] = function () {
+          original.apply(this, arguments);
+          window.dispatchEvent(new Event('scarf:locationchange'));
+        };
+      });
+
+      window.addEventListener('hashchange', handleLocationChange);
+      window.addEventListener('popstate', handleLocationChange);
+      window.addEventListener('scarf:locationchange', handleLocationChange);
+
+      handleLocationChange(); // initial page load
+    })();
+```
