@@ -11,7 +11,7 @@ Not relying on cookies has a some powerful effects:
 
 ## Creating a pixel
 
-Head to your Scarf dashboard and click the + in the top-right corner, then click `New Pixel`. Give your pixel(s) a name, select an Owner to manage its scope (your organization recommended), and optionally attach it to a package you manage on Scarf. This package attachment is optional and is solely used for visualizing the statistics for a pixel and a package together on the same page within the Scarf dashboard.
+Head to your Scarf dashboard and click the + in the top-right corner, then click `New Pixel`. Give your pixel(s) a name, select an Owner to manage its scope (your organization is recommended), and optionally attach it to a package you manage on Scarf. This package attachment is optional and is solely used for visualizing the statistics for a pixel and a package together on the same page within the Scarf dashboard.
 
 
 ![scarf v](https://github.com/user-attachments/assets/11889d39-dcd2-4dac-80d5-8af0014e79db)
@@ -21,7 +21,26 @@ Head to your Scarf dashboard and click the + in the top-right corner, then click
 
 Pro Tip: All new pixels default to “Medium” importance. It’s a good idea to let Scarf start capturing data before determining if that needs to change.
 
+
+By default, pixels are hosted in `static.scarf.sh`. You can use your own domain by filling in the domain field.
+
+![create pixel with custom domain](./assets/pics/scarf-pixels/create-a-pixel-with-custom-domain.png)
+
+After creating the pixel with a custom domain, instructions will be provided on how to verify your domain.
+
+![pixel custom domain instructions](./assets/pics/scarf-pixels/pixel-custom-domain-instructions.png)
+
+The speed of domain verification will depend on how fast your DNS provider propagates the domain changes. When your domain is verified you should see this indicator.
+
+![pixel custom domain verified](./assets/pics/scarf-pixels/pixel-domain-verified.png)
+
 Once created, you can access this Pixel in the Tools dropdown, under Pixels. Here, you will see a full list of all your existing Pixels.
+
+### Tracking Pixel Custom Domains
+
+Multiple domains can be added to a tracking pixels. In the same menu, tracking pixel domains can be removed.
+
+![custom domain update](./assets/pics/scarf-pixels/tracking-pixel-add-delete.png)
 
 ## Embedding and using the pixel
 

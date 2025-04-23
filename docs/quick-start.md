@@ -60,6 +60,7 @@ In the next section, you will create a tracking pixel that can be added to your 
 ### Creating a Tracking Pixel for Your Package
 
 How the Package-Pixel Pair Works:
+
 - Package Distribution: When users install your package, metadata like download source, volume, and timing can be routed through Scarf's infrastructure (e.g., via Scarf Gateway).
 - Pixel Integration: The pixel is included in the package or its associated documentation. When the pixel is triggered, it records usage events, similar to a web analytics tracker.
 
