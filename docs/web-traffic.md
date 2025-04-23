@@ -2,7 +2,7 @@
 
 ## How it works
 
-Scarf gathers web traffic insights via a simple transparent, cookie-free, tracking pixel. You copy an <img> tag from Scarf into your project's README, docs, website, or any other web property. Any time a user views content with your Scarf pixel, Scarf will look up any business metadata associated with the address and surface that information to you (and only you) via your Scarf account. Scarf does not store the IP address itself, so no personally identifiable information is retained.
+Scarf gathers web traffic insights via a simple transparent, cookie-free, tracking pixel. You copy an `<img>` tag from Scarf into your project's README, docs, website, or any other web property. Any time a user views content with your Scarf pixel, Scarf will look up any business metadata associated with the address and surface that information to you (and only you) via your Scarf account. Scarf does not store the IP address itself, so no personally identifiable information is retained.
 
 Not relying on cookies has a some powerful effects:
 
