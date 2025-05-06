@@ -46,15 +46,18 @@ Multiple domains can be added to a tracking pixels. In the same menu, tracking p
 
 Head to your Scarf dashboard and, in the Tools dropdown, select Pixels. Click Copy Pixel Snippet to copy the `<img>` tag to your clipboard, and then paste the tag into your project's README, docs, and any other web properties where you want to gather insights into who is using your documentation pages.
 
-## Caveats
+### Google Tag Manager (GTM)
 
-### Sources
+Using Scarf pixels with Google Tag Manager works easily but requires one additional configuration step beyond simply dropping in your pixel URL. 
 
-Scarf pixel tracking will work on standard web pages, rendered markdown documentation on package registry sites like Docker Hub, npm, and PyPI, and anywhere an image can be embedded, but a place with notably less visibility is GitHub. When GitHub renders markdown, it rewrites any image URLs from their original web address to `https://camo.githubusercontent.com/$`, where GitHub hosts any linked images themselves. This prevents Scarf from providing insights like company information to maintainers, since the end-user information is obfuscated from Scarf.
+| Field      | Value                                      | Example                                                    |
+|------------|--------------------------------------------|------------------------------------------------------------|
+| Tag Type   | Custom Image Tag                           | --                                                         |
+| Image URL  | `<your Scarf pixel URL>&Page={{Page URL}}` | https://static.scarf.sh/a.png?x-pxid=123&Page={{Page URL}} |
+| Triggering | Page View - All Pages                      | --                                                         |
+|            |                                            |                                                            |
 
-Learn how to use Scarf Pixels for documentation insights in this [playbook](https://about.scarf.sh/post/track-your-projects-documentation-views).
-
-## Pixels and Single-Page-Application (SPA) sites
+### Pixels and Single-Page-Application (SPA) sites
 
 SPAs can sometimes be an initial challenge for a tracking pixel based approach if the pixel is not being re-loaded when user navigates to a new page. If your pixel is placed in your site's footer, for instance, it may not be re-loaded when a user navigates to a new page.
 
@@ -94,3 +97,11 @@ To ensure your pixel will be triggered on any page view within an SPA, there are
       sendScarfPing(); // initial page load
     })();
 ```
+
+## Caveats
+
+### Sources
+
+Scarf pixel tracking will work on standard web pages, rendered markdown documentation on package registry sites like Docker Hub, npm, and PyPI, and anywhere an image can be embedded, but a place with notably less visibility is GitHub. When GitHub renders markdown, it rewrites any image URLs from their original web address to `https://camo.githubusercontent.com/$`, where GitHub hosts any linked images themselves. This prevents Scarf from providing insights like company information to maintainers, since the end-user information is obfuscated from Scarf.
+
+Learn how to use Scarf Pixels for documentation insights in this [playbook](https://about.scarf.sh/post/track-your-projects-documentation-views).
