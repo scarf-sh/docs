@@ -102,6 +102,9 @@ The company data export includes the following data fields.
 | **experimentation_start_date** | `text` `format: yyyy-mm-dd` | Date when a company started in the *experimentation* funnel_stage                                 |
 | **ongoing_usage_start_date**   | `text` `format: yyyy-mm-dd` | Date when a company started in the *ongoing usage* funnel_stage                                   |
 | **inactive_start_date**        | `text` `format: yyyy-mm-dd` | Date when a company started in the *inactive* funnel_stage                                        |
+| **scarf_url**                  | `text`                      | URL to the Scarf dashboard page for this company's activity                                       |
+| **package_totals**             | `text`                      | A string of <package_name>=<download total> pairs, in query parameter format (ie, `&` delimited)  |
+| **tracking_pixel_totals**      | `text`                      | A string of <pixel_name>=<view total> pairs, in query parameter format (ie, `&` delimited)        |
 
 ## How to Export Company Events
 
