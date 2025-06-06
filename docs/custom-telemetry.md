@@ -144,5 +144,6 @@ pub async fn report_to_scarf() {
 ## Best Practices and Recommendations
 
 - Manage user consent via environment variable and any configuration your project already offers. Make it easy for your users to opt in/out by giving them multiple options if possible.
-- Never interrupt the user
-- Set aggressive timeouts for calls
+  - `DO_NOT_TRACK` is a common environment variable to check for opt out.
+- Never interrupt the user.
+- Set aggressive timeouts for all network calls for telemetry.
