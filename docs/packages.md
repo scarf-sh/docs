@@ -90,10 +90,10 @@ File Packages on Scarf are a flexible and low-level package type that can track 
 ![Name your package](assets/pics/qs-file-packages/file-package-name.png)
 
 ### Adding an Outgoing and Incoming URL
-This section explains what the Outgoing and Incoming URLs are and how to use a URL template.
+This section explains what the Outgoing and Incoming URLs are and how to use a URL template to dynamically route new URLs.
 
 1.) Add the URL path where your files are currently located. You can add a simple URL or a URL template like in the example. `https://www.example.com/mypath/{version}/{platform}.tar.gz`
-This example uses 2 variables `{version}` and `{platform}`.
+This example uses 2 [variables](/gateway/#variables) `{version}` and `{platform}`.
  > Note: The Outgoing URL is the full URL to your asset on your HTTP/S hosting provider. It can be a URL template but if you use variables in your URL they need to also be used in your Incoming Path that define in the next step.
 
 ![path where files are located](assets/pics/qs-file-packages/file-package-outgoing-url.png)

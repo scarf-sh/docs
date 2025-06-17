@@ -56,12 +56,51 @@ File Packages on Scarf are a flexible and low-level package type that can track 
 Scarf Gateway configuration for a file package entry has a few main considerations:
 
 - **Domain**: Just like Docker container images, you may choose to use your own domain(s) for serving files. You may also choose to use `<username>.gateway.scarf.sh` provided by default by Scarf. Remember, if you elect to use your own domain, you'll need to add a CNAME for that domain to `gateway.scarf.sh` as well as verify ownership of that domain.
-- **Incoming Path**: This refers to where a path on a given domain where Scarf will direct requests to fetch a file asset. This could be static path like `/downloads/rocket-skates.tar.gz` or a template path with variables like `/files/{version}/{platform}/rocket-skates-{platform}-{version}.tar.gz`. You may use variables in your incoming path as specified in [RFC 6570](https://datatracker.ietf.org/doc/html/rfc6570). You can modify a path value later, but be careful to communicate to your users because this would be a breaking change.
+- **Incoming Path**: This refers to where a path on a given domain where Scarf will direct requests to fetch a file asset. This could be static path like `/downloads/rocket-skates.tar.gz` or a template path with variables like `/files/{version}/{platform}/rocket-skates-{platform}-{version}.tar.gz`. You may use variables in your incoming path as specified in [RFC 6570](https://datatracker.ietf.org/doc/html/rfc6570). You can modify a path value later, but be careful to communicate to your users because this would be a breaking change. Read more about [variables here](#variables).
 - **Outgoing URL**: This is an *optional* full URL to your asset on your HTTP/S hosting provider. It is a template (or static) URL that may also use any variables defined in the Incoming Path. For example `https://besthostingprovider.com/acme/{platform}/rocket-skates-{version}.tar.gz`. If an Outgoing URL is not provided, the Gateway will return 200 with no redirect.
 - **Catch-all redirects**: Select this option if you intend to configure a domain-level redirect with your File Package (ie, redirecting `site.com/*` -> `anothersite.com/*`).
-- **Event collection only**: Select this option if you intend to use Scarf Gateway as a telemetry endpoint to send events from your code, and do not intend to redirect your user to another URL or artifact to download. Packages configured with this option will not return a redirect to the client that sends a matching request. Scarf will instead return a simple 200 status code indicating that the event was received successfully.
 
 See [Figure 3](#figure_3) to see how these pieces fit together visually.
+
+#### Variables
+<a id="variables"></a>
+
+Scarf Gateway supports dynamic URL routing through the use of variables, enabling flexible and scalable management of downloads across various versions, platforms, and configurations.
+
+Variables are any string denoted within curly braces `{}` or in the URL's query parameters and can be incorporated into the incoming-path and outgoing-url fields of your package configuration. For example:
+
+```
+"incoming-path": "/project/{platform}/{version}/file.tar.gz",
+"outgoing-url": "https://example.com/downloads/{platform}/project-{version}.tar.gz"
+```
+
+In this configuration:
+
+A request to `https://yourorg.gateway.scarf.sh/project/linux-arm64/1.2.3/file.tar.gz` would be redirected to `https://example.com/downloads/linux-arm64/project-1.2.3.tar.gz`, with `version = 1.2.3` and `platform = linux-arm64` stored.
+
+Variables are parsed by in URLs by Scarf as defined by [RFC 6570](https://datatracker.ietf.org/doc/html/rfc6570). This means that variables can span multiple segments of a path with a `+` prefix, for instance:
+
+```
+"incoming-path": "/foo/{+path}",
+"outgoing-url": "https://example.com/downloads/foo/{+path}"
+```
+
+would route `https://yourorg.gateway.scarf.sh/foo/a/b/c` to `https://example.com/downloads/foo/a/b/c` with `path = a/b/c`
+
+Query parameters are also automatically interpreted as variables for analytics, though they do not affect gateway redirection behavior.
+
+Best Practices
+- Route Structuring: Place fixed path segments before variables to ensure clear and unambiguous routing. For instance, prefer /project/{version}/file.tar.gz over /{project}/{version}/file.tar.gz.
+- Version Management: Utilize variables like {version} to handle multiple versions without creating separate routes for each. This approach simplifies updates and maintenance.
+- Platform Differentiation: Incorporate variables such as {os} or {arch} to manage platform-specific downloads efficiently.
+
+Analytics Granularity: Variables enable detailed analytics in the Scarf dashboard, allowing you to track downloads per version, platform, or other defined segments.
+
+#### Event Collection Packages
+
+Event collection packages are a general package type for collecting telemetry from your code or processing bulk imports of events from an external source. They are equivalent to a `file package` without a redirect. Scarf will always respond with a 200 to denote the event was successfully stored, rather than a 302 like other package types.
+
+If you have a specific schema of data you are expecting to send, you can still configure an incoming path pattern with variables in advance, or just use query parameters to dynamically send any fields you wish.
 
 #### Python Packages
 
