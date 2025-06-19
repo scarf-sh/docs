@@ -254,7 +254,7 @@ A gateway route does not have to link back to a file to download; it can also fo
 
 ## Excluding certain events from your analytics
 
-Some traffic can be noise that you want to fully exclude from your results without having to set filters manually. To set persisent filters heads to your [organization settings](https://app.scarf.sh/organizations/default/filters).
+Some traffic can be noise that you want to fully exclude from your results without having to set filters manually. To set persistent filters heads to your [organization settings](https://app.scarf.sh/organizations/default/filters).
 
 ### Excluding all known bot traffic
 
