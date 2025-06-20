@@ -258,13 +258,13 @@ Some traffic can be noise that you want to fully exclude from your results witho
 
 ### Excluding all known bot traffic
 
-Set this toggle to have Scarf completely surpress all events from known bot user agents. Contact the Scarf team if you are seeing user agents that should be added to our list.
+Set this toggle to have Scarf completely suppress all events from known bot user agents. Contact the Scarf team if you are seeing user agents that should be added to our list.
 
 ![Filter Bots](assets/pics/user-guide/filter-bots.png)
 
 ### Excluding traffic by specific user agent
 
-Set this toggle to have Scarf completely surpress all events from known bot user agents. This is one approach to filter out internal traffic from yourself or your team, by simply adding a known string to your user agents as you download your artifacts or send telemetry.
+Set this toggle to have Scarf completely suppress all events from known bot user agents. This is one approach to filter out internal traffic from yourself or your team, by simply adding a known string to your user agents as you download your artifacts or send telemetry.
 
 ![Filter Bots](assets/pics/user-guide/filter-user-agents.png)
 
