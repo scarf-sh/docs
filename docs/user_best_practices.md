@@ -1,7 +1,7 @@
 # User Guide & Best Practices
 
 
-## Intro
+## Introduction
 
 This is a user guide to best practices when using Scarf.  Consider this not only a guide but also an FAQ.  
 
@@ -251,3 +251,23 @@ You can embed multiple pixels on the same page for different reasons to facilita
 A gateway route does not have to link back to a file to download; it can also forward traffic to a URL and track the traffic who clicked the link. This allows you to track who is clicking on links in social media, watching videos, clicking on links in external content, etc. We created a tutorial on this here:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/wlo7286ETMA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Excluding certain events from your analytics
+
+Some traffic can be noise that you want to fully exclude from your results without having to set filters manually. To set persistent filters heads to your [organization settings](https://app.scarf.sh/organizations/default/filters).
+
+### Excluding all known bot traffic
+
+Set this toggle to have Scarf completely suppress all events from known bot user agents. Contact the Scarf team if you are seeing user agents that should be added to our list.
+
+![Filter Bots](assets/pics/user-guide/filter-bots.png)
+
+### Excluding traffic by specific user agent
+
+Set this toggle to have Scarf completely suppress all events from known bot user agents. This is one approach to filter out internal traffic from yourself or your team, by simply adding a known string to your user agents as you download your artifacts or send telemetry.
+
+![Filter Bots](assets/pics/user-guide/filter-user-agents.png)
+
+Adding `REMOVE_ME` will remove any user agent containing the literal string `REMOVE_ME` from your Scarf analytics results. At this time, only simple substring matches are supported.
+
+
