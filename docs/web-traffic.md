@@ -104,8 +104,19 @@ To ensure your pixel will be triggered on any page view within an SPA, there are
 
 ## Caveats
 
-### Sources
+### Obfuscation on GitHub
 
 Scarf pixel tracking will work on standard web pages, rendered markdown documentation on package registry sites like Docker Hub, npm, and PyPI, and anywhere an image can be embedded, but a place with notably less visibility is GitHub. When GitHub renders markdown, it rewrites any image URLs from their original web address to `https://camo.githubusercontent.com/$`, where GitHub hosts any linked images themselves. This prevents Scarf from providing insights like company information to maintainers, since the end-user information is obfuscated from Scarf.
+
+This prefetching also obscures the page being viewed on GitHub itself. One workaround is to add page information to your query parameter on each page you embed your pixel.
+
+```html
+<!-- explicitly send a `page` query parameter to Scarf to work around GitHub pre-caching -->
+<img referrerpolicy="no-referrer-when-downgrade" src="https://static.scarf.sh/a.png?x-pxid=abc&page=README.md" />
+```
+
+The above will send data to scarf with a specific `page` parameter.
+
+## Learn more
 
 Learn how to use Scarf Pixels for documentation insights in this [playbook](https://about.scarf.sh/post/track-your-projects-documentation-views).
