@@ -111,7 +111,7 @@ Scarf pixel tracking will work on standard web pages, rendered markdown document
 This prefetching also obscures the page being viewed on GitHub itself. One workaround is to add page information to your query parameter on each page you embed your pixel.
 
 ```html
-<!-- explictly send a `page` query paremeter to Scarf to work around GitHub pre-caching -->
+<!-- explicitly send a `page` query parameter to Scarf to work around GitHub pre-caching -->
 <img referrerpolicy="no-referrer-when-downgrade" src="https://static.scarf.sh/a.png?x-pxid=abc&page=README.md" />
 ```
 
