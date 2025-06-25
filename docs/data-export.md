@@ -161,7 +161,7 @@ Scheduling an export can also be done with our REST endpoint [https://api.scarf.
 
 We can export both raw events and company rollups.
 
-After scheduling the export, we send a test file named `scarf-test.csv` to verify connectivity to your bucket. This file will only contain CSV headers. Once connectivity is confirmed, the export process will automatically begin sending files to your bucket at midnight UTC.
+After scheduling the export, we send a test file named `scarf-test.csv` to verify connectivity to your bucket. This file will only contain CSV headers. Once connectivity is confirmed, the export process will automatically begin sending files to your bucket every day. Typically, exports run in the evening UTC for the previous days' data.
 
 ### AWS S3 Integration
 
