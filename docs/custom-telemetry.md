@@ -1,5 +1,8 @@
 ## Custom Telemetry With Scarf Gateway<a id="custom-telemetry-with-scarf-gateway"></a>
 
+!!! Note
+    For authenticated bulk imports of custom events collected from an external source, see [event importing](/event-import/).
+
 Scarf provides you the ability to collect custom telemetry from within your application or code by sending unauthenticated requests to Scarf Gateway for collection and analysis. To enable this you'll need a Scarf account and an [Event Collection Package](/gateway/#event-collection-packages).
 
 Once this has been done, you can send telemetry data and associate it with the Scarf package you just created via HTTP requests to your configured endpoint.
