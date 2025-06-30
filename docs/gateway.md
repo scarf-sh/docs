@@ -87,7 +87,12 @@ Variables are parsed by in URLs by Scarf as defined by [RFC 6570](https://datatr
 
 would route `https://yourorg.gateway.scarf.sh/foo/a/b/c` to `https://example.com/downloads/foo/a/b/c` with `path = a/b/c`
 
-Query parameters are also automatically interpreted as variables for analytics, though they do not affect gateway redirection behavior.
+Query parameters are also automatically interpreted as variables for analytics, though they do not affect gateway redirection behavior. The following would send `a=b` and `b=c`, regardless of any pre-configured variables in the URL template.
+
+```
+https://yourorg.gateway.scarf.sh/foo?a=b&b=c
+
+```
 
 Best Practices
 - Route Structuring: Place fixed path segments before variables to ensure clear and unambiguous routing. For instance, prefer /project/{version}/file.tar.gz over /{project}/{version}/file.tar.gz.

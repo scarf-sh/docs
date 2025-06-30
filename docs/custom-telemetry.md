@@ -1,8 +1,13 @@
-## Custom Telemetry With Scarf’s HTTP API<a id="custom-telemetry-with-scarfs-http-api"></a>
+## Custom Telemetry With Scarf Gateway<a id="custom-telemetry-with-scarf-gateway"></a>
 
-Scarf provides you the ability to collect custom telemetry from within your application by utilizing our API. To enable this you'll need a Scarf account and an [Event Collection Pakcage](/gateway/#event-collection-packages).
+!!! Note
+    For authenticated bulk imports of custom events collected from an external source, see [event importing](/event-import/).
+
+Scarf provides you the ability to collect custom telemetry from within your application or code by sending unauthenticated requests to Scarf Gateway for collection and analysis. To enable this you'll need a Scarf account and an [Event Collection Package](/gateway/#event-collection-packages).
 
 Once this has been done, you can send telemetry data and associate it with the Scarf package you just created via HTTP requests to your configured endpoint.
+
+Event payloads are sent via either pre-configured URL path segments, or by sending query parameters in the request URL. Variables values are currently always interpreted as strings. Learn more about variables [here](/gateway/#variables).
 
 ```python
 from scarf import ScarfEventLogger
