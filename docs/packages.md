@@ -170,15 +170,6 @@ receive stats on install, no additional code is required! For additional details
 
 ## Event Collection
 
-## Event Collection Packages
-
-Event Collection Packages on Scarf are another flexible package type which can be used to collect event telemetry by fetching a URL or by importing event history. Event Collection Packages are an alias of File packages and share all the same traits. Common use cases include:
-
-- Sending custom telemetry or other events from your application
-- Importing log or event history from your hosted installations to Scarf
-
-### Creating an Event Collection Package
-1. Log in to your Scarf acccount.
 
 ## Event Collection Packages
 
