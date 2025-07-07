@@ -168,9 +168,6 @@ npm i --save @scarf/scarf
 Once your library is published to npm with this change, Scarf will automatically
 receive stats on install, no additional code is required! For additional details on configuration of the scarf-js library please refer to the [scarf-js NPM entry](https://www.npmjs.com/package/@scarf/scarf).
 
-## Event Collection
-
-
 ## Event Collection Packages
 
 Event Collection Packages on Scarf are another flexible package type purpose built for telemetry data in general. Event data can be sent to a public Scarf Gateway URL of your choice, or by bulk ingesting events through our authenticated API. Event Collection Packages are an alias of File packages and share all the same traits. Common use cases include:
@@ -181,36 +178,25 @@ Event Collection Packages on Scarf are another flexible package type purpose bui
 ### Creating an Event Collection Package
 1. Once signed in to Scarf, navigate to the home page.
 
-2. Click plus icon in the navigation, then select New Package.
+1. Click plus icon in the navigation, then select New Package.
 ![Create a new package](assets/pics/qs-file-packages/create-new-package.png)
 
-3. In the first drop-down click on the package type you would like to create. For this section you will click `Event Collection`.
+1. In the first drop-down click on the package type you would like to create. For this section you will click `Event Collection`.
 ![Create a package](assets/pics/qs-file-packages/create-file.png)
 
-4. Select the package owner from the dropdown.
+1. Select the package owner from the dropdown.
 ![Select package owner](assets/pics/qs-file-packages/file-package-select-owner.png)
 
-5. Give your package a name.
-![Name your package](assets/pics/qs-file-packages/file-package-name.png)
+1. Give your package a name. ![Name your package](assets/pics/qs-file-packages/file-package-name.png)
 
-### Adding an Incoming URL
+1. Add the URL path where your events will be collected. This is the user visible endpoint your application will connect to for event submission. This setting while required is not relevant when submitting events via the [Event Import API](https://docs.scarf.sh/event-import/).
+ > Note: You can use a URL template, but if you use variables in your URL, they must be present in order for the event to match your route and be collected successfully. Depending on your use case, it may be better to simply pass event data via query parameters and leave your route as something simple and static.
 
-This section explains what the Incoming URLs are and how to use a URL template for Event Collection. 
+1. Choose the domain where your events will be submitted. You may choose to use your own domain or you may choose to use `<username>.gateway.scarf.sh` provided by default by Scarf.
 
-1.) Add the URL path where your events will be collected. This is the user visible endpoint your application will connect to for event submission. This setting while required is not relevant when submitting events via the [Event Import API](https://docs.scarf.sh/event-import/).
- > Note: You can use a URL template, but if you use variables in your URL they need to also be used in your Incoming Path that is defined in the next step.
+1. Click **Submit**.
 
-![path where files are located](assets/pics/qs-file-packages/file-package-incoming.png)
-
-2.) Choose the domain where your events will be submitted. You may choose to use your own domain or you may choose to use `<username>.gateway.scarf.sh` provided by default by Scarf.
-
-3.) Click **Submit**.
-
-4.) Configuring Telemetry
-Once an Event Collection package has been created, you are ready to collect [Custom telemetry](https://docs.scarf.sh/custom-telemetry/)
-
-### Configuring Event Collection
-Once an Event Collection package has been created, you are ready to collect [Custom telemetry](https://docs.scarf.sh/custom-telemetry/)
+1. Once an Event Collection package has been created, you are ready to collect [Custom telemetry](https://docs.scarf.sh/custom-telemetry/)
 
 ## Python Packages
 Scarf Gateway configuration for a Python package entry has three main considerations:
