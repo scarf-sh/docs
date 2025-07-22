@@ -41,6 +41,27 @@ If you elect to use your own domain, you'll need to add a CNAME for that domain 
 
 See [Figure 0](#figure_0) to see how these pieces fit together visually.
 
+#### Python Packages
+
+![Gateway.png](./assets/pics/gateway-diagrams/gateway-python.png)
+
+Scarf Gateway configuration for a Python package entry has three main considerations:
+
+- **pip Command**: This is the current pip command used to install your package. For packages on PyPI.org, this will be of the form `pip install my-pkg` and will include the `--extra-index-url https://my-python-project-domain.com` if your package is hosted elsewhere. This defines the location where the users will be redirected to when installing your package.
+- **Domain**: This can be your own domain, or a Scarf-supplied domain, of the form `<username>.gateway.scarf.sh`. By default, your Scarf domain will be used if this field is left empty.
+
+#### Installing Python packages via requirements.txt
+Add the --extra-index-url option at the top of your requirements.txt:
+
+```
+--extra-index-url https://my-python-project-domain.com/simple/
+my-pkg==0.0.1
+```
+
+NOTE: We have noticed indeterminate behavior in some versions of Pip that have resulted in the public registry being used for download regardless of the --extra-index-url addition.
+
+If you elect to use your own domain, you'll need to add a CNAME for that domain to `gateway.scarf.sh`. Additionally we require you to verify your ownership of the domain by setting a TXT with a value that Scarf provides upon package creation. See your DNS provider's instructions for how to add CNAME and TXT records.
+
 #### File Packages
 
 File Packages on Scarf are a flexible and low-level package type that can track visits and downloads on arbitrary URLs. File packages were originally created to track published tar balls, but it has since expanded to many other use cases and will likely be renamed in future versions of Scarf. You can think of File Packages as a powerful and fully customizable link shortener. Common use cases include:
@@ -101,32 +122,23 @@ Best Practices
 
 Analytics Granularity: Variables enable detailed analytics in the Scarf dashboard, allowing you to track downloads per version, platform, or other defined segments.
 
+#### Variable defaults and overrides
+
+When Scarf processes events like a Docker download, it will automatically pull out special information like the system `platform` or the `version`/`tag`. The same applies for extracting the `page` when a user views a page with a Scarf pixel. These system-recognized variables are treated in specific ways by Scarf, unlike arbitrary variables which are custom-defined and have no special meaning to how Scarf processes your event data.
+
+For lower-level package types like File Packages and Event Collection Packages, Scarf will look for system-recognized variables that can be populated by using specific variable names by default, or you can configure them directly by setting a [custom variable override](https://app.scarf.sh/organizations/default/filters).
+
+| Default variable name | Usage and details                                                                                                                                                                                                                                                                                                           |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `page`                | The page that was viewed. By default, Scarf uses the `referer` header in the HTTP request. However, when rendered on sites like GitHub, sending up `page` explicitly is useful to work around this behavior.                                                                                                                |
+| `platform`            | Platform of the client behind the download and event. Scarf has a known set of recognized platforms: <br>- `macos`<br>- `darwin`<br>- `linux`<br>- `windows`<br>- `ios`<br>- `android`<br>- `aix`<br>- `freebsd`<br>- `openbsd`<br>- `sunos`<br>- `unknownplatform`<br>- `allplatforms` |
+| `version`             | The artifact/package version downloaded/used                                                                                                                                                                                                                                                                                |
+
 #### Event Collection Packages
 
 Event collection packages are a general package type for collecting telemetry from your code or processing bulk imports of events from an external source. They are equivalent to a `file package` without a redirect. Scarf will always respond with a 200 to denote the event was successfully stored, rather than a 302 like other package types.
 
 If you have a specific schema of data you are expecting to send, you can still configure an incoming path pattern with variables in advance, or just use query parameters to dynamically send any fields you wish.
-
-#### Python Packages
-
-![Gateway.png](./assets/pics/gateway-diagrams/gateway-python.png)
-
-Scarf Gateway configuration for a Python package entry has three main considerations:
-
-- **pip Command**: This is the current pip command used to install your package. For packages on PyPI.org, this will be of the form `pip install my-pkg` and will include the `--extra-index-url https://my-python-project-domain.com` if your package is hosted elsewhere. This defines the location where the users will be redirected to when installing your package.
-- **Domain**: This can be your own domain, or a Scarf-supplied domain, of the form `<username>.gateway.scarf.sh`. By default, your Scarf domain will be used if this field is left empty.
-
-#### Installing Python packages via requirements.txt
-Add the --extra-index-url option at the top of your requirements.txt:
-
-```
---extra-index-url https://my-python-project-domain.com/simple/
-my-pkg==0.0.1
-```
-
-NOTE: We have noticed indeterminate behavior in some versions of Pip that have resulted in the public registry being used for download regardless of the --extra-index-url addition. 
-
-If you elect to use your own domain, you'll need to add a CNAME for that domain to `gateway.scarf.sh`. Additionally we require you to verify your ownership of the domain by setting a TXT with a value that Scarf provides upon package creation. See your DNS provider's instructions for how to add CNAME and TXT records.
 
 ### How it works
 
