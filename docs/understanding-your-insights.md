@@ -10,7 +10,7 @@ Scarf denotes how many `sources` or `unique sources` were behind any given numbe
 
 An `origin_id` is the most granular of Scarf IDs, and the default notion of unique sources throughout the platform.
 
-An `origin_id` is a salted hash of every identifier available to Scarf in an http request: the IP address, the user agent, and any other identifying headers that might be available.
+An `origin_id` is a salted hash of every identifier available to Scarf in an HTTP request: the IP address, the user agent, and any other identifying headers that might be available.
 
 An individual developer may map to multiple `origin_ids` as they change IP addresses, or use different programs on their machine to make requests. Thus it is good to consider it a ceiling or slightly higher estimate of how many people are behind the activity you are tracking.
 
