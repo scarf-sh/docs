@@ -4,7 +4,7 @@ Your Scarf dashboard uses various technical terms that are important to understa
 
 ### Unique Sources
 
-Scarf denotes how many `sources` or `unique sources` were behind any given number of events. Because open source activity happens anonymously, Scarf's ability to form a stable anonymous ID for source of traffic can happen at multiple levels of granularity, and therefore are given different types of IDs.
+Scarf denotes how many `sources` or `unique sources` were behind any given number of events. Because open source activity happens anonymously, Scarf's ability to form a stable anonymous ID for a given user / source of traffic can happen at multiple levels of granularity, and therefor are given different types of IDs.
 
 #### Origin IDs
 
