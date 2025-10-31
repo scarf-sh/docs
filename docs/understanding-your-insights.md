@@ -23,4 +23,3 @@ An `endpoint_id` is the least granular Scarf source ID, which is a salted hash o
 Because many developers in an organization might share the same IP (for example, when working behind a corporate NAT or build server), multiple people / machines can collapse into a single endpoint_id. Conversely, a single individual may generate multiple `endpoint_id`s if they work from different networks, such as switching between home, office, and cloud environments.
 
 This makes `endpoint_id`s a good way to reason about unique network sources, but they are not a direct proxy for individual people. Instead, you can think of them as a middle ground: less noisy than `origin_id`s but still more fine-grained than company-level resolution.
-
