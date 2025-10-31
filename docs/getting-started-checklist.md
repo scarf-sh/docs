@@ -2,12 +2,12 @@
 
 
 1. Create a [Scarf account](https://app.scarf.sh/login).
-1. Set up a Scarf Organization for your project. You will see each Organization you belong by clicking on “Organizations” in the top nav or under the dropdown menu at the top right.
+1. Set up a Scarf Organization for your project. You will see each Organization you belong by clicking on “Organizations” in the navbar or under the drop-down menu at the top right.
 1. Track artifact downloads with **Scarf Gateway**, which sits in front of artifact downloads through a custom domain and redirect to track information about Docker containers, files, npm packages, or Python packages that are downloaded.
     1. Set up a [new package URL](/packages) via the [Scarf Gateway](/gateway) within your Scarf Dashboard, and configure your package to redirect to wherever your artifacts are currently hosted.
     1. Update installation and setup documentation to direct users to use the gateway.
     1. Update installation scripts, helm charts, docker compose files, etc to fetch resources through your Scarf Gateway endpoint.
-    1. Check that the Package is set up properly by the arifact and seeing that it shows up in your Scarf Dashboard.
+    1. Check that the Package is set up properly by the artifact and seeing that it shows up in your Scarf Dashboard.
 1. Documentation and/or website tracking with a Scarf Pixel:
     1. Create a Scarf [Pixel](/web-traffic)
 	2. Embed the Pixel in the HTML for the pages you want analytics for (whether on your site or on third-party sites).
