@@ -48,7 +48,7 @@
   --md-accent-bg-color--light: #ffffffb3;
 
   --md-code-fg-color: var(--scarf-color-font-dark);
-  --md-code-bg-color: var(--scarf-color-font-light);
+  --md-code-bg-color: var(--scarf-color-gray-100);
   --md-code-hl-color: var(--scarf-color-yellow-500);
   --md-code-hl-number-color: var(--scarf-color-alert-500);
   --md-code-hl-special-color: var(--scarf-color-pink-500);
@@ -91,8 +91,8 @@
 
 [data-md-color-scheme="slate"] {
   --md-primary-fg-color: var(--scarf-color-blue-dark-500);
-  --md-typeset-a-color: var(--md-primary-fg-color--dark);
-  --md-footer-bg-color: var(--md-default-bg-color--dark);
+  --md-typeset-a-color: var(--md-primary-fg-color--light);
+  --md-footer-bg-color: var(--md-default-bg-color--light);
 }
 
 .md-header__button.md-logo img,

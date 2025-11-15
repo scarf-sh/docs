@@ -9,6 +9,11 @@ Once this has been done, you can send telemetry data and associate it with the S
 
 Event payloads are sent via either pre-configured URL path segments, or by sending query parameters in the request URL. Variables values are currently always interpreted as strings. Learn more about variables [here](/gateway/#variables).
 
+## SDKs and Utilities
+
+Often, telemetry sent to Scarf is simple enough that leveraging an SDK is not necessary, and a single http call from your code is enough. However there are few tools that may be useful depending on the language you are working in. Scarf's SDKs will automatically manage things like user-opt out, timeouts, and validation.
+
+### [Scarf Python SDK](https://github.com/scarf-sh/scarf-py)
 ```python
 from scarf import ScarfEventLogger
 
@@ -35,18 +40,86 @@ success = logger.log_event(
 success = logger.log_event({})
 ```
 
-## SDKs and Utilities
+### [Scarf bash/shell SDK](https://github.com/scarf-sh/scarf-shell/blob/main/scarf.sh)
 
-Most of the time, telemetry sent to Scarf is simple enough that leveraging an SDK is not needed, and a single http call from your code is enough. However there are few tools that may be useful depending on the language you are working in:
+```bash
+# Your Scarf Gateway URL
+SCARF_BASE_URL="https://your-gateway.endpoint/example"
+# The version of your package, if any
+SCARF_PACKAGE_VERSION="0.1"
 
-- [Python](https://github.com/scarf-sh/scarf-py)
-- [Bash or shell](https://github.com/scarf-sh/scarf-shell/blob/main/scarf.sh)
+# Source the scarf.sh script
+source ./scarf.sh
+# Initialize it
+setup_scarf_telemetry
+```
+
+### [Scarf Java SDK](https://github.com/scarf-sh/scarf-java)
+```java
+import sh.scarf.ScarfEventLogger;
+import java.util.*;
+
+ScarfEventLogger logger = new ScarfEventLogger(
+    "https://your-scarf-endpoint.com",
+    5.0 // Optional: default timeout seconds (default: 3.0)
+);
+
+// Send an event with properties (String keys; values are stringified)
+Map<String, Object> props = new LinkedHashMap<>();
+props.put("event", "package_download");
+props.put("package", "scarf");
+props.put("version", "1.0.0");
+boolean success = logger.logEvent(props);
+
+// Send an event with a custom timeout
+success = logger.logEvent(Map.of("event", "custom_event"), 1.0);
+
+// Empty properties are allowed
+success = logger.logEvent(Collections.emptyMap());
+```
+
+### [Scarf Go SDK](https://github.com/scarf-sh/scarf-go)
+```go
+package main
+
+import (
+    "time"
+    "github.com/scarf-sh/scarf-go/scarf"
+)
+
+func main() {
+    // Initialize with required endpoint URL for your event collection package in Scarf
+    logger := scarf.NewScarfEventLogger("https://your-scarf-endpoint.com")
+
+    // Optional: set a default timeout (default is 3 seconds)
+    logger = scarf.NewScarfEventLogger("https://your-scarf-endpoint.com", 5*time.Second)
+
+    // Send an event with properties
+    if err := logger.LogEvent(map[string]any{
+        "event":   "package_download",
+        "package": "scarf",
+        "version": "1.0.0",
+    }); err != nil {
+        // handle error
+    }
+
+    // Send an event with a custom timeout overriding the default
+    if err := logger.LogEventWithTimeout(map[string]any{"event": "custom_event"}, 1*time.Second); err != nil {
+        // handle error
+    }
+
+    // Empty properties are allowed
+    if err := logger.LogEvent(map[string]any{}); err != nil {
+        // handle error
+    }
+}
+```
 
 ## Real world examples
 
 You can find 1k+ real world open source examples of how projects use Scarf telemetry in various languages [on GitHub](https://github.com/search?q=gateway.scarf.sh&type=code).
 
-#### [Java](https://github.com/apache/sedona/blob/3bd5ebf35d0ab1b7bc527cf69f66935bc5f3685c/common/src/main/java/org/apache/sedona/common/utils/TelemetryCollector.java#L26)
+- [Java](https://github.com/apache/sedona/blob/3bd5ebf35d0ab1b7bc527cf69f66935bc5f3685c/common/src/main/java/org/apache/sedona/common/utils/TelemetryCollector.java#L26)
 
 ```java
 /*
@@ -108,7 +181,7 @@ public class TelemetryCollector {
 //...
 ```
 
-#### [Rust](https://github.com/risingwavelabs/risingwave/blob/7e67aadb64dbd57403df48733d30466ffa7931c3/src/common/src/telemetry/mod.rs#L174)
+- [Rust](https://github.com/risingwavelabs/risingwave/blob/7e67aadb64dbd57403df48733d30466ffa7931c3/src/common/src/telemetry/mod.rs#L174)
 
 ```rust
 // Copyright 2025 RisingWave Labs
