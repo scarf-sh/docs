@@ -139,6 +139,42 @@ Example:
 
 ![New file package route](assets/pics/qs-file-packages/file-package-new-route.png)
 
+### Passing Variables in Request Bodies
+
+File packages support passing variables in the request body, similar to the [external event import API](https://docs.scarf.sh/event-import/). This allows you to send additional metadata and custom event data when making requests to file packages.
+
+In addition to the reserved variables listed below, you can also pass any custom variables in the request body, just like you can use variables in URL templates (e.g., `{version}`, `{platform}`). This provides flexibility to include any additional data relevant to your use case. Note that nested structures in the request body will be flattened.
+
+#### Supported Variables
+
+When making requests to file packages, you can include the following variables in the request body:
+
+**`$version`** (string)
+If provided, this field tracks the version of the package download.
+
+**`$type`** (string)
+Specifies whether the event represents a download or view. Other type values are supported by Scarf's API, but they are currently unsupported in the Scarf application level and will be treated as downloads. Support for more event types is coming soon.
+
+**`$remote_address`** (string)
+Remote address of the event, which is used to retrieve IP-related metadata. If not specified, defaults to the remote address of the client making the request.
+
+**`$user_agent`** (string)
+Value of the client's user-agent header, which is used to extract metadata related to the client.
+
+**`$domain`** (string)
+Domain on which the event occurred.
+
+**`$referrer`** (string)
+Referrer of the client when the event occurred.
+
+**`$headers`** (Array of objects)
+Headers of the client's request when the event occurred. Each object can contain arbitrary property names as additional properties.
+
+**`$time`** (string, date-time format)
+Timestamp indicating when the event occurred. Alternatively, UNIX epoch time is also supported. This field is optional for file packages; if not provided, the event time will default to the time the request was received.
+
+> **Note:** The `$unique_id`, `$package`, and `$tracking_pixel` variables are not supported for file package events.
+
 ## npm Packages
 
 NPM Packages on Scarf are a convenient way to collect usage and event telemetry from your npm packages by adding a dependency on `[scarf-js](https://www.npmjs.com/package/@scarf/scarf)`.
