@@ -27,8 +27,8 @@ To activate these benefits for your foundation-backed project:
 
 1. Create your Scarf organization.
 2. Request OSS Foundation Partner activation by either:
-   - [Joining our community Slack](https://join.slack.com/t/scarf-community/shared_invite/zt-3ipqjii74-OUuhZL3Kz1G54aP4lyzXGQ) and post your project name in `#general`.
-   - Emailing [help@scarf.sh](mailto:help@scarf.sh) with your organization name and asking for OSS Foundation Partner activation.
+    - [Joining our community Slack](https://join.slack.com/t/scarf-community/shared_invite/zt-3ipqjii74-OUuhZL3Kz1G54aP4lyzXGQ) and post your project name in `#general`.
+    - Emailing [help@scarf.sh](mailto:help@scarf.sh) with your organization name and asking for OSS Foundation Partner activation.
 3. Your organization will be granted access after manual verification.
 
 ## How to apply for your foundation to join <a id="join"></a>
