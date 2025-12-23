@@ -1,6 +1,6 @@
 # Scarf for Foundation-Backed Projects
 
-Scarf's *Open Source Foundation Partnership Program* provides complimentary Scarf credits to all OSS projects housed within a parnter foundation.
+Scarf's *Open Source Foundation Partnership Program* provides complimentary Scarf credits to all OSS projects housed within a partner foundation.
 
 ## Is my foundation part of the program?
 
