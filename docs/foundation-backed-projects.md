@@ -1,6 +1,6 @@
 # Scarf for Foundation-Backed Projects
 
-Scarf's *Open Source Foundation Partnership Program* provides complimentary Scarf credits to all OSS projects housed within a partner foundation.
+Scarf's **Open Source Foundation Partnership Program** provides complimentary Scarf credits to all OSS projects housed within a partner foundation.
 
 ## Is my foundation part of the program?
 
@@ -11,7 +11,7 @@ If your project is a member of:
 - OWASP
 - CommonHaus
 
-then Scarf is included with in your foundation benefits!
+then Scarf is included with in your foundation benefits! If your foundation is not already a member, [we encourage you to apply](#join).
 
 ## What projects get
 
@@ -27,10 +27,10 @@ To activate these benefits for your foundation-backed project:
 
 1. Create your Scarf organization.
 2. Request OSS Foundation Partner activation by either:
-   - Joining our Slack and posting in `#general`: https://join.slack.com/t/scarf-community/shared_invite/zt-3ipqjii74-OUuhZL3Kz1G54aP4lyzXGQ
+   - [Joining our community Slack](https://join.slack.com/t/scarf-community/shared_invite/zt-3ipqjii74-OUuhZL3Kz1G54aP4lyzXGQ) and post your project name in `#general`.
    - Emailing [help@scarf.sh](mailto:help@scarf.sh) with your organization name and asking for OSS Foundation Partner activation.
 3. Your organization will be granted access after manual verification.
 
-## How to apply for your foundation to join
+## How to apply for your foundation to join <a id="join"></a>
 
 Email [help@scarf.sh](mailto:help@scarf.sh). Please tell us about your organization, how many projects you host, and anything else that we should know.
