@@ -47,6 +47,7 @@ nav:
 - Organizations:
   - Setting up your organization: organizations.md
   - mtc.md
+  - Scarf for Foundation-Backed Projects: foundation-backed-projects.md
 - packages.md
 - package-analytics.md
 - custom-telemetry.md
