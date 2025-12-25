@@ -88,7 +88,11 @@ The company data export includes the following data fields.
 | **company_name**               | `text`                      | Name of the company                                                                                  |
 | **company_domain**             | `text`                      | Domain of the company. Eg. scarf.sh                                                                  |
 | **funnel_stage**               | `text`                      | Stage of a company's journey in using your software                                                  |
-| **total_events**               | `numeric`                   | Count of total events                                                                                |
+| **total_events**               | `numeric`                   | Sum of package and pixel events (total_downloads + total_views)                                      |
+| **total_downloads**            | `numeric`                   | Total package events from package artifacts                                                          |
+| **total_unique_downloads**     | `numeric`                   | Total unique package events from package artifacts                                                   |
+| **total_views**                | `numeric`                   | Total pixel events from tracking pixel artifacts                                                     |
+| **total_unique_views**         | `numeric`                   | Total unique pixel events from tracking pixel artifacts                                              |
 | **unique_sources**             | `numeric`                   | Number of distinct sources of traffic that comprise the total event count from this organization.    |
 | **first_seen**                 | `text`                      | Date of when the first event occured                                                                 |
 | **last_seen**                  | `text`                      | Date of when the last event occured                                                                  |
