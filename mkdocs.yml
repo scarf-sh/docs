@@ -65,6 +65,7 @@ nav:
 - troubleshooting.md
 - understanding-your-insights.md
 - API Docs: https://api-docs.scarf.sh/v2.html
+- changelog.md
 
 # Analytics
 google_analytics:

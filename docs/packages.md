@@ -141,9 +141,17 @@ Example:
 
 ### Passing Variables in Request Bodies
 
-File packages support passing variables in the request body, similar to the [external event import API](https://docs.scarf.sh/event-import/). This allows you to send additional metadata and custom event data when sending telemetry to Scarf.
+File packages support passing variables in the request body as a JSON payload, similar to the [external event import API](https://docs.scarf.sh/event-import/). This allows you to send additional metadata and custom event data when sending telemetry to Scarf (in addition to path and query parameters).
 
-In addition to the reserved variables listed below, you can also pass any custom variables in the request body, just like you can use variables in URL templates (e.g., `{version}`, `{platform}`). This provides flexibility to include any additional data relevant to your use case. Note that nested structures in the request body will be flattened, eg: `{'a': {'b': 'c'}}` flattens to: `a.b=c` as a single key/value pair in Scarf.
+In addition to the reserved variables listed below, you can also pass any custom variables in the JSON body, just like you can use variables in URL templates (e.g., `{version}`, `{platform}`). This provides flexibility to include any additional data relevant to your use case. Note that nested structures in the request body will be flattened, eg: `{'a': {'b': 'c'}}` flattens to: `a.b=c` as a single key/value pair in Scarf.
+
+Example:
+
+```bash
+curl -X POST 'https://<your-domain>/<your-route>' \
+  -H 'Content-Type: application/json' \
+  -d '{"$type":"download","version":"1.2.3","platform":"linux","feature_flag":"on"}'
+```
 
 
 #### Supported Variables
