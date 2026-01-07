@@ -33,6 +33,8 @@ theme:
   favicon: assets/icon.svg
   icon:
     logo: assets/new_scarf.svg
+  features:
+    - content.tooltips
 
 # Styles
 extra_css:

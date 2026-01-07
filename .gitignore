@@ -7,3 +7,8 @@ devenv.local.nix
 *direnv*
 .envrc
 
+# Python
+.venv/
+__pycache__/
+*.pyc
+
