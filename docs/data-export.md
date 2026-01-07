@@ -44,7 +44,7 @@ The event data export includes the following data fields
 | **referer** | `text` | For Scarf pixel views, this refers to the page that was viewed. |
 | **user_agent** | `text` | This refers to the User-Agent, which provides information around the method of installation, often including information such as operating system, device, browser, architecture, and client. |
 | **variables** | `text` | This refers to any custom-specified variables that you might use Scarf to track in [file package downloads](/packages/#files). |
-| **origin_id** | `text` | This uniquely identifies the user (through a specific device) who has interacted with a Scarf event. |
+| `origin_id`{ title="Most granular Scarf source ID (salted hash of IP + user agent + other headers)." } | `text` | This uniquely identifies the user (through a specific device) who has interacted with a Scarf event. |
 | **origin_latitude** | `numeric` | This is the latitude of the location Scarf is able to identify for the event. |
 | **origin_longitude** | `numeric` | This is the longitude of the location Scarf is able to identify for the event. |
 | **origin_country** | `text` | This is the country of the location Scarf is able to identify for the event. |
@@ -56,7 +56,7 @@ The event data export includes the following data fields
 | **origin_domain** | `text` | If Scarf is able to associate the event with a known business entity, that business entity's web domain address is listed here. |
 | **dnt** | `boolean` | If the user includes a DNT request in their header, that is logged here and [they will not be tracked](/gateway/#do-not-track). |
 | **confidence** | `numeric` | The probability of correct identification of the data. |
-| **endpoint_id** | `text` | This uniquely identifies the public-facing device that has interacted with a Scarf event. Unlike origin_id, it is notably not sensitive to changes in device information like client, user agent, etc. |
+| `endpoint_id`{ title="Less granular Scarf source ID (salted hash of IP only)." } | `text` | This uniquely identifies the public-facing device that has interacted with a Scarf event. Unlike origin_id, it is notably not sensitive to changes in device information like client, user agent, etc. |
 | **mtc_quota_exceeded** | `boolean` | A value of `true` indicates the company information from the event data row was scrubbed due to exceeding the MTC limit. |
 
 ## How to Export Aggregate Data 
