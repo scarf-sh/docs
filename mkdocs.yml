@@ -79,6 +79,7 @@ markdown_extensions:
   meta: {}
   admonition: {}
   abbr: {}
+  attr_list: {}
   pymdownx.snippets:
     auto_append:
       - includes/abbreviations.md

@@ -17,6 +17,8 @@
 *[OQL]: Open Source Qualified Lead; a lead scoring concept based on OSS engagement signals.
 *[Outgoing URL]: The destination URL template that Gateway routes/redirects/proxies to (can include variables).
 *[Package]: The unit of configuration, permissions, and analytics in Scarf (what you track/serve via Gateway).
+*[endpoint_id]: A stable, network-level identifier for a traffic source (salted hash of IP only).
+*[origin_id]: A granular identifier for a traffic source (salted hash of IP + user agent + other headers).
 *[Package–Pixel Pair]: Pairing package download analytics with a tracking pixel to correlate page views and downloads.
 *[Scarf Gateway]: Scarf’s routing layer in front of your existing artifact hosting that adds tracking and analytics.
 *[Scarf Pixel]: A cookie-free tracking pixel used for documentation/README insights.
