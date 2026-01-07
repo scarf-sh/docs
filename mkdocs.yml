@@ -76,6 +76,10 @@ google_analytics:
 markdown_extensions:
   meta: {}
   admonition: {}
+  abbr: {}
+  pymdownx.snippets:
+    auto_append:
+      - includes/abbreviations.md
   pymdownx.superfences: {}
   tables: {}
   sane_lists: {}
