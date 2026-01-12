@@ -46,6 +46,12 @@ Multiple domains can be added to a tracking pixels. In the same menu, tracking p
 
 Head to your Scarf dashboard and, in the Tools dropdown, select Pixels. Click Copy Pixel Snippet to copy the `<img>` tag to your clipboard, and then paste the tag into your project's README, docs, and any other web properties where you want to gather insights into who is using your documentation pages.
 
+### Where to place the pixel
+
+Your pixel can go anywhere on the page, but generally adding it to commonly re-used components like the site header or footer works best. Higher up the page is better if possible.
+
+It’s important that the pixel is re-rendered as visitors navigate your site and move to different pages. If your app is a single-page app (SPA), you’ll want to use the JS snippet in [Pixels and Single-Page-Application (SPA) sites](#pixels-and-single-page-application-spa-sites).
+
 ### Google Tag Manager (GTM)
 
 Using Scarf pixels with Google Tag Manager works easily but requires one additional configuration step beyond simply dropping in your pixel URL.
