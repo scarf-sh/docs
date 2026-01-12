@@ -239,70 +239,7 @@ To create a new collection, please first insert the template that will be used. 
 
 ## FAQ
 
-**How do I get started using Scarf Gateway?**
-
-First, create an account on Scarf, if you haven’t already done so.
-Once you’ve registered, you’ll be prompted to create a new package. If you’re already using Scarf, you’ll be able to click “New Package” in the navigation bar.
-
-Select “Docker” for your package type and enter in the requested details about your container.
-Scarf Gateway currently supports Docker containers. Support for more package and artifact types are on the way. Stay tuned.
-
-**If I use a custom domain to host my container through Scarf, what happens to my existing users? Do they all have to update?**
-
-Hosting containers on your custom domain via Scarf has no impact on your existing users; your domain adds a new path for users to download your package. You can encourage end-users to switch their pull commands over to your new domain, but they can continue pulling directly from your registry provider with no negative impact.
-
-Should you decide to switch registries later on, current users will have to update their pull commands to either your custom domain or to the new registry URL. If they go straight to the registry, they would need to update every time you decide to switch registries. If they use your custom domain, they will never need to update it again.
-
-**Are you actually hosting my packages?**
-
-No, your package continues to be hosted on your current hosting provider not on Scarf itself. Scarf Gateway is simply a thin redirect layer in front of your provider. Since Scarf Gateway acts as a stable location on the internet for your packages, you will always have the freedom to host them with any provider you choose.
-
-**My Docker container image name on my current registry is `acme/rocket-skates`, can I change that to just `rocket-skates` when users pull through Scarf?**
-
-Unfortunately this is not possible unless you can change this name on the registry that hosts your container. Your container name on Scarf must match the container name on the registry that hosts it, because the Docker client uses that name to sign the request and validate the response from the registry. The Docker client will reject the download if the response signature is invalid. See the [Caveats section](#caveats) for more information.
-
-**How are you managing the usage data you get about my project? Are you storing my users’ data?**
-
-Scarf Gateway does not store any personally identifying information or sensitive data about your users.
-
-Scarf looks up IP address metadata, but the raw IP addresses are discarded and never exposed. IP metadata may contain:
-
-  - Coarse-grained location
-  - Device/OS information
-  - Company information, cloud providers, etc.
-
-Additionally, Scarf sees metadata about the containers that are being downloaded such as:
-
-  - Tags/versions (variables)
-  - Client runtime and version
-
-**What package types are you planning to support next?**
-
-We’d love your input to help us prioritize support for additional package types. Java, RPM and others are planned. Scarf Gateway will ultimately be generalized to support arbitrary artifact types.
-
-**How much does it cost to use Scarf Gateway?**
-
-Scarf Gateway’s current feature set is free and will remain free. We will be adding additional functionality, features, service level agreements, and more, some free and some paid.
-
-**Is Scarf Gateway self-hosted or managed by Scarf?**
-
-Scarf Gateway is managed by the Scarf team. We plan an open source release of Scarf Gateway for self-hosting, when it is out of the current open beta period and into general availability.
-
-**How long will it take for any given container download to show up in my analytics dashboard?**
-
-Downloads will typically show up in your dashboard in 30 minutes and up to 2-3 hours.
-
-**Is there an API I can use to pull my stats, manage my packages, etc?**
-
-Yes! See [our API documentation](https://api-docs.scarf.sh/v2.html** for more information.
-
-**Is it possible to overwrite the IP address used for a gateway event?**
-
-Yes, simply set the `X-Scarf-IP` header to overwrite the IP that will be associated with the request. For bulk event imports, use the `$remote_address` field in your event JSON payload.
-
-**I have more questions, where is the best place to ask?**
-
-[Join us in Slack](https://tinyurl.com/scarf-community-slack), we're more than happy to help.
+For common questions about Scarf Gateway (and the rest of the platform), see the consolidated [FAQ](faq.md).
 
 ## Figures
 
