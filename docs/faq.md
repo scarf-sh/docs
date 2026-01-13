@@ -24,6 +24,14 @@ For enterprise customers, Scarf Gateway can cache your artifacts to improve glob
 
 No. Scarf Gateway does not store any personally identifiable information.
 
+### Does Scarf Gateway support IPv6?
+
+Scarf Gateway does not currently support downloads / redirects on IPv6.
+
+However, you can still send or import events that set the event IP to an IPv6 address.
+
+Scarf Gateway will support IPv6 in the future. In the meantime, users should expect lower enrichment accuracy on IPv6, but this is improving over time.
+
 Scarf looks up IP address metadata, but the raw IP addresses are discarded and never exposed. IP metadata may contain:
 
 - Coarse-grained location
