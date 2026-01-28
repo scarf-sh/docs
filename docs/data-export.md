@@ -35,7 +35,7 @@ The event data export includes the following data fields
 
 | name | type | description |
 | ---- | ---- | ----------- |
-| **id** | `text` | This uniquely identifies the event (pixel view or package download) that occurred. |
+| **id** | `text` | Identifier for the event (pixel view or package download). This value is stable for a given event, but **exports are at-least-once** and may include **duplicate rows with the same `id`** (even within the same CSV part). Duplicate rows should be identical; consumers should de-duplicate by `id`. |
 | **type** | `text` | This categorizes the type of event that occurred (e.g. *pixel-fetch*, *manifest-fetch*, *binary-download*, etc.). |
 | **package** | `text` | For Scarf package downloads, this specifies which package has been downloaded. |
 | **pixel** | `text` | For Scarf page views, this specifies which pixel has been downloaded. |
@@ -58,6 +58,20 @@ The event data export includes the following data fields
 | **confidence** | `numeric` | The probability of correct identification of the data. |
 | **endpoint_id** | `text` | This uniquely identifies the public-facing device that has interacted with a Scarf event. Unlike origin_id, it is notably not sensitive to changes in device information like client, user agent, etc. |
 | **mtc_quota_exceeded** | `boolean` | A value of `true` indicates the company information from the event data row was scrubbed due to exceeding the MTC limit. |
+
+### A note on duplicates / de-duplication
+
+Scarf’s raw event exports should be treated as **at-least-once delivery**.
+
+That means you may occasionally see the **same event `id` more than once** in an export (for example: across multiple `...-part-00000N.csv` files, or even duplicated within a single part file).
+
+Recommended handling:
+
+- If you are ingesting these exports into a warehouse, **de-duplicate on `id`**.
+- If multiple rows share the same `id`, treat them as the *same logical event*.
+- You should **not** expect field-level differences between duplicate rows for the same `id`.
+
+We’re actively working on eliminating these duplicates at the source, but for now they are possible system behavior.
 
 ## How to Export Aggregate Data 
 
