@@ -42,7 +42,7 @@ A source in this integration is represented by an `origin_id`, which is derived 
 - location
 - user agent
 
-Because this grouping is not a raw IP count, source totals may differ from numbers based only on unique IPs. For more on connection type, see [Data export fields](./data-export/#the-event-data-export-includes-the-following-data-fields).
+Because this grouping is not a raw IP count, source totals may differ from numbers based only on unique IPs. For more on connection type, see [Understanding your insights: origin IDs](/understanding-your-insights/#origin-ids).
 
 ### How far back can Maven Central stats go?
 
