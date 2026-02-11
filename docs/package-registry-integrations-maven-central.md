@@ -24,3 +24,22 @@ You still have free access to your Maven Central package data, but premium featu
 - **Ongoing ingestion:** Maven Central data is continuously made available as we receive it. Typical latency is about **1 week** from a Maven Central download to visibility in Scarf.
 
 Check back regularly for the latest insights.
+
+## FAQs
+
+### What happens when my trial expires? What do I have access to going forward?
+
+When your 30-day trial ends, your account returns to the free tier. You still keep access to Maven Central package data in Scarf, but paid features (including commercial usage insights, advanced filtering, and higher plan limits) are no longer included unless you upgrade.
+
+### What is a “source”? This doesn’t match the unique IP count I saw before.
+
+For Maven Central data, Scarf does **not** receive raw download IP addresses from Maven Central.
+
+A source in this integration is represented by an `origin_id`, which is derived from a unique combination of:
+
+- organization
+- connection type
+- location
+- user agent
+
+Because this grouping is not a raw IP count, source totals may differ from numbers based only on unique IPs. For more on connection type, see [Data export fields](./data-export/#the-event-data-export-includes-the-following-data-fields).
