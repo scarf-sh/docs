@@ -50,6 +50,8 @@ nav:
   - mtc.md
   - Scarf for Foundation-Backed Projects: foundation-backed-projects.md
 - packages.md
+- Package Registry Integrations:
+  - Maven Central: package-registry-integrations-maven-central.md
 - package-analytics.md
 - custom-telemetry.md
 - web-traffic.md
