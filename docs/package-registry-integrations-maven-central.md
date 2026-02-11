@@ -6,10 +6,6 @@ As part of Scarf’s partnership with Sonatype, Maven Central publishers can acc
 
 To enable Maven Central insights in Scarf, opt in from the **Publisher Insights** tab in Maven Central.
 
-## Maven Central Publishers Notice
-
-Welcome to Scarf! As part of our partnership with Sonatype, you now have free access to your Maven Central package download data within the Scarf Platform.
-
 ## Trial period
 
 New Maven Central publishers receive a **30-day trial** of select paid features, including:
