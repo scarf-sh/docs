@@ -43,3 +43,9 @@ A source in this integration is represented by an `origin_id`, which is derived 
 - user agent
 
 Because this grouping is not a raw IP count, source totals may differ from numbers based only on unique IPs. For more on connection type, see [Data export fields](./data-export/#the-event-data-export-includes-the-following-data-fields).
+
+### How far back can Maven Central stats go?
+
+Scarf can make Maven Central stats available starting from **January 1, 2023**.
+
+The data window visible in your account depends on your Scarf plan. **Premium Tier** customers can access the full Maven Central history Scarf has available. For plan details, see [Scarf pricing](https://about.scarf.sh/pricing).
