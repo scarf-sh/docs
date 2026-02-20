@@ -1,5 +1,6 @@
 # Project Information
 site_name: Scarf Documentation
+site_url: https://docs.scarf.sh/
 site_description: |
   Scarf's Technical Documentation & API Reference
 copyright: Copyright &copy; 2019 - 2026 Scarf Systems, Inc. <img referrerpolicy="no-referrer-when-downgrade" src="https://static.scarf.sh/a.png?x-pxid=c9065f3a-a090-4243-8f69-145d5de7bfca" />
