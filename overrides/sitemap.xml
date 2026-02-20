@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for file in pages -%}
+    {% if not file.page.is_link %}
+    {% set loc = file.page.canonical_url or ((config.site_url or '') ~ (file.url or '')) or file.abs_url %}
+    <url>
+         <loc>{{ loc|e }}</loc>
+         {% if file.page.update_date %}<lastmod>{{ file.page.update_date }}</lastmod>{% endif %}
+         <changefreq>daily</changefreq>
+    </url>
+    {%- endif -%}
+{% endfor %}
+</urlset>
