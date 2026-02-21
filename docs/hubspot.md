@@ -160,10 +160,14 @@ With the integration **enabled**, you have the option to set Scarf to use text p
 With the integration **enabled**, you also have the option to set Scarf to attempt to create a new Account record in your CRM when the sync process encounters a Company without a match in the CRM. This will include historical matches as well as any newly surfaced companies.
 
 
-**How auto-creation behaves with filters**
-If org-wide **Automatically create new Accounts in your CRM** is left **off**, Scarf will still sync companies that already have an exact CRM match. New account creation is then limited to any saved filters you explicitly configure for auto-creation.
+**Common setup and auto-creation behavior**
+A common setup is to enable **Auto-match to known Accounts from Scarf** org-wide. Scarf searches for matches using account/company name along with domain and known domain aliases.
 
-If you enable auto-creation for a specific filter, Scarf will first try to match those companies to existing CRM accounts. If no match is found, Scarf creates a new account for that company.
+With org-wide **Automatically create new Accounts in your CRM** left **off**, matched companies can still be synced, and new account creation is limited to any saved filters you explicitly configure for auto-creation.
+
+If you enable auto-creation for a specific filter, Scarf first tries to match companies to existing CRM accounts. If no match is found, Scarf creates a new account for that company.
+
+You can also enable org-wide auto-creation, but use caution: this may create many CRM accounts quickly, including noisy or lower-priority companies.
 
 <p align="center">
   <img src="https://static-assets.scarf.sh/docs/Hubspot/13%20-%20hubspot%20-%20configurations.png" alt="Hubspot Configurations">
