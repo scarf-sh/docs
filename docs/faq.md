@@ -227,3 +227,22 @@ See our pricing plans, and don’t hesitate to get in touch with us with any que
 Support and SLAs are available on paid plans.
 
 We offer a 99.9% uptime SLA, as well as various levels of support, and up to 4-business-hour response times.
+
+
+## CRM Integrations
+
+### What is the common setup for CRM matching and syncing?
+
+A common setup is to enable **Auto-match** org-wide so Scarf can automatically find and link companies using account/company name plus domain and known domain aliases.
+
+### If I do not enable org-wide account auto-creation, will syncing still work?
+
+Yes. Auto-matched and manually matched companies can still sync. New account creation is limited to saved filters where auto-creation is enabled.
+
+### If I only enable one saved filter for auto-creation, what will Scarf do?
+
+Scarf will only auto-create CRM accounts for companies in that enabled filter. For each company, Scarf first attempts to match an existing CRM account; if none is found, it creates a new one.
+
+### Can I enable auto-creation org-wide?
+
+Yes, but do so carefully: org-wide auto-creation can generate many CRM accounts quickly, including noisy or lower-priority companies.
