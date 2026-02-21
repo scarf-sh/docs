@@ -29,6 +29,15 @@ Syncing is the process of writing Scarf Company engagement data into the matched
 -   If a company is not matched, it will not be included in any sync.
 -   If **Automatically Create New Accounts** is enabled, any unmatched Scarf Companies will be created as new Accounts in your CRM and included in the sync.
 
+### Common behavior questions
+
+- **If I leave org-wide account auto-creation off, will everything still sync?**
+  - No. Scarf will still sync companies that already have an exact CRM match, but new CRM account creation is limited to whichever filters you explicitly enable for auto-creation.
+- **If I enable auto-creation for only one saved filter, what happens?**
+  - Scarf will only auto-create new CRM accounts for companies in that enabled filter. For those companies, Scarf will first try to find an existing match; if none exists, it will create a new account.
+- **What does “exact match” mean for company matching?**
+  - Matching uses multiple signals, including primary domain, known domain aliases, and account/company name.
+
 ## Unmatching Scarf Companies from CRM Accounts
 
 You may need to unmatch a company from your CRM in the following cases:

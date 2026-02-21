@@ -144,7 +144,7 @@ While logged in as a user with Edit property settings permissions:
 
 ### Synchronization Frequency
 
-Scarf currently synchronizes with your CRM nightly. The duration of the sync is dependent on the volume of records paired. Manual Company matches are queued for the next nightly sync.
+Scarf synchronizes with your CRM nightly. The duration of each run depends on record volume, and the exact start time may vary. Manual Company matches are queued for the next nightly sync.
 
 ### Configuring the Connection
 
@@ -154,10 +154,16 @@ Once the CRM connection has been initialized, the Integrations menu will add thr
 Toggling this to **off** will temporarily disable the CRM integration. While **off** no reading or writing will be attempted.
 
 **Auto-match to known Accounts from Scarf**
-With the integration **enabled**, you have the option to set Scarf to to use text pattern matching to pair existing CRM Accounts with surfaced Scarf Companies. If the setting is **off** then all mapping will be performed manually.
+With the integration **enabled**, you have the option to set Scarf to use text pattern matching to pair existing CRM Accounts with surfaced Scarf Companies. If the setting is **off**, all mapping will be performed manually.
 
 **Automatically create new Accounts in your CRM**
 With the integration **enabled**, you also have the option to set Scarf to attempt to create a new Account record in your CRM when the sync process encounters a Company without a match in the CRM. This will include historical matches as well as any newly surfaced companies.
+
+
+**How auto-creation behaves with filters**
+If org-wide **Automatically create new Accounts in your CRM** is left **off**, Scarf will still sync companies that already have an exact CRM match. New account creation is then limited to any saved filters you explicitly configure for auto-creation.
+
+If you enable auto-creation for a specific filter, Scarf will first try to match those companies to existing CRM accounts. If no match is found, Scarf creates a new account for that company.
 
 <p align="center">
   <img src="https://static-assets.scarf.sh/docs/Hubspot/13%20-%20hubspot%20-%20configurations.png" alt="Hubspot Configurations">
