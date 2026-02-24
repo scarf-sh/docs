@@ -61,6 +61,15 @@ While our system usually delivers data to your dashboard with a lag of about 30-
 
 We’d love your input to help us prioritize support for additional package types. Java, Apt, RPM, and others are planned.
 
+### Can I override the IP address Scarf uses for enrichment?
+
+Yes.
+
+- For real-time requests through Scarf Gateway, set the `X-Scarf-IP` request header.
+- For bulk event imports, set the `$remote_address` field in each event row.
+
+Use this when your service sits in front of clients (for example, behind your own proxy) and you want Scarf to enrich based on the original client IP.
+
 ## Documentation Insights
 
 ### How does the tracking pixel work?

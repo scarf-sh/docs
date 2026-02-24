@@ -134,6 +134,8 @@ For lower-level package types like File Packages and Event Collection Packages, 
 | `platform`            | Platform of the client behind the download and event. Scarf has a known set of recognized platforms: <br>- `macos`<br>- `darwin`<br>- `linux`<br>- `windows`<br>- `ios`<br>- `android`<br>- `aix`<br>- `freebsd`<br>- `openbsd`<br>- `sunos`<br>- `unknownplatform`<br>- `allplatforms` |
 | `version`             | The artifact/package version downloaded/used                                                                                                                                                                                                                                                                                |
 
+You can also override the IP used for enrichment on gateway requests by setting the `X-Scarf-IP` header. For bulk imports, use `$remote_address` (see [Importing Events](event-import.md)).
+
 #### Event Collection Packages
 
 Event collection packages are a general package type for collecting telemetry from your code or processing bulk imports of events from an external source. They are equivalent to a `file package` without a redirect. Scarf will always respond with a 200 to denote the event was successfully stored, rather than a 302 like other package types.
