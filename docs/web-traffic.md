@@ -54,7 +54,7 @@ Your pixel can go anywhere on the page, but generally adding it to commonly re-u
 - Do **not** place the raw `<img>` pixel directly in visible nav/header markup where it can affect spacing.
 - Do **not** place `<img>` tags inside `<head>`.
 - Prefer adding the pixel in a non-visual location (end of `<body>`, footer partial, or consent-aware analytics partial).
-- If you embed the `<img>` directly in page markup, hide it explicitly:
+- If you embed the `<img>` directly in page markup, render it in a layout-neutral way (for example, a 1x1 non-interactive element):
 
 ```html
 <img
