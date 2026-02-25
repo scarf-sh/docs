@@ -24,6 +24,8 @@ Matching refers to the process reading records from the CRM and associating a Sc
 ### Syncing
 Syncing is the process of writing Scarf Company engagement data into the matched CRM Account.
 
+Scarf CRM syncs run daily. Upstream CRMs enforce per-minute rate limits per connected instance, so CRM sync jobs can take several hours to complete each day. Because of this, we do not recommend relying on any specific account being synced at a particular time on a given day.
+
 -   If **Auto-Sync** is enabled, all matched Scarf Companies will be included in sync operations automatically.
 -   If **Auto-Sync** is disabled, sync operations must be triggered manually.
 -   If a company is not matched, it will not be included in any sync.

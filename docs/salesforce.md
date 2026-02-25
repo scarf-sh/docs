@@ -65,7 +65,7 @@
 
 ### Synchronization Frequency
 
-Scarf currently synchronizes with your CRM nightly. The duration of the sync is dependent on the volume of records paired. Manual Company matches are queued for the next nightly sync.
+Scarf syncs with your CRM daily. Upstream CRMs enforce per-minute rate limits per connected instance, so CRM sync jobs can take several hours to complete each day. Because of this, we do not recommend relying on any specific account being synced at a particular time on a given day. Manual Company matches are queued for the next daily sync cycle.
 
 ### Configuring the Connection
 
