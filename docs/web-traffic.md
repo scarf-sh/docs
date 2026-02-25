@@ -50,6 +50,23 @@ Head to your Scarf dashboard and, in the Tools dropdown, select Pixels. Click Co
 
 Your pixel can go anywhere on the page, but generally adding it to commonly re-used components like the site header or footer works best. Higher up the page is better if possible.
 
+**Important placement note (to avoid layout issues):**
+- Do **not** place the raw `<img>` pixel directly in visible nav/header markup where it can affect spacing.
+- Do **not** place `<img>` tags inside `<head>`.
+- Prefer adding the pixel in a non-visual location (end of `<body>`, footer partial, or consent-aware analytics partial).
+- If you embed the `<img>` directly in page markup, hide it explicitly:
+
+```html
+<img
+  referrerpolicy="no-referrer-when-downgrade"
+  src="https://static.scarf.sh/a.png?x-pxid=<your-pixel-id>"
+  alt=""
+  width="1"
+  height="1"
+  style="position:absolute; width:1px; height:1px; opacity:0; pointer-events:none;"
+/>
+```
+
 It’s important that the pixel is re-rendered as visitors navigate your site and move to different pages. If your app is a single-page app (SPA), you’ll want to use the JS snippet in [Pixels and Single-Page-Application (SPA) sites](#pixels-and-single-page-application-spa-sites).
 
 ### Google Tag Manager (GTM)
