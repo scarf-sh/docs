@@ -1,0 +1,31 @@
+digraph {
+  subgraph external_user {
+    "User" -> "downloads.acme.com" [label = "curl -LO https://downloads.acme.com/files/2.2.1/amd64/rocket-skates-amd64-2.2.1.tar.gz"];
+    "downloads.acme.com" -> "gateway.scarf.sh" [label=""];
+  }
+
+  subgraph external_scarf {
+    "Maintainer" -> "Scarf Dashboard";
+    "Scarf Analytics" -> "Scarf Dashboard" [label="Data is processed and insights are made available to the maintainer"];
+    "Maintainer" -> "DNS Provider" -> "downloads.acme.com" [style=dashed];
+    "downloads.acme.com" -> "gateway.scarf.sh" [style=dashed label="Maintainer set a CNAME from their own domain to Scarf"]
+  }
+
+  subgraph cluster_internal_scarf {
+    label = "Scarf Infrastructure"
+    "gateway.scarf.sh" -> "Scarf Gateway" [label="Request hits Scarf gateway"];
+    "Scarf Gateway" -> "Scarf Configuration";
+    "Scarf Configuration" -> "Scarf Gateway";
+    "Scarf Gateway" -> "Scarf Analytics" [label="Requests aggregated to be asynchronously processed"];
+    "Scarf Dashboard" -> "Scarf Configuration" [style=dashed label="Maintainers configure the Scarf Gateway to redirect to the correct hosting provider"];
+  }
+
+  subgraph cluster_external_deps {
+    subgraph cluster_registries {
+      "Scarf Gateway" -> {"AWS S3"} [style=dashed]
+      "Scarf Gateway" -> {"GitHub Releases"} [label="The request is redirected to the hosting provider configured by the maintainer"]
+      "Scarf Gateway" -> {"Google Cloud Storage"} [style=dashed]
+    }
+    "Scarf Gateway" -> "Let's Encrypt CA" [label="SSL Cert Issuance"]
+  }
+}

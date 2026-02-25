@@ -1,0 +1,602 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "2.0.0",
+    "title": "External event import API",
+    "description": "The purpose of this API specification is to facilitate the import of external event data into Scarf."
+  },
+  "servers": [
+    {
+      "url": "http://api.scarf.sh"
+    }
+  ],
+  "tags": [
+    {
+      "name": "External event import",
+      "description": ""
+    }
+  ],
+  "paths": {
+    "/v2/packages/{owner}/{package_id}/import": {
+      "parameters": [
+        {
+          "name": "owner",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Owner of the event import\n"
+        },
+        {
+          "name": "package_id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Identifies the package to import events for.\n"
+        }
+      ],
+      "post": {
+        "tags": [
+          "External event import"
+        ],
+        "operationId": "importPackageEvents",
+        "summary": "Import external package events in bulk\n",
+        "description": "",
+        "requestBody": {
+          "description": "The request body should be a stream of newline-delimited JSON values, where each line in the  stream represents a valid JSON object that adheres to the `Event` schema. An `Event` is represented by a JSON object that permits any valid key-value pairs, with the exception of properties prefixed by `$`, which are handled in a distinct manner by Scarf. For additional information, please refer to the `Event` properties.\n",
+          "x-tie-haskell-request-body-as-stream": true,
+          "required": true,
+          "content": {
+            "application/x-ndjson": {
+              "schema": {
+                "$ref": "#/components/schemas/Event"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Event import status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EventImport"
+                }
+              }
+            }
+          },
+          "403": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      }
+    },
+    "/v2/tracking-pixels/{owner}/{tracking_pixel_id}/import": {
+      "parameters": [
+        {
+          "name": "owner",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Owner of the event import\n"
+        },
+        {
+          "name": "tracking_pixel_id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Identifies the tracking-pixel to import events for.\n"
+        }
+      ],
+      "post": {
+        "tags": [
+          "External event import"
+        ],
+        "operationId": "importTrackingPixelEvents",
+        "summary": "Import external tracking-pixel events in bulk\n",
+        "description": "",
+        "requestBody": {
+          "description": "The request body should be a stream of newline-delimited JSON values, where each line in the stream represents a valid JSON object that adheres to the `Event` schema. An `Event` is represented by a JSON object that permits any valid key-value pairs, with the exception of properties prefixed by `$`, which are handled in a distinct manner by Scarf. For additional information, please refer to the `Event` properties.\n",
+          "x-tie-haskell-request-body-as-stream": true,
+          "required": true,
+          "content": {
+            "application/x-ndjson": {
+              "schema": {
+                "$ref": "#/components/schemas/Event"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Event import status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EventImport"
+                }
+              }
+            }
+          },
+          "403": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      }
+    },
+    "/v2/imports/{owner}/{event_import_id}/abort": {
+      "parameters": [
+        {
+          "name": "owner",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Owner of the event import\n"
+        },
+        {
+          "name": "event_import_id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-tie-haskell-type": "Data.UUID.UUID"
+          },
+          "description": "Id of the event import to be aborted\n"
+        }
+      ],
+      "post": {
+        "tags": [
+          "External event import"
+        ],
+        "operationId": "abortEventImport",
+        "summary": "Abort event import\n",
+        "responses": {
+          "204": {
+            "description": "Aborts the an event import"
+          },
+          "403": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      }
+    },
+    "/v2/imports/{owner}/{event_import_id}/log": {
+      "parameters": [
+        {
+          "name": "owner",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Owner of the event import.\n"
+        },
+        {
+          "name": "event_import_id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Id of the event import to retrieve logs for.\n"
+        }
+      ],
+      "get": {
+        "tags": [
+          "External event import"
+        ],
+        "summary": "Retrieve the import log for an event import",
+        "description": "The import log records any errors or warnings that occur during the import process, such as missing required fields\nor deserialization errors.\n",
+        "operationId": "getImportLogs",
+        "responses": {
+          "200": {
+            "description": "Retrieve the logs for an import.",
+            "content": {
+              "application/x-ndjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/ImportLog"
+                }
+              }
+            }
+          },
+          "403": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      }
+    },
+    "/v2/imports/{owner}": {
+      "parameters": [
+        {
+          "name": "owner",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Owner of the event import.\n"
+        },
+        {
+          "name": "status",
+          "in": "query",
+          "required": false,
+          "style": "form",
+          "explode": true,
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EventImportStatus"
+            }
+          },
+          "description": "An optional filter to specify the status of the event import.\n"
+        },
+        {
+          "name": "after",
+          "in": "query",
+          "schema": {
+            "type": "string",
+            "x-tie-haskell-type": "Data.UUID.UUID"
+          },
+          "description": "A cursor that is used for pagination.\n"
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "example": 30
+          },
+          "description": "A cursor used for pagination\n"
+        }
+      ],
+      "get": {
+        "tags": [
+          "External event import"
+        ],
+        "operationId": "getEventImports",
+        "summary": "Retrieve a list of event imports\n",
+        "responses": {
+          "200": {
+            "description": "A list of event imports",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EventImports"
+                }
+              }
+            }
+          },
+          "403": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      }
+    },
+    "/v2/imports/{owner}/{event_import_id}": {
+      "parameters": [
+        {
+          "name": "owner",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Owner of the event import.\n"
+        },
+        {
+          "name": "event_import_id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-tie-haskell-type": "Data.UUID.UUID"
+          },
+          "description": "Id of the event import to retrieve.\n"
+        }
+      ],
+      "get": {
+        "tags": [
+          "External event import"
+        ],
+        "operationId": "getEventImport",
+        "summary": "Retrieve a specific event import\n",
+        "responses": {
+          "200": {
+            "description": "The Event import that matches the specified event import id.\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EventImport"
+                }
+              }
+            }
+          },
+          "403": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "EventImports": {
+        "type": "object",
+        "properties": {
+          "event_imports": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EventImport"
+            }
+          }
+        }
+      },
+      "EventImport": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/EventImportStatus"
+          },
+          "events_total": {
+            "type": "integer"
+          },
+          "events_successfully_imported": {
+            "type": "integer"
+          },
+          "events_failed_to_import": {
+            "type": "integer"
+          },
+          "error_log_sample": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImportLog"
+            }
+          },
+          "warning_log_sample": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImportLog"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "EventImportStatus": {
+        "type": "string",
+        "enum": [
+          "importing",
+          "done",
+          "aborted"
+        ]
+      },
+      "Event": {
+        "type": "object",
+        "required": [
+          "$time"
+        ],
+        "properties": {
+          "$time": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp indicating when the event occurred.\n",
+            "x-tie-haskell-name": "time"
+          },
+          "$unique_id": {
+            "type": "string",
+            "description": "Unique identifier that uniquely identifies the event and is used \nfor de-duplication purposes, if provided.\n",
+            "x-tie-haskell-name": "unique_id"
+          },
+          "$package": {
+            "type": "string",
+            "description": "Package identifier that identifies the package to which this event belongs.\n",
+            "x-tie-haskell-name": "package"
+          },
+          "$tracking_pixel": {
+            "type": "string",
+            "description": "Tracking pixel identifier that identifies the tracking pixel to which this event belongs.\n",
+            "x-tie-haskell-name": "tracking_pixel"
+          },
+          "$version": {
+            "type": "string",
+            "description": "If provided, this field tracks the version of the package download.\n",
+            "x-tie-haskell-name": "version"
+          },
+          "$type": {
+            "type": "string",
+            "description": "A flexible event type that allows for free-form values.\n",
+            "x-tie-haskell-name": "type_"
+          },
+          "$remote_address": {
+            "type": "string",
+            "description": "Remote address of the event, which is used to retrieve IP-related metadata.\n",
+            "x-tie-haskell-name": "remote_address"
+          },
+          "$user_agent": {
+            "type": "string",
+            "description": "Value of the client's user-agent header, which is used to extract metadata related to the client.\n",
+            "x-tie-haskell-name": "user_agent"
+          },
+          "$domain": {
+            "type": "string",
+            "description": "Domain on which the event occurred.\n",
+            "x-tie-haskell-name": "domain"
+          },
+          "$referrer": {
+            "type": "string",
+            "description": "Referrer of the client when the event occurred.\n",
+            "x-tie-haskell-name": "referrer"
+          },
+          "$headers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Headers of the client's request when the event occurred.\n",
+            "x-tie-haskell-name": "headers"
+          }
+        },
+        "additionalProperties": true
+      },
+      "ImportLog": {
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "progress": "#/components/schemas/ImportLogProgressReport",
+            "failed-to-decode": "#/components/schemas/ImportLogFailedToDecode",
+            "artifact-not-found": "#/components/schemas/ImportLogArtifactNotFound"
+          }
+        },
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/ImportLogProgressReport"
+          },
+          {
+            "$ref": "#/components/schemas/ImportLogFailedToDecode"
+          },
+          {
+            "$ref": "#/components/schemas/ImportLogArtifactNotFound"
+          }
+        ]
+      },
+      "ImportLogType": {
+        "type": "string",
+        "enum": [
+          "progress",
+          "failed-to-decode",
+          "artifact-not-found"
+        ]
+      },
+      "ImportLogClass": {
+        "type": "string",
+        "enum": [
+          "info",
+          "warning",
+          "error"
+        ]
+      },
+      "ImportLogBase": {
+        "required": [
+          "type",
+          "class"
+        ],
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/ImportLogType"
+          },
+          "class": {
+            "$ref": "#/components/schemas/ImportLogClass"
+          },
+          "line": {
+            "type": "integer"
+          },
+          "human_friendly_message": {
+            "type": "string"
+          }
+        }
+      },
+      "ImportLogProgressReport": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ImportLogBase"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "events_count": {
+                "type": "integer"
+              },
+              "failed_events_count": {
+                "type": "integer"
+              }
+            }
+          }
+        ]
+      },
+      "ImportLogFailedToDecode": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ImportLogBase"
+          }
+        ]
+      },
+      "ImportLogArtifactNotFound": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ImportLogBase"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "package_id": {
+                "type": "string"
+              },
+              "tracking_pixel_id": {
+                "type": "string"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "responses": {
+      "NotFound": {
+        "description": "Not found"
+      },
+      "Unauthorized": {
+        "description": "Unauthorized access"
+      }
+    }
+  }
+}

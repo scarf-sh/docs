@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+    <url>
+         <loc>https://docs.scarf.sh/</loc>
+         <lastmod>2026-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+         <loc>https://docs.scarf.sh/api-v2/</loc>
+         <lastmod>2026-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+         <loc>https://docs.scarf.sh/changelog/</loc>
+         <lastmod>2026-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+         <loc>https://docs.scarf.sh/crm-overview/</loc>
+         <lastmod>2026-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+         <loc>https://docs.scarf.sh/custom-telemetry/</loc>
+         <lastmod>2026-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+         <loc>https://docs.scarf.sh/data-export/</loc>
+         <lastmod>2026-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+         <loc>https://docs.scarf.sh/event-import/</loc>
+         <lastmod>2026-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+         <loc>https://docs.scarf.sh/faq/</loc>
+         <lastmod>2026-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+         <loc>https://docs.scarf.sh/foundation-backed-projects/</loc>
+         <lastmod>2026-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+         <loc>https://docs.scarf.sh/funnel-stages/</loc>
+         <lastmod>2026-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+         <loc>https://docs.scarf.sh/gateway/</loc>
+         <lastmod>2026-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+         <loc>https://docs.scarf.sh/gcp/</loc>
+         <lastmod>2026-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+         <loc>https://docs.scarf.sh/getting-started-checklist/</loc>
+         <lastmod>2026-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+         <loc>https://docs.scarf.sh/hubspot/</loc>
+         <lastmod>2026-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+         <loc>https://docs.scarf.sh/mtc/</loc>
+         <lastmod>2026-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+         <loc>https://docs.scarf.sh/oql/</loc>
+         <lastmod>2026-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+         <loc>https://docs.scarf.sh/organizations/</loc>
+         <lastmod>2026-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+         <loc>https://docs.scarf.sh/package-analytics/</loc>
+         <lastmod>2026-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+         <loc>https://docs.scarf.sh/package-registry-integrations-maven-central/</loc>
+         <lastmod>2026-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+         <loc>https://docs.scarf.sh/packages/</loc>
+         <lastmod>2026-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+         <loc>https://docs.scarf.sh/project-status/</loc>
+         <lastmod>2026-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+         <loc>https://docs.scarf.sh/quick-start/</loc>
+         <lastmod>2026-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+         <loc>https://docs.scarf.sh/sales-prospecting/</loc>
+         <lastmod>2026-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+         <loc>https://docs.scarf.sh/salesforce/</loc>
+         <lastmod>2026-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+         <loc>https://docs.scarf.sh/troubleshooting/</loc>
+         <lastmod>2026-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+         <loc>https://docs.scarf.sh/understanding-your-insights/</loc>
+         <lastmod>2026-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+         <loc>https://docs.scarf.sh/user_best_practices/</loc>
+         <lastmod>2026-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    
+    <url>
+         <loc>https://docs.scarf.sh/web-traffic/</loc>
+         <lastmod>2026-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+</urlset>
