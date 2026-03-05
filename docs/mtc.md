@@ -22,12 +22,13 @@ flowchart TD
   B -->|No| D{MTC credits available this month?}
   D -->|No| E[Company not shown]
   D -->|Yes| F{Set has free capacity?}
-  F -->|Yes| G[Add company and consume 1 MTC credit]
+  F -->|Yes| G[Add company]
   F -->|No| H[Remove least recently seen company]
   H --> I[Add new company]
+  G --> K[Consume 1 MTC credit]
+  I --> K
   C --> J[Company-level enrichment + insights continue]
-  G --> J
-  I --> J
+  K --> J
 ```
 
 Scarf will always show you the total number of companies interacting with your project at the bottom of the Company Insights page. You can update your plan's MTC quota in your Organization settings. You can also track your MTC usage by day in your Organization settings.
