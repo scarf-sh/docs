@@ -15,7 +15,7 @@ This rolling tracked set keeps enrichment focused on the companies currently int
 MTC quotas reset at the beginning of each calendar month.
 
 ### Visual model
-```mermaid
+<pre class="mermaid">
 flowchart TD
   A[Event arrives] --> B{Company already in tracked company set?}
   B -->|Yes| C[Keep tracked]
@@ -26,7 +26,7 @@ flowchart TD
   C --> H[Company-level enrichment + insights continue]
   E --> H
   G --> H
-```
+</pre>
 
 Scarf will always show you the total number of companies interacting with your project at the bottom of the Company Insights page. You can update your plan's MTC quota in your Organization settings. You can also track your MTC usage by day in your Organization settings.
 
