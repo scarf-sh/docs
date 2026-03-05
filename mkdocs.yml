@@ -40,7 +40,7 @@ extra_css:
   - "stylesheets/extra.css"
 
 extra_javascript:
-  - https://unpkg.com/mermaid@10.9.1/dist/mermaid.min.js
+  - javascripts/vendor/mermaid.min.js
   - javascripts/mermaid.js
 
 # Docs Navigation
