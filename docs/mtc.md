@@ -2,10 +2,31 @@
 
 Scarf identifies which companies are viewing your documents, downloading your packages, or executing your software, and tracks their activity across the organization. These are referred to as Monthly Tracked Companies (MTCs). Scarf enriches IP addresses with several metadata sources to provide the most accurate data possible.
 
-## Consumption of MTCs
-MTCs are consumed any time a company is seen for the first time in a given month. For example, if you have purchased 100 MTCs, you will see the first 100 companies that interact with your open source and no further companies will be surfaced for the remainder of the month. MTCs reset on a monthly basis at the start of the calendar month.
+## How MTCs work
+Your MTC quota defines the size of your **tracked company set** (sometimes called your active tracked companies): the number of companies Scarf can actively track at a time.
 
-NOTE: There is no way to predict which companies will surface, or how quickly. Companies are surfaced in the order they are seen, until your MTC limit is reached.
+When an event arrives:
+1. If the company is already in your tracked company set, it stays tracked and no new MTC credit is consumed.
+2. If the company is new and you have available MTC capacity, Scarf adds it to the tracked company set and consumes one MTC credit.
+3. If the company is new and your tracked company set is already full, Scarf removes the **least recently seen** company and adds the new one.
+
+This rolling tracked set keeps enrichment focused on the companies currently interacting with your project. Scarf does not perform additional enrichment or company-level insights for traffic outside of your tracked company set, which helps keep enrichment costs down.
+
+MTC quotas reset at the beginning of each calendar month.
+
+### Visual model
+```mermaid
+flowchart TD
+  A[Event arrives] --> B{Company already in tracked company set?}
+  B -->|Yes| C[Keep tracked]
+  B -->|No| D{Set has free capacity?}
+  D -->|Yes| E[Add company and consume 1 MTC credit]
+  D -->|No| F[Remove least recently seen company]
+  F --> G[Add new company]
+  C --> H[Company-level enrichment + insights continue]
+  E --> H
+  G --> H
+```
 
 Scarf will always show you the total number of companies interacting with your project at the bottom of the Company Insights page. You can update your plan's MTC quota in your Organization settings. You can also track your MTC usage by day in your Organization settings.
 
