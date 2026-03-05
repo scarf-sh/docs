@@ -34,7 +34,11 @@ function renderMtcMermaidDiagram() {
 }
 
 if (typeof mermaid !== "undefined") {
-  mermaid.initialize({ startOnLoad: false, securityLevel: "loose" });
+  mermaid.initialize({
+    startOnLoad: false,
+    securityLevel: "loose",
+    flowchart: { htmlLabels: false },
+  });
 }
 
 if (typeof document$ !== "undefined") {
