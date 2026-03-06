@@ -14,6 +14,15 @@ Hosting packages on your custom domain via Scarf has no impact on your existing 
 
 Should you decide to switch registries later on, current users will have to update their pull commands to either your custom domain or to the new registry URL. If they go straight to the registry, they would need to update every time you decide to switch registries. If they use your custom domain, they will never need to update it again.
 
+### Gateway links look clunky. What is the recommended setup?
+
+Most teams use one or both of these options:
+
+- **Custom domain**: CNAME your own domain to `gateway.scarf.sh` so users see your brand instead of a `*.gateway.scarf.sh` URL.
+- **Custom file-package paths**: Define clean public URL paths independently from where artifacts are stored on your origin.
+
+For Python in particular, many teams treat gateway-based download tracking as a useful signal, but rely on [custom telemetry](/custom-telemetry/) as the primary source of product usage data.
+
 ### Are you actually hosting my packages?
 
 Generally, no. Your package continues to be hosted on your current registry. Scarf Gateway is simply a thin layer on top. Since the gateway acts as a static entry point to your containers, you will always have the freedom to host your container on any registry you choose.
@@ -98,6 +107,15 @@ npm i --save @scarf/scarf
 
 Once your library is published to npm with this change, Scarf will automatically collect stats on install, with no additional code is required. You’ll find package analytics displayed on your Scarf dashboard.
 
+### Should I enable `allowTopLevel` in scarf-js?
+
+`allowTopLevel` can be useful, but whether to enable it depends on the signal you want.
+
+- **Keep it disabled (default)** when top-level installs are mostly local development, CI, or automation noise.
+- **Enable it** when top-level installs in your ecosystem represent real adoption you want to measure.
+
+In short: enable `allowTopLevel` only if top-level install activity is meaningful for your package; otherwise leave it off for cleaner data.
+
 ### What kinds of analytics do package authors get from scarf-js?
 
 - Data insights about your user base
@@ -125,6 +143,28 @@ Additionally, scarf-js sends SHA256-hashed name and version for packages in the 
 - It depends on a package that depends on scarf-js.
 
 Scarf also shares the root package of the dependency tree. In this way, we provide maintainers with information about the public packages using their code, without exposing identifying details of non-public packages.
+
+### How do I choose what events to send from my app?
+
+Scarf telemetry is intended for **lightweight, high-intent product signals**, not full request-by-request tracing.
+
+Good examples:
+
+- Application startup
+- Feature enablement
+- Job/run completion
+
+Usually not useful:
+
+- Logging every low-level action (for example, every query or every click)
+
+Start with a small set of meaningful events and expand only when the new data clearly informs product or go-to-market decisions.
+
+### Can Scarf distinguish repeat usage vs unique users or companies?
+
+Yes. Scarf's analytics pipeline automatically infers repeated usage and unique sources over time. See [Understanding your insights: Unique sources](/understanding-your-insights/#unique-sources).
+
+If your app already has stable installation, deployment, user, or tenant IDs, include them in your event properties. Scarf will incorporate those fields into downstream analytics.
 
 ### As a user of a package using scarf-js, how can I opt out of analytics?
 

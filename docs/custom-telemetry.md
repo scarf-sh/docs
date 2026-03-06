@@ -225,3 +225,6 @@ pub async fn report_to_scarf() {
   - `DO_NOT_TRACK` is a common environment variable to check for opt out.
 - Never interrupt the user.
 - Set aggressive timeouts for all network calls for telemetry.
+- Prefer high-intent events (for example app startup, feature enablement, job completion) over very high-frequency low-level events.
+- Start with a small event set first. You can always add more events later.
+- Scarf computes repeat-vs-unique usage insights for you. See [Understanding your insights: Unique sources](/understanding-your-insights/#unique-sources).
