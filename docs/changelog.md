@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-03-09
+
+- Lifted the Starter plan checkout-template Monthly Tracked Contributors (MTC) limit from 250.
+- Improved MTC over-limit messaging and call-to-action copy for clearer upgrade guidance.
+- Company Insights now hides company location columns by default for a cleaner first view.
+
 ## 2026-03-03
 
 - Added artifact-name filtering in the UI.
