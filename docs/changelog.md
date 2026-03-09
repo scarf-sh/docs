@@ -2,7 +2,7 @@
 
 ## 2026-03-09
 
-- Lifted the Starter plan checkout-template Monthly Tracked Contributors (MTC) limit from 250.
+- Remove the limit on Starter plan checkout-template Monthly Tracked Contributors (MTC).
 - Improved MTC over-limit messaging and call-to-action copy for clearer upgrade guidance.
 - Company Insights now hides company location columns by default for a cleaner first view.
 
