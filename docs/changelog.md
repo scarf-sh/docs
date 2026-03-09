@@ -4,7 +4,7 @@
 
 - Remove the limit on Starter plan checkout-template Monthly Tracked Contributors (MTC).
 - Improved MTC over-limit messaging and call-to-action copy for clearer upgrade guidance.
-- Company Insights now hides company location columns by default for a cleaner first view.
+- Added support for company location columns in the Company Insights UI.
 
 ## 2026-03-03
 
