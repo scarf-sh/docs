@@ -77,9 +77,23 @@ Using Scarf pixels with Google Tag Manager works easily but requires one additio
 |------------|--------------------------------------------|------------------------------------------------------------|
 | Tag Type   | Custom Image Tag                           | --                                                         |
 | Image URL  | `<your Scarf pixel URL>&Page={{Page URL}}` | https://static.scarf.sh/a.png?x-pxid=123&Page={{Page URL}} |
-| Triggering | Page View - All Pages                      | --                                                         |
+| Triggering | Page View - All Pages (or filtered page-view triggers) | --                                                         |
 
 This extra step is because GTM's injection of the pixel tends to tamper with the `referrer` header that Scarf relies on in order to infer what page is being loaded. We work around this by explicitly adding it to the URL's query parameters.
+
+#### Using different pixel IDs on different pages (GTM)
+
+If you need page-level weighting/segmentation, GTM can load different Scarf pixel IDs by page.
+
+Recommended pattern:
+
+1. Create one **Custom Image** tag per Scarf pixel ID.
+2. For each tag, set Image URL to:
+   `https://static.scarf.sh/a.png?x-pxid=<PIXEL_ID>&Page={{Page URL}}`
+3. Use **Page View** triggers with page filters (for example, `Page Path contains /docs/`, `Page Path contains /pricing/`, etc.).
+4. In GTM Preview mode, verify only the intended tag fires on each page.
+
+This avoids "one pixel for all pages" and gives you explicit per-page control over which pixel ID is sent.
 
 If for any reason, you need to use a different variable key besides `Page`, you'll want to configure a [custom variable override](https://app.scarf.sh/organizations/default/filters) for the `Page` parameter in your org settings, to whatever key you'd like to use. This ensures Scarf treats your parameter as the page rather than a normal arbitrary piece of data.
 
