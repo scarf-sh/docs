@@ -81,14 +81,19 @@ To locate your API token quickly, open the page and use Cmd + F (or Ctrl + F on 
 
 #### I downloaded an artifact and Scarf is showing my download as the wrong company
 
-IP -> Company matching is an imperfect approach and incorrect matches do happen. A few things can help understand low-confidence matches:
+IP -> Company matching is probabilistic, not exact, so incorrect matches do happen.
+
+For each event, Scarf checks the IP address across several metadata providers and combines those results into a composite company match and confidence score. In general, the more agreement there is across providers, the higher the confidence of the match.
+
+A few things can help interpret low-confidence matches:
 
 - You can disable "low confidence" companies via the toggle at the top of your company match table.
 - Check the confidence for any individual event through the company activity view (click on the company) and see the "Events" section.
+- Avoid over-indexing on a single event. Company-level confidence improves when you see repeated activity from the same organization over time.
 
-Over time, low confidence scores are outweighed by observing company traffic in aggregate over a longer period of time rather than over-indexing on a single one-off event.
+This is also why static analysis results and Scarf results can disagree. Scarf can observe usage patterns that would not appear in a repository scan—for example, a developer downloading a dependency for a side project, an internal tool, or another environment that is not represented in the codebase being scanned.
 
-If you're seeing persistent issues with a particular company or IP address, let us know so we can update our records accordingly and ensure high accuracy of matches.
+If you're seeing persistent issues with a particular company or IP address, let us know so we can review the match and improve accuracy.
 
 ## Scarf Gateway
 
