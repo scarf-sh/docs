@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-03-23
+
+- Added a closed-beta organization-wide download feed API endpoint for retrieving daily download data.
+- Public API insights filters now use a cleaner owner-scoped CRUD model, and public user-defined-variable endpoints are available.
+- Added quarter presets to the analytics date range picker.
+- The events-by-version chart can now aggregate by full, minor, or major version.
+- Scheduled exports now default to no raw package/pixel selectors, so raw exports stay opt-in.
+- Filter menus now show when global filters are active and link directly to global filter settings.
+
 ## 2026-03-09
 
 - Remove the limit on Starter plan checkout-template Monthly Tracked Contributors (MTC).
