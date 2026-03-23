@@ -76,7 +76,9 @@ You can manage Filter settings for your Organization by clicking into Filter Set
 
 ### Data providers
 
-Scarf partners with 3rd party data providers in order to surface IP-address metadata like the location or company behind any event in your account.
+Scarf partners with multiple 3rd party data providers in order to surface IP-address metadata like the location or company behind any event in your account.
+
+For each event, Scarf checks the IP address across several providers and combines the results into a composite company match and confidence score. In general, the more agreement there is across providers, the higher the confidence of the match.
 
 Scarf's enhanced company matching capabilities feature a Clearbit integration to help us offer best-in-class data quality. Enabling Clearbit for your organization is free! Additional terms apply.
 
