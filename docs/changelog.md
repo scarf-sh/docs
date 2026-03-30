@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-03-30
+
+- Added the new *Usage & Billing* experience for usage-based plans, including company unlock credits, a richer company unlocks table, and a paginated unlocked-companies view in subscription settings.
+- Updated usage-plan checkout so organization admins can self-serve Starter and Basic plans, choose billing interval, and set run and company-unlock quantities during checkout.
+- Added explanatory tooltips to dashboard and company-activity total metric cards.
+- Export flows now respect company unlock visibility for usage-billing organizations, and non-admin members see clearer guidance when exports require an organization admin.
+
 ## 2026-03-23
 
 - Added a closed-beta organization-wide download feed API endpoint for retrieving daily download data.
