@@ -46,7 +46,32 @@ In short: monthly credits reset, but the visible company list naturally changes 
 ## Match Feedback
 Match Feedback allows you to confirm, deny, or fix your company matches. Companies marked with negative match feedback will not consume MTCs the following month.
 
+### Negative feedback
+Use negative feedback when Scarf matched a company, but you do not want that company shown for the event source going forward.
+
 ![No company feedback on file  If you](https://github.com/user-attachments/assets/72389329-b857-45b2-9450-481e45badc39)
+
+### Positive feedback
+Use positive feedback when you know Scarf's company match is wrong and you know which company it should be instead. This is especially useful when the detected company from IP-based enrichment does not match what you know from first-party context.
+
+For example, a referrer URL or domain may clearly indicate that traffic came from a known company, while Scarf's current company match points to a different organization. In that case, submit positive feedback to associate that endpoint with the company you know is correct. This helps Scarf categorize future events from that same `endpoint_id` more accurately.
+
+A mismatch between a referrer/domain and Scarf's company match can happen legitimately, because IP-based matching is probabilistic and can be wrong. If you have concrete evidence about the real company behind the traffic, positive feedback is the right way to correct it.
+
+Typical reasons to submit positive feedback:
+
+- You recognize the company from a known hostname, SSO domain, or internal company URL pattern in the referrer.
+- The matched company appears to be a former employer or otherwise stale association for that IP range.
+- Your team has direct knowledge that the traffic came from a different company than the one Scarf matched.
+
+To submit a correction:
+
+1. Open the event or company details where feedback is available.
+2. Choose the option to submit feedback.
+3. Select the company you know is correct for that event source.
+4. Submit the feedback so future events from that endpoint can be categorized more accurately.
+
+![Positive match feedback for correcting a known company match](assets/pics/user-guide/match-feedback-known-company.png)
 
 ## FAQ
 **How do I know how much of my MTC quota I’ve used?**
