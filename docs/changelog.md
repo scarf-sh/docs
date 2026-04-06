@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-04-06
+
+- Added filter-based company unlock controls, including scheduled and on-demand unlock flows, unlock run history, and inline prompts to enable auto-unlock from filtered insights views.
+- Improved the unlocked companies experience with a richer unlocks table, search/filter support in Company Insights, and clearer company-unlock call-to-action messaging.
+- Added `filter_names` to CRM company rollup exports, and kept both legacy and new LinkedIn URL columns for compatibility.
+
 ## 2026-03-30
 
 - Added the new *Usage & Billing* experience for usage-based plans, including company unlock credits, a richer company unlocks table, and a paginated unlocked-companies view in subscription settings.
