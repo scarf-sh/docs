@@ -10,7 +10,7 @@ For current plan options and pricing, see the [Scarf pricing page](https://about
 
 Scarf can surface company-level insights when traffic can be matched to a business entity. A company unlock is what gives your organization access to a specific company's enriched details and activity inside Scarf.
 
-You can unlock companies one at a time, or configure rules so Scarf unlocks them automatically when they match the criteria you care about.
+You can unlock companies one at a time, unlock them in bulk from a filtered view, or configure rules so Scarf unlocks them automatically when they match the criteria you care about.
 
 ### Runs
 
@@ -22,7 +22,7 @@ Conceptually, Runs are consumed when Scarf performs work for you, such as answer
 
 There are two main ways to unlock companies:
 
-1. Unlock a specific company directly when you decide it is relevant.
+1. Unlock companies manually when you decide they are relevant, either one at a time or in bulk from a filtered list.
 2. Configure filter-based rules so Scarf can unlock matching companies automatically.
 
 This gives teams a product-led onramp: you can start with baseline usage visibility, unlock the companies you care about most, and then automate that workflow as your process matures.
@@ -31,9 +31,12 @@ This gives teams a product-led onramp: you can start with baseline usage visibil
 
 You can unlock companies directly from the parts of Scarf where company insights are already surfaced for your organization.
 
+Manual unlocks are not limited to one company at a time. You can also work through a filtered list in bulk, such as unlocking every company in a saved filter or unlocking the next set of companies from a sorted view.
+
 Use manual unlocks when:
 
 - You are reviewing a short list of high-intent companies.
+- You want to bulk-unlock the companies currently surfaced by a specific filter.
 - Your team wants to qualify companies before making them broadly visible.
 - You are testing which traffic patterns are most useful before creating automation.
 
