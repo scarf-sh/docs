@@ -2,7 +2,7 @@
 
 ## HubSpot Requirements
 
-- A Scarf account with an Organization set-up and an active Premium Subscription.
+- A Scarf account with an Organization set-up and access to CRM integrations on your Scarf plan.
 -   A HubSpot instance.
 
 ## Required Permissions

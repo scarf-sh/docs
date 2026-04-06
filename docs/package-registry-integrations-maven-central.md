@@ -8,15 +8,13 @@ To enable Maven Central insights in Scarf, opt in from the **Publisher Insights*
 
 ## Trial period
 
-New Maven Central publishers receive a **30-day trial** of select paid features, including:
+New Maven Central publishers receive a **30-day trial** of select paid features.
 
-- Up to **3 seats** in the organization
-- Up to **50 MTCs**
-- Up to an **18-month data window**
+The included trial features and limits can change over time. For current packaging, see the [Scarf pricing page](https://about.scarf.sh/pricing/).
 
 After the trial ends, your account returns to the free tier.
 
-You still have free access to your Maven Central package data, but premium features (like commercial usage insights and advanced filtering) require a paid plan. To learn more about upgrading, [book a call](https://cal.com/team/scarf/meeting) with our team.
+You still have free access to your Maven Central package data, but some advanced capabilities require a paid plan. To learn more, [book a call](https://cal.com/team/scarf/meeting) with our team.
 
 ## Data availability timeline
 
@@ -29,7 +27,7 @@ Check back regularly for the latest insights.
 
 ### What happens when my trial expires? What do I have access to going forward?
 
-When your 30-day trial ends, your account returns to the free tier. You still keep access to Maven Central package data in Scarf, but paid features (including commercial usage insights, advanced filtering, and higher plan limits) are no longer included unless you upgrade.
+When your 30-day trial ends, your account returns to the free tier. You still keep access to Maven Central package data in Scarf, but some advanced capabilities are no longer included unless you upgrade.
 
 ### What is a “source”? This doesn’t match the unique IP count I saw before.
 
@@ -48,4 +46,4 @@ Because this grouping is not a raw IP count, source totals may differ from numbe
 
 Scarf can make Maven Central stats available starting from **January 1, 2023**.
 
-The data window visible in your account depends on your Scarf plan. **Premium Tier** customers can access the full Maven Central history Scarf has available. For plan details, see [Scarf pricing](https://about.scarf.sh/pricing).
+The data window visible in your account depends on your Scarf plan. For current plan details, see [Scarf pricing](https://about.scarf.sh/pricing).
