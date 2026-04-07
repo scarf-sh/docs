@@ -10,6 +10,8 @@ For current plan options and pricing, see the [Scarf pricing page](https://about
 
 Scarf can surface company-level insights when traffic can be matched to a business entity. A company unlock is what gives your organization access to a specific company's enriched details and activity inside Scarf.
 
+Company unlocks last for one month. For example, a company unlocked on February 3 remains available until March 3.
+
 You can unlock companies one at a time, unlock them in bulk from a filtered view, or configure rules so Scarf unlocks them automatically when they match the criteria you care about.
 
 ### Runs
@@ -25,7 +27,6 @@ There are two main ways to unlock companies:
 1. Unlock companies manually when you decide they are relevant, either one at a time or in bulk from a filtered list.
 2. Configure filter-based rules so Scarf can unlock matching companies automatically.
 
-This gives teams a product-led onramp: you can start with baseline usage visibility, unlock the companies you care about most, and then automate that workflow as your process matures.
 
 ## Unlock companies manually
 

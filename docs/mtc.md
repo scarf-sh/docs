@@ -101,8 +101,7 @@ It is also available on the Organization settings page.
 
 **What if I want to see more companies?**
 
-
-If you are on a legacy MTC subscription and need to see more companies, contact Scarf support or your Scarf point of contact to discuss your subscription options.
+If you want broader company visibility, review your current company unlock usage and consider unlocking additional companies manually or with saved-filter automation. For current billing guidance, see [Billing and Pricing](/billing-and-pricing/) and the [Scarf pricing page](https://about.scarf.sh/pricing/).
 
 ![Upgrade your MTC limit](https://github.com/user-attachments/assets/e1c121d2-d5dc-434d-a39d-bdeca9e1d694)
 
