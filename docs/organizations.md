@@ -70,6 +70,8 @@ Et voilà! You now have new organization
 
 ## Managing your Organization
 
+For billing concepts such as company unlocks, Runs, and legacy MTC subscriptions, see [Billing and Pricing](/billing-and-pricing/).
+
 ### Filter Settings
 
 You can manage Filter settings for your Organization by clicking into Filter Settings on your organization overview. 
@@ -86,13 +88,5 @@ To enable this Clearbit for your organization, navigate to your organization ove
 
 ![Manage Clearbit](assets/pics/orgs/enable-clearbit.png)
 
-**Complementary Clearbit access is already included in your Scarf plan**
-
-| Scarf Tier | Included Clearbit calls per month                        |
-|------------|----------------------------------------------------------|
-| Basic      | 10,000 calls/month included                              |
-| Premium    | 25,000 calls/month included, with pay-per-usage upgrades |
-
-For more information about enhanced company insights, [contact our sales team](mailto:help@scarf.sh).
-
+Availability of data providers and any included usage depends on your Scarf plan and organization setup. For current plan details, see the [Scarf pricing page](https://about.scarf.sh/pricing/).
 

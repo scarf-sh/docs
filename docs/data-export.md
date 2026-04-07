@@ -6,7 +6,7 @@ Scarf provides a robust platform for tracking package downloads and pixel views.
 
 ## Prerequisites
 
-Exporting data from Scarf will only work if you are on a [Scarf Basic or Premium Plan](https://about.scarf.sh/pricing).
+Export availability depends on your Scarf plan and organization setup. For current plan details, see the [Scarf pricing page](https://about.scarf.sh/pricing/).
 
 ## How to Export Event Data
 
@@ -57,7 +57,7 @@ The event data export includes the following data fields
 | **dnt** | `boolean` | If the user includes a DNT request in their header, that is logged here and [they will not be tracked](/gateway/#do-not-track). |
 | **confidence** | `numeric` | The probability of correct identification of the data. |
 | **endpoint_id** | `text` | This uniquely identifies the public-facing device that has interacted with a Scarf event. Unlike origin_id, it is notably not sensitive to changes in device information like client, user agent, etc. |
-| **mtc_quota_exceeded** | `boolean` | A value of `true` indicates the company information from the event data row was scrubbed due to exceeding the MTC limit. |
+| **mtc_quota_exceeded** | `boolean` | Legacy billing field. A value of `true` indicates the company information from the event data row was scrubbed because the exporting organization exceeded its Monthly Tracked Companies (MTC) limit. |
 
 ### A note on duplicates / de-duplication
 

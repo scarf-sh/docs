@@ -1,8 +1,15 @@
 # Monthly Tracked Companies (MTCs)
 
-Scarf identifies which companies are viewing your documents, downloading your packages, or executing your software, and tracks their activity across the organization. These are referred to as Monthly Tracked Companies (MTCs). Scarf enriches IP addresses with several metadata sources to provide the most accurate data possible.
+MTCs are part of Scarf's legacy billing model.
+
+This page applies only to organizations on existing legacy subscriptions. New subscriptions are not sold on the MTC model. For current billing guidance, see [Billing and Pricing](/billing-and-pricing/) and the [Scarf pricing page](https://about.scarf.sh/pricing/).
+
+Scarf identifies which companies are viewing your documents, downloading your packages, or executing your software, and tracks their activity across the organization. In the legacy billing model, these are referred to as Monthly Tracked Companies (MTCs). Scarf enriches IP addresses with several metadata sources to provide the most accurate data possible.
 
 ## How MTCs work
+
+> Legacy billing only: this section describes behavior for existing subscriptions that still use MTC quotas.
+
 Your MTC quota defines the size of your **tracked company set** (sometimes called your active tracked companies): the number of companies Scarf can actively track at a time.
 
 When an event arrives:
@@ -31,9 +38,12 @@ flowchart TD
   K --> J
 ```
 
-Scarf will always show you the total number of companies interacting with your project at the bottom of the Company Insights page. You can update your plan's MTC quota in your Organization settings. You can also track your MTC usage by day in your Organization settings.
+Scarf will always show you the total number of companies interacting with your project at the bottom of the Company Insights page. Legacy-billing organizations can review their MTC usage in Organization settings.
 
 ## How visibility behaves across months
+
+> Legacy billing only: this section does not apply to current usage-based plans.
+
 MTCs are monthly credits, but company visibility is based on recent activity and your current tracked set.
 
 - At the start of a new month, the tracked set is not wiped; it evolves as new companies are seen.
@@ -44,6 +54,9 @@ MTCs are monthly credits, but company visibility is based on recent activity and
 In short: monthly credits reset, but the visible company list naturally changes with activity over time.
 
 ## Match Feedback
+
+> Legacy billing note: match feedback can affect how companies are counted on legacy MTC subscriptions.
+
 Match Feedback allows you to confirm, deny, or fix your company matches. Companies marked with negative match feedback will not consume MTCs the following month.
 
 ### Negative feedback
@@ -88,8 +101,7 @@ It is also available on the Organization settings page.
 
 **What if I want to see more companies?**
 
-
-You can always increase the number of MTCs on your account to see more. If you are using the Scarf Starter package you can add up to 500 MTCs by going into your account Settings > Billing/Subscription and adding more. If you are using any other Scarf package, contact sales or your customer success manager for more information.
+If you want broader company visibility, review your current company unlock usage and consider unlocking additional companies manually or with saved-filter automation. For current billing guidance, see [Billing and Pricing](/billing-and-pricing/) and the [Scarf pricing page](https://about.scarf.sh/pricing/).
 
 ![Upgrade your MTC limit](https://github.com/user-attachments/assets/e1c121d2-d5dc-434d-a39d-bdeca9e1d694)
 

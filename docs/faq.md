@@ -54,7 +54,7 @@ Additionally, Scarf sees metadata about the client and artifacts being downloade
 
 ### How much does it cost to use Scarf Gateway?
 
-Scarf Gateway is free to use. To gain access to additional features like our developer API, raw data export, integrations, availability & support SLA's, contact our sales team.
+Scarf Gateway is free to use. For plan packaging and pricing for additional Scarf capabilities, see the [Scarf pricing page](https://about.scarf.sh/pricing/).
 
 ### Is Scarf Gateway self-hosted or managed by Scarf?
 
@@ -267,7 +267,9 @@ Yes. Take a look at our case studies.
 
 ### What are the different pricing plans offered by Scarf, and what features are included in each tier?
 
-See our pricing plans, and don’t hesitate to get in touch with us with any questions.
+See the [Scarf pricing page](https://about.scarf.sh/pricing/) for current plans and packaging.
+
+For how billing works inside the product, including company unlocks, Runs, and legacy MTC subscriptions, see [Billing and Pricing](/billing-and-pricing/).
 
 ## Customer Support & SLAs
 

@@ -2,7 +2,7 @@
 
 ## Salesforce Requirements
 
-- A Scarf account with an Organization set-up and an active Premium Subscription.
+- A Scarf account with an Organization set-up and access to CRM integrations on your Scarf plan.
 -   A Salesforce account with API access; API access is included with Force.com, Enterprise, Developer, Performance, and Unlimited Editions. If you are on a different Salesforce plan, you may be required to purchase additional features to enable API access.
 -   It is suggested that a dedicated Salesforce integration user be created ([Salesforce documentation](https://help.salesforce.com/s/articleView?id=platform.integration_user.htm&type=5)). However, any user account that has the necessary Salesforce permissions can be used to initiate the connection.
 
