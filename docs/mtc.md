@@ -88,8 +88,7 @@ It is also available on the Organization settings page.
 
 **What if I want to see more companies?**
 
-
-You can always increase the number of MTCs on your account to see more. If you are using the Scarf Starter package you can add up to 500 MTCs by going into your account Settings > Billing/Subscription and adding more. If you are using any other Scarf package, contact sales or your customer success manager for more information.
+If you want broader company visibility, review your current company unlock usage and consider unlocking additional companies manually or with saved-filter automation. For current billing guidance, see [Billing and Pricing](/billing-and-pricing/) and the [Scarf pricing page](https://about.scarf.sh/pricing/).
 
 ![Upgrade your MTC limit](https://github.com/user-attachments/assets/e1c121d2-d5dc-434d-a39d-bdeca9e1d694)
 
