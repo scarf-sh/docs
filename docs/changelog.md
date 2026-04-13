@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-04-13
+
+- The Scarf Agent in Slack now has full access to Scarf's public API.
+- The Scarf Agent in Slack now supports cron jobs for scheduled and recurring tasks.
+- Usage-based billing organizations can now see currently visible companies directly on the home page, alongside company unlock controls and remaining unlock credits.
+- Scarf MCP filters now expose the full filter attribute surface, including request metadata, company attributes, trend filters, and artifact-name filtering.
+
 ## 2026-04-06
 
 - Added filter-based company unlock controls, including scheduled and on-demand unlock flows, unlock run history, and inline prompts to enable auto-unlock from filtered insights views.
