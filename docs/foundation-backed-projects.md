@@ -17,7 +17,8 @@ then Scarf is included with in your foundation benefits! If your foundation is n
 
 - Unlimited seat licenses for all project maintainers.
 - Unlimited data retention.
-- 100 Monthly Tracked Company (MTC) credits.
+- 25 company unlocks per month.
+- 100 runs per month.
 
 Your foundation may also have access to additional benefits beyond what's listed here, just ask us, or talk to your foundation-side contact.
 
