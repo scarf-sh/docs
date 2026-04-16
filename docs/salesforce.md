@@ -95,16 +95,17 @@ The basic CRM connection allows you to pair Scarf Surfaced Companies with Accoun
 
 | Field Label (suggested) | Field Name (required) | Field Type | Description |
 |-------------------------|----------------------|-----------|-------------|
-| Scarf Company          | Scarf_company_name__c | string    | Company Name as determined by Scarf Enrichment |
-| Scarf Domain           | Scarf_company_domain__c | string    | Primary Internet Domain of the Company |
-| Scarf First Seen       | Scarf_first_seen__c | date      | Date of First Event Scarf observed attributed to this Company |
-| Scarf Last Seen        | Scarf_last_seen__c | date      | Date of most recent Event Scarf observed attributed to this Company |
-| Scarf Funnel Stage     | Scarf_funnel_stage__c | string    | Current [Adoption Funnel Stage](https://docs.scarf.sh/funnel-stages/) of the Company |
+| Scarf Company          | Scarf_company_name__c | string    | Company name as determined by Scarf Enrichment |
+| Scarf Domain           | Scarf_company_domain__c | string    | Primary internet domain of the company |
+| Scarf First Seen       | Scarf_first_seen__c | date      | Date of the first event Scarf observed for this company |
+| Scarf Last Seen        | Scarf_last_seen__c | date      | Date of the most recent event Scarf observed for this company |
+| Scarf Last Updated     | Scarf_last_updated__c | datetime  | Timestamp of the most recent Scarf sync update written for this company record. Use this to identify stale Salesforce records, and note that it changes when Scarf writes refreshed company metadata, not just when event totals change. |
+| Scarf Funnel Stage     | Scarf_funnel_stage__c | string    | Current [adoption funnel stage](https://docs.scarf.sh/funnel-stages/) of the company |
 | Scarf Total Events     | Scarf_total_events_last_30_days__c | number    | Total observed events in the last 30 days |
-| Scarf Total Uniques    | Scarf_total_unique_sources_last_30_days__c | number    | Unique observed Event Sources (endpoints) in the last 30 days |
-| Scarf Events MoM       | Scarf_total_events_MoM__c | number    | Change in Total Events over the previous Month |
-| Scarf Events WoW       | Scarf_total_events_WoW__c | number    | Change in Total Events over the previous Week |
-| Scarf Sources MoM      | Scarf_total_unique_sources_MoM__c | number    | Change in Unique Sources over the previous Month |
-| Scarf Sources WoW      | Scarf_total_unique_sources_WoW__c | number    | Change in Unique Sources over the Previous Week |
+| Scarf Total Uniques    | Scarf_total_unique_sources_last_30_days__c | number    | Unique observed event sources (endpoints) in the last 30 days |
+| Scarf Events MoM       | Scarf_total_events_MoM__c | number    | Change in total events over the previous month |
+| Scarf Events WoW       | Scarf_total_events_WoW__c | number    | Change in total events over the previous week |
+| Scarf Sources MoM      | Scarf_total_unique_sources_MoM__c | number    | Change in unique sources over the previous month |
+| Scarf Sources WoW      | Scarf_total_unique_sources_WoW__c | number    | Change in unique sources over the previous week |
 
 For a detailed guide on how to make the most of your Salesforce integration, check out our [Salesforce Integration Playbook](https://about.scarf.sh/post/sync-scarf-data-with-salesforce). It walks you through configuring the connection, matching and syncing companies.

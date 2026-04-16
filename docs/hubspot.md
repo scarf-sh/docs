@@ -106,17 +106,18 @@ The HubSpot connection allows you to pair Scarf Surfaced Companies with Account 
 
 | Property Label (suggested) | Internal Name (**required**)                   | Object Type | Description                                                         |
 |----------------------------|------------------------------------------------|-------------|---------------------------------------------------------------------|
-| Scarf Company              | `scarf_company_name`                           | string      | Company Name as determined by Scarf Enrichment                     |
-| Scarf Domain               | `scarf_company_domain`                         | string      | Primary Internet Domain of the Company                             |
-| Scarf First Seen           | `scarf_first_seen`                             | date        | Date of First Event Scarf observed attributed to this Company      |
-| Scarf Last Seen            | `scarf_last_seen`                              | date        | Date of most recent Event Scarf observed attributed to this Company |
-| Scarf Funnel Stage         | `scarf_funnel_stage`                           | string      | Current [Adoption Funnel Stage](https://docs.scarf.sh/funnel-stages/) of the Company                  |
-| Scarf Total Events         | `scarf_total_events_last_30_days`              | number      | Total observed events in the last 30 days                          |
-| Scarf Total Uniques        | `scarf_total_unique_sources_last_30_days`      | number      | Unique observed Event Sources (endpoints) in the last 30 days      |
-| Scarf Events MoM           | `scarf_total_events_mom`                       | number      | Change in Total Events over the previous Month                     |
-| Scarf Events WoW           | `scarf_total_events_wow`                       | number      | Change in Total Events over the previous Week                      |
-| Scarf Sources MoM          | `scarf_total_unique_sources_mom`               | number      | Change in Unique Sources over the previous Month                   |
-| Scarf Sources WoW          | `scarf_total_unique_sources_wow`               | number      | Change in Unique Sources over the Previous Week                    |
+| Scarf Company              | `scarf_company_name`                           | string      | Company name as determined by Scarf Enrichment                      |
+| Scarf Domain               | `scarf_company_domain`                         | string      | Primary internet domain of the company                              |
+| Scarf First Seen           | `scarf_first_seen`                             | date        | Date of the first event Scarf observed for this company             |
+| Scarf Last Seen            | `scarf_last_seen`                              | date        | Date of the most recent event Scarf observed for this company       |
+| Scarf Last Updated         | `scarf_last_updated`                           | datetime    | Timestamp of the most recent Scarf sync update written for this company record. Use this to identify stale HubSpot records, and note that it changes when Scarf writes refreshed company metadata, not just when event totals change. |
+| Scarf Funnel Stage         | `scarf_funnel_stage`                           | string      | Current [adoption funnel stage](https://docs.scarf.sh/funnel-stages/) of the company |
+| Scarf Total Events         | `scarf_total_events_last_30_days`              | number      | Total observed events in the last 30 days                           |
+| Scarf Total Uniques        | `scarf_total_unique_sources_last_30_days`      | number      | Unique observed event sources (endpoints) in the last 30 days       |
+| Scarf Events MoM           | `scarf_total_events_mom`                       | number      | Change in total events over the previous month                      |
+| Scarf Events WoW           | `scarf_total_events_wow`                       | number      | Change in total events over the previous week                       |
+| Scarf Sources MoM          | `scarf_total_unique_sources_mom`               | number      | Change in unique sources over the previous month                    |
+| Scarf Sources WoW          | `scarf_total_unique_sources_wow`               | number      | Change in unique sources over the previous week                     |
 
 
 ### Create Scarf data fields in HubSpot
