@@ -104,8 +104,6 @@ The Scarf integration to HubSpot is a [Private App](https://developers.hubspot.c
 
 The HubSpot connection allows you to pair Scarf Surfaced Companies with Account records in HubSpot, and optionally to create new Account records when Company Matches are surfaced. In addition to account records, Scarf will attempt to publish metrics to the HubSpot Account record if a matching Field is found on the account. If no matching Fields are found on an Account Object, Scarf will not update the record. The Fields Scarf will attempt to publish are enumerated here:
 
-Scarf also exports a `scarf_last_updated` datetime property for HubSpot company records. This value reflects the latest Scarf metadata refresh written to the CRM record and is useful for sorting or filtering stale records.
-
 | Property Label (suggested) | Internal Name (**required**)                   | Object Type | Description                                                         |
 |----------------------------|------------------------------------------------|-------------|---------------------------------------------------------------------|
 | Scarf Company              | `scarf_company_name`                           | string      | Company name as determined by Scarf Enrichment                      |

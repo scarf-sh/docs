@@ -93,8 +93,6 @@ You also have the option to set Scarf to attempt to create a new Account record 
 
 The basic CRM connection allows you to pair Scarf Surfaced Companies with Account records in Salesforce, and optionally to create new Account records when Company Matches are surfaced. In addition to account records, Scarf will attempt to publish metrics to the CRM Account record if a matching Field is found on the account. If no matching Fields are found on an Account Object, Scarf will not update the record. The Fields Scarf will attempt to publish are enumerated here:
 
-Scarf also exports a `Scarf_last_updated__c` datetime field. This value comes from the latest metadata update Scarf has for the company and is intended to help downstream Salesforce users sort or filter for stale records. If a record has not been refreshed recently, this timestamp makes that visible immediately.
-
 | Field Label (suggested) | Field Name (required) | Field Type | Description |
 |-------------------------|----------------------|-----------|-------------|
 | Scarf Company          | Scarf_company_name__c | string    | Company name as determined by Scarf Enrichment |
