@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-04-20
+
+- Usage-based billing company views now stay scoped to the current view, including visible-company counts in table footers and package/pixel-aware company results across the home, dashboard, and analytics pages.
+- Starter-tier usage-billing organizations now get clearer out-of-Runs handling, including a billing modal and automated depleted-run emails when metered actions are blocked.
+- CRM exports now include a `last updated at` field so downstream systems can identify stale records more reliably.
+
 ## 2026-04-13
 
 - The Scarf Agent in Slack now has full access to Scarf's public API.
