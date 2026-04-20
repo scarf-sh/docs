@@ -15,8 +15,6 @@ then Scarf is included with in your foundation benefits! If your foundation is n
 
 ## What projects get
 
-- Unlimited seat licenses for all project maintainers.
-- Unlimited data retention.
 - 25 company unlocks per month.
 - 100 runs per month.
 
