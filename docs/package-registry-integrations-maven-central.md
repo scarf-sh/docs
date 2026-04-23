@@ -10,9 +10,8 @@ To enable Maven Central insights in Scarf, opt in from the **Publisher Insights*
 
 New Maven Central publishers receive a **30-day trial** of select paid features, including:
 
-- Up to **3 seats** in the organization
-- Up to **50 MTCs**
-- Up to an **18-month data window**
+- Up to **25 company unlocks**
+- Up to **100 runs**
 
 After the trial ends, your account returns to the free tier.
 
