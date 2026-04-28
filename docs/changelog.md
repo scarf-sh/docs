@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-04-28
+
+- Company Journey is now available to all organizations, with clearer retention-aware guidance when older activity is outside the current plan window.
+- The organization-wide download feed is now easier to use, with pagination, clearer onboarding copy, and the new *Dependency Radar* name in navigation.
+- Dependency Radar now provides clearer access guidance when account or organization settings need attention.
+- Usage-based billing now reports Runs, company unlocks, and top-up balances more accurately for the active billing period.
+- Usage-billing organizations now get clearer notifications when metered actions run out of credits.
+- Starter-plan organizations can now use the full rolling 3-month history window, with more consistent upgrade guidance for older or longer date ranges.
+- Company unlocks now apply more precisely to the selected package, pixel, and filter context.
+- Company activity pages now avoid unintentionally carrying over saved insights filters, reducing confusing filtered views when opening company profiles.
+- Maven Central enrollment is more reliable and provides better diagnostics when publisher setup needs support.
+
 ## 2026-04-20
 
 - Usage-based billing company views now stay scoped to the current view, including visible-company counts in table footers and package/pixel-aware company results across the home, dashboard, and analytics pages.
