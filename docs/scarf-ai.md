@@ -12,7 +12,9 @@ Use Scarf AI when you want to:
 
 ## Runs and billing
 
-Scarf AI uses Scarf Runs. A Run is consumed when Scarf performs work on your behalf, such as answering an AI question, making a public API call, running an export, or evaluating an automated workflow. Viewing dashboards, changing filters, or reviewing already-available results does not by itself consume Runs.
+Scarf AI uses Scarf Runs. Scarf AI in-app and the Scarf Slack Agent consume 1 Run per message sent to the AI. API calls made by Scarf AI while answering that message do not consume additional Runs, which makes the in-app and Slack AI experiences the most cost-effective way to consume inference with Scarf.
+
+Viewing dashboards, changing filters, or reviewing already-available results does not by itself consume Runs.
 
 For the full billing model, see [Billing and Pricing](billing-and-pricing.md).
 
@@ -70,9 +72,11 @@ Capabilities include:
 - natural-language Scarf analytics in Slack
 - answers scoped to your Scarf organization
 - team-visible investigation threads
+- downloadable reports sent back into Slack
+- scheduled recurring tasks, such as cron-style reports or monitoring workflows
 - the same Scarf data access controls used by your organization
 
-Slack Agent requests that cause Scarf to answer a question or process analytics may consume Runs.
+The Scarf Slack Agent consumes 1 Run per message sent to the AI. API calls the agent makes while answering that message do not consume additional Runs.
 
 ### Scarf AI via API
 
@@ -102,20 +106,21 @@ Capabilities include:
 - company, package, event, filter, export, and related API surfaces
 - integration with your own agents, data pipelines, and reporting systems
 
-Public API calls consume Runs as described in [Billing and Pricing](billing-and-pricing.md).
+Direct public API calls may consume Runs as described in [Billing and Pricing](billing-and-pricing.md). API calls made by Scarf AI while answering an in-app or Slack Agent message do not consume additional Runs beyond the 1 Run for the message.
 
 ## Using Scarf in your LLM of choice
 
 ### Scarf Skill
 
-The Scarf Skill is an agent skill that teaches compatible AI assistants how to answer Scarf analytics questions safely using the Scarf API. Use it when your assistant supports skills and you want a guided Scarf workflow inside that assistant.
+The [Scarf Skill](https://github.com/scarf-sh/scarf-skill) is an agent skill that teaches compatible AI assistants how to answer Scarf analytics questions safely using the Scarf API. Use it when your assistant supports skills and you want a guided Scarf workflow inside that assistant.
 
 To set it up:
 
-1. Install the Scarf Skill from the Scarf skill package or your organization's approved skill registry.
-2. Provide a Scarf API token to the assistant as `SCARF_API_TOKEN` using your assistant's secret-management mechanism.
-3. Tell the assistant which Scarf organization or owner to use.
-4. Ask Scarf analytics questions in natural language.
+1. Download or clone the Scarf Skill from [github.com/scarf-sh/scarf-skill](https://github.com/scarf-sh/scarf-skill), or point your LLM client directly at that repository if it supports installing skills from GitHub.
+2. Install or enable the skill in your LLM client using that client's skill setup flow.
+3. Provide a Scarf API token to the assistant as `SCARF_API_TOKEN` using your assistant's secret-management mechanism.
+4. Tell the assistant which Scarf organization or owner to use.
+5. Ask Scarf analytics questions in natural language.
 
 Example prompts:
 
@@ -135,30 +140,26 @@ Skill-driven Scarf API calls consume Runs when they call Scarf endpoints or ask 
 
 ### Scarf MCP server
 
-The Scarf MCP server lets MCP-compatible clients, such as desktop assistants and coding agents, connect to Scarf analytics as tools. It is published as the `@scarf/scarf-mcp` npm package.
+The Scarf MCP server lets MCP-compatible clients, such as desktop assistants and coding agents, connect to Scarf analytics as tools. It is available at:
+
+```text
+https://api.scarf.sh/mcp
+```
 
 Prerequisites:
 
-- Node.js and npm
 - a Scarf API token
-- an MCP-compatible client
+- an MCP-compatible client that supports remote MCP servers
 
-Install the server:
-
-```bash
-npm install -g @scarf/scarf-mcp
-```
-
-Configure your MCP client to run the server with your Scarf token. For clients that use JSON MCP configuration, add a server entry like this:
+Configure your MCP client to use Scarf's remote MCP endpoint and authenticate with your Scarf API token. For clients that use JSON MCP configuration, add a server entry like this:
 
 ```json
 {
   "mcpServers": {
     "scarf": {
-      "command": "npx",
-      "args": ["@scarf/scarf-mcp"],
-      "env": {
-        "SCARF_API_TOKEN": "your-token-here"
+      "url": "https://api.scarf.sh/mcp",
+      "headers": {
+        "Authorization": "Bearer your-token-here"
       }
     }
   }
@@ -182,7 +183,7 @@ Available MCP capabilities include:
 - `get-company-totals` to aggregate metrics for a company
 - `get-consolidated-company-insights` to retrieve paginated company insights with filtering
 
-MCP tool calls use the Scarf API, so API-backed requests may consume Runs.
+MCP tool calls use the Scarf API, so direct API-backed requests may consume Runs.
 
 ## Choosing the right option
 
