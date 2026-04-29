@@ -103,7 +103,7 @@ Capabilities include:
 
 - programmatic access to Scarf analytics
 - organization-scoped authentication
-- company, package, event, filter, export, and related API surfaces
+- access to supported Scarf data and workflow surfaces
 - integration with your own agents, data pipelines, and reporting systems
 
 Direct public API calls may consume Runs as described in [Billing and Pricing](billing-and-pricing.md). API calls made by Scarf AI while answering an in-app or Slack Agent message do not consume additional Runs beyond the 1 Run for the message.
@@ -130,10 +130,10 @@ Example prompts:
 
 Capabilities include:
 
-- guided use of Scarf public API endpoints
+- guided use of supported Scarf API capabilities
 - safe defaults such as organization scoping and recent date ranges
 - read-oriented analytics flows
-- insights-filter creation and reuse where supported
+- reusable analysis patterns where supported
 - concise summaries designed for operators and go-to-market teams
 
 Skill-driven Scarf API calls consume Runs when they call Scarf endpoints or ask Scarf to process analytics.
@@ -170,18 +170,12 @@ Restart your MCP client after saving the configuration, then ask it Scarf questi
 
 Example prompts:
 
-- "Use Scarf to show company totals for github.com."
-- "Create an insights filter for Fortune 500 companies in investigation."
-- "List my saved Scarf insights filters."
-- "Get consolidated company insights sorted by download count."
+- "Use Scarf to summarize activity for this company."
+- "Find high-intent companies for my organization this month."
+- "Show me what changed in our Scarf activity this week."
+- "Help me investigate unusual download activity."
 
-Available MCP capabilities include:
-
-- `create-insights-filter` to create reusable analytics filters
-- `get-insights-filter` to retrieve a saved filter
-- `list-insights-filters` to list named filters
-- `get-company-totals` to aggregate metrics for a company
-- `get-consolidated-company-insights` to retrieve paginated company insights with filtering
+Available MCP capabilities include Scarf analytics, company and package insights, filtering, and related workflows exposed by the Scarf MCP server. The exact tool set may change over time, so rely on your MCP client to show the current available tools.
 
 MCP tool calls use the Scarf API, so direct API-backed requests may consume Runs.
 
