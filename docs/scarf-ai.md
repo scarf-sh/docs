@@ -51,13 +51,13 @@ Each submitted AI question or follow-up that requires Scarf to process data may 
 
 ### Scarf Slack Agent
 
-The Scarf Slack Agent brings Scarf AI into your team Slack workspace. It is available on Basic and Premium plans. Contact Scarf to have the Slack Agent set up for your workspace.
+The Scarf Slack Agent brings Scarf AI into Slack. It is available on Basic and Premium plans. The Slack Agent is currently set up manually by the Scarf team in a shared Slack Connect channel with your team. If you do not already have a Slack Connect channel with Scarf, reach out and Scarf can help set one up.
 
 To set it up:
 
 1. Reach out to Scarf and ask for the Slack Agent to be enabled for your organization.
-2. Scarf will confirm your plan, organization, and Slack workspace details.
-3. Once installed, invite the Scarf Slack Agent to the channels where your team wants to ask analytics questions.
+2. Scarf will confirm your plan, organization, and Slack Connect channel details.
+3. Scarf will manually add and configure the Slack Agent in the shared channel.
 4. Ask Scarf questions directly in Slack.
 
 Example uses:
