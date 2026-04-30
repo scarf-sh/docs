@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-04-30
+
+- Starter-tier organizations can now export aggregate analytics, making high-level usage reporting available without requiring a higher-tier plan.
+- Added public API support for v3 aggregate exports, so aggregate analytics can be pulled programmatically and used by external workflows, agents, and integrations.
+- Added geographic region filtering for Company Insights, helping teams segment company activity by where organizations are headquartered.
+- Company Insights on the home page now includes package context, making it easier to understand which packages are driving company activity.
+- Company Activity event details now show the remote IP when available, giving teams more debugging and attribution context.
+- Added the new API v3 MCP route, expanding what the Scarf Agent and MCP-compatible clients can access through Scarf.
+- Improved company insights quality by hiding UNKNOWN placeholder company rows from customer-facing views.
+- Company Journey is now available to all users.
+- Dependency Radar is now available in navigation, with clearer access guidance when account or organization settings need attention.
+- Improved usage-billing handling around promotional credits, top-ups, package-scoped unlocks, subscription retention windows, run depletion checks, and depletion emails.
+- Improved Slack Agent aggregate handling with longer request timeouts for heavier analytics queries.
+
 ## 2026-04-28
 
 - Company Journey is now available to all organizations, with clearer retention-aware guidance when older activity is outside the current plan window.
