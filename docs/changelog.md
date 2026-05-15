@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-05-11
+
+- Added endpoint, origin, and Maven file-extension breakdowns to v3 aggregate exports, giving API users more ways to segment package activity.
+- Public API docs for v3 aggregate exports now describe the supported date, rollup, breakdown, and breakdown-set parameters directly in the schema.
+- The Scarf Agent and MCP-compatible clients now use v3 aggregate exports and can trigger company unlock workflows through the supported API surfaces.
+- Starter and Basic plan users now get clearer retention-window guidance and upgrade prompts when selected analytics ranges exceed plan limits.
+- Starter users now see clearer self-serve checkout guidance before choosing monthly or annual billing.
+- Analytics total cards now clarify that unique-source totals are deduplicated across the whole selected date range, rather than summed from daily or monthly unique counts.
+
 ## 2026-04-30
 
 - Starter-tier organizations can now export aggregate analytics, making high-level usage reporting available without requiring a higher-tier plan.
