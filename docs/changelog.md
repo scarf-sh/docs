@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-05-18
+
+- Scarf AI now reports the current returned filter ID when a filter update creates or points to a different ID than the original request, making follow-up filter operations clearer.
+- Public export API permission errors now use plan-neutral "not eligible for export" wording instead of legacy Pro-tier messaging.
+- Public API docs now categorize the v3 aggregate export endpoint under Packages, making the endpoint easier to find alongside related package analytics APIs.
+
 ## 2026-05-11
 
 - Added endpoint, origin, and Maven file-extension breakdowns to v3 aggregate exports, giving API users more ways to segment package activity.
