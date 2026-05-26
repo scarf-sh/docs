@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-05-25
+
+- Added public API endpoints for endpoint feedback, allowing teams to record endpoint IDs that should be matched to a different company or unmatched from their current company in future processing.
+- Organization subscription settings now show how each company was unlocked, including manual unlocks with the user name and automatic filter-based unlocks with the filter name.
+- Bug fix for Maven Central package badges not displaying live download / company counts.
+- Usage-based billing checkout now shows the organization's package tier (Starter, Basic, or Premium) alongside subscription status and billing interval.
+
 ## 2026-05-18
 
 - Scarf AI now reports the current returned filter ID when a filter update creates or points to a different ID than the original request, making follow-up filter operations clearer.
