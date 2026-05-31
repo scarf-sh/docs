@@ -115,6 +115,31 @@ func main() {
 }
 ```
 
+### [Scarf C++ SDK](https://github.com/scarf-sh/cpp-sdk)
+```cpp
+#include "scarf/event_logger.hpp"
+
+int main() {
+    // Initialize with required endpoint URL for your event collection package in Scarf
+    scarf::EventLogger logger("https://your-scarf-endpoint.com");
+
+    // Send an event with properties
+    scarf::LogResult result = logger.log_event({
+        {"sdk", "scarf-cpp"},
+        {"release", "v0.1.0"},
+        {"source", "my-application"},
+        {"metadata", scarf::PropertyValue::Object{
+            {"channel", "stable"},
+            {"feature", "install"}
+        }},
+    });
+
+    return result.success ? 0 : 1;
+}
+```
+
+The C++ SDK can be consumed from source with CMake, supports C++17 or newer, and uses the same telemetry defaults as Scarf's other SDKs, including `DO_NOT_TRACK` and `SCARF_NO_ANALYTICS` opt-outs.
+
 ## Real world examples
 
 You can find 1k+ real world open source examples of how projects use Scarf telemetry in various languages [on GitHub](https://github.com/search?q=gateway.scarf.sh&type=code).
