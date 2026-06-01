@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-06-01
+
+- Scarf AI now gives more careful answers about company activity, preserving distinctions between active and newly observed companies, observed activity dates, aggregate-export coverage gaps, and download signals versus confirmed runtime usage.
+- Scarf AI now avoids suggesting company unlocks or unlock-credit actions unless billing or entitlement evidence has actually been retrieved.
+- README badges now render properly on GitHub again.
+
 ## 2026-05-25
 
 - Added public API endpoints for endpoint feedback, allowing teams to record endpoint IDs that should be matched to a different company or unmatched from their current company in future processing.
