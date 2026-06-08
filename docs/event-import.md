@@ -22,7 +22,7 @@ We provide three main ways to import events:
 
 <!-- prettier-ignore-start -->
 !!! Warning
-    Beginning June 15, 2026, Scarf will no longer support historical event imports for events whose `$time` value is more than **1 week older** than the moment the import is triggered. Imports of current data are not impacted. If you rely on importing older historical events, [contact us](mailto:support@scarf.sh) so we can discuss accommodations. A possible workaround is to import those events into a separate Scarf package with newer timestamps.
+    Beginning June 15, 2026, Scarf will no longer support historical event imports for events whose `$time` value is more than **1 week older** than the moment the import is triggered. Imports of current data are not impacted. If you rely on importing older historical events, [email help@scarf.sh](mailto:help@scarf.sh) so we can discuss accommodations. A possible workaround is to import those events into a separate Scarf package with newer timestamps.
 <!-- prettier-ignore-end -->
 
 ## Getting Started
