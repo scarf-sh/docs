@@ -4,6 +4,7 @@
 
 - Maven Central / Sonatype onboarding now includes a staged welcome email sequence with setup guidance, and users can disable welcome emails from their account email preferences.
 - Async export history and API responses can now show failed exports explicitly, making export status easier to understand when an export cannot complete.
+- Starting next week, the Event Import API will stop accepting historical imports for events timestamped more than one week before the import is triggered; imports of current data are unaffected.
 
 ## 2026-06-01
 
