@@ -20,6 +20,11 @@ We provide three main ways to import events:
     The Event Import API is meant to handle large, bundled imports, and is limited to **15 concurrent imports**. Past this limit, you will get a *422: too many active imports* error. To avoid running into this problem, make sure to batch your imports if you have automation to bring data into Scarf.
 <!-- prettier-ignore-end -->
 
+<!-- prettier-ignore-start -->
+!!! Warning
+    Beginning June 15, 2026, Scarf will no longer support historical event imports for events whose `$time` value is more than **1 week older** than the moment the import is triggered. Imports of current data are not impacted. If you rely on importing older historical events, [contact us](mailto:support@scarf.sh) so we can discuss accommodations. A possible workaround is to import those events into a separate Scarf package with newer timestamps.
+<!-- prettier-ignore-end -->
+
 ## Getting Started
 
 To get started, create packages and pixels in your account to import data into them. You will need to get IDs from the packages and pixels you want to import data into.
