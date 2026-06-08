@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-06-08
+
+- Maven Central / Sonatype onboarding now includes a staged welcome email sequence with setup guidance, and users can disable welcome emails from their account email preferences.
+- Async export history and API responses can now show failed exports explicitly, making export status easier to understand when an export cannot complete.
+
 ## 2026-06-01
 
 - Scarf AI now gives more careful answers about company activity, preserving distinctions between active and newly observed companies, observed activity dates, aggregate-export coverage gaps, and download signals versus confirmed runtime usage.
