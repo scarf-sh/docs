@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-06-15
+
+- Added Intent Scoring settings for configuring high-intent pixel URLs, so matching website activity can be treated as high-importance intent.
+- Company Journey now distinguishes days with pixel activity but no package activity using a half-square marker.
+- Company Insights filters now support explicit first-seen and last-seen calendar date ranges, with clearer rolling-window labels.
+- Maven Central packages now support importance settings during package creation and from the package details page.
+
 ## 2026-06-08
 
 - Maven Central / Sonatype onboarding now includes a staged welcome email sequence with setup guidance, and users can disable welcome emails from their account email preferences.
