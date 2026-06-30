@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-06-29
+
+- Company-domain filters now handle large domain lists with a multiline editor and concise summary display.
+- Company Insights and Company Unlocks now expose sortable company-size columns, using normalized headcount ranges that also match Company Activity details.
+- Company-size filters now match parsed headcount ranges across vendor formats, including open-ended ranges.
+
 ## 2026-06-15
 
 - Added Intent Scoring settings for configuring high-intent pixel URLs, so matching website activity can be treated as high-importance intent.
