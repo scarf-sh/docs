@@ -14,6 +14,8 @@ Company unlocks last for one month. For example, a company unlocked on February 
 
 You can unlock companies one at a time, unlock them in bulk from a filtered view, or configure rules so Scarf unlocks them automatically when they match the criteria you care about.
 
+Company unlocks consume organization credits, so only organization Owners and Admins can spend unlock credits. Organization Members can view data they have access to, including companies that have already been unlocked, but they cannot manually unlock companies or configure automatic unlock rules. For more detail, see [Roles and permissions](/organizations/#roles-and-permissions).
+
 ### Runs
 
 Runs are Scarf's usage unit for workflows and processing performed on top of your data.
