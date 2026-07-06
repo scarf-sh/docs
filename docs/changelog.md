@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-07-06
+
+- CRM sync history now shows each sync's progress status, completion percentage, and processed-entry counts while in-progress syncs are running.
+- Insights filters now support matching either all active criteria or any active criterion, making broad exploratory filters easier to build.
+- Company Insights now includes estimated company revenue ranges, with table display, filtering, and sorting support.
+- Company Insights now supports Scarf's curated top-company signal, including a Top Company column plus filtering and sorting controls.
+
 ## 2026-06-29
 
 - Company-domain filters now handle large domain lists with a multiline editor and concise summary display.
