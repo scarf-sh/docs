@@ -57,7 +57,6 @@ nav:
 - packages.md
 - Package Registry Integrations:
   - Maven Central: package-registry-integrations-maven-central.md
-  - Maven Central troubleshooting: package-registry-integrations-maven-central-troubleshooting.md
 - package-analytics.md
 - Scarf AI: scarf-ai.md
 - custom-telemetry.md
