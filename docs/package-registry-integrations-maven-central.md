@@ -24,6 +24,8 @@ You still have free access to your Maven Central package data, but premium featu
 
 Check back regularly for the latest insights.
 
+If your Maven Central package or stats are not appearing as expected, see [Maven Central troubleshooting](/package-registry-integrations-maven-central-troubleshooting/).
+
 ## FAQs
 
 ### What happens when my trial expires? What do I have access to going forward?
