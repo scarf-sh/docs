@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-07-13
+
+- Report owners now receive an email when a new report file is uploaded, with a link to the entity Reports tab.
+- CRM sync history now groups same-day sync summaries into one daily row, while preserving aggregate progress, status, and processed-entry counts.
+- Company Unlocks now includes CRM account, CRM sync state, SIC code, and owner context for unlocked companies.
+- Scarf AI now gives clearer answers when working from partial or visible-only data, including truncated API results, fallback lookups, and "complete" package comparisons.
+
 ## 2026-07-06
 
 - CRM sync history now shows each sync's progress status, completion percentage, and processed-entry counts while in-progress syncs are running.
