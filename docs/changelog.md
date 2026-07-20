@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-07-20
+
+- Usage-billing organizations can now filter Company Insights by companies that were previously unlocked, including companies whose unlock visibility has expired.
+- Event exports are now available for unlocked companies, so their activity data can be exported through the company event export flow.
+- CRM-enabled organizations are gradually gaining access to a dedicated CRM Management page for viewing unlocked and Monthly Tracked Contributor companies, managing CRM connections and sync state, and customizing the company table. Customers interested in beta testing can contact us.
+- Paid company-unlock credits now carry over across billing periods until spent. Company visibility can still expire after 31 days without refunding the credit, and Usage &amp; Billing shows credits earned in prior periods.
+
 ## 2026-07-13
 
 - Report owners now receive an email when a new report file is uploaded, with a link to the entity Reports tab.
