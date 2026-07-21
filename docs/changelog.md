@@ -55,6 +55,7 @@
 
 ## 2026-05-18
 
+- Scarf Gateway no longer proxies container image blobs; blob downloads are now redirected to upstream registries in all cases. Current container clients have been thoroughly tested and require no configuration changes, but this is a breaking change for some much older clients that cannot follow registry redirects.
 - Scarf AI now reports the current returned filter ID when a filter update creates or points to a different ID than the original request, making follow-up filter operations clearer.
 - Public export API permission errors now use plan-neutral "not eligible for export" wording instead of legacy Pro-tier messaging.
 - Public API docs now categorize the v3 aggregate export endpoint under Packages, making the endpoint easier to find alongside related package analytics APIs.
