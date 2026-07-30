@@ -83,7 +83,7 @@ To locate your API token quickly, open the page and use Cmd + F (or Ctrl + F on 
 
 IP -> Company matching is probabilistic, not exact, so incorrect matches do happen.
 
-For each event, Scarf checks the IP address across several metadata providers and combines those results into a composite company match and confidence score. In general, the more agreement there is across providers, the higher the confidence of the match.
+For each event, Scarf checks the IP address across several metadata providers and combines those results into a composite company match and confidence score. In general, the more agreement there is across providers, the higher the confidence of the match. See [How company matching works](company-matching.md) for a full explanation.
 
 A few things can help interpret low-confidence matches:
 

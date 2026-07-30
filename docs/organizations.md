@@ -92,7 +92,7 @@ You can manage Filter settings for your Organization by clicking into Filter Set
 
 Scarf partners with multiple 3rd party data providers in order to surface IP-address metadata like the location or company behind any event in your account.
 
-For each event, Scarf checks the IP address across several providers and combines the results into a composite company match and confidence score. In general, the more agreement there is across providers, the higher the confidence of the match.
+For each event, Scarf checks the IP address across several providers and combines the results into a composite company match and confidence score. In general, the more agreement there is across providers, the higher the confidence of the match. See [How company matching works](company-matching.md) for details about the process, confidence levels, limitations, and match feedback.
 
 Scarf's enhanced company matching capabilities feature a Clearbit integration to help us offer best-in-class data quality. Enabling Clearbit for your organization is free! Additional terms apply.
 
@@ -108,4 +108,3 @@ To enable this Clearbit for your organization, navigate to your organization ove
 | Premium    | 25,000 calls/month included, with pay-per-usage upgrades |
 
 For more information about enhanced company insights, [contact our sales team](mailto:help@scarf.sh).
-
