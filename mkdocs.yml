@@ -45,37 +45,43 @@ extra_javascript:
 
 # Docs Navigation
 nav:
-- index.md
-- getting-started-checklist.md
-- quick-start.md
-- gateway.md
-- faq.md
-- Organizations:
-  - Setting up your organization: organizations.md
+- Overview: index.md
+- Getting Started:
+  - Getting Started Checklist: getting-started-checklist.md
+  - Quick Start: quick-start.md
+  - FAQ: faq.md
+- Organizations and Billing:
+  - Setting Up Your Organization: organizations.md
   - Scarf for Foundation-Backed Projects: foundation-backed-projects.md
-- Billing and Pricing: billing-and-pricing.md
-- packages.md
-- Package Registry Integrations:
-  - Maven Central: package-registry-integrations-maven-central.md
-- package-analytics.md
-- How company matching works: company-matching.md
-- Scarf AI: scarf-ai.md
-- custom-telemetry.md
-- web-traffic.md
-- oql.md
-- funnel-stages.md
-- sales-prospecting.md
-- event-import.md
-- data-export.md
-- CRM Integrations:
-  - crm-overview.md
-  - salesforce.md
-  - hubspot.md
-- user_best_practices.md
-- troubleshooting.md
-- understanding-your-insights.md
-- API Docs: https://api-docs.scarf.sh/v2.html
-- changelog.md
+  - Billing and Pricing: billing-and-pricing.md
+- Setup and Data Collection:
+  - Scarf Gateway: gateway.md
+  - Setting Up Scarf Packages: packages.md
+  - Package Registry Integrations:
+    - Maven Central: package-registry-integrations-maven-central.md
+  - Scarf SDKs for Library and Package Authors: package-analytics.md
+  - Custom Telemetry: custom-telemetry.md
+  - Scarf Pixels: web-traffic.md
+  - Importing Events: event-import.md
+- Insights and Company Data:
+  - How Company Matching Works: company-matching.md
+  - Scarf AI: scarf-ai.md
+  - Open Source Qualified Leads (OQLs): oql.md
+  - Open Source Adoption Funnel Stages: funnel-stages.md
+  - Making Sense of Your Scarf Insights: understanding-your-insights.md
+- Sales and CRM:
+  - Lead Generation - Scarf's Sales Prospecting Service: sales-prospecting.md
+  - CRM Integrations:
+    - Overview: crm-overview.md
+    - Salesforce: salesforce.md
+    - HubSpot: hubspot.md
+- Data and Developer Tools:
+  - Data Export: data-export.md
+  - API Docs: https://api-docs.scarf.sh/v2.html
+- Help and Updates:
+  - User Guide and Best Practices: user_best_practices.md
+  - Troubleshooting: troubleshooting.md
+  - Changelog: changelog.md
 
 # Analytics
 google_analytics:
