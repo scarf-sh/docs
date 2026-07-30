@@ -40,7 +40,7 @@ Once created, you can access this Pixel in the Tools dropdown, under Pixels. Her
 
 Multiple domains can be added to a tracking pixels. In the same menu, tracking pixel domains can be removed.
 
-![custom domain update](./assets/pics/scarf-pixels/tracking-pixel-add-delete.png)
+![custom domain update](./assets/pics/scarf-pixels/tracking-pixel-add-delete-domain.png)
 
 ## Embedding and using the pixel
 
