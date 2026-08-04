@@ -105,7 +105,19 @@ Select "npm" as your package type. Once created, add a dependency on this librar
 npm i --save @scarf/scarf
 ```
 
-Once your library is published to npm with this change, Scarf will automatically collect stats on install, with no additional code is required. You’ll find package analytics displayed on your Scarf dashboard.
+Once your library is published, Scarf can collect installation statistics when
+the installer permits `@scarf/scarf` to run its install script. npm releases
+that use dependency script approval skip the script until the user approves it.
+For global packages and CLIs, publish this installation command:
+
+```bash
+npm install -g your-package --allow-scripts=@scarf/scarf
+```
+
+The package still installs when users omit `--allow-scripts`, but Scarf does not
+receive an installation event. See [npm install-script
+approval](package-analytics.md#npm-install-script-approval) for local-project
+approval and configuration options.
 
 ### Should I enable `allowTopLevel` in scarf-js?
 
