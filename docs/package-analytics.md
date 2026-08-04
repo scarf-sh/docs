@@ -30,9 +30,11 @@ install script.
 
 #### npm install-script approval
 
-npm releases that use dependency script approval block install scripts unless
-the person installing the package approves them. If npm skips `@scarf/scarf`,
-the package still installs, but Scarf does not receive an installation event.
+npm 12 blocks dependency install scripts unless the person installing the
+package approves them. npm 11.16 and later can record the same approvals, but
+npm 11 only warns about unreviewed scripts and still runs them by default. If
+npm 12 skips `@scarf/scarf`, the package still installs, but Scarf does not
+receive an installation event.
 
 For a global package or CLI, add Scarf to the installation command you publish:
 
@@ -45,16 +47,19 @@ names in the same comma-separated list. Keep a command without
 `--allow-scripts` available for users who do not want to send installation
 telemetry.
 
-For local project installs, users can review skipped scripts and approve Scarf
-from the project directory:
+For local project installs, users can approve Scarf from the project directory,
+then rebuild it to run the script skipped during the initial install:
 
 ```bash
-npm approve-scripts @scarf/scarf
+npm install-scripts approve @scarf/scarf
+npm rebuild @scarf/scarf
 ```
 
 npm stores this approval in the consuming project's `package.json`. npm ignores
 an `allowScripts` entry from your published library when it decides which
-scripts a downstream user has approved.
+scripts a downstream user has approved. By default, npm pins an approval to the
+installed package version, so users may need to review and approve a later
+version again.
 
 Users who want to approve Scarf for future global installs can set a user-level
 npm preference:
@@ -65,7 +70,7 @@ npm config set allow-scripts=@scarf/scarf --location=user
 
 The install-time flag has a narrower scope, so we recommend it over the
 user-level setting. See npm's
-[`approve-scripts` documentation](https://docs.npmjs.com/cli/v11/commands/npm-approve-scripts/)
+[`install-scripts` documentation](https://docs.npmjs.com/cli/v12/commands/npm-install-scripts/)
 for more information.
 
 Head to your package's dashboard on Scarf to see your reports when available.

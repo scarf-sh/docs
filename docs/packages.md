@@ -211,8 +211,10 @@ Once an npm entry has been created, you are ready to configure your package by a
 npm i --save @scarf/scarf
 ```
 Once your library is published, Scarf can receive installation statistics when
-the installer permits `@scarf/scarf` to run its install script. For global
-packages and CLIs, document this recommended installation form:
+the installer permits `@scarf/scarf` to run its install script. npm 12 blocks
+unapproved dependency scripts by default; npm 11.16 and later only warn about
+them. For global packages and CLIs installed with npm 12, document this
+recommended installation form:
 ```bash
 npm install -g your-package --allow-scripts=@scarf/scarf
 ```

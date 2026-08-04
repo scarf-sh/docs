@@ -106,9 +106,9 @@ npm i --save @scarf/scarf
 ```
 
 Once your library is published, Scarf can collect installation statistics when
-the installer permits `@scarf/scarf` to run its install script. npm releases
-that use dependency script approval skip the script until the user approves it.
-For global packages and CLIs, publish this installation command:
+the installer permits `@scarf/scarf` to run its install script. npm 12 blocks
+unapproved dependency scripts by default; npm 11.16 and later only warn about
+them. For global packages and CLIs installed with npm 12, publish this command:
 
 ```bash
 npm install -g your-package --allow-scripts=@scarf/scarf
