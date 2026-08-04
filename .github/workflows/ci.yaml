@@ -28,6 +28,7 @@ jobs:
 
   build:
     name: Deploy docs
+    needs: test
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
     steps:
