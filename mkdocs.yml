@@ -65,6 +65,7 @@ nav:
   - Importing Events: event-import.md
 - Insights and Company Data:
   - How Company Matching Works: company-matching.md
+  - Intent Scoring: intent-scoring.md
   - Scarf AI: scarf-ai.md
   - Open Source Qualified Leads (OQLs): oql.md
   - Open Source Adoption Funnel Stages: funnel-stages.md
