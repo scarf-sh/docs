@@ -52,6 +52,7 @@ nav:
   - FAQ: faq.md
 - Organizations and Billing:
   - Setting Up Your Organization: organizations.md
+  - Email Notifications: notifications.md
   - Scarf for Foundation-Backed Projects: foundation-backed-projects.md
   - Billing and Pricing: billing-and-pricing.md
 - Setup and Data Collection:
