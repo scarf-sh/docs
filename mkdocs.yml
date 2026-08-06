@@ -49,6 +49,7 @@ nav:
 - Getting Started:
   - Getting Started Checklist: getting-started-checklist.md
   - Quick Start: quick-start.md
+  - Two-Factor Authentication: two-factor-authentication.md
   - FAQ: faq.md
 - Organizations and Billing:
   - Setting Up Your Organization: organizations.md
