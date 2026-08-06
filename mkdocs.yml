@@ -80,6 +80,7 @@ nav:
     - HubSpot: hubspot.md
 - Data and Developer Tools:
   - Data Export: data-export.md
+  - Dependency Radar: dependency-radar.md
   - Webhooks: webhooks.md
   - API Docs: https://api-docs.scarf.sh/v2.html
 - Help and Updates:
