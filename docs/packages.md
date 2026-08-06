@@ -210,8 +210,18 @@ Once an npm entry has been created, you are ready to configure your package by a
 ```bash
 npm i --save @scarf/scarf
 ```
-Once your library is published to npm with this change, Scarf will automatically
-receive stats on install, no additional code is required! For additional details on configuration of the scarf-js library please refer to the [scarf-js NPM entry](https://www.npmjs.com/package/@scarf/scarf).
+Once your library is published, Scarf can receive installation statistics when
+the installer permits `@scarf/scarf` to run its install script. npm 12 blocks
+unapproved dependency scripts by default; npm 11.16 and later only warn about
+them. For global packages and CLIs installed with npm 12, document this
+recommended installation form:
+```bash
+npm install -g your-package --allow-scripts=@scarf/scarf
+```
+The package still installs when users omit `--allow-scripts`, but Scarf does not
+receive an installation event. See [Scarf SDKs for library and package
+authors](package-analytics.md#npm-install-script-approval) for local-project
+approval, user-level npm configuration, and other scarf-js options.
 
 ## Event Collection Packages
 

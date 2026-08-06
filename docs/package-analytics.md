@@ -24,14 +24,63 @@ Once created, add a dependency on this library to your own:
 npm i --save @scarf/scarf
 ```
 
-Once your library is published to npm with this change, Scarf will automatically
-collect stats on install, no additional code is required!
+Once your library is published to npm with this change, Scarf can collect
+installation statistics when the installer permits `@scarf/scarf` to run its
+install script.
+
+#### npm install-script approval
+
+npm 12 blocks dependency install scripts unless the person installing the
+package approves them. npm 11.16 and later can record the same approvals, but
+npm 11 only warns about unreviewed scripts and still runs them by default. If
+npm 12 skips `@scarf/scarf`, the package still installs, but Scarf does not
+receive an installation event.
+
+For a global package or CLI, add Scarf to the installation command you publish:
+
+```bash
+npm install -g your-package --allow-scripts=@scarf/scarf
+```
+
+If your package needs other dependency install scripts, pass their package
+names in the same comma-separated list. Keep a command without
+`--allow-scripts` available for users who do not want to send installation
+telemetry.
+
+For local project installs, users can approve Scarf from the project directory,
+then rebuild it to run the script skipped during the initial install:
+
+```bash
+npm install-scripts approve @scarf/scarf
+npm rebuild @scarf/scarf
+```
+
+npm stores this approval in the consuming project's `package.json`. npm ignores
+an `allowScripts` entry from your published library when it decides which
+scripts a downstream user has approved. By default, npm pins an approval to the
+installed package version, so users may need to review and approve a later
+version again.
+
+Users who want to approve Scarf for future global installs can set a user-level
+npm preference:
+
+```bash
+npm config set allow-scripts=@scarf/scarf --location=user
+```
+
+The install-time flag has a narrower scope, so we recommend it over the
+user-level setting. See npm's
+[`install-scripts` documentation](https://docs.npmjs.com/cli/v12/commands/npm-install-scripts/)
+for more information.
 
 Head to your package's dashboard on Scarf to see your reports when available.
 
 #### How does it work?
 
-`scarf-js` registers a `postInstall` hook that sends telemetry information. This library has no runtime footprint, it only runs at installation time, when a developer runs `npm install` Continue reading below [here](#what-information-does-scarf-js-send?)
+`scarf-js` registers a `postinstall` hook that sends telemetry information when
+the installer permits it to run. This library has no runtime footprint; it only
+runs when a developer installs the package. Continue reading
+[what information scarf-js sends](#what-information-does-scarf-js-send).
 
 #### Configuration
 
