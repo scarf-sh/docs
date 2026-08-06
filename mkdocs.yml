@@ -49,9 +49,11 @@ nav:
 - Getting Started:
   - Getting Started Checklist: getting-started-checklist.md
   - Quick Start: quick-start.md
+  - Two-Factor Authentication: two-factor-authentication.md
   - FAQ: faq.md
 - Organizations and Billing:
   - Setting Up Your Organization: organizations.md
+  - Email Notifications: notifications.md
   - Scarf for Foundation-Backed Projects: foundation-backed-projects.md
   - Billing and Pricing: billing-and-pricing.md
 - Setup and Data Collection:
@@ -65,6 +67,7 @@ nav:
   - Importing Events: event-import.md
 - Insights and Company Data:
   - How Company Matching Works: company-matching.md
+  - Intent Scoring: intent-scoring.md
   - Scarf AI: scarf-ai.md
   - Open Source Qualified Leads (OQLs): oql.md
   - Open Source Adoption Funnel Stages: funnel-stages.md
@@ -78,6 +81,7 @@ nav:
 - Data and Developer Tools:
   - Data Export: data-export.md
   - Dependency Radar: dependency-radar.md
+  - Webhooks: webhooks.md
   - API Docs: https://api-docs.scarf.sh/v2.html
 - Help and Updates:
   - User Guide and Best Practices: user_best_practices.md
