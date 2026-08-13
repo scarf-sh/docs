@@ -108,4 +108,40 @@ The basic CRM connection allows you to pair Scarf Surfaced Companies with Accoun
 | Scarf Sources MoM      | Scarf_total_unique_sources_MoM__c | number    | Change in unique sources over the previous month |
 | Scarf Sources WoW      | Scarf_total_unique_sources_WoW__c | number    | Change in unique sources over the previous week |
 
+#### Per-package and per-pixel breakdown
+
+The fields above total a company's activity across everything you publish. The fields below break that total down by individual package and by individual tracking pixel, so you can see *which* of your packages an account is downloading and *which* of your pages it is viewing.
+
+Packages and pixels are reported separately and ranked independently, each by total events over the last 30 days. Slots are filled only as far as an account's activity reaches: a company that downloaded two packages fills the first two package slots and leaves the third empty.
+
+| Field Label (suggested) | Field Name (required) | Field Type | Description |
+|-------------------------|----------------------|-----------|-------------|
+| Scarf Top Package 1         | Scarf_top_package_1_name__c | string | Package with the most observed events in the last 30 days |
+| Scarf Top Package 1 Events  | Scarf_top_package_1_events__c | number | Observed events for that package in the last 30 days |
+| Scarf Top Package 1 Sources | Scarf_top_package_1_unique_sources__c | number | Unique observed event sources for that package in the last 30 days |
+| Scarf Top Package 2         | Scarf_top_package_2_name__c | string | Package with the second most observed events in the last 30 days |
+| Scarf Top Package 2 Events  | Scarf_top_package_2_events__c | number | Observed events for that package in the last 30 days |
+| Scarf Top Package 2 Sources | Scarf_top_package_2_unique_sources__c | number | Unique observed event sources for that package in the last 30 days |
+| Scarf Top Package 3         | Scarf_top_package_3_name__c | string | Package with the third most observed events in the last 30 days |
+| Scarf Top Package 3 Events  | Scarf_top_package_3_events__c | number | Observed events for that package in the last 30 days |
+| Scarf Top Package 3 Sources | Scarf_top_package_3_unique_sources__c | number | Unique observed event sources for that package in the last 30 days |
+| Scarf Package Breakdown     | Scarf_package_breakdown__c | string | Every package for this company, ordered by events, as `name: N events, M sources; ...` |
+| Scarf Top Pixel 1           | Scarf_top_pixel_1_name__c | string | Tracking pixel with the most observed events in the last 30 days |
+| Scarf Top Pixel 1 Events    | Scarf_top_pixel_1_events__c | number | Observed events for that pixel in the last 30 days |
+| Scarf Top Pixel 1 Sources   | Scarf_top_pixel_1_unique_sources__c | number | Unique observed event sources for that pixel in the last 30 days |
+| Scarf Top Pixel 2           | Scarf_top_pixel_2_name__c | string | Tracking pixel with the second most observed events in the last 30 days |
+| Scarf Top Pixel 2 Events    | Scarf_top_pixel_2_events__c | number | Observed events for that pixel in the last 30 days |
+| Scarf Top Pixel 2 Sources   | Scarf_top_pixel_2_unique_sources__c | number | Unique observed event sources for that pixel in the last 30 days |
+| Scarf Top Pixel 3           | Scarf_top_pixel_3_name__c | string | Tracking pixel with the third most observed events in the last 30 days |
+| Scarf Top Pixel 3 Events    | Scarf_top_pixel_3_events__c | number | Observed events for that pixel in the last 30 days |
+| Scarf Top Pixel 3 Sources   | Scarf_top_pixel_3_unique_sources__c | number | Unique observed event sources for that pixel in the last 30 days |
+| Scarf Pixel Breakdown       | Scarf_pixel_breakdown__c | string | Every tracking pixel for this company, ordered by events, as `name: N events, M sources; ...` |
+
+Each field is independent, so create only the ones you intend to use:
+
+- The numbered slots are ordinary Salesforce fields, so they can be filtered, reported on, and used in list views. Most companies engage with only one or two packages, so the first slot alone often carries the signal you want.
+- The two breakdown fields hold the complete list rather than only the top three, which makes them suited to reading on the account page rather than to reporting. Create them as **Text Area (Long)**, because the value can exceed the 255 character limit of a `Text` field.
+- Create pixel fields only if you publish tracking pixels, and package fields only if you publish packages. A field you have not created is skipped entirely, so partial setups are fine.
+- A field you *have* created but for which a company has no activity is cleared on each sync rather than left at its previous value. This keeps a slot from showing last month's package after a company stops using it, so avoid writing your own data into these fields.
+
 For a detailed guide on how to make the most of your Salesforce integration, check out our [Salesforce Integration Playbook](https://about.scarf.sh/post/sync-scarf-data-with-salesforce). It walks you through configuring the connection, matching and syncing companies.
