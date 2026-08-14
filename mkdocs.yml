@@ -88,21 +88,19 @@ nav:
   - Troubleshooting: troubleshooting.md
   - Changelog: changelog.md
 
-# Analytics
-google_analytics:
-  - auto
-  - G-GH3EXW7112
-
 # Extensions
 markdown_extensions:
-  meta: {}
-  admonition: {}
-  pymdownx.superfences: {}
-  tables: {}
-  sane_lists: {}
+  - meta
+  - admonition
+  - pymdownx.superfences
+  - tables
+  - sane_lists
 
 # Customization
 extra:
+  analytics:
+    provider: google
+    property: G-GH3EXW7112
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/scarf-sh

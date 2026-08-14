@@ -1,5 +1,31 @@
 {% extends "base.html" %}
 
+{% block site_meta %}
+{{ super() }}
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  base-uri 'self';
+  connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com;
+  font-src 'self' data: https://fonts.gstatic.com;
+  form-action 'self';
+  frame-src https://www.youtube.com;
+  img-src 'self' data: https:;
+  object-src 'none';
+  script-src 'self' https://www.googletagmanager.com https://unpkg.com
+    'sha256-apoQPHefCNWjxbCm+HzVDOAW4CSVWhY7VylQjgOFyfk='
+    'sha256-e5RQGHxjAydZO6e7nr5hRgrNFeqlOtgF/Pz1mqXUw7Y='
+    'sha256-exqRXrW/0laiImCrTE8a70vxyyY10FJVIppytLf/dbY='
+    'sha256-/K9p2JtEqCycL2fSbEonMakkteWpAHv57x2wndLqMNo='
+    'sha256-/8wPdzX9q0NNJXyA5lzsLojXFpkeaXVxhbfkUOQaWy8='
+    'sha256-DrEMJJ29sL7vIloQzly+VUGMxKcBTMII+OfW7Y8AkG4='
+    'sha256-IpdNNvFSYNvqPDLWBa7CGTGUQvL/HHVdRg+lV/6yC/I='
+    'sha256-y4PACAGMebpXXh9NlOaYhB4Zt/je8v7pBFsMrW9lCgk=';
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com;
+  worker-src 'self' blob:;
+  upgrade-insecure-requests
+">
+{% endblock %}
+
 {% block extrahead %}
 {% set title = config.site_name %}
 {% if page and page.meta and page.meta.title %}

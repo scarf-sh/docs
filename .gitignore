@@ -1,9 +1,12 @@
 # Mac
 *.DS_Store
 
+# Python
+__pycache__/
+*.py[cod]
+
 # Devenv
 .devenv*
 devenv.local.nix
 *direnv*
 .envrc
-
