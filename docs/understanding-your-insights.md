@@ -2,6 +2,16 @@
 
 Your Scarf dashboard uses various technical terms that are important to understand.
 
+### Events and Downloads
+
+An **event** is any interaction that Scarf records, such as a package download, tracking pixel view, or custom telemetry event. A **download** is one type of event.
+
+Scarf may show a higher overall event count than the sum of events shown for individual companies. Scarf counts every recorded event in the overall total, but company totals include only events that Scarf matched to a company. When Scarf cannot associate an event with a company, such as activity from a home network, unidentified cloud infrastructure, or VPN, it keeps the event in the overall total without listing it under a company.
+
+### First Seen and Last Seen
+
+For a company, **first seen** is the date of the earliest event that Scarf matched to that company from your organization's data. **Last seen** is the date of the most recent matched event.
+
 ### Unique Sources
 
 Scarf denotes how many `sources` or `unique sources` were behind any given number of events. Because open source activity happens anonymously, Scarf's ability to form a stable anonymous ID for a given user / source of traffic can happen at multiple levels of granularity, and therefore are given different types of IDs.

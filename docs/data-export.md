@@ -102,14 +102,14 @@ The company data export includes the following data fields.
 | **company_name**               | `text`                      | Name of the company                                                                                  |
 | **company_domain**             | `text`                      | Domain of the company. Eg. scarf.sh                                                                  |
 | **funnel_stage**               | `text`                      | Stage of a company's journey in using your software                                                  |
-| **total_events**               | `numeric`                   | Sum of package and pixel events (total_downloads + total_views)                                      |
+| **total_events**               | `numeric`                   | Sum of package and pixel events matched to the company (`total_downloads` + `total_views`). This can be lower than the organization's overall event count because Scarf cannot match every event to a company. See [Events and Downloads](/understanding-your-insights/#events-and-downloads). |
 | **total_downloads**            | `numeric`                   | Total package events from package artifacts                                                          |
 | **total_unique_downloads**     | `numeric`                   | Total unique package events from package artifacts                                                   |
 | **total_views**                | `numeric`                   | Total pixel events from tracking pixel artifacts                                                     |
 | **total_unique_views**         | `numeric`                   | Total unique pixel events from tracking pixel artifacts                                              |
 | **unique_sources**             | `numeric`                   | Number of distinct sources of traffic that comprise the total event count from this organization.    |
-| **first_seen**                 | `text`                      | Date of when the first event occured                                                                 |
-| **last_seen**                  | `text`                      | Date of when the last event occured                                                                  |
+| **first_seen**                 | `text`                      | Date of the earliest event Scarf matched to the company from your organization's data. See [First Seen and Last Seen](/understanding-your-insights/#first-seen-and-last-seen). |
+| **last_seen**                  | `text`                      | Date of the most recent event Scarf matched to the company from your organization's data. See [First Seen and Last Seen](/understanding-your-insights/#first-seen-and-last-seen). |
 | **company_linkedin_url**       | `text`                      | A company's LinkedIn link                                                                            |
 | **company_industry**           | `text`                      | A company's industry. Eg. Tech, Government, etc.                                                     |
 | **company_size**               | `text`                      | A company's approximated employee count                                                              |
