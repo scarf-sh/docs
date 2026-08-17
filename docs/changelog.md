@@ -15,7 +15,6 @@
 - One-time Run and Company Unlock top-ups show an itemized price breakdown and the amount charged today before purchase.
 - Export History paginates recent exports, making longer histories easier to browse.
 - Scarf AI in Slack delivers long answers as complete Markdown attachments instead of truncating them.
-- The hosted Scarf MCP endpoint exposes OAuth discovery that supports connecting from ChatGPT.
 - Locked-company summaries label the count as “additional companies discovered,” distinguishing it from the total result count.
 
 ## 2026-07-20
