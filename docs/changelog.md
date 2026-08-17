@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-08-17
+
+- Organization settings now use a consistent responsive layout across member management, billing, integrations, exports, filters, notifications, and other settings pages.
+- Dashboards, Company Insights, and company activity pages adapt better to narrow screens.
+- Company profiles show when a company was unlocked and when its visibility expires.
+- Usage-billing top-ups now carry across billing periods until spent, while recurring free, plan, and monthly grant allowances renew without banking unused credits.
+- Salesforce CRM syncs include each company's leading packages and tracking pixels, event and source counts, and full artifact breakdowns.
+- Existing Sonatype-enrolled organizations can add Maven namespaces to the same enrollment after package discovery.
+
+## 2026-08-10
+
+- Added the public OSS AI Index, with daily organization-level adoption rankings and 30-day rank changes for model developers and inference platforms, plus methodology and limitations.
+- One-time Run and Company Unlock top-ups show an itemized price breakdown and the amount charged today before purchase.
+- Export History paginates recent exports, making longer histories easier to browse.
+- Scarf AI in Slack delivers long answers as complete Markdown attachments instead of truncating them.
+- The hosted Scarf MCP endpoint exposes OAuth discovery that supports connecting from ChatGPT.
+- Locked-company summaries label the count as “additional companies discovered,” distinguishing it from the total result count.
+
 ## 2026-07-20
 
 - Usage-billing organizations can now filter Company Insights by companies that were previously unlocked, including companies whose unlock visibility has expired.
