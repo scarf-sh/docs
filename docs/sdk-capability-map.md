@@ -11,6 +11,7 @@ Scarf can measure package downloads, application events, container pulls, and do
 | .NET or C# | Direct HTTP to an Event Collection package | Runtime or feature events sent by the application |
 | C++ | [Scarf C++ SDK](https://github.com/scarf-sh/cpp-sdk) with an Event Collection package | Runtime or feature events sent by the application |
 | Docker and Helm | [Scarf Gateway](/gateway/) in image references, install instructions, and chart values | Container pulls routed through the Scarf hostname |
+| Homebrew, tarballs, Linux packages, and standalone binaries | [Scarf File Packages](/packages/#file-packages) with Scarf Gateway routes | Downloads of bottles, archives, `.deb` and `.rpm` packages, installers, and other binary artifacts |
 | Documentation and websites | [Scarf Pixels](/web-traffic/) | Page or rendered-document views that load the pixel image |
 | Other languages and tools | Direct HTTP to an Event Collection package | Custom events from any client that can send an HTTPS request |
 
@@ -30,6 +31,8 @@ Package downloads and runtime usage answer different questions. Use both when yo
 - `@scarf/scarf` can report npm installs when npm permits the package's install script. It cannot report installs when the user or package manager disables scripts.
 - Scarf Gateway can measure requests for containers and other artifacts when users fetch them through the configured Scarf hostname.
 - Python package-index routing provides download signals but may not cover every pip configuration. Use runtime events when you need a more complete application signal.
+
+Use a [File Package](/packages/#file-packages) for artifacts distributed as files rather than through a supported package registry. This includes Homebrew bottles and formula-linked downloads, tarballs and other archives, Linux packages such as `.deb` and `.rpm` files, installers, release assets, and standalone binaries. Point each download URL at a Scarf Gateway route that redirects to the original artifact host.
 
 ## Containers and Helm
 
