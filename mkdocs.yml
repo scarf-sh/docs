@@ -61,6 +61,7 @@ nav:
   - Setting Up Scarf Packages: packages.md
   - Package Registry Integrations:
     - Maven Central: package-registry-integrations-maven-central.md
+  - SDK and Distribution Capability Map: sdk-capability-map.md
   - Scarf SDKs for Library and Package Authors: package-analytics.md
   - Custom Telemetry: custom-telemetry.md
   - Scarf Pixels: web-traffic.md
