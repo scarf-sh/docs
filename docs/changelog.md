@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-08-24
+
+- Company Insights, Company Unlocks, and CRM company tables now expose eligible revenue, Top Company, and location columns; Company Unlocks also includes unique package and view source counts.
+- The OSS AI Index now ranks providers by average daily unique-organization adoption across complete Saturday-to-Friday weeks and shows changes from the prior complete week. Access begins with email verification.
+- Scarf AI received reliability fixes across package, company, and page-view questions.
+- MCP clients can now connect through Scarf's first-party OAuth 2.1 flow, including dynamic client registration and a branded consent screen.
+- Sonatype enrollment API responses now tell callers when Maven discovery is still catching up and that they can retry the same request without changing its payload.
+
 ## 2026-08-17
 
 - Organization settings now use a consistent responsive layout across member management, billing, integrations, exports, filters, notifications, and other settings pages.
