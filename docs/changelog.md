@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-08-31
+
+- ChatGPT can now connect to Scarf's hosted MCP endpoint through OAuth 2.1.
+- Scarf's login, registration, password recovery, and email verification screens now use the current application design, with clearer loading states across authentication and dashboards.
+- Sonatype integrations can now enroll Maven namespaces before Maven Central package discovery finishes; Scarf discovers the packages as they become available.
+
 ## 2026-08-24
 
 - Company Insights, Company Unlocks, and CRM company tables now expose eligible revenue, Top Company, and location columns; Company Unlocks also includes unique package and view source counts.
