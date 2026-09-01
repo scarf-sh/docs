@@ -22,13 +22,28 @@ Runs are Scarf's usage unit for workflows and processing performed on top of you
 
 Conceptually, Runs are consumed when Scarf performs work for you, such as answering a question, running an export, evaluating a monitor, calling the public API, or applying an automatic workflow.
 
+## What consumes a Company Unlock credit?
+
+For an organization on Scarf's current usage-billing model, a Company Unlock credit is consumed only when Scarf unlocks a company and reveals its identity and company-level details. This can happen when an Owner or Admin unlocks a company manually or in bulk, or when an automatic saved-filter rule unlocks a matching company.
+
+The following do **not** consume Company Unlock credits by themselves:
+
+- receiving package-download, pixel-view, or other raw traffic
+- viewing event totals or other data already available to your organization
+- polling for an export, generating export rows, or processing overlapping export windows
+- running or delivering a scheduled export
+- sending export data to an integration such as Common Room
+
+Export and integration workflows may consume [Runs](#runs), but Runs and Company Unlock credits are separate balances. Repeating an export does not unlock a company or spend another Company Unlock credit.
+
+Until a company is unlocked, its identity remains redacted in company-level views, exports, and integrations. Non-company event and download data may still be available according to your plan. See [Data Export](/data-export/#billing-and-company-visibility) for the export-specific behavior.
+
 ## How company unlocks work
 
-There are two main ways to unlock companies:
+There are two ways to spend Company Unlock credits:
 
 1. Unlock companies manually when you decide they are relevant, either one at a time or in bulk from a filtered list.
 2. Configure filter-based rules so Scarf can unlock matching companies automatically.
-
 
 ## Unlock companies manually
 
