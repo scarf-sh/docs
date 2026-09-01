@@ -1,0 +1,31 @@
+digraph {
+  subgraph external_user {
+    "User" -> "docker.acme.come" [label = "docker pull docker.acme.come/acme/rocket-skates"];
+    "docker.acme.come" -> "gateway.scarf.sh" [label=""];
+  }
+
+  subgraph external_scarf {
+    "Maintainer" -> "Scarf Dashboard";
+    "Scarf Analytics" -> "Scarf Dashboard" [label="Data is processed and insights are made available to the maintainer"];
+    "Maintainer" -> "DNS Provider" -> "docker.acme.come" [style=dashed];
+    "docker.acme.come" -> "gateway.scarf.sh" [style=dashed label="Maintainer set a CNAME from their own domain to Scarf"]
+  }
+
+  subgraph cluster_internal_scarf {
+    label = "Scarf Infrastructure"
+    "gateway.scarf.sh" -> "Scarf Gateway" [label="Request hits Scarf gateway"];
+    "Scarf Gateway" -> "Scarf Configuration";
+    "Scarf Configuration" -> "Scarf Gateway";
+    "Scarf Gateway" -> "Scarf Analytics" [label="Requests aggregated to be asynchronously processed"];
+    "Scarf Dashboard" -> "Scarf Configuration" [style=dashed label="Maintainers configure the Scarf Gateway to redirect to the correct registry"];
+  }
+
+  subgraph cluster_external_deps {
+    subgraph cluster_registries {
+      "Scarf Gateway" -> {"GitHub"} [style=dashed]
+      "Scarf Gateway" -> {"DockerHub"} [label="The request is redirected to the registry configured by the maintainer"]
+      "Scarf Gateway" -> {"Quay"} [style=dashed]
+    }
+    "Scarf Gateway" -> "Let's Encrypt CA" [label="SSL Cert Issuance"]
+  }
+}

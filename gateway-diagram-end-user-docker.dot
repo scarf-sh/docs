@@ -1,0 +1,23 @@
+digraph {
+  subgraph external_user {
+    "User" -> "docker.acme.come" [label = "docker pull docker.acme.come/acme/rocket-skates"];
+  }
+
+  subgraph external_scarf {
+    "docker.acme.come" -> "gateway.scarf.sh" [label="Via maintainer's CNAME"]
+  }
+
+  subgraph cluster_internal_scarf {
+    label = "Scarf Infrastructure"
+    "gateway.scarf.sh" -> "Scarf Gateway" [label="Request hits Scarf Gateway"];
+  }
+
+  subgraph cluster_external_deps {
+    subgraph cluster_registries {
+      "Scarf Gateway" -> {"GitHub"} [style=dashed]
+      "Scarf Gateway" -> {"DockerHub"} [label="The request is redirected to the registry configured by the maintainer"]
+      "Scarf Gateway" -> {"Quay"} [style=dashed]
+    }
+    "Scarf Gateway" -> "Let's Encrypt CA" [label="SSL Cert Issuance"]
+  }
+}
