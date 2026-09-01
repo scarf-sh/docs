@@ -4,6 +4,12 @@
 
 Scarf provides a robust platform for tracking package downloads and pixel views. The ability to export this data is crucial for analytics, reporting, and integrating with other tools. This guide aims to provide a clear and concise explanation of how to export data from Scarf, what data is exported, and how to make use of any available integrations.
 
+## Billing and company visibility
+
+Export activity is not the unit used to consume Company Unlock credits. Polling for an export, the number of rows produced, overlapping date windows, repeated processing, and scheduled delivery do not unlock companies or spend Company Unlock credits. Starting or running an export may consume **Runs**, which are a separate usage balance. See [Billing and Pricing](/billing-and-pricing/#what-consumes-a-company-unlock-credit) for the complete distinction.
+
+For organizations on the current usage-billing model, company identity remains redacted in exports until that company is unlocked. Exporting the same locked company repeatedly does not reveal its identity. Non-company event and download data may still be included according to the organization's plan.
+
 ## Prerequisites
 
 Exporting data from Scarf will only work if you are on a [Scarf Basic or Premium Plan](https://about.scarf.sh/pricing).
@@ -168,12 +174,18 @@ The following environment variables are **required**:
 
 For more details, you can visit the [GitHub repository](https://github.com/scarf-sh/scarf-postgres-exporter).
 
+### CRM and data-delivery integrations
+
+The same company-visibility rules apply when Scarf delivers data to CRM and data-delivery integrations, including Common Room. Delivery does not independently spend Company Unlock credits: unlocked companies can include company identity, while locked company identity remains redacted. The export or integration workflow may still consume Runs as described in [Billing and Pricing](/billing-and-pricing/#runs).
+
 ### Future Integrations
 
 Integrations are in development, if you have particular data sources you'd like Scarf to integrate with, we'd love to hear from you.
 
 ## Daily Scheduled Exports
 In your organization settings, fill in the details for the export.
+
+Scheduled runs—including runs with overlapping date windows—do not spend Company Unlock credits merely because they execute or deliver rows. Review [Billing and company visibility](#billing-and-company-visibility) before configuring a downstream integration.
 
 Scheduling an export can also be done with our REST endpoint [https://api.scarf.sh/v2/exports/{owner}/schedule-export](https://api-docs.scarf.sh/v2.html#tag/Packages/operation/scheduleExport)
 

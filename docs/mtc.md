@@ -1,5 +1,8 @@
 # Monthly Tracked Companies (MTCs)
 
+!!! note "Legacy billing only"
+    Monthly Tracked Companies are part of Scarf's legacy billing model. MTCs are not another name for Company Unlocks and do not describe the current usage-billing model. For current billing, see [Billing and Pricing](/billing-and-pricing/).
+
 Scarf identifies which companies are viewing your documents, downloading your packages, or executing your software, and tracks their activity across the organization. These are referred to as Monthly Tracked Companies (MTCs). Scarf enriches IP addresses with several metadata sources to provide the most accurate data possible.
 
 ## How MTCs work
@@ -58,7 +61,7 @@ It is also available on the Organization settings page.
 
 **What if I want to see more companies?**
 
-If you want broader company visibility, review your current company unlock usage and consider unlocking additional companies manually or with saved-filter automation. For current billing guidance, see [Billing and Pricing](/billing-and-pricing/) and the [Scarf pricing page](https://about.scarf.sh/pricing/).
+If your organization still uses legacy MTC billing, review its MTC quota in Organization settings. If your organization uses current usage billing instead, manage Company Unlocks manually or with saved-filter automation. The two models are separate; see [Billing and Pricing](/billing-and-pricing/) and the [Scarf pricing page](https://about.scarf.sh/pricing/).
 
 ![Upgrade your MTC limit](https://github.com/user-attachments/assets/e1c121d2-d5dc-434d-a39d-bdeca9e1d694)
 
