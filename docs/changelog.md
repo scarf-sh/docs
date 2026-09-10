@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-09-07
+
+- Monthly usage-billing customers can decrease or rebalance recurring Runs and Company Unlock quantities through Edit recurring credits, with a price preview before confirmation. Decreases reduce available credits upon update without a current-period charge or refund; the lower recurring bill applies at renewal.
+- MCP users can manage permissions for analytics reads, filter creation, updates, deletion, and company unlocks through separate tools. If your client pins the former `scarf_api` tool, switch to `scarf_api_read` or the corresponding write tool.
+- In MCP clients that support prompts, you can use Most recent companies to list companies newly visible to your organization, or Recent page views to view tracking-pixel counts by page and day.
+
 ## 2026-08-31
 
 - ChatGPT can now connect to Scarf's hosted MCP endpoint through OAuth 2.1.
