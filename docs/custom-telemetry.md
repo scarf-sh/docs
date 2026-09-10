@@ -117,6 +117,34 @@ func main() {
 }
 ```
 
+### [Scarf .NET SDK](https://www.nuget.org/packages/Scarf)
+
+Install the SDK from NuGet:
+
+```bash
+dotnet add package Scarf
+```
+
+Create a logger with your Event Collection package endpoint and send an event:
+
+```csharp
+using Scarf;
+
+using var logger = new ScarfEventLogger("https://your-scarf-endpoint.com");
+
+ScarfEventResult result = await logger.LogEventAsync(new
+{
+    eventName = "startup",
+    package = "my-application",
+    version = "1.0.0",
+});
+```
+
+The .NET SDK sends event properties as a JSON request body, uses a three-second
+default timeout, and isolates serialization, timeout, transport, cancellation,
+and HTTP failures from the host application. It honors the `DO_NOT_TRACK` and
+`SCARF_NO_ANALYTICS` environment-variable opt-outs.
+
 ### [Scarf C++ SDK](https://github.com/scarf-sh/cpp-sdk)
 ```cpp
 #include "scarf/event_logger.hpp"

@@ -1,6 +1,6 @@
 # Scarf SDKs for library and package authors
 
-Scarf's programming language SDKs provide observability into the usage of your libraries and language-specific packages. By adding a dependency to scarf-js or another Scarf language-level library, you can gain better data insights into how your package is used, and by which companies.
+Scarf's programming language SDKs show how people use your libraries and language-specific packages. Use scarf-js for npm install events or the [Scarf .NET SDK](https://www.nuget.org/packages/Scarf) for runtime events. See the [SDK and distribution capability map](/sdk-capability-map/) for the available integrations.
 
 ## JavaScript
 

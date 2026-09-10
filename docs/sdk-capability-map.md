@@ -8,7 +8,7 @@ Scarf can measure package downloads, application events, container pulls, and do
 | Go | [Scarf Go SDK](https://github.com/scarf-sh/scarf-go) with an Event Collection package | Runtime or feature events sent by the application |
 | Java | [Scarf Java SDK](https://github.com/scarf-sh/scarf-java) for runtime events; Scarf's native [Maven Central integration](/package-registry-integrations-maven-central/) for repository downloads | Application events and Maven Central downloads as separate signals |
 | JavaScript or TypeScript | [`@scarf/scarf`](https://github.com/scarf-sh/scarf-js) for npm install events; direct HTTP for runtime events | npm installs where install scripts run, or application events sent to Scarf |
-| .NET or C# | Direct HTTP to an Event Collection package | Runtime or feature events sent by the application |
+| .NET or C# | [Scarf .NET SDK](https://www.nuget.org/packages/Scarf) with an Event Collection package | Runtime or feature events sent by the application |
 | C++ | [Scarf C++ SDK](https://github.com/scarf-sh/cpp-sdk) with an Event Collection package | Runtime or feature events sent by the application |
 | Docker and Helm | [Scarf Gateway](/gateway/) in image references, install instructions, and chart values | Container pulls routed through the Scarf hostname |
 | Homebrew, tarballs, Linux packages, and standalone binaries | [Scarf File Packages](/packages/#file-packages) with Scarf Gateway routes | Downloads of bottles, archives, `.deb` and `.rpm` packages, installers, and other binary artifacts |
@@ -19,7 +19,7 @@ Scarf can measure package downloads, application events, container pulls, and do
 
 Create an [Event Collection package](/packages/#event-collection-packages), then send events to its Scarf endpoint. Use a Scarf language SDK when one exists. The SDKs handle common behavior such as short timeouts and the `DO_NOT_TRACK` and `SCARF_NO_ANALYTICS` environment-variable opt-outs.
 
-For .NET, JavaScript runtime code, or another language without a Scarf SDK, send the same event with an ordinary HTTPS request. Keep the request asynchronous, set a short timeout, and isolate failures so telemetry cannot interrupt the host application. Check the two environment-variable opt-outs before sending. Publish the event schema and never include personal data, credentials, secrets, or workload names in the payload.
+For JavaScript runtime code or another language without a Scarf SDK, send the same event with an ordinary HTTPS request. Keep the request asynchronous, set a short timeout, and isolate failures so telemetry cannot interrupt the host application. Check the two environment-variable opt-outs before sending. Publish the event schema and never include personal data, credentials, secrets, or workload names in the payload.
 
 See [Custom Telemetry](/custom-telemetry/) for endpoint setup and examples.
 
