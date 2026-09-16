@@ -99,6 +99,7 @@ The basic CRM connection allows you to pair Scarf Surfaced Companies with Accoun
 | Scarf Domain           | Scarf_company_domain__c | string    | Primary internet domain of the company |
 | Scarf First Seen       | Scarf_first_seen__c | date      | Date of the first event Scarf observed for this company |
 | Scarf Last Seen        | Scarf_last_seen__c | date      | Date of the most recent event Scarf observed for this company |
+| Scarf LEI              | Scarf_lei__c | string    | [Legal Entity Identifier](https://www.gleif.org/en/about-lei/introducing-the-legal-entity-identifier-lei) (LEI) of the company, when one is known. Useful as a stable join key against your own records. Only a small share of companies have a published LEI, so treat this as a supplement to domain matching rather than a replacement. |
 | Scarf Last Updated     | Scarf_last_updated__c | datetime  | Timestamp of the most recent Scarf sync update written for this company record. Use this to identify stale Salesforce records, and note that it changes when Scarf writes refreshed company metadata, not just when event totals change. |
 | Scarf Funnel Stage     | Scarf_funnel_stage__c | string    | Current [adoption funnel stage](https://docs.scarf.sh/funnel-stages/) of the company |
 | Scarf Total Events     | Scarf_total_events_last_30_days__c | number    | Total observed events in the last 30 days |
