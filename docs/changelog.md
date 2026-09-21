@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-09-14
+
+- Configure File / Event Collection packages to capture selected request headers as event variables with the `event_variable_headers` setting. Scarf matches header names case-insensitively, skips sensitive authentication and client-IP headers, and preserves existing path or query variable values when names overlap.
+
 ## 2026-09-07
 
 - Monthly usage-billing customers can decrease or rebalance recurring Runs and Company Unlock quantities through Edit recurring credits, with a price preview before confirmation. Decreases reduce available credits upon update without a current-period charge or refund; the lower recurring bill applies at renewal.
