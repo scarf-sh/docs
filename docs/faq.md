@@ -281,6 +281,16 @@ Yes. Take a look at our case studies.
 
 See our pricing plans, and don’t hesitate to get in touch with us with any questions.
 
+### What happens after I unlock a company?
+
+A Company Unlock grants 31 days of access to the company's identity, firmographics, and available activity history. Scarf continues to collect eligible events before, during, and after that window. When the unlock expires, Company Insights locks the details again. Unlocking the same company for another 31 days spends another credit.
+
+See [Company unlock lifecycle](/billing-and-pricing/#company-unlock-lifecycle) for monthly credit renewal, carryover, data-window limits, and active-count behavior.
+
+### Where can I see companies that my organization unlocked before?
+
+Open **Organization settings**, select **Usage & Billing**, and find the **Unlocked companies** table. The table includes active and expired unlocks. Company Insights also offers a **Previously Unlocked** filter.
+
 ## Customer Support & SLAs
 
 ### What kind of customer support does Scarf offer, and are there any service level agreements (SLAs) for uptime or support response times?

@@ -10,7 +10,7 @@ For current plan options and pricing, see the [Scarf pricing page](https://about
 
 Scarf can surface company-level insights when traffic can be matched to a business entity. A company unlock is what gives your organization access to a specific company's enriched details and activity inside Scarf.
 
-Company unlocks last for one month. For example, a company unlocked on February 3 remains available until March 3.
+Each Company Unlock grants 31 days of access to a company's identity, firmographics, and activity.
 
 You can unlock companies one at a time, unlock them in bulk from a filtered view, or configure rules so Scarf unlocks them automatically when they match the criteria you care about.
 
@@ -37,6 +37,49 @@ The following do **not** consume Company Unlock credits by themselves:
 Export and integration workflows may consume [Runs](#runs), but Runs and Company Unlock credits are separate balances. Repeating an export does not unlock a company or spend another Company Unlock credit.
 
 Until a company is unlocked, its identity remains redacted in company-level views, exports, and integrations. Non-company event and download data may still be available according to your plan. See [Data Export](/data-export/#billing-and-company-visibility) for the export-specific behavior.
+
+## Company unlock lifecycle
+
+### Access during the 31-day window
+
+Your configured packages, pixels, imports, and SDKs continue sending events whether or not you have an active unlock.
+
+During the unlock window, you can view all available company history inside your plan's data window, including events from before you spent the credit. Starter includes a three-month data window. See the [Scarf pricing page](https://about.scarf.sh/pricing/) for the data window included with other plans.
+
+### After an unlock expires
+
+When the 31-day window ends:
+
+- Company Insights locks the company and redacts its identity and company details again.
+- The active unlocked-company count decreases. Filters and date ranges can narrow the count shown in Company Insights.
+- Scarf continues to collect eligible events from your configured data sources.
+- Scarf does not return the spent credit. Unlocking the same company again spends another credit and starts a new 31-day window.
+
+If you unlock the company again later, Scarf shows the history that remains inside your plan's data window, including events collected without an active unlock.
+
+### Monthly credits and carryover
+
+On a monthly subscription, each renewal provides the next allotment of Company Unlock credits. Credits and company visibility follow separate schedules:
+
+- Paid subscription credits and one-time Company Unlock purchases remain available until you spend them.
+- Free and plan-included monthly allowances renew each usage period. Unused allowance does not carry forward.
+- An unlock's 31-day visibility window can expire while unused credits remain in your balance.
+
+Your team can use new credits on different companies as priorities change or unlock the same company again to continue access.
+
+### Current unlock count and full history
+
+Company Insights counts companies with an active, non-expired unlock. Expired unlocks no longer appear in that active count.
+
+If Company Insights shows 10 unlocked companies, 10 active unlocks match the current filters and date range. The number does not represent your organization's lifetime unlock total.
+
+To review every company your organization has unlocked:
+
+1. Open **Organization settings**.
+2. Select **Usage & Billing**.
+3. Find the **Unlocked companies** table.
+
+The table includes active and expired unlocks, with the company name, domain, unlock date, source, and expiration date. Its total is a historical count, so it can be higher than the active count in Company Insights. You can also use the **Previously Unlocked** filter in Company Insights to find companies whose unlock window has expired.
 
 ## How company unlocks work
 
