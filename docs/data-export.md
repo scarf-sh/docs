@@ -12,6 +12,8 @@ For organizations on the current usage-billing model, company identity remains r
 
 ## Prerequisites
 
+Organization Owners, Admins, and Members can export data they have access to. Export access does not grant Members permission to unlock companies or manage organization settings. See [Roles and permissions](/organizations/#roles-and-permissions).
+
 Exporting data from Scarf will only work if you are on a [Scarf Basic or Premium Plan](https://about.scarf.sh/pricing).
 
 ## How to Export Event Data

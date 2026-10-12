@@ -78,11 +78,11 @@ Scarf organizations have three member roles:
 |------|----------------------|
 | Owner | Full organization access. Owners can manage organization settings, billing, integrations, API tokens, packages, tracking pixels, member roles, and company unlocks. Owners can also promote members to owners and transfer or revoke ownership, as long as the organization keeps at least one owner. |
 | Admin | Administrative access for day-to-day management. Admins can manage organization settings, billing, integrations, API tokens, packages, tracking pixels, members, and company unlocks. Admins cannot make another user an owner, change an owner to another role, or remove an owner. |
-| Member | Read access to the organization and its analytics. Members can view organization data, packages, tracking pixels, insights, filters, reports, and previously unlocked companies, but cannot change organization settings, manage billing or integrations, manage members, create or update resources, export data, or spend company unlock credits. |
+| Member | Read and export access to the organization and its analytics. Members can view organization data, packages, tracking pixels, insights, filters, reports, and previously unlocked companies, and export data they have access to. Members cannot change organization settings, manage billing or integrations, manage members, create or update resources, or spend company unlock credits. |
 
-Actions that change the organization or consume credits require Owner or Admin access. This includes manually unlocking companies, setting up automatic company unlock rules, changing billing settings, creating packages or tracking pixels, changing domains or routes, configuring CRM integrations, managing API tokens, and inviting or removing organization members.
+Managing the organization or spending Company Unlock credits requires Owner or Admin access. This includes manually unlocking companies, setting up automatic company unlock rules, changing billing settings, creating packages or tracking pixels, changing domains or routes, configuring CRM integrations, managing API tokens, and inviting or removing organization members.
 
-Members are intended for teammates who need visibility into Scarf data but should not administer the account or spend usage credits.
+Members are intended for teammates who need to view and export Scarf data without administering the account or spending Company Unlock credits.
 
 ### Filter Settings
 
