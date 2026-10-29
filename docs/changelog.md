@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-29
+
+- **Better mobile-web usability.** We improved layouts across dashboards, analytics, and organization settings. On phones, you can browse readable category summaries, use filters and date controls, and manage invitations and exports without controls overflowing the screen. Scarf AI starts as a compact “Open chat” bar to leave more room for your analytics.
+- **Clearer analytics breakdowns.** We now show the nine leading categories plus “Other” in package, client, cloud-provider, user-agent, and custom-variable charts, preserving totals while reducing clutter.
+- **More reliable Company Journey.** We fixed cases where activity history appeared empty near plan retention limits. You can retry failed loads, and Starter users can distinguish unavailable history from days without activity.
+- **Clearer Maven Central onboarding.** We replaced misleading trial countdowns and expiration warnings with information about your publisher company-unlock grant and remaining balance. Additional verified publishers can also join an existing Maven Central organization through enrollment.
+- **Export fixes.** We fixed missing company details in package-event exports for unlocked companies on usage-based plans, and failures in company exports spanning thousands of packages.
+
 ## 2026-09-14
 
 - Configure File / Event Collection packages to capture selected request headers as event variables with the `event_variable_headers` setting. Scarf matches header names case-insensitively, skips sensitive authentication and client-IP headers, and preserves existing path or query variable values when names overlap.
