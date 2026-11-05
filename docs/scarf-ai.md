@@ -148,25 +148,31 @@ https://api.scarf.sh/mcp
 
 Prerequisites:
 
-- a Scarf API token
+- a Scarf account with access to the organization you want to use
 - an MCP-compatible client that supports remote MCP servers
 
-Configure your MCP client to use Scarf's remote MCP endpoint and authenticate with your Scarf API token. For clients that use JSON MCP configuration, add a server entry like this:
+#### Authentication
 
-```json
-{
-  "mcpServers": {
-    "scarf": {
-      "url": "https://api.scarf.sh/mcp",
-      "headers": {
-        "Authorization": "Bearer your-token-here"
-      }
-    }
-  }
-}
-```
+If your MCP client supports OAuth, add the server using only `https://api.scarf.sh/mcp`. Follow the client's browser sign-in flow to sign in to Scarf and approve the requested access. You do not need to copy an API token.
 
-Restart your MCP client after saving the configuration, then ask it Scarf questions.
+Alternatively, use a Scarf API token with a client that supports bearer-token authentication. In the Scarf app, open [Settings → Overview](https://app.scarf.sh/account) and find the **API Token** section to copy your personal token or generate a new one with **Regenerate Token**. Configure your client to send it in the `Authorization: Bearer <token>` header, using the client's secret-management mechanism.
+
+#### OAuth scopes
+
+- `scarf.analytics.read`: read Scarf analytics.
+- `scarf.insights_filters.write`: create, update, and delete insights filters, and unlock companies.
+
+Read tools require `scarf.analytics.read`. Write tools require both scopes. Your Scarf organization permissions still apply.
+
+#### Available tools
+
+| Tool | Access | Purpose |
+| --- | --- | --- |
+| `scarf_api_read` | Read | Query Scarf analytics and insights through the allowed API routes. |
+| `scarf_create_insights_filter` | Write | Create an insights filter. |
+| `scarf_update_insights_filter` | Write | Update an existing insights filter. |
+| `scarf_delete_insights_filter` | Write | Delete an insights filter. |
+| `scarf_unlock_companies` | Write | Unlock company insights; **spends your organization's company-unlock credits**. |
 
 Example prompts:
 
@@ -174,8 +180,6 @@ Example prompts:
 - "Find high-intent companies for my organization this month."
 - "Show me what changed in our Scarf activity this week."
 - "Help me investigate unusual download activity."
-
-Available MCP capabilities include Scarf analytics, company and package insights, filtering, and related workflows exposed by the Scarf MCP server. The exact tool set may change over time, so rely on your MCP client to show the current available tools.
 
 MCP tool calls use the Scarf API, so direct API-backed requests may consume Runs.
 
